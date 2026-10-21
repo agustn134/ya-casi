@@ -41,14 +41,18 @@ public class LockerInteraction : MonoBehaviour
         interactionPoint != null ? interactionPoint.position : transform.position;
 
     /// <summary>
-    /// Revisa el casillero y comunica su contenido.
-    /// Impide obtener el resultado más de una vez.
+    /// Revisa el casillero una sola vez.
+    /// Entrega la USB o descuenta diez segundos si está vacío.
     /// </summary>
     public void Interact()
     {
+        if (levelManager != null && !levelManager.IsPlaying)
+        {
+            return;
+        }
+
         if (searched)
         {
-            Debug.Log("Este casillero ya fue revisado.", this);
             return;
         }
 
@@ -56,17 +60,36 @@ public class LockerInteraction : MonoBehaviour
 
         if (containsUSB)
         {
-            // Comunica al gestor que el jugador consiguió la USB.
             if (levelManager != null)
             {
                 levelManager.CollectUSB();
+                levelManager.ShowFeedback(
+                    "¡Encontraste tu USB! Busca la salida."
+                );
             }
 
             Debug.Log("¡Encontraste la USB!", this);
         }
         else
         {
-            Debug.Log("Aquí no está la USB.", this);
+            if (levelManager != null)
+            {
+                levelManager.ApplyPenalty(10f);
+
+                // Si la penalización terminó la partida,
+                // se conserva únicamente el mensaje de derrota.
+                if (levelManager.IsPlaying)
+                {
+                    levelManager.ShowFeedback(
+                        "Aquí no está la USB. −10 segundos."
+                    );
+                }
+            }
+
+            Debug.Log(
+                "Aquí no está la USB. Penalización: 10 segundos.",
+                this
+            );
         }
     }
 }

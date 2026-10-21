@@ -31,7 +31,8 @@ public class LevelExit : MonoBehaviour
         if (player == null || levelManager == null)
             return;
 
-        if (!levelManager.HasUSB || levelManager.IsCompleted)
+        // Solo permite finalizar una partida que sigue activa.
+        if (!levelManager.HasUSB || !levelManager.IsPlaying)
             return;
 
         levelManager.CompleteLevel();

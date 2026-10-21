@@ -1,9 +1,9 @@
 /*
  * Archivo: PlayerInteraction.cs
  * Proyecto: Ya Casi
- * Autores del proyecto: Agustín López Parra y Carlos Manuel Palma Muñoz.
- * Función: Gestiona la interacción con el casillero y muestra
- * el indicador de teclado cuando el jugador está cerca.
+ * Autores del proyecto: Agustín López Parra
+ * Función: Selecciona el casillero sin revisar más cercano,
+ * muestra el indicador y permite interactuar mediante E.
  */
 
 using UnityEngine;
@@ -11,22 +11,32 @@ using UnityEngine.InputSystem;
 using TMPro;
 
 /// <summary>
-/// Comprueba la distancia al casillero asignado y permite revisarlo
-/// mediante la acción Interact de Player Input.
+/// Gestiona la interacción del jugador con los casilleros del nivel.
+/// Requiere Player Input con Behavior = Send Messages.
 /// </summary>
 public class PlayerInteraction : MonoBehaviour
 {
-    [SerializeField]
-    [Tooltip("Casillero disponible para esta primera prueba.")]
-    private LockerInteraction targetLocker;
-
     [SerializeField, Min(0.1f)]
-    [Tooltip("Distancia máxima de interacción en unidades del mundo.")]
+    [Tooltip("Distancia máxima para revisar un casillero.")]
     private float interactionDistance = 1.5f;
 
     [SerializeField]
     [Tooltip("Texto del Canvas que muestra E para revisar.")]
     private TMP_Text interactionText;
+
+    // Casilleros encontrados al iniciar esta escena.
+    private LockerInteraction[] lockers;
+
+    /// <summary>
+    /// Obtiene los casilleros activos de la escena una sola vez.
+    /// Esta versión supone que todos están colocados antes de iniciar.
+    /// </summary>
+    private void Awake()
+    {
+        lockers = FindObjectsByType<LockerInteraction>(
+            FindObjectsSortMode.None
+        );
+    }
 
     /// <summary>
     /// Oculta el indicador al activar el componente.
@@ -37,55 +47,73 @@ public class PlayerInteraction : MonoBehaviour
     }
 
     /// <summary>
-    /// Actualiza la visibilidad según la distancia y el estado del casillero.
+    /// Muestra el indicador si existe un casillero disponible cerca.
     /// </summary>
     private void Update()
     {
-        bool canSearch = IsWithinRange() && !targetLocker.IsSearched;
-        SetPromptVisible(canSearch);
+        SetPromptVisible(FindNearestLocker() != null);
     }
 
     /// <summary>
-    /// Comprueba si existe un casillero activo dentro del alcance.
+    /// Busca el casillero activo y sin revisar más cercano,
+    /// siempre que esté dentro del alcance.
     /// </summary>
-    private bool IsWithinRange()
+    /// <returns>Casillero disponible o null si no hay ninguno.</returns>
+    private LockerInteraction FindNearestLocker()
     {
-        if (targetLocker == null || !targetLocker.isActiveAndEnabled)
-            return false;
+        LockerInteraction nearest = null;
+        float nearestDistance = interactionDistance;
 
-        float distance = Vector2.Distance(
-            transform.position,
-            targetLocker.InteractionPosition
-        );
+        if (lockers == null)
+            return null;
 
-        return distance <= interactionDistance;
+        foreach (LockerInteraction locker in lockers)
+        {
+            if (locker == null ||
+                !locker.isActiveAndEnabled ||
+                locker.IsSearched)
+            {
+                continue;
+            }
+
+            float distance = Vector2.Distance(
+                transform.position,
+                locker.InteractionPosition
+            );
+
+            if (distance <= nearestDistance)
+            {
+                nearestDistance = distance;
+                nearest = locker;
+            }
+        }
+
+        return nearest;
     }
 
     /// <summary>
-    /// Recibe la acción Interact mediante Send Messages.
-    /// Solo responde al presionar el botón, no al soltarlo.
+    /// Revisa el casillero disponible más cercano al presionar E.
+    /// Ignora la notificación enviada al soltar la tecla.
     /// </summary>
     /// <param name="value">Estado del botón de interacción.</param>
     public void OnInteract(InputValue value)
     {
-        if (!value.isPressed || targetLocker == null)
+        if (!value.isPressed)
             return;
 
-        if (!IsWithinRange())
-        {
-            Debug.Log("Acércate al casillero para revisarlo.", this);
+        LockerInteraction nearest = FindNearestLocker();
+
+        if (nearest == null)
             return;
-        }
 
-        targetLocker.Interact();
+        nearest.Interact();
 
-        // Oculta el indicador inmediatamente después de revisar.
-        SetPromptVisible(false);
+        // Actualiza el indicador tras cambiar el estado del casillero.
+        SetPromptVisible(FindNearestLocker() != null);
     }
 
     /// <summary>
-    /// Muestra u oculta únicamente el componente de texto.
-    /// El Canvas y sus otros elementos permanecen activos.
+    /// Controla la visibilidad del componente de texto.
     /// </summary>
     private void SetPromptVisible(bool visible)
     {
@@ -94,7 +122,7 @@ public class PlayerInteraction : MonoBehaviour
     }
 
     /// <summary>
-    /// Oculta el indicador si se desactiva el jugador o este componente.
+    /// Oculta el indicador al desactivar la interacción.
     /// </summary>
     private void OnDisable()
     {
