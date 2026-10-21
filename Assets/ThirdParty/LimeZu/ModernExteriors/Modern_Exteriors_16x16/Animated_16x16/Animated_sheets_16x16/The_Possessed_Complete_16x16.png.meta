@@ -1,0 +1,6357 @@
+fileFormatVersion: 2
+guid: b3f49880e8ab8b740a72da296b796d04
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1656491366629684781
+    second: The_Possessed_Complete_16x16_0
+  - first:
+      213: 8286993279106489666
+    second: The_Possessed_Complete_16x16_1
+  - first:
+      213: 2899030715654554963
+    second: The_Possessed_Complete_16x16_2
+  - first:
+      213: 7029309836894941465
+    second: The_Possessed_Complete_16x16_3
+  - first:
+      213: 1874139635109205963
+    second: The_Possessed_Complete_16x16_4
+  - first:
+      213: 8146295412243675815
+    second: The_Possessed_Complete_16x16_5
+  - first:
+      213: -2934374714639503380
+    second: The_Possessed_Complete_16x16_6
+  - first:
+      213: 5193165040520140462
+    second: The_Possessed_Complete_16x16_7
+  - first:
+      213: -7282461249071569501
+    second: The_Possessed_Complete_16x16_8
+  - first:
+      213: 3296812691188073764
+    second: The_Possessed_Complete_16x16_9
+  - first:
+      213: -193092185377021398
+    second: The_Possessed_Complete_16x16_10
+  - first:
+      213: -5154730321546707831
+    second: The_Possessed_Complete_16x16_11
+  - first:
+      213: -932929766312349290
+    second: The_Possessed_Complete_16x16_12
+  - first:
+      213: -3424479882657077907
+    second: The_Possessed_Complete_16x16_13
+  - first:
+      213: 8572999062949497318
+    second: The_Possessed_Complete_16x16_14
+  - first:
+      213: 8461468172680802785
+    second: The_Possessed_Complete_16x16_15
+  - first:
+      213: -9160952585130008808
+    second: The_Possessed_Complete_16x16_16
+  - first:
+      213: -5954363108510586314
+    second: The_Possessed_Complete_16x16_17
+  - first:
+      213: 2957502489989448251
+    second: The_Possessed_Complete_16x16_18
+  - first:
+      213: 8041615436852422374
+    second: The_Possessed_Complete_16x16_19
+  - first:
+      213: 3634145166321136587
+    second: The_Possessed_Complete_16x16_20
+  - first:
+      213: -7697023602989895020
+    second: The_Possessed_Complete_16x16_21
+  - first:
+      213: 8445368962548747399
+    second: The_Possessed_Complete_16x16_22
+  - first:
+      213: -3645832093696330569
+    second: The_Possessed_Complete_16x16_23
+  - first:
+      213: -1016826785943158448
+    second: The_Possessed_Complete_16x16_24
+  - first:
+      213: -188208683863640074
+    second: The_Possessed_Complete_16x16_25
+  - first:
+      213: -7856287436211628374
+    second: The_Possessed_Complete_16x16_26
+  - first:
+      213: -8040712343151926173
+    second: The_Possessed_Complete_16x16_27
+  - first:
+      213: 5424631300120619906
+    second: The_Possessed_Complete_16x16_28
+  - first:
+      213: 2632510500211894762
+    second: The_Possessed_Complete_16x16_29
+  - first:
+      213: 1090356926531257279
+    second: The_Possessed_Complete_16x16_30
+  - first:
+      213: -6182698115987423606
+    second: The_Possessed_Complete_16x16_31
+  - first:
+      213: -1915823948339796250
+    second: The_Possessed_Complete_16x16_32
+  - first:
+      213: 7239236728507708894
+    second: The_Possessed_Complete_16x16_33
+  - first:
+      213: 6590907560724841684
+    second: The_Possessed_Complete_16x16_34
+  - first:
+      213: -7422786004408376019
+    second: The_Possessed_Complete_16x16_35
+  - first:
+      213: 1237982830933214785
+    second: The_Possessed_Complete_16x16_36
+  - first:
+      213: 6495648775856431746
+    second: The_Possessed_Complete_16x16_37
+  - first:
+      213: -1000266999279576094
+    second: The_Possessed_Complete_16x16_38
+  - first:
+      213: 3890998528066609005
+    second: The_Possessed_Complete_16x16_39
+  - first:
+      213: 1999412843279970450
+    second: The_Possessed_Complete_16x16_40
+  - first:
+      213: -9150798387432612909
+    second: The_Possessed_Complete_16x16_41
+  - first:
+      213: 818696809719812132
+    second: The_Possessed_Complete_16x16_42
+  - first:
+      213: 7367187495095269
+    second: The_Possessed_Complete_16x16_43
+  - first:
+      213: -3469900181694774745
+    second: The_Possessed_Complete_16x16_44
+  - first:
+      213: 2638204712908467771
+    second: The_Possessed_Complete_16x16_45
+  - first:
+      213: -5592297095715527437
+    second: The_Possessed_Complete_16x16_46
+  - first:
+      213: -1687442384739942679
+    second: The_Possessed_Complete_16x16_47
+  - first:
+      213: 7721466355623122061
+    second: The_Possessed_Complete_16x16_48
+  - first:
+      213: 491921776004156653
+    second: The_Possessed_Complete_16x16_49
+  - first:
+      213: 3980935341786080440
+    second: The_Possessed_Complete_16x16_50
+  - first:
+      213: 17300868513037522
+    second: The_Possessed_Complete_16x16_51
+  - first:
+      213: 7933109776111272814
+    second: The_Possessed_Complete_16x16_52
+  - first:
+      213: -6221830502372541566
+    second: The_Possessed_Complete_16x16_53
+  - first:
+      213: 7861191763128473199
+    second: The_Possessed_Complete_16x16_54
+  - first:
+      213: -7482218895492416187
+    second: The_Possessed_Complete_16x16_55
+  - first:
+      213: -3891093631122462137
+    second: The_Possessed_Complete_16x16_56
+  - first:
+      213: -1601533094335213320
+    second: The_Possessed_Complete_16x16_57
+  - first:
+      213: -3427723189999057074
+    second: The_Possessed_Complete_16x16_58
+  - first:
+      213: 6593091365806851557
+    second: The_Possessed_Complete_16x16_59
+  - first:
+      213: 4667192224728943060
+    second: The_Possessed_Complete_16x16_60
+  - first:
+      213: 1348299784290137154
+    second: The_Possessed_Complete_16x16_61
+  - first:
+      213: -8103210896710825287
+    second: The_Possessed_Complete_16x16_62
+  - first:
+      213: -2308001656656299829
+    second: The_Possessed_Complete_16x16_63
+  - first:
+      213: -601277394066073698
+    second: The_Possessed_Complete_16x16_64
+  - first:
+      213: -8828833301924459982
+    second: The_Possessed_Complete_16x16_65
+  - first:
+      213: -1977228243404708635
+    second: The_Possessed_Complete_16x16_66
+  - first:
+      213: -1869947489454083836
+    second: The_Possessed_Complete_16x16_67
+  - first:
+      213: 5282579917454876277
+    second: The_Possessed_Complete_16x16_68
+  - first:
+      213: -4581834334556567808
+    second: The_Possessed_Complete_16x16_69
+  - first:
+      213: -2413389487414639364
+    second: The_Possessed_Complete_16x16_70
+  - first:
+      213: 5136081159142881917
+    second: The_Possessed_Complete_16x16_71
+  - first:
+      213: 6316142260903256303
+    second: The_Possessed_Complete_16x16_72
+  - first:
+      213: 1893588374014291199
+    second: The_Possessed_Complete_16x16_73
+  - first:
+      213: 750167954562889650
+    second: The_Possessed_Complete_16x16_74
+  - first:
+      213: 2859315570132921995
+    second: The_Possessed_Complete_16x16_75
+  - first:
+      213: 1714643072250405754
+    second: The_Possessed_Complete_16x16_76
+  - first:
+      213: -3606810867204961243
+    second: The_Possessed_Complete_16x16_77
+  - first:
+      213: 3207069197749848275
+    second: The_Possessed_Complete_16x16_78
+  - first:
+      213: 5549623579983603828
+    second: The_Possessed_Complete_16x16_79
+  - first:
+      213: -4570996915112652825
+    second: The_Possessed_Complete_16x16_80
+  - first:
+      213: -2943589289446180249
+    second: The_Possessed_Complete_16x16_81
+  - first:
+      213: 8043433100603616541
+    second: The_Possessed_Complete_16x16_82
+  - first:
+      213: -4524371267382171361
+    second: The_Possessed_Complete_16x16_83
+  - first:
+      213: -7950974354750069704
+    second: The_Possessed_Complete_16x16_84
+  - first:
+      213: 3508520811956996071
+    second: The_Possessed_Complete_16x16_85
+  - first:
+      213: 7694688036149884105
+    second: The_Possessed_Complete_16x16_86
+  - first:
+      213: -9087287681523359354
+    second: The_Possessed_Complete_16x16_87
+  - first:
+      213: -5347665649909349102
+    second: The_Possessed_Complete_16x16_88
+  - first:
+      213: 6691704564566157462
+    second: The_Possessed_Complete_16x16_89
+  - first:
+      213: 6199688665367641264
+    second: The_Possessed_Complete_16x16_90
+  - first:
+      213: 2154034917057003110
+    second: The_Possessed_Complete_16x16_91
+  - first:
+      213: -8938776899697192236
+    second: The_Possessed_Complete_16x16_92
+  - first:
+      213: -5472795717594628238
+    second: The_Possessed_Complete_16x16_93
+  - first:
+      213: 7396598100380685571
+    second: The_Possessed_Complete_16x16_94
+  - first:
+      213: 1670985389752020408
+    second: The_Possessed_Complete_16x16_95
+  - first:
+      213: -5405461100269123329
+    second: The_Possessed_Complete_16x16_96
+  - first:
+      213: 578007852450100412
+    second: The_Possessed_Complete_16x16_97
+  - first:
+      213: 8262890458900762960
+    second: The_Possessed_Complete_16x16_98
+  - first:
+      213: 8890548601100289831
+    second: The_Possessed_Complete_16x16_99
+  - first:
+      213: 6854918981486100407
+    second: The_Possessed_Complete_16x16_100
+  - first:
+      213: 1420471442381226080
+    second: The_Possessed_Complete_16x16_101
+  - first:
+      213: -1914388298410001264
+    second: The_Possessed_Complete_16x16_102
+  - first:
+      213: -2595125687546700923
+    second: The_Possessed_Complete_16x16_103
+  - first:
+      213: -8107744024285362017
+    second: The_Possessed_Complete_16x16_104
+  - first:
+      213: -49305791983446566
+    second: The_Possessed_Complete_16x16_105
+  - first:
+      213: 9153511299699834566
+    second: The_Possessed_Complete_16x16_106
+  - first:
+      213: -2725310699538874776
+    second: The_Possessed_Complete_16x16_107
+  - first:
+      213: -9142856867721459825
+    second: The_Possessed_Complete_16x16_108
+  - first:
+      213: -4103333248743734851
+    second: The_Possessed_Complete_16x16_109
+  - first:
+      213: 1223268860943725279
+    second: The_Possessed_Complete_16x16_110
+  - first:
+      213: -1435651823835341151
+    second: The_Possessed_Complete_16x16_111
+  - first:
+      213: -7032271215720854731
+    second: The_Possessed_Complete_16x16_112
+  - first:
+      213: 262043833794823836
+    second: The_Possessed_Complete_16x16_113
+  - first:
+      213: -306489880219125338
+    second: The_Possessed_Complete_16x16_114
+  - first:
+      213: 3626326857558513122
+    second: The_Possessed_Complete_16x16_115
+  - first:
+      213: -438772706280084800
+    second: The_Possessed_Complete_16x16_116
+  - first:
+      213: 5287474843513521894
+    second: The_Possessed_Complete_16x16_117
+  - first:
+      213: -2289996836627586602
+    second: The_Possessed_Complete_16x16_118
+  - first:
+      213: 1669701147721659124
+    second: The_Possessed_Complete_16x16_119
+  - first:
+      213: -262714785154092175
+    second: The_Possessed_Complete_16x16_120
+  - first:
+      213: 8146217907643891297
+    second: The_Possessed_Complete_16x16_121
+  - first:
+      213: 7874197306798047552
+    second: The_Possessed_Complete_16x16_122
+  - first:
+      213: -6938582239379665782
+    second: The_Possessed_Complete_16x16_123
+  - first:
+      213: -7337960376449323230
+    second: The_Possessed_Complete_16x16_124
+  - first:
+      213: 7185427460036403498
+    second: The_Possessed_Complete_16x16_125
+  - first:
+      213: -3479635215482524135
+    second: The_Possessed_Complete_16x16_126
+  - first:
+      213: 3300146152037030991
+    second: The_Possessed_Complete_16x16_127
+  - first:
+      213: -6323348134404886331
+    second: The_Possessed_Complete_16x16_128
+  - first:
+      213: -7778400331727102590
+    second: The_Possessed_Complete_16x16_129
+  - first:
+      213: 440980159038973637
+    second: The_Possessed_Complete_16x16_130
+  - first:
+      213: -7846895840365565470
+    second: The_Possessed_Complete_16x16_131
+  - first:
+      213: 5066060884056824751
+    second: The_Possessed_Complete_16x16_132
+  - first:
+      213: 6398066309080493766
+    second: The_Possessed_Complete_16x16_133
+  - first:
+      213: 6130326945978348913
+    second: The_Possessed_Complete_16x16_134
+  - first:
+      213: 1624232944749655824
+    second: The_Possessed_Complete_16x16_135
+  - first:
+      213: 1498318560389039975
+    second: The_Possessed_Complete_16x16_136
+  - first:
+      213: 5676781062353068736
+    second: The_Possessed_Complete_16x16_137
+  - first:
+      213: 4873073087903823836
+    second: The_Possessed_Complete_16x16_138
+  - first:
+      213: 7198052293671186893
+    second: The_Possessed_Complete_16x16_139
+  - first:
+      213: 7693521448272627390
+    second: The_Possessed_Complete_16x16_140
+  - first:
+      213: 1782781899393792714
+    second: The_Possessed_Complete_16x16_141
+  - first:
+      213: 6960201398512417958
+    second: The_Possessed_Complete_16x16_142
+  - first:
+      213: 5790963227300880944
+    second: The_Possessed_Complete_16x16_143
+  - first:
+      213: -4405394294268071347
+    second: The_Possessed_Complete_16x16_144
+  - first:
+      213: -8336693299720867406
+    second: The_Possessed_Complete_16x16_145
+  - first:
+      213: -3873649802537381378
+    second: The_Possessed_Complete_16x16_146
+  - first:
+      213: 7834396407095843127
+    second: The_Possessed_Complete_16x16_147
+  - first:
+      213: 8459438278495102652
+    second: The_Possessed_Complete_16x16_148
+  - first:
+      213: 5530146359796717404
+    second: The_Possessed_Complete_16x16_149
+  - first:
+      213: -8249931099335174579
+    second: The_Possessed_Complete_16x16_150
+  - first:
+      213: -8184685770748889117
+    second: The_Possessed_Complete_16x16_151
+  - first:
+      213: 5321540739910689889
+    second: The_Possessed_Complete_16x16_152
+  - first:
+      213: 2051409276704571243
+    second: The_Possessed_Complete_16x16_153
+  - first:
+      213: -5057557147187930456
+    second: The_Possessed_Complete_16x16_154
+  - first:
+      213: 216167915757512688
+    second: The_Possessed_Complete_16x16_155
+  - first:
+      213: 747950600106284996
+    second: The_Possessed_Complete_16x16_156
+  - first:
+      213: -6984601021423187703
+    second: The_Possessed_Complete_16x16_157
+  - first:
+      213: -208165420957496226
+    second: The_Possessed_Complete_16x16_158
+  - first:
+      213: -2417483521405362575
+    second: The_Possessed_Complete_16x16_159
+  - first:
+      213: -2171984922684602704
+    second: The_Possessed_Complete_16x16_160
+  - first:
+      213: -7766834826623441954
+    second: The_Possessed_Complete_16x16_161
+  - first:
+      213: 5501051427978030939
+    second: The_Possessed_Complete_16x16_162
+  - first:
+      213: -5872067980195946504
+    second: The_Possessed_Complete_16x16_163
+  - first:
+      213: -585899717454774524
+    second: The_Possessed_Complete_16x16_164
+  - first:
+      213: 4095500801811190387
+    second: The_Possessed_Complete_16x16_165
+  - first:
+      213: -2941305913190221728
+    second: The_Possessed_Complete_16x16_166
+  - first:
+      213: 2952573319834126072
+    second: The_Possessed_Complete_16x16_167
+  - first:
+      213: -8862885169368061638
+    second: The_Possessed_Complete_16x16_168
+  - first:
+      213: 7343099464144338021
+    second: The_Possessed_Complete_16x16_169
+  - first:
+      213: 6823469061486765814
+    second: The_Possessed_Complete_16x16_170
+  - first:
+      213: 366438673012948014
+    second: The_Possessed_Complete_16x16_171
+  - first:
+      213: 5442798071644177386
+    second: The_Possessed_Complete_16x16_172
+  - first:
+      213: 4872113458395541108
+    second: The_Possessed_Complete_16x16_173
+  - first:
+      213: 6528485026429433449
+    second: The_Possessed_Complete_16x16_174
+  - first:
+      213: 3322187542081962284
+    second: The_Possessed_Complete_16x16_175
+  - first:
+      213: 7043807229412631423
+    second: The_Possessed_Complete_16x16_176
+  - first:
+      213: -9078445167127559766
+    second: The_Possessed_Complete_16x16_177
+  - first:
+      213: 6445188723911750031
+    second: The_Possessed_Complete_16x16_178
+  - first:
+      213: 5278595078748426477
+    second: The_Possessed_Complete_16x16_179
+  - first:
+      213: -6682958469967820836
+    second: The_Possessed_Complete_16x16_180
+  - first:
+      213: -1558880446117613918
+    second: The_Possessed_Complete_16x16_181
+  - first:
+      213: 9140502226281467058
+    second: The_Possessed_Complete_16x16_182
+  - first:
+      213: 8550721485733897041
+    second: The_Possessed_Complete_16x16_183
+  - first:
+      213: 8424605611535473355
+    second: The_Possessed_Complete_16x16_184
+  - first:
+      213: -8137679012036350358
+    second: The_Possessed_Complete_16x16_185
+  - first:
+      213: -2772802137429771314
+    second: The_Possessed_Complete_16x16_186
+  - first:
+      213: -2780155115092913236
+    second: The_Possessed_Complete_16x16_187
+  - first:
+      213: 5310323093772822048
+    second: The_Possessed_Complete_16x16_188
+  - first:
+      213: -7601317505514804485
+    second: The_Possessed_Complete_16x16_189
+  - first:
+      213: 6904470889959710735
+    second: The_Possessed_Complete_16x16_190
+  - first:
+      213: 3116621063647384493
+    second: The_Possessed_Complete_16x16_191
+  - first:
+      213: 1685314290958321409
+    second: The_Possessed_Complete_16x16_192
+  - first:
+      213: 4941727154013292005
+    second: The_Possessed_Complete_16x16_193
+  - first:
+      213: -4738315466142744503
+    second: The_Possessed_Complete_16x16_194
+  - first:
+      213: -3125924442985087967
+    second: The_Possessed_Complete_16x16_195
+  - first:
+      213: 3657386958047642012
+    second: The_Possessed_Complete_16x16_196
+  - first:
+      213: -4337855263827848756
+    second: The_Possessed_Complete_16x16_197
+  - first:
+      213: 7840082680024192803
+    second: The_Possessed_Complete_16x16_198
+  - first:
+      213: -6056202874364723816
+    second: The_Possessed_Complete_16x16_199
+  - first:
+      213: 378560413613089536
+    second: The_Possessed_Complete_16x16_200
+  - first:
+      213: -17216366680645543
+    second: The_Possessed_Complete_16x16_201
+  - first:
+      213: -5281196680508965869
+    second: The_Possessed_Complete_16x16_202
+  - first:
+      213: -4907713202296057623
+    second: The_Possessed_Complete_16x16_203
+  - first:
+      213: -1506616964526510564
+    second: The_Possessed_Complete_16x16_204
+  - first:
+      213: -5746388841674930036
+    second: The_Possessed_Complete_16x16_205
+  - first:
+      213: -140973981094413977
+    second: The_Possessed_Complete_16x16_206
+  - first:
+      213: 1051582766410483549
+    second: The_Possessed_Complete_16x16_207
+  - first:
+      213: -3988344028054272704
+    second: The_Possessed_Complete_16x16_208
+  - first:
+      213: -136805702374134269
+    second: The_Possessed_Complete_16x16_209
+  - first:
+      213: -1354640368365385665
+    second: The_Possessed_Complete_16x16_210
+  - first:
+      213: -1769083890898086394
+    second: The_Possessed_Complete_16x16_211
+  - first:
+      213: -1544800960496628648
+    second: The_Possessed_Complete_16x16_212
+  - first:
+      213: 1562510995961777729
+    second: The_Possessed_Complete_16x16_213
+  - first:
+      213: -1713597355273886794
+    second: The_Possessed_Complete_16x16_214
+  - first:
+      213: -6229742378323373263
+    second: The_Possessed_Complete_16x16_215
+  - first:
+      213: 1296660767202264342
+    second: The_Possessed_Complete_16x16_216
+  - first:
+      213: 7660735770276028558
+    second: The_Possessed_Complete_16x16_217
+  - first:
+      213: -279983137583323720
+    second: The_Possessed_Complete_16x16_218
+  - first:
+      213: 2885908318369970830
+    second: The_Possessed_Complete_16x16_219
+  - first:
+      213: 5261141401673099309
+    second: The_Possessed_Complete_16x16_220
+  - first:
+      213: 3040542935511169825
+    second: The_Possessed_Complete_16x16_221
+  - first:
+      213: -6224354034020339208
+    second: The_Possessed_Complete_16x16_222
+  - first:
+      213: 3013219289620195730
+    second: The_Possessed_Complete_16x16_223
+  - first:
+      213: 4520684316849210039
+    second: The_Possessed_Complete_16x16_224
+  - first:
+      213: 7586237110159559829
+    second: The_Possessed_Complete_16x16_225
+  - first:
+      213: -5354263685770048682
+    second: The_Possessed_Complete_16x16_226
+  - first:
+      213: 1862861841942838542
+    second: The_Possessed_Complete_16x16_227
+  - first:
+      213: 9049452825170115117
+    second: The_Possessed_Complete_16x16_228
+  - first:
+      213: 1164442171301332787
+    second: The_Possessed_Complete_16x16_229
+  - first:
+      213: 5093545583379595626
+    second: The_Possessed_Complete_16x16_230
+  - first:
+      213: -2652342140805060815
+    second: The_Possessed_Complete_16x16_231
+  - first:
+      213: 4643610825876351159
+    second: The_Possessed_Complete_16x16_232
+  - first:
+      213: -6656043778516726250
+    second: The_Possessed_Complete_16x16_233
+  - first:
+      213: -2925768880678410964
+    second: The_Possessed_Complete_16x16_234
+  - first:
+      213: -8611464464588010799
+    second: The_Possessed_Complete_16x16_235
+  - first:
+      213: 9169747374852914218
+    second: The_Possessed_Complete_16x16_236
+  - first:
+      213: 718138494630651089
+    second: The_Possessed_Complete_16x16_237
+  - first:
+      213: 4448220104042215241
+    second: The_Possessed_Complete_16x16_238
+  - first:
+      213: 1775969385804653636
+    second: The_Possessed_Complete_16x16_239
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_0
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 623
+        width: 15
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d26b6791f1a0df610800000000000000
+      internalID: 1656491366629684781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_1
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 623
+        width: 18
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24d11312b70510370800000000000000
+      internalID: 8286993279106489666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_2
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 623
+        width: 15
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 355498f731d6b3820800000000000000
+      internalID: 2899030715654554963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_3
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 623
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9113844cd002d8160800000000000000
+      internalID: 7029309836894941465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_4
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 625
+        width: 190
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc71a2a8118420a10800000000000000
+      internalID: 1874139635109205963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_5
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 575
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7aabd2a34847d0170800000000000000
+      internalID: 8146295412243675815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_6
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 575
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cef26087eb10747d0800000000000000
+      internalID: -2934374714639503380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_7
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 575
+        width: 15
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea61e2cf614d11840800000000000000
+      internalID: 5193165040520140462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_8
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 575
+        width: 15
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a5aa8ef3108fea90800000000000000
+      internalID: -7282461249071569501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_9
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 575
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 425c345eca1a0cd20800000000000000
+      internalID: 3296812691188073764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_10
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 575
+        width: 15
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a22e2b13eaff15df0800000000000000
+      internalID: -193092185377021398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_11
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 575
+        width: 15
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98cf54f5518b678b0800000000000000
+      internalID: -5154730321546707831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_12
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 575
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 691709602519d03f0800000000000000
+      internalID: -932929766312349290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_13
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 575
+        width: 18
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d65e0cdb0bdc970d0800000000000000
+      internalID: -3424479882657077907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_14
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 575
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e98cded93969f670800000000000000
+      internalID: 8572999062949497318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_15
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 575
+        width: 18
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e1b9e6e87c2d6570800000000000000
+      internalID: 8461468172680802785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_16
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 575
+        width: 18
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81f112f1922cdd080800000000000000
+      internalID: -9160952585130008808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_17
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 575
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63a2985ec4add5da0800000000000000
+      internalID: -5954363108510586314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_18
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 575
+        width: 18
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b32872a58d82b0920800000000000000
+      internalID: 2957502489989448251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_19
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 575
+        width: 18
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e6e2ed22ae899f60800000000000000
+      internalID: 8041615436852422374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_20
+      rect:
+        serializedVersion: 2
+        x: 983
+        y: 575
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc336c436c31f6230800000000000000
+      internalID: 3634145166321136587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_21
+      rect:
+        serializedVersion: 2
+        x: 1048
+        y: 575
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4927dfb40ddae2590800000000000000
+      internalID: -7697023602989895020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_22
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 575
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78cc3d1735af33570800000000000000
+      internalID: 8445368962548747399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_23
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 575
+        width: 15
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b4f288f607676dc0800000000000000
+      internalID: -3645832093696330569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_24
+      rect:
+        serializedVersion: 2
+        x: 1240
+        y: 575
+        width: 15
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05181c1fc6183e1f0800000000000000
+      internalID: -1016826785943158448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_25
+      rect:
+        serializedVersion: 2
+        x: 1304
+        y: 575
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f7f9aef239536df0800000000000000
+      internalID: -188208683863640074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_26
+      rect:
+        serializedVersion: 2
+        x: 1368
+        y: 575
+        width: 15
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa6dd3f733cd8f290800000000000000
+      internalID: -7856287436211628374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_27
+      rect:
+        serializedVersion: 2
+        x: 1432
+        y: 575
+        width: 15
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 364a455b9b6a96090800000000000000
+      internalID: -8040712343151926173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_28
+      rect:
+        serializedVersion: 2
+        x: 1496
+        y: 575
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28ba7213d69284b40800000000000000
+      internalID: 5424631300120619906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_29
+      rect:
+        serializedVersion: 2
+        x: 1559
+        y: 575
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae9ad903a5e888420800000000000000
+      internalID: 2632510500211894762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_30
+      rect:
+        serializedVersion: 2
+        x: 1623
+        y: 575
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb3484409d9b12f00800000000000000
+      internalID: 1090356926531257279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_31
+      rect:
+        serializedVersion: 2
+        x: 1687
+        y: 575
+        width: 18
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8eb71322d4a23aa0800000000000000
+      internalID: -6182698115987423606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_32
+      rect:
+        serializedVersion: 2
+        x: 1751
+        y: 575
+        width: 18
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e6250bf440a965e0800000000000000
+      internalID: -1915823948339796250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_33
+      rect:
+        serializedVersion: 2
+        x: 1815
+        y: 575
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed5b9af037fe67460800000000000000
+      internalID: 7239236728507708894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_34
+      rect:
+        serializedVersion: 2
+        x: 1879
+        y: 575
+        width: 18
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d4c070a18b977b50800000000000000
+      internalID: 6590907560724841684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_35
+      rect:
+        serializedVersion: 2
+        x: 1943
+        y: 575
+        width: 18
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d256f73e477fcf890800000000000000
+      internalID: -7422786004408376019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_36
+      rect:
+        serializedVersion: 2
+        x: 2007
+        y: 575
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1468ecb53d23e2110800000000000000
+      internalID: 1237982830933214785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_37
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 481
+        width: 174
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 282af9e652e252a50800000000000000
+      internalID: 6495648775856431746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_38
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 531
+        width: 16
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2eb156bb6765e12f0800000000000000
+      internalID: -1000266999279576094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_39
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 532
+        width: 15
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6f5afebb8a9ff530800000000000000
+      internalID: 3890998528066609005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_40
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 533
+        width: 15
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2907e0b33675fbb10800000000000000
+      internalID: 1999412843279970450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_41
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 527
+        width: 15
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3db9cd18955d10180800000000000000
+      internalID: -9150798387432612909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_42
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 527
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 420581a29689c5b00800000000000000
+      internalID: 818696809719812132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_43
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 527
+        width: 15
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5eb83a10b6c2a1000800000000000000
+      internalID: 7367187495095269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_44
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 527
+        width: 15
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72205084b2078dfc0800000000000000
+      internalID: -3469900181694774745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_45
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 527
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3eaba56539cc9420800000000000000
+      internalID: 2638204712908467771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_46
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 527
+        width: 18
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f46d63bb6b2462b0800000000000000
+      internalID: -5592297095715527437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_47
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 527
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ee33ae67100598e0800000000000000
+      internalID: -1687442384739942679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_48
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 527
+        width: 18
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d84db088db8282b60800000000000000
+      internalID: 7721466355623122061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_49
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 527
+        width: 18
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: decc10cbf38a3d600800000000000000
+      internalID: 491921776004156653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_50
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 527
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b425f8f99f1f3730800000000000000
+      internalID: 3980935341786080440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_51
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 527
+        width: 18
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dc760a5c077d3000800000000000000
+      internalID: 17300868513037522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_52
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 527
+        width: 18
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e638a495f41181e60800000000000000
+      internalID: 7933109776111272814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_53
+      rect:
+        serializedVersion: 2
+        x: 983
+        y: 527
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28bf46d6f1e97a9a0800000000000000
+      internalID: -6221830502372541566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_54
+      rect:
+        serializedVersion: 2
+        x: 1048
+        y: 527
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f66df781240981d60800000000000000
+      internalID: 7861191763128473199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_55
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 527
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54d757a9e81d92890800000000000000
+      internalID: -7482218895492416187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_56
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 527
+        width: 15
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74a292955fe000ac0800000000000000
+      internalID: -3891093631122462137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_57
+      rect:
+        serializedVersion: 2
+        x: 1240
+        y: 527
+        width: 15
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f01e10d22636c9e0800000000000000
+      internalID: -1601533094335213320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_58
+      rect:
+        serializedVersion: 2
+        x: 1304
+        y: 527
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e47ccb76be74e60d0800000000000000
+      internalID: -3427723189999057074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_59
+      rect:
+        serializedVersion: 2
+        x: 1368
+        y: 527
+        width: 15
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e5cc9e5aad5f7b50800000000000000
+      internalID: 6593091365806851557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_60
+      rect:
+        serializedVersion: 2
+        x: 1432
+        y: 527
+        width: 15
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d90f6db99235c040800000000000000
+      internalID: 4667192224728943060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_61
+      rect:
+        serializedVersion: 2
+        x: 1496
+        y: 527
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 244795d928f16b210800000000000000
+      internalID: 1348299784290137154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_62
+      rect:
+        serializedVersion: 2
+        x: 1559
+        y: 527
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ba0a714f9c9b8f80800000000000000
+      internalID: -8103210896710825287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_63
+      rect:
+        serializedVersion: 2
+        x: 1623
+        y: 527
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc8fcf9b8b458ffd0800000000000000
+      internalID: -2308001656656299829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_64
+      rect:
+        serializedVersion: 2
+        x: 1687
+        y: 527
+        width: 18
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9718335565d7a7f0800000000000000
+      internalID: -601277394066073698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_65
+      rect:
+        serializedVersion: 2
+        x: 1751
+        y: 527
+        width: 18
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23a47a993eea97580800000000000000
+      internalID: -8828833301924459982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_66
+      rect:
+        serializedVersion: 2
+        x: 1815
+        y: 527
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e42eff63697f84e0800000000000000
+      internalID: -1977228243404708635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_67
+      rect:
+        serializedVersion: 2
+        x: 1879
+        y: 527
+        width: 18
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 401b47e6aac9c06e0800000000000000
+      internalID: -1869947489454083836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_68
+      rect:
+        serializedVersion: 2
+        x: 1943
+        y: 527
+        width: 18
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57e9285527e7f4940800000000000000
+      internalID: 5282579917454876277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_69
+      rect:
+        serializedVersion: 2
+        x: 2007
+        y: 527
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0074115c2fd0a60c0800000000000000
+      internalID: -4581834334556567808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_70
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 431
+        width: 18
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf40df14c0be18ed0800000000000000
+      internalID: -2413389487414639364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_71
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 431
+        width: 18
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7ab9442a96074740800000000000000
+      internalID: 5136081159142881917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_72
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 431
+        width: 18
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe0a8f30ce177a750800000000000000
+      internalID: 6316142260903256303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_73
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 431
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffc6eefe790674a10800000000000000
+      internalID: 1893588374014291199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_74
+      rect:
+        serializedVersion: 2
+        x: 2712
+        y: 431
+        width: 16
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b73a95b7c1296a00800000000000000
+      internalID: 750167954562889650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_75
+      rect:
+        serializedVersion: 2
+        x: 2838
+        y: 431
+        width: 40
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8e248a9c545ea720800000000000000
+      internalID: 2859315570132921995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_76
+      rect:
+        serializedVersion: 2
+        x: 2902
+        y: 431
+        width: 38
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a73e1162ac2abc710800000000000000
+      internalID: 1714643072250405754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_77
+      rect:
+        serializedVersion: 2
+        x: 2967
+        y: 431
+        width: 25
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52cca3040a802fdc0800000000000000
+      internalID: -3606810867204961243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_78
+      rect:
+        serializedVersion: 2
+        x: 2989
+        y: 457
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d80afd817cc18c20800000000000000
+      internalID: 3207069197749848275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_79
+      rect:
+        serializedVersion: 2
+        x: 3031
+        y: 431
+        width: 24
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 478ed0a2e39340d40800000000000000
+      internalID: 5549623579983603828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_80
+      rect:
+        serializedVersion: 2
+        x: 3095
+        y: 431
+        width: 21
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7efcd4d168e8090c0800000000000000
+      internalID: -4570996915112652825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_81
+      rect:
+        serializedVersion: 2
+        x: 3159
+        y: 431
+        width: 22
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76a7ae513254627d0800000000000000
+      internalID: -2943589289446180249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_82
+      rect:
+        serializedVersion: 2
+        x: 3223
+        y: 431
+        width: 18
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1de8100ac300af60800000000000000
+      internalID: 8043433100603616541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_83
+      rect:
+        serializedVersion: 2
+        x: 3287
+        y: 431
+        width: 18
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f19a3bfad443631c0800000000000000
+      internalID: -4524371267382171361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_84
+      rect:
+        serializedVersion: 2
+        x: 3351
+        y: 431
+        width: 18
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 834a1ee43f678a190800000000000000
+      internalID: -7950974354750069704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_85
+      rect:
+        serializedVersion: 2
+        x: 3415
+        y: 431
+        width: 18
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e703cbe615c0b030800000000000000
+      internalID: 3508520811956996071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_86
+      rect:
+        serializedVersion: 2
+        x: 3479
+        y: 431
+        width: 18
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c4792c200609ca60800000000000000
+      internalID: 7694688036149884105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_87
+      rect:
+        serializedVersion: 2
+        x: 3536
+        y: 431
+        width: 32
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 681640b000873e180800000000000000
+      internalID: -9087287681523359354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_88
+      rect:
+        serializedVersion: 2
+        x: 3594
+        y: 431
+        width: 44
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 215489fac6649c5b0800000000000000
+      internalID: -5347665649909349102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_89
+      rect:
+        serializedVersion: 2
+        x: 3668
+        y: 431
+        width: 24
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69863d8e8d5bddc50800000000000000
+      internalID: 6691704564566157462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_90
+      rect:
+        serializedVersion: 2
+        x: 3735
+        y: 431
+        width: 18
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bcf0496ef7b90650800000000000000
+      internalID: 6199688665367641264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_91
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 385
+        width: 174
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66e78f0385ba4ed10800000000000000
+      internalID: 2154034917057003110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_92
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 431
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d2d417f4c513f380800000000000000
+      internalID: -8938776899697192236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_93
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 431
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27f3e7c7a49bc04b0800000000000000
+      internalID: -5472795717594628238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_94
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 431
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 305158f88cef5a660800000000000000
+      internalID: 7396598100380685571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_95
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 431
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bd6905db58803710800000000000000
+      internalID: 1670985389752020408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_96
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 431
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff84447c4c1fbf4b0800000000000000
+      internalID: -5405461100269123329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_97
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 431
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb4bca2541f750800800000000000000
+      internalID: 578007852450100412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_98
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 431
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0519ebcf71faba270800000000000000
+      internalID: 8262890458900762960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_99
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 431
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 727cdea39d2916b70800000000000000
+      internalID: 8890548601100289831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_100
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 431
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bfbf87ae70912f50800000000000000
+      internalID: 6854918981486100407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_101
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 431
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06048b8304786b310800000000000000
+      internalID: 1420471442381226080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_102
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 431
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09c7b174cf9be65e0800000000000000
+      internalID: -1914388298410001264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_103
+      rect:
+        serializedVersion: 2
+        x: 983
+        y: 431
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58b994ecfe24cfbd0800000000000000
+      internalID: -2595125687546700923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_104
+      rect:
+        serializedVersion: 2
+        x: 1047
+        y: 431
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f98ccae34c18b7f80800000000000000
+      internalID: -8107744024285362017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_105
+      rect:
+        serializedVersion: 2
+        x: 1111
+        y: 431
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad51577b4a4d05ff0800000000000000
+      internalID: -49305791983446566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_106
+      rect:
+        serializedVersion: 2
+        x: 1175
+        y: 431
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cef12a970ec70f70800000000000000
+      internalID: 9153511299699834566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_107
+      rect:
+        serializedVersion: 2
+        x: 1239
+        y: 431
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86ef96bab50cd2ad0800000000000000
+      internalID: -2725310699538874776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_108
+      rect:
+        serializedVersion: 2
+        x: 1303
+        y: 431
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f87c837ae1c0e1180800000000000000
+      internalID: -9142856867721459825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_109
+      rect:
+        serializedVersion: 2
+        x: 1367
+        y: 431
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db1849196280e07c0800000000000000
+      internalID: -4103333248743734851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_110
+      rect:
+        serializedVersion: 2
+        x: 1430
+        y: 431
+        width: 19
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd2f8514c8ce9f010800000000000000
+      internalID: 1223268860943725279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_111
+      rect:
+        serializedVersion: 2
+        x: 1495
+        y: 431
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ae172bc54a831ce0800000000000000
+      internalID: -1435651823835341151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_112
+      rect:
+        serializedVersion: 2
+        x: 1558
+        y: 431
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53b01ce769a586e90800000000000000
+      internalID: -7032271215720854731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_113
+      rect:
+        serializedVersion: 2
+        x: 1623
+        y: 431
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c960cec7a77f2a300800000000000000
+      internalID: 262043833794823836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_114
+      rect:
+        serializedVersion: 2
+        x: 1687
+        y: 431
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a9794ae3112fbbf0800000000000000
+      internalID: -306489880219125338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_115
+      rect:
+        serializedVersion: 2
+        x: 1752
+        y: 431
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e5db38501d435230800000000000000
+      internalID: 3626326857558513122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_116
+      rect:
+        serializedVersion: 2
+        x: 1817
+        y: 431
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cae9016c8a29e9f0800000000000000
+      internalID: -438772706280084800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_117
+      rect:
+        serializedVersion: 2
+        x: 1881
+        y: 431
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e6007e1b52e06940800000000000000
+      internalID: 5287474843513521894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_118
+      rect:
+        serializedVersion: 2
+        x: 1945
+        y: 431
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d16b00920c4830e0800000000000000
+      internalID: -2289996836627586602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_119
+      rect:
+        serializedVersion: 2
+        x: 2004
+        y: 431
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f2f20fe858fb2710800000000000000
+      internalID: 1669701147721659124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_120
+      rect:
+        serializedVersion: 2
+        x: 2067
+        y: 431
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 173b5a97b46aa5cf0800000000000000
+      internalID: -262714785154092175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_121
+      rect:
+        serializedVersion: 2
+        x: 2131
+        y: 431
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16e3a08c60e2d0170800000000000000
+      internalID: 8146217907643891297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_122
+      rect:
+        serializedVersion: 2
+        x: 2195
+        y: 431
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04109033bb4c64d60800000000000000
+      internalID: 7874197306798047552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_123
+      rect:
+        serializedVersion: 2
+        x: 2264
+        y: 431
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8cc0f8273435bf90800000000000000
+      internalID: -6938582239379665782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_124
+      rect:
+        serializedVersion: 2
+        x: 2328
+        y: 431
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22fa8d17ae35a2a90800000000000000
+      internalID: -7337960376449323230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_125
+      rect:
+        serializedVersion: 2
+        x: 2392
+        y: 431
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a21aec27434c7b360800000000000000
+      internalID: 7185427460036403498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_126
+      rect:
+        serializedVersion: 2
+        x: 2456
+        y: 431
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91e6939153ad5bfc0800000000000000
+      internalID: -3479635215482524135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_127
+      rect:
+        serializedVersion: 2
+        x: 2520
+        y: 431
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4c1a0bb0797ccd20800000000000000
+      internalID: 3300146152037030991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_128
+      rect:
+        serializedVersion: 2
+        x: 2583
+        y: 431
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c0faa1df54fe38a0800000000000000
+      internalID: -6323348134404886331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_129
+      rect:
+        serializedVersion: 2
+        x: 2648
+        y: 431
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28d10aa2c129d0490800000000000000
+      internalID: -7778400331727102590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_130
+      rect:
+        serializedVersion: 2
+        x: 2770
+        y: 431
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c663844e1dae1600800000000000000
+      internalID: 440980159038973637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_131
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 335
+        width: 15
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e9258dcec93a1390800000000000000
+      internalID: -7846895840365565470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_132
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 335
+        width: 18
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fab55bc68834e4640800000000000000
+      internalID: 5066060884056824751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_133
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 335
+        width: 15
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ce2322e86f7ac850800000000000000
+      internalID: 6398066309080493766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_134
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 335
+        width: 18
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1757b04a0eb431550800000000000000
+      internalID: 6130326945978348913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_135
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 287
+        width: 15
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0173a48f14f6a8610800000000000000
+      internalID: 1624232944749655824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_136
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 287
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7670d50dac81bc410800000000000000
+      internalID: 1498318560389039975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_137
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 287
+        width: 15
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c22831ac4af7ce40800000000000000
+      internalID: 5676781062353068736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_138
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 287
+        width: 15
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd7f501a722a0a340800000000000000
+      internalID: 4873073087903823836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_139
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 287
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc1f4f69c6e94e360800000000000000
+      internalID: 7198052293671186893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_140
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 287
+        width: 15
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb68324cef0e4ca60800000000000000
+      internalID: 7693521448272627390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_141
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 287
+        width: 15
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acafc5121b6bdb810800000000000000
+      internalID: 1782781899393792714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_142
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 287
+        width: 15
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ac72839b4a979060800000000000000
+      internalID: 6960201398512417958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_143
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 287
+        width: 18
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0326e969f52ad5050800000000000000
+      internalID: 5790963227300880944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_144
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 287
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d427e9aea35ecd2c0800000000000000
+      internalID: -4405394294268071347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_145
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 287
+        width: 18
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b132c41d9d1e4c80800000000000000
+      internalID: -8336693299720867406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_146
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 287
+        width: 18
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef15f7f27080e3ac0800000000000000
+      internalID: -3873649802537381378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_147
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 287
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7395b8a160e59bc60800000000000000
+      internalID: 7834396407095843127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_148
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 287
+        width: 18
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb6ea055b46f56570800000000000000
+      internalID: 8459438278495102652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_149
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 287
+        width: 18
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c575a9370d60fbc40800000000000000
+      internalID: 5530146359796717404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_150
+      rect:
+        serializedVersion: 2
+        x: 983
+        y: 287
+        width: 18
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d46ddaa006b528d80800000000000000
+      internalID: -8249931099335174579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_151
+      rect:
+        serializedVersion: 2
+        x: 1048
+        y: 287
+        width: 15
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e77154e7a72a6e80800000000000000
+      internalID: -8184685770748889117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_152
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 287
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1646524bb19e9d940800000000000000
+      internalID: 5321540739910689889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_153
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 287
+        width: 15
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6fbaea4ed1187c10800000000000000
+      internalID: 2051409276704571243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_154
+      rect:
+        serializedVersion: 2
+        x: 1240
+        y: 287
+        width: 15
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8aa10aa1292ffc9b0800000000000000
+      internalID: -5057557147187930456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_155
+      rect:
+        serializedVersion: 2
+        x: 1304
+        y: 287
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f72096f29bfff200800000000000000
+      internalID: 216167915757512688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_156
+      rect:
+        serializedVersion: 2
+        x: 1368
+        y: 287
+        width: 15
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c710e4ab11416a00800000000000000
+      internalID: 747950600106284996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_157
+      rect:
+        serializedVersion: 2
+        x: 1432
+        y: 287
+        width: 15
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9098d348066b11f90800000000000000
+      internalID: -6984601021423187703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_158
+      rect:
+        serializedVersion: 2
+        x: 1496
+        y: 287
+        width: 15
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5c0f4d07a27c1df0800000000000000
+      internalID: -208165420957496226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_159
+      rect:
+        serializedVersion: 2
+        x: 1559
+        y: 287
+        width: 18
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17ed540bb8f537ed0800000000000000
+      internalID: -2417483521405362575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_160
+      rect:
+        serializedVersion: 2
+        x: 1623
+        y: 287
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b641e1783f8bd1e0800000000000000
+      internalID: -2171984922684602704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_161
+      rect:
+        serializedVersion: 2
+        x: 1687
+        y: 287
+        width: 18
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed32af920e8a63490800000000000000
+      internalID: -7766834826623441954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_162
+      rect:
+        serializedVersion: 2
+        x: 1751
+        y: 287
+        width: 18
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5f29cfb029a75c40800000000000000
+      internalID: 5501051427978030939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_163
+      rect:
+        serializedVersion: 2
+        x: 1815
+        y: 287
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ff99779849328ea0800000000000000
+      internalID: -5872067980195946504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_164
+      rect:
+        serializedVersion: 2
+        x: 1879
+        y: 287
+        width: 18
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40f3b1baf477ed7f0800000000000000
+      internalID: -585899717454774524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_165
+      rect:
+        serializedVersion: 2
+        x: 1943
+        y: 287
+        width: 18
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3729845c74426d830800000000000000
+      internalID: 4095500801811190387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_166
+      rect:
+        serializedVersion: 2
+        x: 2007
+        y: 287
+        width: 18
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0687a8c0bd16e27d0800000000000000
+      internalID: -2941305913190221728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_167
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 193
+        width: 174
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f6420e7ac5a9f820800000000000000
+      internalID: 2952573319834126072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_168
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 243
+        width: 15
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a392db265e4b00580800000000000000
+      internalID: -8862885169368061638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_169
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 244
+        width: 15
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56c3fa6ae0ee7e560800000000000000
+      internalID: 7343099464144338021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_170
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 245
+        width: 15
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f669c985f4d1be50800000000000000
+      internalID: 6823469061486765814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_171
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 239
+        width: 15
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2cf6e8180ad51500800000000000000
+      internalID: 366438673012948014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_172
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 239
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae3488c4204b88b40800000000000000
+      internalID: 5442798071644177386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_173
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 239
+        width: 15
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47ee01970693d9340800000000000000
+      internalID: 4872113458395541108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_174
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 239
+        width: 15
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96678c9ca86d99a50800000000000000
+      internalID: 6528485026429433449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_175
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 239
+        width: 15
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c210603c7f7ca1e20800000000000000
+      internalID: 3322187542081962284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_176
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 239
+        width: 18
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f73e77ffa51a0c160800000000000000
+      internalID: 7043807229412631423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_177
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 239
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa1008c5832e20280800000000000000
+      internalID: -9078445167127559766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_178
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 239
+        width: 18
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f81fc1f0ff8e17950800000000000000
+      internalID: 6445188723911750031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_179
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 239
+        width: 18
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de0dce5c146514940800000000000000
+      internalID: 5278595078748426477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_180
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 239
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd741ecedac5143a0800000000000000
+      internalID: -6682958469967820836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_181
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 239
+        width: 18
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ae6bd95e7ebd5ae0800000000000000
+      internalID: -1558880446117613918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_182
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 239
+        width: 18
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bc8c2aa85699de70800000000000000
+      internalID: 9140502226281467058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_183
+      rect:
+        serializedVersion: 2
+        x: 983
+        y: 239
+        width: 18
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 153287a33e34aa670800000000000000
+      internalID: 8550721485733897041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_184
+      rect:
+        serializedVersion: 2
+        x: 1048
+        y: 239
+        width: 15
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bca95501b263ae470800000000000000
+      internalID: 8424605611535473355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_185
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 239
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6eeb67cd08211f80800000000000000
+      internalID: -8137679012036350358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_186
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 239
+        width: 15
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecbfd0e95270589d0800000000000000
+      internalID: -2772802137429771314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_187
+      rect:
+        serializedVersion: 2
+        x: 1240
+        y: 239
+        width: 15
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca3d66817a7ea69d0800000000000000
+      internalID: -2780155115092913236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_188
+      rect:
+        serializedVersion: 2
+        x: 1304
+        y: 239
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 026e1eee7be02b940800000000000000
+      internalID: 5310323093772822048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_189
+      rect:
+        serializedVersion: 2
+        x: 1368
+        y: 239
+        width: 15
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfae4d29002b28690800000000000000
+      internalID: -7601317505514804485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_190
+      rect:
+        serializedVersion: 2
+        x: 1432
+        y: 239
+        width: 15
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f00e21661bb91df50800000000000000
+      internalID: 6904470889959710735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_191
+      rect:
+        serializedVersion: 2
+        x: 1496
+        y: 239
+        width: 15
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da3d3364856704b20800000000000000
+      internalID: 3116621063647384493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_192
+      rect:
+        serializedVersion: 2
+        x: 1559
+        y: 239
+        width: 18
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 107c57f1b60736710800000000000000
+      internalID: 1685314290958321409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_193
+      rect:
+        serializedVersion: 2
+        x: 1623
+        y: 239
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e54dd70aaa849440800000000000000
+      internalID: 4941727154013292005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_194
+      rect:
+        serializedVersion: 2
+        x: 1687
+        y: 239
+        width: 18
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94082de203f1e3eb0800000000000000
+      internalID: -4738315466142744503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_195
+      rect:
+        serializedVersion: 2
+        x: 1751
+        y: 239
+        width: 18
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12cb92de74c7e94d0800000000000000
+      internalID: -3125924442985087967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_196
+      rect:
+        serializedVersion: 2
+        x: 1815
+        y: 239
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9183988f06a1c230800000000000000
+      internalID: 3657386958047642012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_197
+      rect:
+        serializedVersion: 2
+        x: 1879
+        y: 239
+        width: 18
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc19b78de97dcc3c0800000000000000
+      internalID: -4337855263827848756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_198
+      rect:
+        serializedVersion: 2
+        x: 1943
+        y: 239
+        width: 18
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 327d880b8a19dcc60800000000000000
+      internalID: 7840082680024192803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_199
+      rect:
+        serializedVersion: 2
+        x: 2007
+        y: 239
+        width: 18
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89d7ac9a29b04fba0800000000000000
+      internalID: -6056202874364723816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_200
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 148
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 003ee63c0bae04500800000000000000
+      internalID: 378560413613089536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_201
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 150
+        width: 17
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9506da34ec5d2cff0800000000000000
+      internalID: -17216366680645543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_202
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 155
+        width: 21
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31c7a4d999b65b6b0800000000000000
+      internalID: -5281196680508965869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_203
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 163
+        width: 23
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e016ad38dc44ebb0800000000000000
+      internalID: -4907713202296057623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_204
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 161
+        width: 26
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1ee1d86adb671be0800000000000000
+      internalID: -1506616964526510564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_205
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 154
+        width: 22
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8882be4bc9b040b0800000000000000
+      internalID: -5746388841674930036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_206
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 154
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7697b4e39e82b0ef0800000000000000
+      internalID: -140973981094413977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_207
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 154
+        width: 28
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d57c1db54f8f79e00800000000000000
+      internalID: 1051582766410483549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_208
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 155
+        width: 19
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04546c5dc3e86a8c0800000000000000
+      internalID: -3988344028054272704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_209
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 158
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30eedb240f7f91ef0800000000000000
+      internalID: -136805702374134269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_210
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 143
+        width: 19
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f384d2d13c9533de0800000000000000
+      internalID: -1354640368365385665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_211
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 143
+        width: 19
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60657210393f277e0800000000000000
+      internalID: -1769083890898086394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_212
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 143
+        width: 18
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85c8aec06b3cf8ae0800000000000000
+      internalID: -1544800960496628648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_213
+      rect:
+        serializedVersion: 2
+        x: 851
+        y: 143
+        width: 18
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14e81f7e8772fa510800000000000000
+      internalID: 1562510995961777729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_214
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 143
+        width: 18
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b3e9dec8441838e0800000000000000
+      internalID: -1713597355273886794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_215
+      rect:
+        serializedVersion: 2
+        x: 979
+        y: 143
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13396d140528b89a0800000000000000
+      internalID: -6229742378323373263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_216
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 97
+        width: 174
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 615c647091aaef110800000000000000
+      internalID: 1296660767202264342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_217
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 174
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e806e614896605a60800000000000000
+      internalID: 7660735770276028558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_218
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 47
+        width: 18
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b52f3dd1dc4d1cf0800000000000000
+      internalID: -279983137583323720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_219
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 47
+        width: 18
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8a79ca435ecc0820800000000000000
+      internalID: 2885908318369970830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_220
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 47
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2863d7ea34530940800000000000000
+      internalID: 5261141401673099309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_221
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 47
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12b777bb0bd223a20800000000000000
+      internalID: 3040542935511169825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_222
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 47
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f1b2fdebf6ae99a0800000000000000
+      internalID: -6224354034020339208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_223
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 47
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 299aa2caafa11d920800000000000000
+      internalID: 3013219289620195730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_224
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 47
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b20a7f3f62bcbe30800000000000000
+      internalID: 4520684316849210039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_225
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 47
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59c42f4457ab74960800000000000000
+      internalID: 7586237110159559829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_226
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 47
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65b07efbb85d1b5b0800000000000000
+      internalID: -5354263685770048682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_227
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 47
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0df1a2b9f63ad910800000000000000
+      internalID: 1862861841942838542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_228
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 47
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2a7beff56d169d70800000000000000
+      internalID: 9049452825170115117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_229
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 47
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33786ed3cfde82010800000000000000
+      internalID: 1164442171301332787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_230
+      rect:
+        serializedVersion: 2
+        x: 788
+        y: 47
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a61c998a8b8efa640800000000000000
+      internalID: 5093545583379595626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_231
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 47
+        width: 32
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 137e38a20ecf03bd0800000000000000
+      internalID: -2652342140805060815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_232
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 47
+        width: 34
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b8a487717b617040800000000000000
+      internalID: 4643610825876351159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_233
+      rect:
+        serializedVersion: 2
+        x: 983
+        y: 47
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61ecf0cd27bf0a3a0800000000000000
+      internalID: -6656043778516726250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_234
+      rect:
+        serializedVersion: 2
+        x: 1047
+        y: 47
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c25654454b49567d0800000000000000
+      internalID: -2925768880678410964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_235
+      rect:
+        serializedVersion: 2
+        x: 1111
+        y: 47
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1da0558e1beed7880800000000000000
+      internalID: -8611464464588010799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_236
+      rect:
+        serializedVersion: 2
+        x: 1175
+        y: 47
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2cbd2e67ac714f70800000000000000
+      internalID: 9169747374852914218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_237
+      rect:
+        serializedVersion: 2
+        x: 1239
+        y: 47
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d46effe72757f900800000000000000
+      internalID: 718138494630651089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_238
+      rect:
+        serializedVersion: 2
+        x: 1303
+        y: 47
+        width: 18
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 947ff20fd904bbd30800000000000000
+      internalID: 4448220104042215241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: The_Possessed_Complete_16x16_239
+      rect:
+        serializedVersion: 2
+        x: 1367
+        y: 47
+        width: 18
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 444ead43fb285a810800000000000000
+      internalID: 1775969385804653636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      The_Possessed_Complete_16x16_0: 1656491366629684781
+      The_Possessed_Complete_16x16_1: 8286993279106489666
+      The_Possessed_Complete_16x16_10: -193092185377021398
+      The_Possessed_Complete_16x16_100: 6854918981486100407
+      The_Possessed_Complete_16x16_101: 1420471442381226080
+      The_Possessed_Complete_16x16_102: -1914388298410001264
+      The_Possessed_Complete_16x16_103: -2595125687546700923
+      The_Possessed_Complete_16x16_104: -8107744024285362017
+      The_Possessed_Complete_16x16_105: -49305791983446566
+      The_Possessed_Complete_16x16_106: 9153511299699834566
+      The_Possessed_Complete_16x16_107: -2725310699538874776
+      The_Possessed_Complete_16x16_108: -9142856867721459825
+      The_Possessed_Complete_16x16_109: -4103333248743734851
+      The_Possessed_Complete_16x16_11: -5154730321546707831
+      The_Possessed_Complete_16x16_110: 1223268860943725279
+      The_Possessed_Complete_16x16_111: -1435651823835341151
+      The_Possessed_Complete_16x16_112: -7032271215720854731
+      The_Possessed_Complete_16x16_113: 262043833794823836
+      The_Possessed_Complete_16x16_114: -306489880219125338
+      The_Possessed_Complete_16x16_115: 3626326857558513122
+      The_Possessed_Complete_16x16_116: -438772706280084800
+      The_Possessed_Complete_16x16_117: 5287474843513521894
+      The_Possessed_Complete_16x16_118: -2289996836627586602
+      The_Possessed_Complete_16x16_119: 1669701147721659124
+      The_Possessed_Complete_16x16_12: -932929766312349290
+      The_Possessed_Complete_16x16_120: -262714785154092175
+      The_Possessed_Complete_16x16_121: 8146217907643891297
+      The_Possessed_Complete_16x16_122: 7874197306798047552
+      The_Possessed_Complete_16x16_123: -6938582239379665782
+      The_Possessed_Complete_16x16_124: -7337960376449323230
+      The_Possessed_Complete_16x16_125: 7185427460036403498
+      The_Possessed_Complete_16x16_126: -3479635215482524135
+      The_Possessed_Complete_16x16_127: 3300146152037030991
+      The_Possessed_Complete_16x16_128: -6323348134404886331
+      The_Possessed_Complete_16x16_129: -7778400331727102590
+      The_Possessed_Complete_16x16_13: -3424479882657077907
+      The_Possessed_Complete_16x16_130: 440980159038973637
+      The_Possessed_Complete_16x16_131: -7846895840365565470
+      The_Possessed_Complete_16x16_132: 5066060884056824751
+      The_Possessed_Complete_16x16_133: 6398066309080493766
+      The_Possessed_Complete_16x16_134: 6130326945978348913
+      The_Possessed_Complete_16x16_135: 1624232944749655824
+      The_Possessed_Complete_16x16_136: 1498318560389039975
+      The_Possessed_Complete_16x16_137: 5676781062353068736
+      The_Possessed_Complete_16x16_138: 4873073087903823836
+      The_Possessed_Complete_16x16_139: 7198052293671186893
+      The_Possessed_Complete_16x16_14: 8572999062949497318
+      The_Possessed_Complete_16x16_140: 7693521448272627390
+      The_Possessed_Complete_16x16_141: 1782781899393792714
+      The_Possessed_Complete_16x16_142: 6960201398512417958
+      The_Possessed_Complete_16x16_143: 5790963227300880944
+      The_Possessed_Complete_16x16_144: -4405394294268071347
+      The_Possessed_Complete_16x16_145: -8336693299720867406
+      The_Possessed_Complete_16x16_146: -3873649802537381378
+      The_Possessed_Complete_16x16_147: 7834396407095843127
+      The_Possessed_Complete_16x16_148: 8459438278495102652
+      The_Possessed_Complete_16x16_149: 5530146359796717404
+      The_Possessed_Complete_16x16_15: 8461468172680802785
+      The_Possessed_Complete_16x16_150: -8249931099335174579
+      The_Possessed_Complete_16x16_151: -8184685770748889117
+      The_Possessed_Complete_16x16_152: 5321540739910689889
+      The_Possessed_Complete_16x16_153: 2051409276704571243
+      The_Possessed_Complete_16x16_154: -5057557147187930456
+      The_Possessed_Complete_16x16_155: 216167915757512688
+      The_Possessed_Complete_16x16_156: 747950600106284996
+      The_Possessed_Complete_16x16_157: -6984601021423187703
+      The_Possessed_Complete_16x16_158: -208165420957496226
+      The_Possessed_Complete_16x16_159: -2417483521405362575
+      The_Possessed_Complete_16x16_16: -9160952585130008808
+      The_Possessed_Complete_16x16_160: -2171984922684602704
+      The_Possessed_Complete_16x16_161: -7766834826623441954
+      The_Possessed_Complete_16x16_162: 5501051427978030939
+      The_Possessed_Complete_16x16_163: -5872067980195946504
+      The_Possessed_Complete_16x16_164: -585899717454774524
+      The_Possessed_Complete_16x16_165: 4095500801811190387
+      The_Possessed_Complete_16x16_166: -2941305913190221728
+      The_Possessed_Complete_16x16_167: 2952573319834126072
+      The_Possessed_Complete_16x16_168: -8862885169368061638
+      The_Possessed_Complete_16x16_169: 7343099464144338021
+      The_Possessed_Complete_16x16_17: -5954363108510586314
+      The_Possessed_Complete_16x16_170: 6823469061486765814
+      The_Possessed_Complete_16x16_171: 366438673012948014
+      The_Possessed_Complete_16x16_172: 5442798071644177386
+      The_Possessed_Complete_16x16_173: 4872113458395541108
+      The_Possessed_Complete_16x16_174: 6528485026429433449
+      The_Possessed_Complete_16x16_175: 3322187542081962284
+      The_Possessed_Complete_16x16_176: 7043807229412631423
+      The_Possessed_Complete_16x16_177: -9078445167127559766
+      The_Possessed_Complete_16x16_178: 6445188723911750031
+      The_Possessed_Complete_16x16_179: 5278595078748426477
+      The_Possessed_Complete_16x16_18: 2957502489989448251
+      The_Possessed_Complete_16x16_180: -6682958469967820836
+      The_Possessed_Complete_16x16_181: -1558880446117613918
+      The_Possessed_Complete_16x16_182: 9140502226281467058
+      The_Possessed_Complete_16x16_183: 8550721485733897041
+      The_Possessed_Complete_16x16_184: 8424605611535473355
+      The_Possessed_Complete_16x16_185: -8137679012036350358
+      The_Possessed_Complete_16x16_186: -2772802137429771314
+      The_Possessed_Complete_16x16_187: -2780155115092913236
+      The_Possessed_Complete_16x16_188: 5310323093772822048
+      The_Possessed_Complete_16x16_189: -7601317505514804485
+      The_Possessed_Complete_16x16_19: 8041615436852422374
+      The_Possessed_Complete_16x16_190: 6904470889959710735
+      The_Possessed_Complete_16x16_191: 3116621063647384493
+      The_Possessed_Complete_16x16_192: 1685314290958321409
+      The_Possessed_Complete_16x16_193: 4941727154013292005
+      The_Possessed_Complete_16x16_194: -4738315466142744503
+      The_Possessed_Complete_16x16_195: -3125924442985087967
+      The_Possessed_Complete_16x16_196: 3657386958047642012
+      The_Possessed_Complete_16x16_197: -4337855263827848756
+      The_Possessed_Complete_16x16_198: 7840082680024192803
+      The_Possessed_Complete_16x16_199: -6056202874364723816
+      The_Possessed_Complete_16x16_2: 2899030715654554963
+      The_Possessed_Complete_16x16_20: 3634145166321136587
+      The_Possessed_Complete_16x16_200: 378560413613089536
+      The_Possessed_Complete_16x16_201: -17216366680645543
+      The_Possessed_Complete_16x16_202: -5281196680508965869
+      The_Possessed_Complete_16x16_203: -4907713202296057623
+      The_Possessed_Complete_16x16_204: -1506616964526510564
+      The_Possessed_Complete_16x16_205: -5746388841674930036
+      The_Possessed_Complete_16x16_206: -140973981094413977
+      The_Possessed_Complete_16x16_207: 1051582766410483549
+      The_Possessed_Complete_16x16_208: -3988344028054272704
+      The_Possessed_Complete_16x16_209: -136805702374134269
+      The_Possessed_Complete_16x16_21: -7697023602989895020
+      The_Possessed_Complete_16x16_210: -1354640368365385665
+      The_Possessed_Complete_16x16_211: -1769083890898086394
+      The_Possessed_Complete_16x16_212: -1544800960496628648
+      The_Possessed_Complete_16x16_213: 1562510995961777729
+      The_Possessed_Complete_16x16_214: -1713597355273886794
+      The_Possessed_Complete_16x16_215: -6229742378323373263
+      The_Possessed_Complete_16x16_216: 1296660767202264342
+      The_Possessed_Complete_16x16_217: 7660735770276028558
+      The_Possessed_Complete_16x16_218: -279983137583323720
+      The_Possessed_Complete_16x16_219: 2885908318369970830
+      The_Possessed_Complete_16x16_22: 8445368962548747399
+      The_Possessed_Complete_16x16_220: 5261141401673099309
+      The_Possessed_Complete_16x16_221: 3040542935511169825
+      The_Possessed_Complete_16x16_222: -6224354034020339208
+      The_Possessed_Complete_16x16_223: 3013219289620195730
+      The_Possessed_Complete_16x16_224: 4520684316849210039
+      The_Possessed_Complete_16x16_225: 7586237110159559829
+      The_Possessed_Complete_16x16_226: -5354263685770048682
+      The_Possessed_Complete_16x16_227: 1862861841942838542
+      The_Possessed_Complete_16x16_228: 9049452825170115117
+      The_Possessed_Complete_16x16_229: 1164442171301332787
+      The_Possessed_Complete_16x16_23: -3645832093696330569
+      The_Possessed_Complete_16x16_230: 5093545583379595626
+      The_Possessed_Complete_16x16_231: -2652342140805060815
+      The_Possessed_Complete_16x16_232: 4643610825876351159
+      The_Possessed_Complete_16x16_233: -6656043778516726250
+      The_Possessed_Complete_16x16_234: -2925768880678410964
+      The_Possessed_Complete_16x16_235: -8611464464588010799
+      The_Possessed_Complete_16x16_236: 9169747374852914218
+      The_Possessed_Complete_16x16_237: 718138494630651089
+      The_Possessed_Complete_16x16_238: 4448220104042215241
+      The_Possessed_Complete_16x16_239: 1775969385804653636
+      The_Possessed_Complete_16x16_24: -1016826785943158448
+      The_Possessed_Complete_16x16_25: -188208683863640074
+      The_Possessed_Complete_16x16_26: -7856287436211628374
+      The_Possessed_Complete_16x16_27: -8040712343151926173
+      The_Possessed_Complete_16x16_28: 5424631300120619906
+      The_Possessed_Complete_16x16_29: 2632510500211894762
+      The_Possessed_Complete_16x16_3: 7029309836894941465
+      The_Possessed_Complete_16x16_30: 1090356926531257279
+      The_Possessed_Complete_16x16_31: -6182698115987423606
+      The_Possessed_Complete_16x16_32: -1915823948339796250
+      The_Possessed_Complete_16x16_33: 7239236728507708894
+      The_Possessed_Complete_16x16_34: 6590907560724841684
+      The_Possessed_Complete_16x16_35: -7422786004408376019
+      The_Possessed_Complete_16x16_36: 1237982830933214785
+      The_Possessed_Complete_16x16_37: 6495648775856431746
+      The_Possessed_Complete_16x16_38: -1000266999279576094
+      The_Possessed_Complete_16x16_39: 3890998528066609005
+      The_Possessed_Complete_16x16_4: 1874139635109205963
+      The_Possessed_Complete_16x16_40: 1999412843279970450
+      The_Possessed_Complete_16x16_41: -9150798387432612909
+      The_Possessed_Complete_16x16_42: 818696809719812132
+      The_Possessed_Complete_16x16_43: 7367187495095269
+      The_Possessed_Complete_16x16_44: -3469900181694774745
+      The_Possessed_Complete_16x16_45: 2638204712908467771
+      The_Possessed_Complete_16x16_46: -5592297095715527437
+      The_Possessed_Complete_16x16_47: -1687442384739942679
+      The_Possessed_Complete_16x16_48: 7721466355623122061
+      The_Possessed_Complete_16x16_49: 491921776004156653
+      The_Possessed_Complete_16x16_5: 8146295412243675815
+      The_Possessed_Complete_16x16_50: 3980935341786080440
+      The_Possessed_Complete_16x16_51: 17300868513037522
+      The_Possessed_Complete_16x16_52: 7933109776111272814
+      The_Possessed_Complete_16x16_53: -6221830502372541566
+      The_Possessed_Complete_16x16_54: 7861191763128473199
+      The_Possessed_Complete_16x16_55: -7482218895492416187
+      The_Possessed_Complete_16x16_56: -3891093631122462137
+      The_Possessed_Complete_16x16_57: -1601533094335213320
+      The_Possessed_Complete_16x16_58: -3427723189999057074
+      The_Possessed_Complete_16x16_59: 6593091365806851557
+      The_Possessed_Complete_16x16_6: -2934374714639503380
+      The_Possessed_Complete_16x16_60: 4667192224728943060
+      The_Possessed_Complete_16x16_61: 1348299784290137154
+      The_Possessed_Complete_16x16_62: -8103210896710825287
+      The_Possessed_Complete_16x16_63: -2308001656656299829
+      The_Possessed_Complete_16x16_64: -601277394066073698
+      The_Possessed_Complete_16x16_65: -8828833301924459982
+      The_Possessed_Complete_16x16_66: -1977228243404708635
+      The_Possessed_Complete_16x16_67: -1869947489454083836
+      The_Possessed_Complete_16x16_68: 5282579917454876277
+      The_Possessed_Complete_16x16_69: -4581834334556567808
+      The_Possessed_Complete_16x16_7: 5193165040520140462
+      The_Possessed_Complete_16x16_70: -2413389487414639364
+      The_Possessed_Complete_16x16_71: 5136081159142881917
+      The_Possessed_Complete_16x16_72: 6316142260903256303
+      The_Possessed_Complete_16x16_73: 1893588374014291199
+      The_Possessed_Complete_16x16_74: 750167954562889650
+      The_Possessed_Complete_16x16_75: 2859315570132921995
+      The_Possessed_Complete_16x16_76: 1714643072250405754
+      The_Possessed_Complete_16x16_77: -3606810867204961243
+      The_Possessed_Complete_16x16_78: 3207069197749848275
+      The_Possessed_Complete_16x16_79: 5549623579983603828
+      The_Possessed_Complete_16x16_8: -7282461249071569501
+      The_Possessed_Complete_16x16_80: -4570996915112652825
+      The_Possessed_Complete_16x16_81: -2943589289446180249
+      The_Possessed_Complete_16x16_82: 8043433100603616541
+      The_Possessed_Complete_16x16_83: -4524371267382171361
+      The_Possessed_Complete_16x16_84: -7950974354750069704
+      The_Possessed_Complete_16x16_85: 3508520811956996071
+      The_Possessed_Complete_16x16_86: 7694688036149884105
+      The_Possessed_Complete_16x16_87: -9087287681523359354
+      The_Possessed_Complete_16x16_88: -5347665649909349102
+      The_Possessed_Complete_16x16_89: 6691704564566157462
+      The_Possessed_Complete_16x16_9: 3296812691188073764
+      The_Possessed_Complete_16x16_90: 6199688665367641264
+      The_Possessed_Complete_16x16_91: 2154034917057003110
+      The_Possessed_Complete_16x16_92: -8938776899697192236
+      The_Possessed_Complete_16x16_93: -5472795717594628238
+      The_Possessed_Complete_16x16_94: 7396598100380685571
+      The_Possessed_Complete_16x16_95: 1670985389752020408
+      The_Possessed_Complete_16x16_96: -5405461100269123329
+      The_Possessed_Complete_16x16_97: 578007852450100412
+      The_Possessed_Complete_16x16_98: 8262890458900762960
+      The_Possessed_Complete_16x16_99: 8890548601100289831
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
