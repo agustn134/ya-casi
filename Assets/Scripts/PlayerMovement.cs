@@ -1,92 +1,180 @@
 /*
  * Archivo: PlayerMovement.cs
  * Proyecto: Ya Casi
- * Descripción: Controla el movimiento del jugador en perspectiva top-down 2D.
- * Autores del proyecto: Agustín López Parra y Carlos Manuel Palma Muñoz.
- * Fecha: 20 de octubre de 2026.
- *
- * Configuración necesaria:
- * - Añadir este script al objeto Player.
- * - Rigidbody2D: Gravity Scale = 0 y Freeze Rotation Z activado.
- * - Player Input: asignar PlayerControls y Default Map = Player.
- * - Player Input: Behavior = Send Messages.
- * - Acción Move: Value / Vector2, con WASD y flechas.
+ * Autores del proyecto:
+ * Agustín López Parra y Carlos Manuel Palma Muñoz.
+ * Función: Controla el movimiento y las animaciones del jugador.
  */
 
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 /// <summary>
-/// Controla el desplazamiento del jugador en ocho direcciones mediante
-/// el Input System y las físicas 2D de Unity.
+/// Mueve al personaje en ocho direcciones y muestra
+/// animaciones de caminar y reposo con cuatro orientaciones.
 /// </summary>
-/// <remarks>
-/// Este componente gestiona únicamente el movimiento.
-/// Las animaciones, la carrera y las interacciones se añadirán después.
-/// </remarks>
-[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Rigidbody2D), typeof(Animator))]
 public class PlayerMovement : MonoBehaviour
 {
-    /// <summary>
-    /// Velocidad de desplazamiento en unidades del mundo por segundo.
-    /// SerializeField permite ajustarla desde el Inspector.
-    /// </summary>
-    [SerializeField]
-    [Tooltip("Velocidad del jugador en unidades por segundo.")]
+    [SerializeField, Min(0f)]
     private float moveSpeed = 3f;
 
-    // Referencia al componente que controla las físicas del jugador.
-    private Rigidbody2D rb;
+    [SerializeField, Min(0f)]
+    private float runSpeed = 5f;
 
-    // Dirección solicitada por el jugador: X horizontal e Y vertical.
+    [SerializeField, Min(0.1f)]
+    private float runAnimationSpeed = 1.5f;
+
+    private bool sprintHeld;
+    private bool wasRunning;
+
+    private Rigidbody2D rb;
+    private Animator animator;
     private Vector2 moveInput;
 
-    /// <summary>
-    /// Obtiene y guarda la referencia al Rigidbody2D al cargar el objeto.
-    /// Unity ejecuta Awake antes de comenzar las actualizaciones del juego.
-    /// </summary>
+    // Al comenzar, el personaje mira hacia abajo.
+    private string facingDirection = "Down";
+    private string currentAnimation;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+    }
+
+    private void Start()
+    {
+        UpdateAnimation();
     }
 
     /// <summary>
-    /// Recibe los cambios de la acción Move del Input System.
-    /// Player Input llama a este método mediante Send Messages.
+    /// Recibe Move desde Player Input con Send Messages.
+    /// Limita la velocidad para evitar acelerar en diagonal.
     /// </summary>
-    /// <param name="value">
-    /// Valor de movimiento como Vector2. Al soltar las teclas,
-    /// recibe un vector de valor cero.
-    /// </param>
     public void OnMove(InputValue value)
     {
-        // Limita la magnitud a 1 para evitar mayor velocidad en diagonal.
-        moveInput = Vector2.ClampMagnitude(value.Get<Vector2>(), 1f);
+        if (!isActiveAndEnabled)
+        {
+            return;
+        }
+
+        moveInput = Vector2.ClampMagnitude(
+            value.Get<Vector2>(), 1f
+        );
     }
 
     /// <summary>
-    /// Aplica la velocidad durante cada actualización de físicas.
-    /// Unity ejecuta FixedUpdate a intervalos de tiempo fijos.
+    /// Activa la carrera mientras se mantiene pulsado Shift.
     /// </summary>
+    public void OnSprint(InputValue value)
+    {
+        if (!isActiveAndEnabled)
+        {
+            return;
+        }
+
+        sprintHeld = value.isPressed;
+    }
+
+    private void Update()
+    {
+        UpdateAnimation();
+    }
+
     private void FixedUpdate()
     {
-        // linearVelocity se expresa en unidades por segundo.
-        // No se multiplica por deltaTime porque ya representa una velocidad.
-        rb.linearVelocity = moveInput * moveSpeed;
+        float currentSpeed = sprintHeld ? runSpeed : moveSpeed;
+        rb.linearVelocity = moveInput * currentSpeed;
     }
 
     /// <summary>
-    /// Detiene el movimiento cuando se desactiva este componente
-    /// o el objeto Player, evitando conservar la última velocidad.
+    /// Conserva la última orientación al detenerse.
+    /// En diagonales exactas utiliza la orientación vertical.
+    /// </summary>
+    private void UpdateAnimation()
+    {
+        bool isMoving = moveInput.sqrMagnitude > 0.001f;
+        bool isRunning = isMoving && sprintHeld;
+
+        // Se actualiza antes del return para responder a Shift
+        // aunque el personaje siga mirando en la misma dirección.
+        animator.speed = isRunning ? runAnimationSpeed : 1f;
+
+        if (isRunning != wasRunning)
+        {
+            if (isMoving)
+            {
+                Debug.Log(
+                    isRunning
+                        ? "[PlayerMovement] Corriendo."
+                        : "[PlayerMovement] Caminando.",
+                    this
+                );
+            }
+
+            wasRunning = isRunning;
+        }
+
+        if (isMoving)
+        {
+            if (Mathf.Abs(moveInput.x) > Mathf.Abs(moveInput.y))
+            {
+                facingDirection = moveInput.x > 0f
+                    ? "Right"
+                    : "Left";
+            }
+            else
+            {
+                facingDirection = moveInput.y > 0f
+                    ? "Up"
+                    : "Down";
+            }
+        }
+
+        string nextAnimation =
+            (isMoving ? "Walk" : "Idle") + facingDirection;
+
+        // Evita reiniciar el clip en cada actualización.
+        if (currentAnimation == nextAnimation)
+        {
+            return;
+        }
+
+        animator.Play(
+            "Base Layer." + nextAnimation,
+            0,
+            0f
+        );
+
+        currentAnimation = nextAnimation;
+
+        string movementDescription = isMoving
+            ? $"Moviéndose hacia {facingDirection} (Input: {moveInput})"
+            : $"Detenido mirando hacia {facingDirection}";
+
+        Debug.Log($"[PlayerMovement] Animación activa: {nextAnimation} | {movementDescription}", this);
+    }
+
+    /// <summary>
+    /// Detiene el movimiento y muestra reposo
+    /// cuando el gestor desactiva este componente.
     /// </summary>
     private void OnDisable()
     {
         moveInput = Vector2.zero;
+        sprintHeld = false;
+        wasRunning = false;
 
-        // Comprueba que Awake ya haya obtenido el Rigidbody2D.
         if (rb != null)
         {
             rb.linearVelocity = Vector2.zero;
+        }
+
+        if (animator != null &&
+            animator.isActiveAndEnabled &&
+            animator.runtimeAnimatorController != null)
+        {
+            UpdateAnimation();
         }
     }
 }

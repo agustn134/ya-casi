@@ -80,6 +80,8 @@ public class LockerInteraction : MonoBehaviour
                 // se conserva únicamente el mensaje de derrota.
                 if (levelManager.IsPlaying)
                 {
+                    levelManager.PlayWrongLockerSound();
+
                     levelManager.ShowFeedback(
                         "Aquí no está la USB. −10 segundos."
                     );
