@@ -59,12 +59,12 @@ public class PlayerInteraction : MonoBehaviour
     /// siempre que esté dentro del alcance.
     /// </summary>
     /// <returns>Casillero disponible o null si no hay ninguno.</returns>
-    private LockerInteraction FindNearestLocker()
+    public LockerInteraction FindNearestLocker()
     {
         LockerInteraction nearest = null;
         float nearestDistance = interactionDistance;
 
-        if (lockers == null)
+        if (Time.timeScale <= 0f || lockers == null)
             return null;
 
         foreach (LockerInteraction locker in lockers)
@@ -98,7 +98,7 @@ public class PlayerInteraction : MonoBehaviour
     /// <param name="value">Estado del botón de interacción.</param>
     public void OnInteract(InputValue value)
     {
-        if (!value.isPressed)
+        if (!isActiveAndEnabled || Time.timeScale <= 0f || !value.isPressed)
             return;
 
         LockerInteraction nearest = FindNearestLocker();

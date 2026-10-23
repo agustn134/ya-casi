@@ -51,7 +51,10 @@ public class Level01Manager : MonoBehaviour
     /// <summary>
     /// Indica si la partida todavía permite acciones.
     /// </summary>
-    public bool IsPlaying => !IsCompleted && !IsFailed;
+    public bool IsPlaying => !IsCompleted && !IsFailed && Time.timeScale > 0f;
+    public float RemainingTime => remainingTime;
+    public float RoundTime { get; private set; }
+    public void EnsureRoundTime(float seconds) { remainingTime = Mathf.Max(remainingTime, seconds); RoundTime = remainingTime; }
 
     /// <summary>
     /// Inicializa el reloj, bloquea la salida y muestra el objetivo.
@@ -59,6 +62,8 @@ public class Level01Manager : MonoBehaviour
     private void Start()
     {
         remainingTime = initialTime;
+        if (GetComponent<CampusGameExperience>() == null)
+            gameObject.AddComponent<CampusGameExperience>();
 
         if (exitBarrier != null)
             exitBarrier.enabled = true;
@@ -83,7 +88,7 @@ public class Level01Manager : MonoBehaviour
         // queda desactivada al ganar o perder.
         if (!IsPlaying)
         {
-            if (Keyboard.current != null &&
+            if ((IsCompleted || IsFailed) && Keyboard.current != null &&
                 Keyboard.current.rKey.wasPressedThisFrame)
             {
                 RestartLevel();
@@ -249,6 +254,7 @@ public class Level01Manager : MonoBehaviour
             return;
         }
 
+        Time.timeScale = 1f;
         SceneManager.LoadScene(currentScene.path);
     }
 
