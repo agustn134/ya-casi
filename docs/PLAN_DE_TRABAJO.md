@@ -121,3 +121,8 @@ La entrega del 13 incluye ZIP Windows completo y probado fuera del Editor, versi
 ## Flujo de Git
 
 Una rama por tarea o conjunto pequeño, con referencia a la issue. Mantener `main` jugable, revisar cambios antes de integrar y no trabajar ambos simultáneamente en una misma escena. No subir Library, Temp, Logs, credenciales ni datos privados de evaluadores. Unir PR, issue y evidencia de prueba para mantener trazabilidad.
+
+
+## Atribución del nivel 1
+
+El desarrollo completo del nivel 1 fue realizado por **Agustín López Parra (@agustn134)**. **Carlos Manuel Palma Muñoz (@elmanee) participó únicamente como revisor**, sin colaborar en su desarrollo, según lo confirmado por Agustín. [Desglose del Sprint 1](SPRINT_1_NIVEL_1.md).

@@ -60,3 +60,8 @@ Los recursos de terceros conservan las condiciones de licencia de sus autores; l
 <img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/40161e4a-92fc-46bc-b497-701a3975bef2" />
 
 </details>
+
+
+## Atribución del nivel 1
+
+El desarrollo completo del nivel 1 fue realizado por **Agustín López Parra (@agustn134)**. **Carlos Manuel Palma Muñoz (@elmanee) participó únicamente como revisor**, sin colaborar en su desarrollo, según lo confirmado por Agustín. [Desglose del Sprint 1](docs/SPRINT_1_NIVEL_1.md).
