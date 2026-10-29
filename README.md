@@ -65,3 +65,15 @@ Los recursos de terceros conservan las condiciones de licencia de sus autores; l
 ## Atribución del nivel 1
 
 El desarrollo completo del nivel 1 fue realizado por **Agustín López Parra (@agustn134)**. **Carlos Manuel Palma Muñoz (@elmanee) participó únicamente como revisor**, sin colaborar en su desarrollo, según lo confirmado por Agustín. [Desglose del Sprint 1](docs/SPRINT_1_NIVEL_1.md).
+
+
+## Responsables por nivel
+
+| Nivel y sprint | Responsable |
+|---|---|
+| 1 — El Caos del Casillero | Agustín López Parra (@agustn134) |
+| 2 — Maratón en la Biblioteca | Carlos Manuel Palma Muñoz (@elmanee) |
+| 3 — La Ruta de Entrega | Agustín López Parra (@agustn134) |
+| 4 — El Cubículo | Carlos Manuel Palma Muñoz (@elmanee) |
+
+Todas las issues de los sprints 1 y 3 corresponden a Agustín; las de los sprints 2 y 4 a Carlos. Actualizado el 28 de octubre de 2026.

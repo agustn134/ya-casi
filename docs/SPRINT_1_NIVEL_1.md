@@ -30,3 +30,8 @@ Integración del nivel: 23 de octubre de 2026, PR #1 y #2, commit c5777943f. El 
 La issue [#3](https://github.com/agustn134/ya-casi/issues/3) agrupa el desglose. El cierre de #4 documenta lo confirmado por el propietario; las pruebas formales de regresión del juego completo siguen en el Sprint 4. No se presentan nuevas pruebas automáticas como ejecutadas.
 
 [Ver Sprint 1 completado](https://github.com/agustn134/ya-casi/milestone/1?closed=1) · [Ver todas sus issues cerradas](https://github.com/agustn134/ya-casi/issues?q=is%3Aissue+is%3Aclosed+milestone%3A1)
+
+
+## Responsable del seguimiento actualizado
+
+Desde el 28 de octubre, todas las issues del Sprint 1 están asignadas a Agustín, incluida #44 para registrar y dar seguimiento a la revisión histórica de Carlos. Carlos conserva únicamente el rol de revisor del nivel 1; no se le atribuye desarrollo. Este ajuste no altera los estados completados.
