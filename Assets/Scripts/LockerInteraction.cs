@@ -32,6 +32,8 @@ public class LockerInteraction : MonoBehaviour
     /// Permite ocultar el indicador de interacción.
     /// </summary>
     public bool IsSearched => searched;
+    public void InitializeRound(Level01Manager manager, bool hasUSB)
+    { levelManager = manager; containsUSB = hasUSB; searched = false; }
 
     /// <summary>
     /// Posición utilizada para comprobar la distancia del jugador.
@@ -80,6 +82,8 @@ public class LockerInteraction : MonoBehaviour
                 // se conserva únicamente el mensaje de derrota.
                 if (levelManager.IsPlaying)
                 {
+                    levelManager.PlayWrongLockerSound();
+
                     levelManager.ShowFeedback(
                         "Aquí no está la USB. −10 segundos."
                     );

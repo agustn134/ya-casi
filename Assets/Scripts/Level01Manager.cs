@@ -25,6 +25,13 @@ public class Level01Manager : MonoBehaviour
 
     private Coroutine feedbackCoroutine;
 
+    [Header("Sonidos")]
+    [SerializeField] private AudioSource sfxSource;
+    [SerializeField] private AudioClip wrongLockerSound;
+    [SerializeField] private AudioClip usbFoundSound;
+    [SerializeField] private AudioClip victorySound;
+    [SerializeField] private AudioClip defeatSound;
+
     [Header("Escenario y jugador")]
     [SerializeField] private Collider2D exitBarrier;
     [SerializeField] private PlayerMovement playerMovement;
@@ -44,7 +51,10 @@ public class Level01Manager : MonoBehaviour
     /// <summary>
     /// Indica si la partida todavía permite acciones.
     /// </summary>
-    public bool IsPlaying => !IsCompleted && !IsFailed;
+    public bool IsPlaying => !IsCompleted && !IsFailed && Time.timeScale > 0f;
+    public float RemainingTime => remainingTime;
+    public float RoundTime { get; private set; }
+    public void EnsureRoundTime(float seconds) { remainingTime = Mathf.Max(remainingTime, seconds); RoundTime = remainingTime; }
 
     /// <summary>
     /// Inicializa el reloj, bloquea la salida y muestra el objetivo.
@@ -52,6 +62,8 @@ public class Level01Manager : MonoBehaviour
     private void Start()
     {
         remainingTime = initialTime;
+        if (GetComponent<CampusGameExperience>() == null)
+            gameObject.AddComponent<CampusGameExperience>();
 
         if (exitBarrier != null)
             exitBarrier.enabled = true;
@@ -76,7 +88,7 @@ public class Level01Manager : MonoBehaviour
         // queda desactivada al ganar o perder.
         if (!IsPlaying)
         {
-            if (Keyboard.current != null &&
+            if ((IsCompleted || IsFailed) && Keyboard.current != null &&
                 Keyboard.current.rKey.wasPressedThisFrame)
             {
                 RestartLevel();
@@ -101,6 +113,7 @@ public class Level01Manager : MonoBehaviour
             return;
 
         HasUSB = true;
+        PlaySound(usbFoundSound);
 
         if (exitBarrier != null)
             exitBarrier.enabled = false;
@@ -136,6 +149,13 @@ public class Level01Manager : MonoBehaviour
         IsCompleted = true;
         ClearFeedback();
 
+        if (sfxSource != null)
+        {
+            sfxSource.Stop();
+        }
+
+        PlaySound(victorySound);
+
         if (objectiveText != null)
         {
             objectiveText.text =
@@ -156,6 +176,13 @@ public class Level01Manager : MonoBehaviour
 
         IsFailed = true;
         ClearFeedback();
+
+        if (sfxSource != null)
+        {
+            sfxSource.Stop();
+        }
+
+        PlaySound(defeatSound);
 
         if (exitBarrier != null)
             exitBarrier.enabled = true;
@@ -227,6 +254,7 @@ public class Level01Manager : MonoBehaviour
             return;
         }
 
+        Time.timeScale = 1f;
         SceneManager.LoadScene(currentScene.path);
     }
 
@@ -272,6 +300,29 @@ public class Level01Manager : MonoBehaviour
         if (feedbackText != null)
         {
             feedbackText.text = "";
+        }
+    }
+
+    /// <summary>
+    /// Reproduce un efecto de sonido si está configurado.
+    /// </summary>
+    private void PlaySound(AudioClip clip)
+    {
+        if (sfxSource != null && clip != null)
+        {
+            sfxSource.PlayOneShot(clip);
+        }
+    }
+
+    /// <summary>
+    /// Reproduce el aviso de casillero incorrecto
+    /// mientras la partida continúa.
+    /// </summary>
+    public void PlayWrongLockerSound()
+    {
+        if (IsPlaying)
+        {
+            PlaySound(wrongLockerSound);
         }
     }
 }
