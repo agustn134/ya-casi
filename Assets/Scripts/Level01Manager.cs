@@ -54,6 +54,7 @@ public class Level01Manager : MonoBehaviour
     public bool IsPlaying => !IsCompleted && !IsFailed && Time.timeScale > 0f;
     public float RemainingTime => remainingTime;
     public float RoundTime { get; private set; }
+    public void SetRoundTime(float seconds) { remainingTime = Mathf.Max(1, seconds); RoundTime = remainingTime; UpdateTimer(); }
     public void EnsureRoundTime(float seconds) { remainingTime = Mathf.Max(remainingTime, seconds); RoundTime = remainingTime; }
 
     /// <summary>
@@ -62,8 +63,8 @@ public class Level01Manager : MonoBehaviour
     private void Start()
     {
         remainingTime = initialTime;
-        if (GetComponent<CampusGameExperience>() == null)
-            gameObject.AddComponent<CampusGameExperience>();
+        if (GetComponent<LevelOneUpgrade>() == null)
+            gameObject.AddComponent<LevelOneUpgrade>();
 
         if (exitBarrier != null)
             exitBarrier.enabled = true;
@@ -169,7 +170,7 @@ public class Level01Manager : MonoBehaviour
     /// <summary>
     /// Finaliza la partida al agotarse el tiempo.
     /// </summary>
-    private void FailLevel()
+    public void FailLevel()
     {
         if (!IsPlaying)
             return;
