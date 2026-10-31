@@ -31,6 +31,8 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Animator animator;
     private Vector2 moveInput;
+    private Vector2 keyboardInput; private bool keyboardSprint;
+    public bool IsRunning => sprintHeld && moveInput.sqrMagnitude > .001f;
 
     // Al comenzar, el personaje mira hacia abajo.
     private string facingDirection = "Down";
@@ -58,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-        moveInput = Vector2.ClampMagnitude(
+        keyboardInput = Vector2.ClampMagnitude(
             value.Get<Vector2>(), 1f
         );
     }
@@ -73,11 +75,16 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-        sprintHeld = value.isPressed;
+        keyboardSprint = value.isPressed;
     }
 
     private void Update()
     {
+        moveInput=keyboardInput;
+        if(Gamepad.current!=null && Gamepad.current.leftStick.ReadValue().sqrMagnitude>.01f)moveInput=Gamepad.current.leftStick.ReadValue();
+        if(TouchGameControls.Direction.sqrMagnitude>.01f)moveInput=TouchGameControls.Direction;
+        moveInput=Vector2.ClampMagnitude(moveInput,1);
+        sprintHeld=keyboardSprint || TouchGameControls.Sprint || (Gamepad.current!=null&&Gamepad.current.rightTrigger.isPressed);
         UpdateAnimation();
     }
 

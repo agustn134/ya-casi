@@ -26,6 +26,7 @@ public class PlayerInteraction : MonoBehaviour
 
     // Casilleros encontrados al iniciar esta escena.
     private LockerInteraction[] lockers;
+    private float nextReview;
 
     /// <summary>
     /// Obtiene los casilleros activos de la escena una sola vez.
@@ -51,7 +52,9 @@ public class PlayerInteraction : MonoBehaviour
     /// </summary>
     private void Update()
     {
-        SetPromptVisible(FindNearestLocker() != null);
+        var nearest=FindNearestLocker();
+        if(interactionText!=null)interactionText.text=nearest!=null&&nearest.IsSearched?"E: ya revisado (−5 s)":"E para revisar";
+        SetPromptVisible(nearest != null);
     }
 
     /// <summary>
@@ -70,8 +73,7 @@ public class PlayerInteraction : MonoBehaviour
         foreach (LockerInteraction locker in lockers)
         {
             if (locker == null ||
-                !locker.isActiveAndEnabled ||
-                locker.IsSearched)
+                !locker.isActiveAndEnabled)
             {
                 continue;
             }
@@ -96,20 +98,12 @@ public class PlayerInteraction : MonoBehaviour
     /// Ignora la notificación enviada al soltar la tecla.
     /// </summary>
     /// <param name="value">Estado del botón de interacción.</param>
-    public void OnInteract(InputValue value)
+    public void OnInteract(InputValue value) { if(value.isPressed) TryInteract(); }
+    public void TryInteract()
     {
-        if (!isActiveAndEnabled || Time.timeScale <= 0f || !value.isPressed)
-            return;
-
-        LockerInteraction nearest = FindNearestLocker();
-
-        if (nearest == null)
-            return;
-
-        nearest.Interact();
-
-        // Actualiza el indicador tras cambiar el estado del casillero.
-        SetPromptVisible(FindNearestLocker() != null);
+        if(!isActiveAndEnabled || Time.timeScale<=0 || Time.unscaledTime<nextReview)return;
+        var nearest=FindNearestLocker();if(nearest==null)return;
+        nextReview=Time.unscaledTime+.7f;nearest.Interact();
     }
 
     /// <summary>
