@@ -183,7 +183,15 @@ public class Level01Manager : MonoBehaviour
             sfxSource.Stop();
         }
 
-        PlaySound(defeatSound);
+        // Detener el fondo antes de reproducir Game Over.
+        var upgrade = GetComponent<LevelOneUpgrade>();
+        if (upgrade != null) upgrade.StopLevelMusic();
+
+        var audioConfig = Resources.Load<U2GameConfig>("U2GameConfig");
+        AudioClip gameOver = audioConfig != null && audioConfig.gameOverSound != null
+            ? audioConfig.gameOverSound : defeatSound;
+        if (upgrade != null) upgrade.PlayGameOverMusic(gameOver);
+        else PlaySound(gameOver);
 
         if (exitBarrier != null)
             exitBarrier.enabled = true;

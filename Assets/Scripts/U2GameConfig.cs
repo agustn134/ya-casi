@@ -4,6 +4,7 @@ public sealed class U2GameConfig : ScriptableObject
 {
     public AudioClip soundtrack;
     public AudioClip menuMusic;
+    public AudioClip gameOverSound;
     public TMP_FontAsset font;
     public RuntimeAnimatorController[] studentControllers;
     public float roundSeconds = 135f;
