@@ -1,0 +1,61 @@
+Prueba iniciada
+PASS: 30 estantes configurados
+PASS: Puerta doble y cinco fotogramas configurados
+PASS: Puerta cerrada al iniciar sin libros
+PASS: Acceso libre al estante trasero D1
+PASS: Acceso libre al estante trasero D2
+PASS: Acceso libre al estante trasero D3
+PASS: Acceso libre al estante trasero D4
+PASS: Acceso libre al estante trasero D5
+PASS: Acceso libre al estante trasero D6
+PASS: Acceso libre al estante trasero E1
+PASS: Acceso libre al estante trasero E2
+PASS: Acceso libre al estante trasero E3
+PASS: Acceso libre al estante trasero E4
+PASS: Acceso libre al estante trasero E5
+PASS: Acceso libre al estante trasero E6
+PASS: Se conservan los alumnos configurados en la escena actual
+PASS: Sorteo 0: tres libros sin duplicar
+PASS: Sorteo 1: tres libros sin duplicar
+PASS: Sorteo 2: tres libros sin duplicar
+PASS: Sorteo 3: tres libros sin duplicar
+PASS: Sorteo 4: tres libros sin duplicar
+PASS: Sorteo 5: tres libros sin duplicar
+PASS: Sorteo 6: tres libros sin duplicar
+PASS: Sorteo 7: tres libros sin duplicar
+PASS: Sorteo 8: tres libros sin duplicar
+PASS: Sorteo 9: tres libros sin duplicar
+PASS: Sorteo 10: tres libros sin duplicar
+PASS: Sorteo 11: tres libros sin duplicar
+PASS: Sorteo 12: tres libros sin duplicar
+PASS: Sorteo 13: tres libros sin duplicar
+PASS: Sorteo 14: tres libros sin duplicar
+PASS: Sorteo 15: tres libros sin duplicar
+PASS: Sorteo 16: tres libros sin duplicar
+PASS: Sorteo 17: tres libros sin duplicar
+PASS: Sorteo 18: tres libros sin duplicar
+PASS: Sorteo 19: tres libros sin duplicar
+PASS: Sorteo 20: tres libros sin duplicar
+PASS: Sorteo 21: tres libros sin duplicar
+PASS: Sorteo 22: tres libros sin duplicar
+PASS: Sorteo 23: tres libros sin duplicar
+PASS: Los libros cambian de estante entre partidas
+PASS: Tres libros distintos asignados
+PASS: Inventario vacío al iniciar
+PASS: Estante incorrecto resta exactamente 10 s
+PASS: Revisar el mismo estante vacío vuelve a restar 10 s
+PASS: Salida bloqueada sin tres libros
+PASS: Pausa detiene el reloj
+PASS: Regaño inmoviliza y evita acumulación
+PASS: Movimiento restaurado tras tres segundos
+PASS: Los seis alumnos recorren la biblioteca durante la partida
+PASS: Los alumnos se detienen para buscar libros
+PASS: El jugador se desplaza con física e input compartidos
+PASS: La carrera activa detección real por radio de ruido
+PASS: Tres libros recogidos y registrados
+PASS: Caminar físicamente hacia la salida permite ganar sin pulsar E
+PASS: La puerta se abre al recuperar los tres libros
+PASS: Reinicio vacía inventario
+PASS: Tiempo agotado muestra derrota
+PASS: Derrota reproduce la misma música Game Over del nivel 1
+LIBRARY_PLAY_VERIFIED_OK

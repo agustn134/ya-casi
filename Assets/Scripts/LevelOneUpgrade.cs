@@ -109,7 +109,7 @@ public sealed class LevelOneUpgrade : MonoBehaviour
         U2Presentation.Text(card.transform,"Resultado",(manager.IsCompleted?"Llegaste a tiempo a la salida.":"Respira, evita las filas y recuerda los casilleros revisados.")+$"\n\nPuntaje: {score}\nTiempo de juego: {Mathf.FloorToInt(elapsed/60):00}:{Mathf.FloorToInt(elapsed%60):00}\nTiempo restante: {Mathf.CeilToInt(manager.RemainingTime)} s\nMejor puntaje: {PlayerPrefs.GetInt("YaCasi.U2.Best",0)}",new Vector2(0,70),new Vector2(1130,300),34,Color.white);
         U2Presentation.Button(card.transform,"Reintentar",new Vector2(0,-150),manager.RestartLevel);
         U2Presentation.Button(card.transform,"Menú principal",new Vector2(0,-250),U2Presentation.ReturnToMenu);
-        U2Presentation.Text(card.transform,"Siguiente nivel","Nivel 2 en desarrollo",new Vector2(0,-350),new Vector2(900,60),28,Color.white);
+        if(manager.IsCompleted) U2Presentation.Button(card.transform,"Nivel 2 · Biblioteca",new Vector2(0,-350),()=>{Time.timeScale=1;UnityEngine.SceneManagement.SceneManager.LoadScene(LibraryLevelManager.SceneName);});
     }
     void SpawnStudents()
     {

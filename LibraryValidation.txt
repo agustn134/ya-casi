@@ -1,0 +1,2 @@
+LIBRARY_VALIDATION_OK
+9 estantes; 3 libros; jugador nivel 1; cámara; bibliotecaria; salida; 180 segundos; penalización 10 segundos.

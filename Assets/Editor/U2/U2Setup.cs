@@ -42,7 +42,7 @@ public static class U2Setup
         Directory.CreateDirectory("Z:/DOCUMENTOS/Barron/U2_Entrega/Windows");
         SessionState.SetBool("YaCasi.U2.Build",true);
         UnityEditor.Build.Reporting.BuildReport report;
-        try{report=UnityEditor.BuildPipeline.BuildPlayer(new[]{"Assets/Scenes/MenuPrincipal.unity","Assets/Scenes/Nivel01_CaosDelCasillero.unity"},"Z:/DOCUMENTOS/Barron/U2_Entrega/Windows/YaCasi.exe",BuildTarget.StandaloneWindows64,BuildOptions.None);}
+        try{report=UnityEditor.BuildPipeline.BuildPlayer(new[]{"Assets/Scenes/MenuPrincipal.unity","Assets/Scenes/Nivel01_CaosDelCasillero.unity",LibraryLevelBuilder.Path},"Z:/DOCUMENTOS/Barron/U2_Entrega/Windows/YaCasi.exe",BuildTarget.StandaloneWindows64,BuildOptions.None);}
         finally{SessionState.SetBool("YaCasi.U2.Build",false);}
         Debug.Log("U2_BUILD: "+report.summary.result);
         File.WriteAllText("Z:/DOCUMENTOS/Barron/U2_Entrega/BuildWindows.txt",report.summary.result+"\n"+report.summary.totalErrors+" errores\n"+report.summary.totalSize+" bytes\n");
@@ -55,7 +55,7 @@ public static class U2Setup
         Directory.CreateDirectory("Z:/DOCUMENTOS/Barron/U2_Entrega/WebGL");
         SessionState.SetBool("YaCasi.U2.Build",true);
         UnityEditor.Build.Reporting.BuildReport report;
-        try{report=BuildPipeline.BuildPlayer(new[]{"Assets/Scenes/MenuPrincipal.unity","Assets/Scenes/Nivel01_CaosDelCasillero.unity"},"Z:/DOCUMENTOS/Barron/U2_Entrega/WebGL",BuildTarget.WebGL,BuildOptions.None);}
+        try{report=BuildPipeline.BuildPlayer(new[]{"Assets/Scenes/MenuPrincipal.unity","Assets/Scenes/Nivel01_CaosDelCasillero.unity",LibraryLevelBuilder.Path},"Z:/DOCUMENTOS/Barron/U2_Entrega/WebGL",BuildTarget.WebGL,BuildOptions.None);}
         finally{SessionState.SetBool("YaCasi.U2.Build",false);}
         File.WriteAllText("Z:/DOCUMENTOS/Barron/U2_Entrega/BuildWebGL.txt",report.summary.result+"\n"+report.summary.totalErrors+" errores\n");Debug.Log("U2_WEB: "+report.summary.result);
     }

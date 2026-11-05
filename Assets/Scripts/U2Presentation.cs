@@ -40,20 +40,20 @@ public sealed class U2Presentation : MonoBehaviour
         Clear();var card=Card(root.transform,"Inicio");
         Text(card.transform,"Título","¡YA CASI!",new Vector2(0,320),new Vector2(1000,100),76,Gold);
         Text(card.transform,"Subtítulo","Recupera la USB antes de que cierre el edificio",new Vector2(0,240),new Vector2(1100,70),30,Color.white);
-        Button(card.transform,"Jugar",new Vector2(0,130),()=>{PlayerPrefs.DeleteKey("YaCasi.U2.Win");StartLevel();});
+        Button(card.transform,"Jugar",new Vector2(0,130),()=>{PlayerPrefs.DeleteKey("YaCasi.U2.Win");PlayerPrefs.SetInt(SaveKey,1);StartLevel();});
         var cont=Button(card.transform,"Continuar",new Vector2(0,35),StartLevel);cont.interactable=PlayerPrefs.HasKey(SaveKey);
         Button(card.transform,"Opciones",new Vector2(0,-60),()=>Options(root.transform,Main));
         Button(card.transform,"Créditos",new Vector2(0,-155),Credits);
         Button(card.transform,"Salir",new Vector2(0,-250),Quit);
-        Text(card.transform,"Mejor","Mejor puntaje: "+PlayerPrefs.GetInt("YaCasi.U2.Best",0),new Vector2(0,-340),new Vector2(800,55),28,Gold);
+        Button(card.transform,"Nivel 2 · Biblioteca",new Vector2(0,-345),()=>{Time.timeScale=1;SceneManager.LoadScene(LibraryLevelManager.SceneName);});
     }
-    public static void StartLevel(){Time.timeScale=1;SceneManager.LoadScene(LevelScene);}
+    public static void StartLevel(){Time.timeScale=1;SceneManager.LoadScene(PlayerPrefs.GetInt(SaveKey,1)==2?LibraryLevelManager.SceneName:LevelScene);}
     public static void ReturnToMenu(){Time.timeScale=1;SceneManager.LoadScene(MenuScene);}
     void Credits()
     {
         Clear();var card=Card(root.transform,"Créditos");var cfg=Resources.Load<U2GameConfig>("U2GameConfig");
         Text(card.transform,"Título","CRÉDITOS",new Vector2(0,320),new Vector2(900,70),54,Gold);
-        Text(card.transform,"Autores","Agustín López Parra · Carlos Manuel Palma Muñoz\n\nNivel 1: desarrollo de Agustín; revisión de Carlos.\nUnity · C# · TextMesh Pro\nArte: LimeZu — Modern Interiors, Exteriors y Office\nInterfaz: That Witch Design — Simple Button Set 01\nFuente: Pixelify Sans — SIL OFL\nEfectos: Kenney Interface Sounds y síntesis propia\nGame Over: Alphix — Pixabay (417465)\nMúsica del nivel: "+(cfg!=null?cfg.soundtrackCredit:"pendiente de confirmar")+"\n\nAvance académico: nivel 1 disponible. Niveles 2–4 pendientes.",new Vector2(0,20),new Vector2(1120,500),30,Color.white);
+        Text(card.transform,"Autores","Agustín López Parra · Carlos Manuel Palma Muñoz\n\nNivel 1: desarrollo de Agustín; revisión de Carlos.\nUnity · C# · TextMesh Pro\nArte: LimeZu — Modern Interiors, Exteriors y Office\nInterfaz: That Witch Design — Simple Button Set 01\nFuente: Pixelify Sans — SIL OFL\nEfectos: Kenney Interface Sounds y síntesis propia\nGame Over: Alphix — Pixabay (417465)\nMúsica del nivel: "+(cfg!=null?cfg.soundtrackCredit:"pendiente de confirmar")+"\n\nAvance académico: niveles 1 y 2 disponibles. Niveles 3–4 pendientes.",new Vector2(0,20),new Vector2(1120,500),30,Color.white);
         Button(card.transform,"Volver",new Vector2(0,-310),Main);
     }
     static void Quit()
