@@ -1736,6 +1736,8 @@ MonoBehaviour:
   - Profesor CGTI
   deliveryDistance: 1.8
   roundSeconds: 180
+  wrongProjectPenalty: 5
+  repeatDeliveryPenalty: 8
   levelMusic: {fileID: 8300000, guid: 47844c9fedac48b4adf2abb82e84ff3d, type: 3}
   timeoutMusic: {fileID: 8300000, guid: c35acfe4710126945ac9ae0a09394f5c, type: 3}
   projectIds:
@@ -1752,6 +1754,9 @@ MonoBehaviour:
   - Proyecto CGTI
   projectIcons: []
   showTutorial: 0
+  projectNamesFollowProfessors: 1
+  showNarrativeIntro: 0
+  narrativeIntro: "Galindo necesita entregar los proyectos para aprobar las unidades de sus materias.\n\nLos profesores lo esperan en distintos edificios de la universidad. Debe llegar con el proyecto correcto antes de que cierre el sistema de entregas."
 --- !u!1 &2140000000
 GameObject:
   m_ObjectHideFlags: 0

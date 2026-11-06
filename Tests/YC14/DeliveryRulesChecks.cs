@@ -20,14 +20,17 @@ public static class DeliveryRulesChecks
             Check(round.DeliveredCount == 0 && round.RequiredCount == count, "Progreso inicial 0/" + count);
             Check(round.TryDeliver(professors[0], projects[1]) == ProjectDeliveryResult.WrongProject, "Rechaza proyecto equivocado");
             Check(inventory.Quantity(projects[1]) == 1 && round.DeliveredCount == 0, "Error no consume ni suma");
+            Check(round.RemainingTime == 175 && round.WarningCount == 1, "Proyecto equivocado resta cinco segundos");
             round.SetPaused(true); round.AdvanceTime(60);
-            Check(round.RemainingTime == 180 && round.ElapsedTime == 0, "Pausa congela reloj y cronómetro");
+            Check(round.RemainingTime == 175 && round.ElapsedTime == 0, "Pausa congela reloj y cronómetro");
             Check(round.TryDeliver(professors[0], projects[0]) == ProjectDeliveryResult.NotPlaying, "No entrega durante pausa");
             round.SetPaused(false); round.AdvanceTime(10);
-            Check(round.RemainingTime == 170 && round.ElapsedTime == 10, "Reanudar continúa ambos relojes");
+            Check(round.RemainingTime == 165 && round.ElapsedTime == 10, "Reanudar continúa ambos relojes");
             Check(round.TryDeliver(professors[0], projects[0]) == ProjectDeliveryResult.Accepted, "Acepta el proyecto correcto");
             Check(inventory.Quantity(projects[0]) == 0 && round.DeliveredCount == 1, "Entrega retira proyecto y suma una vez");
             Check(round.TryDeliver(professors[0], projects[0]) == ProjectDeliveryResult.AlreadyDelivered && round.DeliveredCount == 1, "Entrega repetida no cuenta");
+            Check(round.RemainingTime == 157 && round.TotalPenaltySeconds == 13 && round.WarningCount == 2, "Entrega repetida resta ocho segundos y acumula amonestaciones");
+            Check(round.ElapsedTime == 10, "Las sanciones no aumentan el cronómetro de recorrido");
             inventory.TryRemove(projects[1]);
             Check(round.TryDeliver(professors[1], projects[1]) == ProjectDeliveryResult.MissingProject && round.DeliveredCount == 1, "No entrega un objeto ausente");
             inventory.Add(projects[1]);
@@ -45,6 +48,16 @@ public static class DeliveryRulesChecks
         var restartInventory = new ProjectInventory(); restartInventory.Add("project");
         var restart = new ProjectDeliverySession(new[] { "prof" }, new[] { "project" }, 180, restartInventory);
         Check(restart.Playing && restart.RemainingTime == 180 && restart.Inventory.Quantity("project") == 1, "Reinicio independiente repone inventario y tiempo");
+        var penalizedInventory = new ProjectInventory(); penalizedInventory.Add("a"); penalizedInventory.Add("b");
+        var wrongLoss = new ProjectDeliverySession(new[] { "p", "q" }, new[] { "a", "b" }, 4, penalizedInventory);
+        Check(wrongLoss.TryDeliver("p", "b") == ProjectDeliveryResult.WrongProject && wrongLoss.Failed && wrongLoss.RemainingTime == 0, "Proyecto equivocado puede agotar el tiempo");
+        Check(penalizedInventory.Quantity("b") == 1 && wrongLoss.TotalPenaltySeconds == 4 && wrongLoss.ElapsedTime == 0, "Derrota por sanción conserva inventario y limita descuento al tiempo restante");
+        var repeatLoss = new ProjectDeliverySession(new[] { "p", "q" }, new[] { "a", "b" }, 4, penalizedInventory);
+        repeatLoss.TryDeliver("p", "a");
+        Check(repeatLoss.TryDeliver("p", "a") == ProjectDeliveryResult.AlreadyDelivered && repeatLoss.Failed && repeatLoss.DeliveredCount == 1, "Repetir puede provocar derrota sin sumar progreso");
+        var custom = new ProjectDeliverySession(new[] { "p" }, new[] { "b" }, 100, penalizedInventory, 3, 7);
+        custom.TryDeliver("p", "a");
+        Check(custom.RemainingTime == 97, "Penalizaciones configurables");
         Console.WriteLine("YC14_RULES_OK " + passed + " comprobaciones");
         return 0;
     }

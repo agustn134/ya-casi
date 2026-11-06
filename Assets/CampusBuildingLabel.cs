@@ -5,6 +5,7 @@ using UnityEngine;
 public sealed class CampusBuildingLabel : MonoBehaviour
 {
     [SerializeField] string buildingName = "Edificio A";
+    public string DisplayName => buildingName?.Trim() ?? "";
     [SerializeField] float textSize = .11f;
     GameObject visual;
     static Sprite background;

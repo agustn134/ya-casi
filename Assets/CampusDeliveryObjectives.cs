@@ -8,17 +8,26 @@ using UnityEngine.UI;
 /// <summary>Inventario de proyectos, entregas, tiempo y presentación compartida con el nivel 1.</summary>
 public sealed class CampusDeliveryObjectives : MonoBehaviour
 {
+    [Header("Jugador y profesores")]
     [SerializeField] Transform player;
     [SerializeField] Transform[] professors;
     [SerializeField] string[] professorNames;
+    [Header("Inventario de proyectos")]
     [SerializeField] string[] projectIds;
     [SerializeField] string[] projectNames;
     [SerializeField] Sprite[] projectIcons;
+    [Tooltip("Obtiene el nombre del letrero del profesor y genera PROYECTO DE PROF. NOMBRE.")]
+    [SerializeField] bool projectNamesFollowProfessors = true;
     [SerializeField] float deliveryDistance = 1.8f;
     [SerializeField] float roundSeconds = 180f;
+    [SerializeField, Min(0)] float wrongProjectPenalty = 5f;
+    [SerializeField, Min(0)] float repeatDeliveryPenalty = 8f;
     [SerializeField] AudioClip levelMusic;
     [SerializeField] AudioClip timeoutMusic;
     [SerializeField] bool showTutorial = true;
+    [Header("Contexto narrativo inicial")]
+    [SerializeField] bool showNarrativeIntro = true;
+    [SerializeField, TextArea(3, 6)] string narrativeIntro = "Galindo necesita entregar los proyectos para aprobar las unidades de sus materias.\n\nLos profesores lo esperan en distintos edificios de la universidad. Debe llegar con el proyecto correcto antes de que cierre el sistema de entregas.";
     public ProjectDeliverySession Session { get; private set; }
     public int SelectedProject => selected;
     public bool IsPaused => Session != null && Session.Paused;
@@ -31,15 +40,16 @@ public sealed class CampusDeliveryObjectives : MonoBehaviour
     AudioClip acceptTone, rejectTone;
     int nearest = -1, selected;
     float feedbackUntil;
-    bool resultShown, optionsOpen;
+    bool resultShown, optionsOpen, narrativeOpen;
     static readonly Color Gold = new Color32(255, 213, 107, 255);
     static readonly Color Navy = new Color32(24, 39, 51, 255);
-    const string TutorialKey = "YaCasi.Nivel03.Tutorial.YC14";
+    const string TutorialKey = "YaCasi.Nivel03.Tutorial.YC14.Penalizaciones";
     public const string Controls = "WASD / flechas / joystick: moverte · Shift / gatillo: correr\n1–5 o clic: seleccionar proyecto · Tab / RB: siguiente proyecto\nE / botón sur: entregar · Esc / Start: pausa";
 
     void Awake()
     {
         Application.runInBackground = true;
+        if (projectNamesFollowProfessors) SyncProjectNames();
         if (player == null || professors == null || professors.Length == 0 || professorNames == null
             || professorNames.Length != professors.Length || Array.Exists(professors, t => t == null))
         {
@@ -59,7 +69,7 @@ public sealed class CampusDeliveryObjectives : MonoBehaviour
         var inventory = new ProjectInventory();
         var ids = new string[professors.Length];
         for (int i = 0; i < professors.Length; i++) { ids[i] = "profesor-" + i; inventory.Add(projectIds[i]); }
-        Session = new ProjectDeliverySession(ids, projectIds, roundSeconds, inventory);
+        Session = new ProjectDeliverySession(ids, projectIds, roundSeconds, inventory, wrongProjectPenalty, repeatDeliveryPenalty);
         Time.timeScale = 1;
         music = gameObject.AddComponent<AudioSource>();
         music.playOnAwake = false; music.spatialBlend = 0; music.loop = true;
@@ -74,7 +84,23 @@ public sealed class CampusDeliveryObjectives : MonoBehaviour
     {
         if (Session == null) return;
         BuildHud(); RefreshHud();
-        if (showTutorial && !PlayerPrefs.HasKey(TutorialKey)) ShowTutorial();
+        if (showNarrativeIntro) ShowNarrativeIntro();
+        else if (showTutorial && !PlayerPrefs.HasKey(TutorialKey)) ShowTutorial();
+    }
+
+    [ContextMenu("Actualizar nombres desde profesores")]
+    public void SyncProjectNames()
+    {
+        if (professors == null) return;
+        if (professorNames == null || professorNames.Length != professors.Length) professorNames = new string[professors.Length];
+        if (projectNames == null || projectNames.Length != professors.Length) projectNames = new string[professors.Length];
+        for (int i = 0; i < professors.Length; i++)
+        {
+            if (professors[i] == null) continue;
+            var label = professors[i].GetComponentInChildren<CampusBuildingLabel>(true);
+            if (label != null && !string.IsNullOrWhiteSpace(label.DisplayName)) professorNames[i] = label.DisplayName;
+            if (!string.IsNullOrWhiteSpace(professorNames[i])) projectNames[i] = "PROYECTO DE " + professorNames[i].Trim().ToUpperInvariant();
+        }
     }
 
     void Update()
@@ -154,7 +180,9 @@ public sealed class CampusDeliveryObjectives : MonoBehaviour
         {
             SetFeedback("Acércate más al profesor.", false); return ProjectDeliveryResult.NotPlaying;
         }
+        float before = Session.RemainingTime;
         var result = Session.TryDeliver("profesor-" + professor, projectIds[selected]);
+        string deduction = "−" + (before - Session.RemainingTime).ToString("0.#") + " s";
         switch (result)
         {
             case ProjectDeliveryResult.Accepted:
@@ -164,12 +192,13 @@ public sealed class CampusDeliveryObjectives : MonoBehaviour
                 if (!Session.Completed) NextProject(); else ShowResult();
                 break;
             case ProjectDeliveryResult.WrongProject:
-                SetFeedback(professorNames[professor] + " necesita: " + projectNames[professor] + ". Selecciónalo en el inventario.", false); break;
+                SetFeedback("¡Amonestación! " + deduction + ". " + professorNames[professor] + " necesita: " + projectNames[professor] + ".", false); break;
             case ProjectDeliveryResult.AlreadyDelivered:
-                SetFeedback("Este profesor ya recibió su proyecto. No cuenta de nuevo.", false); break;
+                SetFeedback("¡Amonestación! " + deduction + ". Este profesor ya recibió su proyecto. No repitas la entrega.", false); break;
             case ProjectDeliveryResult.MissingProject:
                 SetFeedback("Ese proyecto ya no está en tu inventario.", false); break;
         }
+        if (Session.Failed) ShowResult();
         RefreshHud(); return result;
     }
     void SetFeedback(string value, bool success)
@@ -224,9 +253,10 @@ public sealed class CampusDeliveryObjectives : MonoBehaviour
         objective.text = "LA RUTA DE ENTREGA · " + Session.DeliveredCount + "/" + Session.RequiredCount;
         timer.text = "Tiempo: " + Format(Session.RemainingTime, true);
         timer.color = Session.RemainingTime <= 20 ? new Color(1, .4f, .3f) : Gold;
-        elapsed.text = "Recorrido: " + Format(Session.ElapsedTime, false) + " · Esc: pausa · E: entregar el proyecto seleccionado";
+        elapsed.text = "Recorrido: " + Format(Session.ElapsedTime, false) + " · Amonestaciones: " + Session.WarningCount
+            + " · Descuento: −" + Session.TotalPenaltySeconds.ToString("0.#") + " s";
         prompt.text = nearest < 0 ? "Busca a los profesores señalados en el campus."
-            : Session.IsDelivered("profesor-" + nearest) ? professorNames[nearest] + " · Proyecto recibido"
+            : Session.IsDelivered("profesor-" + nearest) ? professorNames[nearest] + " · Ya recibió su proyecto. Repetir: −" + repeatDeliveryPenalty.ToString("0.#") + " s"
             : "E: entregar a " + professorNames[nearest] + " · Pide: " + projectNames[nearest];
         if (Time.unscaledTime >= feedbackUntil) feedback.text = "";
         for (int i = 0; i < projectIds.Length; i++)
@@ -239,7 +269,7 @@ public sealed class CampusDeliveryObjectives : MonoBehaviour
     }
     public void TogglePause()
     {
-        if (Session == null || Session.Failed || Session.Completed || optionsOpen) return;
+        if (Session == null || Session.Failed || Session.Completed || optionsOpen || narrativeOpen) return;
         if (Session.Paused) { Resume(); return; }
         SetPaused(true);
         overlay = U2Presentation.NewCanvas("Pausa nivel 3", 100);
@@ -258,7 +288,7 @@ public sealed class CampusDeliveryObjectives : MonoBehaviour
     void SetPaused(bool value) { Session.SetPaused(value); Time.timeScale = value ? 0 : 1; }
     public void Resume()
     {
-        if (Session == null || Session.Failed || Session.Completed) return;
+        if (Session == null || Session.Failed || Session.Completed || narrativeOpen) return;
         if (overlay != null) Destroy(overlay); optionsOpen = false; SetPaused(false);
     }
     void ShowTutorial()
@@ -266,8 +296,28 @@ public sealed class CampusDeliveryObjectives : MonoBehaviour
         SetPaused(true); overlay = U2Presentation.NewCanvas("Tutorial nivel 3", 100);
         var card = U2Presentation.Card(overlay.transform, "Tutorial");
         U2Presentation.Text(card.transform, "Título", "¡LOS PROYECTOS ESTÁN LISTOS!", new Vector2(0, 300), new Vector2(1140, 90), 49, Gold);
-        U2Presentation.Text(card.transform, "Reglas", "Llevas cinco proyectos en el inventario. Cada profesor recibe uno distinto.\nSelecciona el correcto y acércate para entregarlo con E.\nUn proyecto equivocado no se consume. Las entregas repetidas no cuentan.\nCompleta las cinco entregas antes de que terminen los tres minutos.\n\n" + Controls, new Vector2(0, 20), new Vector2(1120, 430), 32, Color.white);
+        U2Presentation.Text(card.transform, "Reglas", "Llevas cinco proyectos. Cada profesor recibe uno distinto.\nSelecciona el correcto y entrégalo con E.\nProyecto equivocado: −" + wrongProjectPenalty.ToString("0.#") + " s; el proyecto se conserva.\nRepetir una entrega ya realizada: −" + repeatDeliveryPenalty.ToString("0.#") + " s; no suma progreso.\nCompleta 5/5 antes de que termine el reloj.\n\n" + Controls, new Vector2(0, 20), new Vector2(1120, 430), 32, Color.white);
         U2Presentation.Button(card.transform, "¡Vamos!", new Vector2(0, -300), () => { PlayerPrefs.SetInt(TutorialKey, 1); PlayerPrefs.Save(); Resume(); });
+    }
+    void ShowNarrativeIntro()
+    {
+        narrativeOpen = true; SetPaused(true);
+        overlay = U2Presentation.NewCanvas("Contexto narrativo nivel 3", 100);
+        var card = U2Presentation.Card(overlay.transform, "Contexto");
+        U2Presentation.Text(card.transform, "Título", "GALINDO · LA RUTA DE ENTREGA", new Vector2(0, 300), new Vector2(1150, 90), 48, Gold);
+        U2Presentation.Text(card.transform, "Historia", narrativeIntro, new Vector2(0, 100), new Vector2(1100, 250), 34, Color.white);
+        U2Presentation.Text(card.transform, "Objetivo", "Entrega los " + Session.RequiredCount + " proyectos antes de que termine el reloj.\nSelecciona con 1–5 o clic y entrega con E.\nProyecto equivocado: −" + wrongProjectPenalty.ToString("0.#") + " s · Entrega repetida: −" + repeatDeliveryPenalty.ToString("0.#") + " s",
+            new Vector2(0, -100), new Vector2(1100, 130), 28, Gold);
+        U2Presentation.Button(card.transform, "Comenzar", new Vector2(0, -240), () =>
+        {
+            narrativeOpen = false;
+            PlayerPrefs.SetInt(TutorialKey, 1); PlayerPrefs.Save(); Resume();
+        });
+        var rules = U2Presentation.Button(card.transform, "Controles y reglas", new Vector2(0, -340), () =>
+        {
+            narrativeOpen = false; Destroy(overlay); ShowTutorial();
+        });
+        ResizeButton(rules, new Vector2(620, 60), 28);
     }
     void ShowResult()
     {
@@ -280,7 +330,8 @@ public sealed class CampusDeliveryObjectives : MonoBehaviour
         var card = U2Presentation.Card(overlay.transform, "Resultado");
         U2Presentation.Text(card.transform, "Título", Session.Completed ? "¡PROYECTOS ENTREGADOS!" : "SE ACABÓ EL TIEMPO", new Vector2(0, 300), new Vector2(1160, 100), 52, Gold);
         U2Presentation.Text(card.transform, "Resultado", (Session.Completed ? "Todos los profesores recibieron su proyecto correcto." : "Quedaron proyectos sin entregar. Revisa el inventario y busca otra ruta.")
-            + "\n\nEntregas: " + Session.DeliveredCount + "/" + Session.RequiredCount + "\nTiempo de juego: " + Format(Session.ElapsedTime, false) + "\nTiempo restante: " + Format(Session.RemainingTime, true),
+            + "\n\nEntregas: " + Session.DeliveredCount + "/" + Session.RequiredCount + "\nTiempo de juego: " + Format(Session.ElapsedTime, false) + "\nTiempo restante: " + Format(Session.RemainingTime, true)
+            + "\nAmonestaciones: " + Session.WarningCount + " · Descuento: −" + Session.TotalPenaltySeconds.ToString("0.#") + " s",
             new Vector2(0, 70), new Vector2(1130, 300), 34, Color.white);
         U2Presentation.Button(card.transform, "Reintentar", new Vector2(0, -150), Restart);
         U2Presentation.Button(card.transform, "Menú principal", new Vector2(0, -250), U2Presentation.ReturnToMenu);

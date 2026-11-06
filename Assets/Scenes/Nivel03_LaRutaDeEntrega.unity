@@ -119657,7 +119657,7 @@ Transform:
   m_GameObject: {fileID: 1277077824}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.026176924, w: 0.99965733}
-  m_LocalPosition: {x: -0.4, y: -7.8, z: 0}
+  m_LocalPosition: {x: -5.48, y: -9.69, z: 0}
   m_LocalScale: {x: 9, y: 9, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -151744,7 +151744,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26f8b32f595a42589caff21014ae3d18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CampusBuildingLabel
-  buildingName: Edificio V
+  buildingName: EDIFICIO V
   textSize: 0.11
 --- !u!1 &2100000010
 GameObject:
@@ -151772,7 +151772,7 @@ Transform:
   m_GameObject: {fileID: 2100000010}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5, y: 12, z: 0}
+  m_LocalPosition: {x: 1.1, y: 8.89, z: 0}
   m_LocalScale: {x: 1.1657963, y: 1.4070022, z: 0.9648235}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -151818,8 +151818,8 @@ Transform:
   m_GameObject: {fileID: 2100000020}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12, y: 10.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 12.72, y: 5.22, z: 0}
+  m_LocalScale: {x: 1.424918, y: 1.4081222, z: 1.0118}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -151836,7 +151836,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26f8b32f595a42589caff21014ae3d18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CampusBuildingLabel
-  buildingName: Edificio C
+  buildingName: EDIFICIO C
   textSize: 0.11
 --- !u!1 &2100000030
 GameObject:
@@ -151849,7 +151849,7 @@ GameObject:
   - component: {fileID: 2100000031}
   - component: {fileID: 2100000032}
   m_Layer: 0
-  m_Name: Letrero_Edificio_D
+  m_Name: Letrero_Edificio_F
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -151864,8 +151864,8 @@ Transform:
   m_GameObject: {fileID: 2100000030}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 28.5, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 28.67, y: 0.26, z: 0}
+  m_LocalScale: {x: 1.3833, y: 1.425, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -151882,7 +151882,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26f8b32f595a42589caff21014ae3d18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CampusBuildingLabel
-  buildingName: Edificio F
+  buildingName: EDIFICIO F
   textSize: 0.11
 --- !u!1 &2100000040
 GameObject:
@@ -151895,7 +151895,7 @@ GameObject:
   - component: {fileID: 2100000041}
   - component: {fileID: 2100000042}
   m_Layer: 0
-  m_Name: Letrero_Edificio_E
+  m_Name: Letrero_Edificio_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -151910,8 +151910,8 @@ Transform:
   m_GameObject: {fileID: 2100000040}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.5, y: -7.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -20.08, y: -9.26, z: 0}
+  m_LocalScale: {x: 1.4, y: 1.6167, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -151956,8 +151956,8 @@ Transform:
   m_GameObject: {fileID: 2100000050}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4, y: -3.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -3.87, y: -7.13, z: 0}
+  m_LocalScale: {x: 1.5333, y: 1.35, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -151974,7 +151974,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26f8b32f595a42589caff21014ae3d18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CampusBuildingLabel
-  buildingName: Edificio R
+  buildingName: EDIFICIO R
   textSize: 0.11
 --- !u!1 &2100000060
 GameObject:
@@ -152002,8 +152002,8 @@ Transform:
   m_GameObject: {fileID: 2100000060}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11, y: -6.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 11.12, y: -9.66, z: 0}
+  m_LocalScale: {x: 0.9867824, y: 1.3333, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -152020,7 +152020,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26f8b32f595a42589caff21014ae3d18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CampusBuildingLabel
-  buildingName: Biblioteca
+  buildingName: BIBLIOTECA
   textSize: 0.11
 --- !u!1 &2100000070
 GameObject:
@@ -152048,7 +152048,7 @@ Transform:
   m_GameObject: {fileID: 2100000070}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21, y: -19.5, z: 0}
+  m_LocalPosition: {x: -17.57, y: -21.85, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -152066,7 +152066,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26f8b32f595a42589caff21014ae3d18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CampusBuildingLabel
-  buildingName: Edificio G
+  buildingName: EDIFICIO G
   textSize: 0.11
 --- !u!1 &2100000080
 GameObject:
@@ -152079,7 +152079,7 @@ GameObject:
   - component: {fileID: 2100000081}
   - component: {fileID: 2100000082}
   m_Layer: 0
-  m_Name: Letrero_Edificio_H
+  m_Name: Letrero_Edificio_D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -152094,7 +152094,7 @@ Transform:
   m_GameObject: {fileID: 2100000080}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.5, y: -21.5, z: 0}
+  m_LocalPosition: {x: 14.15, y: -22.46, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -152112,7 +152112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26f8b32f595a42589caff21014ae3d18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CampusBuildingLabel
-  buildingName: Edificio H
+  buildingName: EDIFICIO D
   textSize: 0.11
 --- !u!1 &2100000090
 GameObject:
@@ -152140,8 +152140,8 @@ Transform:
   m_GameObject: {fileID: 2100000090}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.5, y: -29.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -16.39, y: -30.82, z: 0}
+  m_LocalScale: {x: 1, y: 1.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -152158,7 +152158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26f8b32f595a42589caff21014ae3d18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CampusBuildingLabel
-  buildingName: Edificio I
+  buildingName: EDIFICIO I
   textSize: 0.11
 --- !u!1 &2100000100
 GameObject:
@@ -152171,7 +152171,7 @@ GameObject:
   - component: {fileID: 2100000101}
   - component: {fileID: 2100000102}
   m_Layer: 0
-  m_Name: Letrero_Servicios
+  m_Name: Letrero_CADES
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -152186,7 +152186,7 @@ Transform:
   m_GameObject: {fileID: 2100000100}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21, y: -33.5, z: 0}
+  m_LocalPosition: {x: 21.05, y: -33.77, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -152204,7 +152204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26f8b32f595a42589caff21014ae3d18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CampusBuildingLabel
-  buildingName: Servicios
+  buildingName: CADES
   textSize: 0.11
 --- !u!1 &2100000110
 GameObject:
@@ -152232,8 +152232,8 @@ Transform:
   m_GameObject: {fileID: 2100000110}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: -42, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -1.81, y: -42.26, z: 0}
+  m_LocalScale: {x: 1.625, y: 1.5917, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -152251,7 +152251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CampusBuildingLabel
   buildingName: CGTI
-  textSize: 0.11
+  textSize: 0.15
 --- !u!1 &2100000120
 GameObject:
   m_ObjectHideFlags: 0
@@ -152278,7 +152278,7 @@ Transform:
   m_GameObject: {fileID: 2100000120}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.5, y: -40.5, z: 0}
+  m_LocalPosition: {x: -20.37, y: -41.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -152296,7 +152296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26f8b32f595a42589caff21014ae3d18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CampusBuildingLabel
-  buildingName: Edificio J
+  buildingName: EDIFICIO J
   textSize: 0.11
 --- !u!1 &2100000130
 GameObject:
@@ -152324,8 +152324,8 @@ Transform:
   m_GameObject: {fileID: 2100000130}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13, y: -43.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -12.93, y: -44.59, z: 0}
+  m_LocalScale: {x: 1, y: 1.5833, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -152342,7 +152342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26f8b32f595a42589caff21014ae3d18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CampusBuildingLabel
-  buildingName: Edificio K
+  buildingName: EDIFICIO K
   textSize: 0.11
 --- !u!1 &2100000140
 GameObject:
@@ -152370,8 +152370,8 @@ Transform:
   m_GameObject: {fileID: 2100000140}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.5, y: -42.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 13.57, y: -42.79, z: 0}
+  m_LocalScale: {x: 1.0833, y: 1.6083, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -152388,7 +152388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26f8b32f595a42589caff21014ae3d18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CampusBuildingLabel
-  buildingName: Edificio L
+  buildingName: CETAQ
   textSize: 0.11
 --- !u!1 &2110000000
 GameObject:
@@ -152420,7 +152420,7 @@ Transform:
   m_GameObject: {fileID: 2110000000}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -22.5, y: 1, z: 0}
+  m_LocalPosition: {x: -14.29, y: 8.69, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -152630,7 +152630,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26f8b32f595a42589caff21014ae3d18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CampusBuildingLabel
-  buildingName: Profesor V
+  buildingName: Prof. Iridian
   textSize: 0.075
 --- !u!1 &2110000100
 GameObject:
@@ -152662,7 +152662,7 @@ Transform:
   m_GameObject: {fileID: 2110000100}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.5, y: 6, z: 0}
+  m_LocalPosition: {x: 5.53, y: 13.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -152872,7 +152872,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26f8b32f595a42589caff21014ae3d18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CampusBuildingLabel
-  buildingName: Profesor Cafeteria
+  buildingName: Prof. Barrientos
   textSize: 0.075
 --- !u!1 &2110000200
 GameObject:
@@ -152904,7 +152904,7 @@ Transform:
   m_GameObject: {fileID: 2110000200}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.5, y: -13, z: 0}
+  m_LocalPosition: {x: 14.3, y: -3.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -153114,7 +153114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26f8b32f595a42589caff21014ae3d18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CampusBuildingLabel
-  buildingName: Profesora Biblioteca
+  buildingName: Prof. Muro
   textSize: 0.075
 --- !u!1 &2110000300
 GameObject:
@@ -153356,7 +153356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26f8b32f595a42589caff21014ae3d18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CampusBuildingLabel
-  buildingName: Profesor F
+  buildingName: Prof. Torres
   textSize: 0.075
 --- !u!1 &2110000400
 GameObject:
@@ -153598,7 +153598,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26f8b32f595a42589caff21014ae3d18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CampusBuildingLabel
-  buildingName: Profesor CGTI
+  buildingName: Prof. Barron
   textSize: 0.075
 --- !u!1 &2110001000
 GameObject:
@@ -153652,15 +153652,11 @@ MonoBehaviour:
   - {fileID: 2110000301}
   - {fileID: 2110000401}
   professorNames:
-  - Profesor V
-  - Profesor Cafeteria
-  - Profesora Biblioteca
-  - Profesor F
-  - Profesor CGTI
-  deliveryDistance: 1.8
-  roundSeconds: 180
-  levelMusic: {fileID: 8300000, guid: 47844c9fedac48b4adf2abb82e84ff3d, type: 3}
-  timeoutMusic: {fileID: 8300000, guid: c35acfe4710126945ac9ae0a09394f5c, type: 3}
+  - "Prof. Iridian"
+  - "Prof. Barrientos"
+  - "Prof. Muro"
+  - "Prof. Torres"
+  - "Prof. Barron"
   projectIds:
   - proyecto-v
   - proyecto-cafeteria
@@ -153668,13 +153664,22 @@ MonoBehaviour:
   - proyecto-f
   - proyecto-cgti
   projectNames:
-  - Proyecto V
-  - Proyecto Cafetería
-  - Proyecto Biblioteca
-  - Proyecto F
-  - Proyecto CGTI
+  - "PROYECTO DE PROF. IRIDIAN"
+  - "PROYECTO DE PROF. BARRIENTOS"
+  - "PROYECTO DE PROF. MURO"
+  - "PROYECTO DE PROF. TORRES"
+  - "PROYECTO DE PROF. BARRON"
   projectIcons: []
+  deliveryDistance: 1.8
+  roundSeconds: 180
+  wrongProjectPenalty: 5
+  repeatDeliveryPenalty: 8
+  levelMusic: {fileID: 8300000, guid: 47844c9fedac48b4adf2abb82e84ff3d, type: 3}
+  timeoutMusic: {fileID: 8300000, guid: c35acfe4710126945ac9ae0a09394f5c, type: 3}
   showTutorial: 1
+  projectNamesFollowProfessors: 1
+  showNarrativeIntro: 1
+  narrativeIntro: "Galindo necesita entregar los proyectos para aprobar las unidades de sus materias.\n\nLos profesores lo esperan en distintos edificios de la universidad. Debe llegar con el proyecto correcto antes de que cierre el sistema de entregas."
 --- !u!1 &2120000000
 GameObject:
   m_ObjectHideFlags: 0
@@ -154183,9 +154188,9 @@ MonoBehaviour:
   speed: 1.08
   groupId: 1
   formationSlot: 0
-  seed: 1306
   patrolCenter: {x: 2.5, y: 32.5}
   patrolRange: 16
+  seed: 1306
 --- !u!1 &2120010010
 GameObject:
   m_ObjectHideFlags: 0
@@ -154397,9 +154402,9 @@ MonoBehaviour:
   speed: 1.15
   groupId: 1
   formationSlot: 1
-  seed: 1403
   patrolCenter: {x: 2.5, y: 32.5}
   patrolRange: 16
+  seed: 1403
 --- !u!1 &2120010020
 GameObject:
   m_ObjectHideFlags: 0
@@ -154611,9 +154616,9 @@ MonoBehaviour:
   speed: 1.23
   groupId: 1
   formationSlot: 2
-  seed: 1500
   patrolCenter: {x: 2.5, y: 32.5}
   patrolRange: 16
+  seed: 1500
 --- !u!1 &2120010030
 GameObject:
   m_ObjectHideFlags: 0
@@ -154825,9 +154830,9 @@ MonoBehaviour:
   speed: 0.82
   groupId: 2
   formationSlot: 0
-  seed: 1597
   patrolCenter: {x: 44.5, y: -31.5}
   patrolRange: 16
+  seed: 1597
 --- !u!1 &2120010040
 GameObject:
   m_ObjectHideFlags: 0
@@ -155039,9 +155044,9 @@ MonoBehaviour:
   speed: 1.22
   groupId: 2
   formationSlot: 1
-  seed: 1694
   patrolCenter: {x: 44.5, y: -31.5}
   patrolRange: 16
+  seed: 1694
 --- !u!1 &2120010050
 GameObject:
   m_ObjectHideFlags: 0
@@ -155253,9 +155258,9 @@ MonoBehaviour:
   speed: 1.18
   groupId: 2
   formationSlot: 2
-  seed: 1791
   patrolCenter: {x: 44.5, y: -31.5}
   patrolRange: 16
+  seed: 1791
 --- !u!1 &2120010060
 GameObject:
   m_ObjectHideFlags: 0
@@ -155467,9 +155472,9 @@ MonoBehaviour:
   speed: 0.91
   groupId: 2
   formationSlot: 3
-  seed: 1888
   patrolCenter: {x: 44.5, y: -31.5}
   patrolRange: 16
+  seed: 1888
 --- !u!1 &2120010070
 GameObject:
   m_ObjectHideFlags: 0
@@ -155681,9 +155686,9 @@ MonoBehaviour:
   speed: 1.02
   groupId: 3
   formationSlot: 0
-  seed: 1985
   patrolCenter: {x: -30.5, y: -30.5}
   patrolRange: 16
+  seed: 1985
 --- !u!1 &2120010080
 GameObject:
   m_ObjectHideFlags: 0
@@ -155895,9 +155900,9 @@ MonoBehaviour:
   speed: 0.81
   groupId: 3
   formationSlot: 1
-  seed: 2082
   patrolCenter: {x: -30.5, y: -30.5}
   patrolRange: 16
+  seed: 2082
 --- !u!1 &2120010090
 GameObject:
   m_ObjectHideFlags: 0
@@ -156109,9 +156114,9 @@ MonoBehaviour:
   speed: 0.79
   groupId: 3
   formationSlot: 2
-  seed: 2179
   patrolCenter: {x: -30.5, y: -30.5}
   patrolRange: 16
+  seed: 2179
 --- !u!1 &2120010100
 GameObject:
   m_ObjectHideFlags: 0
@@ -156323,9 +156328,9 @@ MonoBehaviour:
   speed: 0.77
   groupId: 4
   formationSlot: 0
-  seed: 2276
   patrolCenter: {x: 11.5, y: 2.5}
   patrolRange: 16
+  seed: 2276
 --- !u!1 &2120010110
 GameObject:
   m_ObjectHideFlags: 0
@@ -156537,9 +156542,9 @@ MonoBehaviour:
   speed: 1.08
   groupId: 4
   formationSlot: 1
-  seed: 2373
   patrolCenter: {x: 11.5, y: 2.5}
   patrolRange: 16
+  seed: 2373
 --- !u!1 &2120010120
 GameObject:
   m_ObjectHideFlags: 0
@@ -156751,9 +156756,9 @@ MonoBehaviour:
   speed: 1.06
   groupId: 4
   formationSlot: 2
-  seed: 2470
   patrolCenter: {x: 11.5, y: 2.5}
   patrolRange: 16
+  seed: 2470
 --- !u!1 &2120010130
 GameObject:
   m_ObjectHideFlags: 0
@@ -156965,9 +156970,9 @@ MonoBehaviour:
   speed: 1.14
   groupId: 4
   formationSlot: 3
-  seed: 2567
   patrolCenter: {x: 11.5, y: 2.5}
   patrolRange: 16
+  seed: 2567
 --- !u!1 &2120010140
 GameObject:
   m_ObjectHideFlags: 0
@@ -157179,9 +157184,9 @@ MonoBehaviour:
   speed: 0.8
   groupId: 5
   formationSlot: 0
-  seed: 2664
   patrolCenter: {x: 12.5, y: -40.5}
   patrolRange: 16
+  seed: 2664
 --- !u!1 &2120010150
 GameObject:
   m_ObjectHideFlags: 0
@@ -157393,9 +157398,9 @@ MonoBehaviour:
   speed: 1.04
   groupId: 5
   formationSlot: 1
-  seed: 2761
   patrolCenter: {x: 12.5, y: -40.5}
   patrolRange: 16
+  seed: 2761
 --- !u!1 &2120010160
 GameObject:
   m_ObjectHideFlags: 0
@@ -157607,9 +157612,9 @@ MonoBehaviour:
   speed: 0.86
   groupId: 5
   formationSlot: 2
-  seed: 2858
   patrolCenter: {x: 12.5, y: -40.5}
   patrolRange: 16
+  seed: 2858
 --- !u!1 &2120010170
 GameObject:
   m_ObjectHideFlags: 0
@@ -157821,9 +157826,9 @@ MonoBehaviour:
   speed: 0.98
   groupId: 6
   formationSlot: 0
-  seed: 2955
   patrolCenter: {x: -28.5, y: 30.5}
   patrolRange: 16
+  seed: 2955
 --- !u!1 &2120010180
 GameObject:
   m_ObjectHideFlags: 0
@@ -158035,9 +158040,9 @@ MonoBehaviour:
   speed: 0.93
   groupId: 6
   formationSlot: 1
-  seed: 3052
   patrolCenter: {x: -28.5, y: 30.5}
   patrolRange: 16
+  seed: 3052
 --- !u!1 &2120010190
 GameObject:
   m_ObjectHideFlags: 0
@@ -158249,9 +158254,9 @@ MonoBehaviour:
   speed: 1.18
   groupId: 6
   formationSlot: 2
-  seed: 3149
   patrolCenter: {x: -28.5, y: 30.5}
   patrolRange: 16
+  seed: 3149
 --- !u!1 &2120010200
 GameObject:
   m_ObjectHideFlags: 0
@@ -158463,9 +158468,9 @@ MonoBehaviour:
   speed: 0.83
   groupId: 6
   formationSlot: 3
-  seed: 3246
   patrolCenter: {x: -28.5, y: 30.5}
   patrolRange: 16
+  seed: 3246
 --- !u!1 &2120010210
 GameObject:
   m_ObjectHideFlags: 0
@@ -158677,9 +158682,9 @@ MonoBehaviour:
   speed: 1.23
   groupId: 0
   formationSlot: 0
-  seed: 3343
   patrolCenter: {x: -26.5, y: 9.5}
   patrolRange: 14
+  seed: 3343
 --- !u!1 &2120010220
 GameObject:
   m_ObjectHideFlags: 0
@@ -158891,9 +158896,9 @@ MonoBehaviour:
   speed: 0.81
   groupId: 0
   formationSlot: 0
-  seed: 3440
   patrolCenter: {x: -0.5, y: -21.5}
   patrolRange: 14
+  seed: 3440
 --- !u!1 &2120010230
 GameObject:
   m_ObjectHideFlags: 0
@@ -159105,9 +159110,9 @@ MonoBehaviour:
   speed: 1.2
   groupId: 0
   formationSlot: 0
-  seed: 3537
   patrolCenter: {x: -16.5, y: 9.5}
   patrolRange: 14
+  seed: 3537
 --- !u!1 &2120010240
 GameObject:
   m_ObjectHideFlags: 0
@@ -159319,9 +159324,9 @@ MonoBehaviour:
   speed: 0.77
   groupId: 0
   formationSlot: 0
-  seed: 3634
   patrolCenter: {x: 34.5, y: -10.5}
   patrolRange: 14
+  seed: 3634
 --- !u!1 &2120010250
 GameObject:
   m_ObjectHideFlags: 0
@@ -159533,9 +159538,9 @@ MonoBehaviour:
   speed: 0.86
   groupId: 0
   formationSlot: 0
-  seed: 3731
   patrolCenter: {x: 21.5, y: -20.5}
   patrolRange: 14
+  seed: 3731
 --- !u!1 &2120010260
 GameObject:
   m_ObjectHideFlags: 0
@@ -159747,9 +159752,9 @@ MonoBehaviour:
   speed: 0.83
   groupId: 0
   formationSlot: 0
-  seed: 3828
   patrolCenter: {x: -14.5, y: -13.5}
   patrolRange: 14
+  seed: 3828
 --- !u!1 &2120010270
 GameObject:
   m_ObjectHideFlags: 0
@@ -159961,9 +159966,9 @@ MonoBehaviour:
   speed: 0.93
   groupId: 0
   formationSlot: 0
-  seed: 3925
   patrolCenter: {x: -9.5, y: -33.5}
   patrolRange: 14
+  seed: 3925
 --- !u!1 &2120010280
 GameObject:
   m_ObjectHideFlags: 0
@@ -160175,9 +160180,9 @@ MonoBehaviour:
   speed: 1.07
   groupId: 0
   formationSlot: 0
-  seed: 4022
   patrolCenter: {x: -18.5, y: -0.5}
   patrolRange: 14
+  seed: 4022
 --- !u!1 &2120010290
 GameObject:
   m_ObjectHideFlags: 0
@@ -160389,9 +160394,9 @@ MonoBehaviour:
   speed: 0.98
   groupId: 0
   formationSlot: 0
-  seed: 4119
   patrolCenter: {x: 4.5, y: -15.5}
   patrolRange: 14
+  seed: 4119
 --- !u!1 &2120010300
 GameObject:
   m_ObjectHideFlags: 0
@@ -160603,9 +160608,9 @@ MonoBehaviour:
   speed: 0.9
   groupId: 0
   formationSlot: 0
-  seed: 4216
   patrolCenter: {x: -13.5, y: 19.5}
   patrolRange: 14
+  seed: 4216
 --- !u!1 &2120010310
 GameObject:
   m_ObjectHideFlags: 0
@@ -160817,9 +160822,9 @@ MonoBehaviour:
   speed: 0.89
   groupId: 0
   formationSlot: 0
-  seed: 4313
   patrolCenter: {x: -30.5, y: -8.5}
   patrolRange: 14
+  seed: 4313
 --- !u!1 &2120010320
 GameObject:
   m_ObjectHideFlags: 0
@@ -161031,9 +161036,9 @@ MonoBehaviour:
   speed: 0.82
   groupId: 0
   formationSlot: 0
-  seed: 4410
   patrolCenter: {x: 33.5, y: -19.5}
   patrolRange: 14
+  seed: 4410
 --- !u!1 &2120010330
 GameObject:
   m_ObjectHideFlags: 0
@@ -161245,9 +161250,9 @@ MonoBehaviour:
   speed: 1.01
   groupId: 0
   formationSlot: 0
-  seed: 4507
   patrolCenter: {x: 10.5, y: -27.5}
   patrolRange: 14
+  seed: 4507
 --- !u!1 &2120010340
 GameObject:
   m_ObjectHideFlags: 0
@@ -161459,9 +161464,9 @@ MonoBehaviour:
   speed: 0.98
   groupId: 0
   formationSlot: 0
-  seed: 4604
   patrolCenter: {x: 4.5, y: 12.5}
   patrolRange: 14
+  seed: 4604
 --- !u!1 &2120010350
 GameObject:
   m_ObjectHideFlags: 0
@@ -161673,9 +161678,9 @@ MonoBehaviour:
   speed: 0.97
   groupId: 0
   formationSlot: 0
-  seed: 4701
   patrolCenter: {x: 24.5, y: -4.5}
   patrolRange: 14
+  seed: 4701
 --- !u!1 &2120010360
 GameObject:
   m_ObjectHideFlags: 0
@@ -161887,9 +161892,9 @@ MonoBehaviour:
   speed: 1.25
   groupId: 0
   formationSlot: 0
-  seed: 4798
   patrolCenter: {x: -2.5, y: -31.5}
   patrolRange: 14
+  seed: 4798
 --- !u!1 &2120010370
 GameObject:
   m_ObjectHideFlags: 0
@@ -162101,9 +162106,9 @@ MonoBehaviour:
   speed: 1.2
   groupId: 0
   formationSlot: 0
-  seed: 4895
   patrolCenter: {x: -17.5, y: -25.5}
   patrolRange: 14
+  seed: 4895
 --- !u!1 &2120010380
 GameObject:
   m_ObjectHideFlags: 0
@@ -162315,9 +162320,9 @@ MonoBehaviour:
   speed: 1.06
   groupId: 0
   formationSlot: 0
-  seed: 4992
   patrolCenter: {x: -20.5, y: -38.5}
   patrolRange: 14
+  seed: 4992
 --- !u!1 &2120010390
 GameObject:
   m_ObjectHideFlags: 0
@@ -162529,9 +162534,9 @@ MonoBehaviour:
   speed: 0.75
   groupId: 0
   formationSlot: 0
-  seed: 5089
   patrolCenter: {x: 16.5, y: -11.5}
   patrolRange: 14
+  seed: 5089
 --- !u!1 &2120010400
 GameObject:
   m_ObjectHideFlags: 0
@@ -162743,9 +162748,9 @@ MonoBehaviour:
   speed: 0.83
   groupId: 0
   formationSlot: 0
-  seed: 5186
   patrolCenter: {x: 44.5, y: -15.5}
   patrolRange: 14
+  seed: 5186
 --- !u!1 &2120010410
 GameObject:
   m_ObjectHideFlags: 0
@@ -162957,9 +162962,9 @@ MonoBehaviour:
   speed: 0.76
   groupId: 0
   formationSlot: 0
-  seed: 5283
   patrolCenter: {x: -3.5, y: -0.5}
   patrolRange: 14
+  seed: 5283
 --- !u!114 &2132000000
 MonoBehaviour:
   m_ObjectHideFlags: 0

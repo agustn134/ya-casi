@@ -79,12 +79,16 @@ public static class CampusDeliveryVerification
                 var hud = GameObject.Find("HUD nivel 3");
                 Check(hud != null && hud.GetComponentsInChildren<TMP_Text>().All(t => t.font == font), "HUD usa la fuente del nivel 1");
                 Near(controller, 0); controller.SelectProject(1);
+                float beforeWrong = session.RemainingTime;
                 var wrong = controller.TryDeliverTo(0);
                 Check(wrong == ProjectDeliveryResult.WrongProject && session.DeliveredCount == 0,
                     "Controlador rechaza selección incorrecta (resultado: " + wrong + ")");
+                Check(Mathf.Abs(beforeWrong - session.RemainingTime - 5) < .01f && session.WarningCount == 1, "Proyecto incorrecto resta cinco segundos y muestra amonestación");
                 controller.SelectProject(0);
                 Check(controller.TryDeliverTo(0) == ProjectDeliveryResult.Accepted && session.DeliveredCount == 1, "Primera entrega actualiza inventario y progreso");
+                float beforeRepeat = session.RemainingTime;
                 Check(controller.TryDeliverTo(0) == ProjectDeliveryResult.AlreadyDelivered && session.DeliveredCount == 1, "No cuenta entrega repetida");
+                Check(Mathf.Abs(beforeRepeat - session.RemainingTime - 8) < .01f && session.WarningCount == 2, "Entrega repetida resta ocho segundos");
                 controller.TogglePause(); pausedTime = session.RemainingTime; pausedElapsed = session.ElapsedTime;
                 Check(session.Paused && Time.timeScale == 0, "Pausa congela simulación"); Next(1);
             }
@@ -104,7 +108,9 @@ public static class CampusDeliveryVerification
             else if (phase == 3)
             {
                 Check(session.DeliveredCount == 0 && !session.Failed && !session.Completed && session.RemainingTime > 175, "Reiniciar restablece partida");
-                session.AdvanceTime(180); Next(4);
+                session.AdvanceTime(session.RemainingTime - 3);
+                Near(controller, 0); controller.SelectProject(1); controller.TryDeliverTo(0);
+                Check(session.Failed && session.RemainingTime == 0 && session.DeliveredCount == 0, "Una amonestación agota el reloj sin consumir un proyecto"); Next(4);
             }
             else if (phase == 4)
             {

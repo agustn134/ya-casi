@@ -19,4 +19,6 @@ Para probar: abrir `Assets/Scenes/MenuNivel03.unity`, pulsar Play y elegir Jugar
 
 Cinco proyectos distintos, cinco profesores y tres minutos. Seleccionar con 1–5, Tab o clic; entregar con E. Esc abre la pausa con continuar, reiniciar, opciones y menú principal. La interfaz comparte Pixelify Sans, paneles y ajustes de audio con el nivel 1.
 
+Las amonestaciones restan tiempo: proyecto equivocado, 5 segundos; entrega repetida a un profesor que ya recibió su proyecto, 8 segundos. El HUD muestra el número de amonestaciones y el descuento acumulado. Si la sanción agota el reloj, se pierde la partida.
+
 [Alcance y comprobaciones de YC14](docs/YC14_ENTREGAS_INVENTARIO.md). Escena provisional: `Assets/Scenes/Nivel03_PruebaEntregas.unity`.
