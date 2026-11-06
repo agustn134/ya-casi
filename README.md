@@ -14,3 +14,9 @@ Composición y producción: **Agustín López Parra**, desarrollador de ¡Ya Cas
 - `YaCASI-Soundtrack-GameOver-TiempoFinal.mp3`: fin de tiempo (tres minutos) del nivel 3.
 
 Para probar: abrir `Assets/Scenes/MenuNivel03.unity`, pulsar Play y elegir Jugar nivel 3.
+
+## Nivel 3 — inventario y entregas (YC14)
+
+Cinco proyectos distintos, cinco profesores y tres minutos. Seleccionar con 1–5, Tab o clic; entregar con E. Esc abre la pausa con continuar, reiniciar, opciones y menú principal. La interfaz comparte Pixelify Sans, paneles y ajustes de audio con el nivel 1.
+
+[Alcance y comprobaciones de YC14](docs/YC14_ENTREGAS_INVENTARIO.md). Escena provisional: `Assets/Scenes/Nivel03_PruebaEntregas.unity`.

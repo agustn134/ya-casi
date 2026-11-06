@@ -1,0 +1,36 @@
+PASS Progreso inicial 0/3
+PASS Rechaza proyecto equivocado
+PASS Error no consume ni suma
+PASS Pausa congela reloj y cronómetro
+PASS No entrega durante pausa
+PASS Reanudar continúa ambos relojes
+PASS Acepta el proyecto correcto
+PASS Entrega retira proyecto y suma una vez
+PASS Entrega repetida no cuenta
+PASS No entrega un objeto ausente
+PASS Acepta entregas en cualquier orden
+PASS Acepta entregas en cualquier orden
+PASS Victoria 3/3
+PASS Victoria detiene reloj y evita derrota tardía
+PASS No cambia progreso tras victoria
+PASS Progreso inicial 0/5
+PASS Rechaza proyecto equivocado
+PASS Error no consume ni suma
+PASS Pausa congela reloj y cronómetro
+PASS No entrega durante pausa
+PASS Reanudar continúa ambos relojes
+PASS Acepta el proyecto correcto
+PASS Entrega retira proyecto y suma una vez
+PASS Entrega repetida no cuenta
+PASS No entrega un objeto ausente
+PASS Acepta entregas en cualquier orden
+PASS Acepta entregas en cualquier orden
+PASS Acepta entregas en cualquier orden
+PASS Acepta entregas en cualquier orden
+PASS Victoria 5/5
+PASS Victoria detiene reloj y evita derrota tardía
+PASS No cambia progreso tras victoria
+PASS Tiempo agotado produce derrota sin reloj negativo
+PASS No acepta entregas tras derrota
+PASS Reinicio independiente repone inventario y tiempo
+YC14_RULES_OK 35 comprobaciones

@@ -19,6 +19,8 @@ public sealed class CampusPathPlayer : MonoBehaviour
     string facing = "Down", state;
     readonly RaycastHit2D[] hits = new RaycastHit2D[16];
 
+    public void ConfigurePath(Tilemap tilemap) { path = tilemap; }
+
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
@@ -77,6 +79,8 @@ public sealed class CampusPathPlayer : MonoBehaviour
             if (stick.sqrMagnitude > .04f) input = stick;
             sprint |= Gamepad.current.rightTrigger.isPressed;
         }
+        if (TouchGameControls.Direction.sqrMagnitude > .01f) input = TouchGameControls.Direction;
+        sprint |= TouchGameControls.Sprint;
         input = Vector2.ClampMagnitude(input, 1f);
     }
 

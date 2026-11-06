@@ -38,6 +38,8 @@ public static class CampusValidation
         var objectives = UnityEngine.Object.FindFirstObjectByType<CampusDeliveryObjectives>();
         var config = new SerializedObject(objectives);
         Check(config.FindProperty("professors").arraySize == 5, "Faltan objetivos");
+        Check(config.FindProperty("projectIds").arraySize == 5, "Faltan proyectos del inventario");
+        Check(config.FindProperty("projectNames").arraySize == 5, "Faltan nombres de proyectos");
         Check(config.FindProperty("roundSeconds").floatValue == 180, "El temporizador debe ser de 180 segundos");
         Check(config.FindProperty("timeoutMusic").objectReferenceValue is AudioClip, "Falta canción de derrota");
         Check(config.FindProperty("levelMusic").objectReferenceValue is AudioClip, "Falta música del nivel 3");

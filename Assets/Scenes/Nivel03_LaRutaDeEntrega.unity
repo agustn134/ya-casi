@@ -153661,6 +153661,20 @@ MonoBehaviour:
   roundSeconds: 180
   levelMusic: {fileID: 8300000, guid: 47844c9fedac48b4adf2abb82e84ff3d, type: 3}
   timeoutMusic: {fileID: 8300000, guid: c35acfe4710126945ac9ae0a09394f5c, type: 3}
+  projectIds:
+  - proyecto-v
+  - proyecto-cafeteria
+  - proyecto-biblioteca
+  - proyecto-f
+  - proyecto-cgti
+  projectNames:
+  - Proyecto V
+  - Proyecto Cafetería
+  - Proyecto Biblioteca
+  - Proyecto F
+  - Proyecto CGTI
+  projectIcons: []
+  showTutorial: 1
 --- !u!1 &2120000000
 GameObject:
   m_ObjectHideFlags: 0
