@@ -6,14 +6,26 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MenuPrincipal.unity
+    guid: 26cf604cbed048646b040f61b22dc332
+  - enabled: 1
+    path: Assets/Scenes/Nivel01_CaosDelCasillero.unity
+    guid: f4c7b44c0aa148e449fc159a056e1029
+  - enabled: 1
+    path: Assets/Scenes/Campus_Prototype.unity
+    guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/ActividadMenu/Scenes/MenuActividadCompleta.unity
+    guid: 7f06e9bebd893ee47bc0a9998312aafe
+  - enabled: 1
+    path: Assets/ActividadMenu/Scenes/PruebaMenu.unity
+    guid: 1519385c58712dc469cb03e1682bc62e
+  - enabled: 1
     path: Assets/Scenes/MenuNivel03.unity
     guid: 99a58f3754d24ae6875fff21b4cc9c4d
   - enabled: 1
     path: Assets/Scenes/Nivel03_LaRutaDeEntrega.unity
     guid: 252721de718f42d7aad2723254ec46ed
-  - enabled: 1
-    path: Assets/Scenes/Campus_Prototype.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
   m_configObjects:
     com.unity.dt.app-ui: {fileID: 11400000, guid: 1b1c20d82303e4b5781c3ef50ac1449f, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

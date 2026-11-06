@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c116de20fd9fb9d48b2e053dd6fc60e0, type: 3}
+  m_Name: U2GameConfig
+  m_EditorClassIdentifier: Assembly-CSharp::U2GameConfig
+  soundtrack: {fileID: 8300000, guid: fa85c1ec53bc89f43a2984e82c1d3c08, type: 3}
+  menuMusic: {fileID: 8300000, guid: 4014ca32447973247bec21ddcfcebb88, type: 3}
+  font: {fileID: 11400000, guid: 518635a2bee37f045b5cff339953dd5b, type: 2}
+  studentControllers:
+  - {fileID: 22100000, guid: 236aa66feb23d2342b39c9acc69a872e, type: 2}
+  - {fileID: 22100000, guid: f01ba0a54555cfc4db02893908d75b7d, type: 2}
+  - {fileID: 22100000, guid: 7dbb0d8eb9434eb4db22337a15793143, type: 2}
+  - {fileID: 22100000, guid: ba2553bf0ba354f4f88be95e8041458d, type: 2}
+  - {fileID: 22100000, guid: e525808ef7e59d74b919855bc55edd99, type: 2}
+  - {fileID: 22100000, guid: 40bdf51bf9e1ddc49acc32632727a4cb, type: 2}
+  roundSeconds: 135
+  wrongLockerPenalty: 3
+  repeatLockerPenalty: 5
+  studentCount: 6
+  soundtrackCredit: "Pixel art \u2014 Brutaldesign \xB7 Pixabay\npixabay.com/music/id-481480/"
