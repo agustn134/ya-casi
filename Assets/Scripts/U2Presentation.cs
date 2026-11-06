@@ -6,7 +6,7 @@ using UnityEngine.InputSystem.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-/// <summary>Menú del videojuego y opciones comunes, independientes de la actividad Menú II.</summary>
+/// <summary>MenÃº del videojuego y opciones comunes, independientes de la actividad MenÃº II.</summary>
 public sealed class U2Presentation : MonoBehaviour
 {
     public const string MenuScene = "MenuPrincipal";
@@ -24,13 +24,13 @@ public sealed class U2Presentation : MonoBehaviour
     void Start()
     {
         Time.timeScale=1;
-        root=NewCanvas("Menú principal",100);
+        root=NewCanvas("MenÃº principal",100);
         music=gameObject.AddComponent<AudioSource>();music.loop=true;music.volume=MusicVolume;
         var config=Resources.Load<U2GameConfig>("U2GameConfig");music.clip=config!=null?config.menuMusic:null;if(music.clip!=null)music.Play();
         splash=true;splashTime=Time.unscaledTime+1.8f;
         var card=Card(root.transform,"Splash");
-        Text(card.transform,"Logo equipo","AL · CP",new Vector2(0,120),new Vector2(700,120),76,Gold);
-        Text(card.transform,"Nombre","¡YA CASI!",Vector2.zero,new Vector2(850,120),82,Color.white);
+        Text(card.transform,"Logo equipo","AL Â· CP",new Vector2(0,120),new Vector2(700,120),76,Gold);
+        Text(card.transform,"Nombre","Â¡YA CASI!",Vector2.zero,new Vector2(850,120),82,Color.white);
         Text(card.transform,"Carga","Una aventura universitaria contrarreloj",new Vector2(0,-130),new Vector2(1000,80),34,Color.white);
     }
     void Update(){if(music!=null)music.volume=MusicVolume;if(splash&&Time.unscaledTime>=splashTime){splash=false;Main();}}
@@ -38,22 +38,23 @@ public sealed class U2Presentation : MonoBehaviour
     public void Main()
     {
         Clear();var card=Card(root.transform,"Inicio");
-        Text(card.transform,"Título","¡YA CASI!",new Vector2(0,320),new Vector2(1000,100),76,Gold);
-        Text(card.transform,"Subtítulo","Recupera la USB antes de que cierre el edificio",new Vector2(0,240),new Vector2(1100,70),30,Color.white);
-        Button(card.transform,"Jugar",new Vector2(0,130),()=>{PlayerPrefs.DeleteKey("YaCasi.U2.Win");StartLevel();});
-        var cont=Button(card.transform,"Continuar",new Vector2(0,35),StartLevel);cont.interactable=PlayerPrefs.HasKey(SaveKey);
-        Button(card.transform,"Opciones",new Vector2(0,-60),()=>Options(root.transform,Main));
-        Button(card.transform,"Créditos",new Vector2(0,-155),Credits);
-        Button(card.transform,"Salir",new Vector2(0,-250),Quit);
-        Text(card.transform,"Mejor","Mejor puntaje: "+PlayerPrefs.GetInt("YaCasi.U2.Best",0),new Vector2(0,-340),new Vector2(800,55),28,Gold);
+        Text(card.transform,"TÃ­tulo","Â¡YA CASI!",new Vector2(0,320),new Vector2(1000,100),76,Gold);
+        Text(card.transform,"SubtÃ­tulo","Recupera la USB antes de que cierre el edificio",new Vector2(0,240),new Vector2(1100,70),30,Color.white);
+        Button(card.transform,"Jugar nivel 1",new Vector2(0,155),()=>{PlayerPrefs.DeleteKey("YaCasi.U2.Win");StartLevel();});
+        Button(card.transform,"Jugar nivel 3",new Vector2(0,65),()=>{Time.timeScale=1;SceneManager.LoadScene("MenuNivel03");});
+        var cont=Button(card.transform,"Continuar nivel 1",new Vector2(0,-25),StartLevel);cont.interactable=PlayerPrefs.HasKey(SaveKey);
+        Button(card.transform,"Opciones",new Vector2(0,-115),()=>Options(root.transform,Main));
+        Button(card.transform,"CrÃ©ditos",new Vector2(0,-205),Credits);
+        Button(card.transform,"Salir",new Vector2(0,-295),Quit);
+        Text(card.transform,"Mejor","Mejor puntaje nivel 1: "+PlayerPrefs.GetInt("YaCasi.U2.Best",0),new Vector2(0,-380),new Vector2(800,45),25,Gold);
     }
     public static void StartLevel(){Time.timeScale=1;SceneManager.LoadScene(LevelScene);}
     public static void ReturnToMenu(){Time.timeScale=1;SceneManager.LoadScene(MenuScene);}
     void Credits()
     {
-        Clear();var card=Card(root.transform,"Créditos");var cfg=Resources.Load<U2GameConfig>("U2GameConfig");
-        Text(card.transform,"Título","CRÉDITOS",new Vector2(0,320),new Vector2(900,70),54,Gold);
-        Text(card.transform,"Autores","Agustín López Parra · Carlos Manuel Palma Muñoz\n\nNivel 1: desarrollo de Agustín; revisión de Carlos.\nUnity · C# · TextMesh Pro\nArte: LimeZu — Modern Interiors, Exteriors y Office\nInterfaz: That Witch Design — Simple Button Set 01\nFuente: Pixelify Sans — SIL OFL\nEfectos: Kenney Interface Sounds y síntesis propia\nMúsica del nivel: "+(cfg!=null?cfg.soundtrackCredit:"pendiente de confirmar")+"\n\nAvance académico: nivel 1 disponible. Niveles 2–4 pendientes.",new Vector2(0,20),new Vector2(1120,500),30,Color.white);
+        Clear();var card=Card(root.transform,"CrÃ©ditos");var cfg=Resources.Load<U2GameConfig>("U2GameConfig");
+        Text(card.transform,"TÃ­tulo","CRÃ‰DITOS",new Vector2(0,320),new Vector2(900,70),54,Gold);
+        Text(card.transform,"Autores","AgustÃ­n LÃ³pez Parra Â· Carlos Manuel Palma MuÃ±oz\n\nNivel 1: desarrollo de AgustÃ­n; revisiÃ³n de Carlos.\nUnity Â· C# Â· TextMesh Pro\nArte: LimeZu â€” Modern Interiors, Exteriors y Office\nInterfaz: That Witch Design â€” Simple Button Set 01\nFuente: Pixelify Sans â€” SIL OFL\nEfectos: Kenney Interface Sounds y sÃ­ntesis propia\nMÃºsica del nivel: "+(cfg!=null?cfg.soundtrackCredit:"pendiente de confirmar")+"\n\nAvance acadÃ©mico: nivel 1 disponible. Niveles 2â€“4 pendientes.",new Vector2(0,20),new Vector2(1120,500),30,Color.white);
         Button(card.transform,"Volver",new Vector2(0,-310),Main);
     }
     static void Quit()
@@ -61,21 +62,21 @@ public sealed class U2Presentation : MonoBehaviour
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying=false;
 #elif UNITY_WEBGL
-        Debug.Log("Puedes cerrar la pestaña para salir del juego.");
+        Debug.Log("Puedes cerrar la pestaÃ±a para salir del juego.");
 #else
         Application.Quit();
 #endif
     }
-    public static void Options(Transform parent,Action back)
+    public static void Options(Transform parent,Action back,string controls=null)
     {
         var cover=Image(parent,"Opciones",new Color(0,0,0,.9f));Stretch(cover.rectTransform);
         var card=Card(cover.transform,"Panel opciones");
-        Text(card.transform,"Título","OPCIONES",new Vector2(0,320),new Vector2(900,80),56,Gold);
-        Slider(card.transform,"Música",165,MusicVolume,v=>PlayerPrefs.SetFloat("YaCasi.U2.Music",v));
+        Text(card.transform,"TÃ­tulo","OPCIONES",new Vector2(0,320),new Vector2(900,80),56,Gold);
+        Slider(card.transform,"MÃºsica",165,MusicVolume,v=>PlayerPrefs.SetFloat("YaCasi.U2.Music",v));
         Slider(card.transform,"Efectos",35,EffectsVolume,v=>PlayerPrefs.SetFloat("YaCasi.U2.Effects",v));
-        Text(card.transform,"Calidad","Calidad gráfica",new Vector2(-240,-75),new Vector2(400,55),32,Color.white);
+        Text(card.transform,"Calidad","Calidad grÃ¡fica",new Vector2(-240,-75),new Vector2(400,55),32,Color.white);
         for(int i=0;i<3;i++){int quality=i;var b=Button(card.transform,new[]{"Baja","Media","Alta"}[i],new Vector2(-330+i*330,-140),()=>{QualitySettings.SetQualityLevel(Mathf.RoundToInt((QualitySettings.names.Length-1)*quality/2f),true);PlayerPrefs.SetInt("YaCasi.U2.Quality",quality);});b.GetComponent<RectTransform>().sizeDelta=new Vector2(290,65);}
-        Text(card.transform,"Controles","WASD / flechas / joystick: moverte · Shift / gatillo: correr\nE / botón sur: revisar · Esc / Start: pausa\nEn móvil: botones de dirección, correr y revisar.",new Vector2(0,-240),new Vector2(1100,120),27,Color.white);
+        Text(card.transform,"Controles",controls??"WASD / flechas / joystick: moverte Â· Shift / gatillo: correr\nE / botÃ³n sur: revisar Â· Esc / Start: pausa\nEn mÃ³vil: botones de direcciÃ³n, correr y revisar.",new Vector2(0,-240),new Vector2(1100,120),27,Color.white);
         var close=Button(card.transform,"Volver",new Vector2(0,-350),()=>{PlayerPrefs.Save();Destroy(cover.gameObject);back?.Invoke();});
     }
     static void Slider(Transform parent,string caption,float y,float initial,UnityEngine.Events.UnityAction<float> changed)
