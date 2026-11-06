@@ -22,13 +22,14 @@ public sealed class LibraryStudent : MonoBehaviour
     public float DistanceTravelled { get; private set; }
     readonly RaycastHit2D[] hits = new RaycastHit2D[12];
     Collider2D footprint;
+    Rigidbody2D body;
     void Awake()
     {
         animator = GetComponent<Animator>(); sprite = GetComponent<SpriteRenderer>();
-        footprint = GetComponent<Collider2D>(); next = startWaypoint;
+        footprint = GetComponent<Collider2D>(); body = GetComponent<Rigidbody2D>(); next = startWaypoint;
         if (seated && animator != null) animator.enabled = false;
     }
-    void Update()
+    void FixedUpdate()
     {
         if (manager == null || !manager.IsPlaying) return;
         if (seated)
@@ -60,7 +61,7 @@ public sealed class LibraryStudent : MonoBehaviour
             var filter = ContactFilter2D.noFilter; filter.useTriggers = false;
             int count = footprint.Cast(direction, filter, hits, .12f + speed * Time.deltaTime);
             for (int i = 0; i < count; i++)
-                if (hits[i].collider != null && hits[i].collider.GetComponentInParent<PlayerMovement>() == null && hits[i].collider.GetComponentInParent<LibraryStudent>() == null)
+                if (hits[i].collider != null && hits[i].collider != footprint && hits[i].collider.attachedRigidbody != body)
                     obstacle = true;
         }
         if (obstacle)
@@ -71,8 +72,10 @@ public sealed class LibraryStudent : MonoBehaviour
         }
         blocked = 0;
         Vector2 previous = transform.position;
-        transform.position = Vector2.MoveTowards(previous, route[next], speed * Time.deltaTime);
-        DistanceTravelled += Vector2.Distance(previous, transform.position);
+        Vector2 target = Vector2.MoveTowards(previous, route[next], speed * Time.fixedDeltaTime);
+        if (body != null) body.MovePosition(target);
+        else transform.position = target;
+        DistanceTravelled += Vector2.Distance(previous, target);
         Animate(direction);
     }
     void Animate(Vector2 direction)

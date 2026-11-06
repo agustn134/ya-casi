@@ -101,7 +101,7 @@ public sealed class LibraryLevelManager : MonoBehaviour
         int displaySeconds = Mathf.CeilToInt(remaining);
         clock.text = "CIERRE  " + (displaySeconds / 60).ToString("00") + ":" + (displaySeconds % 60).ToString("00");
         clock.color = remaining < 30 ? new Color(1, .4f, .35f) : gold;
-        noise.text = frozen ? "¡SHHH! · 3 s sin moverte" : librarian.Investigating ? "TE ESCUCHARON · la bibliotecaria se acerca" : PlayerIsRunning ? "RUIDO ALTO · radio de 5 m" : "EN SILENCIO · camina cerca de la bibliotecaria";
+        noise.text = frozen ? "¡SHHH! · 3 s sin moverte" : librarian.Investigating ? "TE ESCUCHARON · el guardia se acerca" : PlayerIsRunning ? "RUIDO ALTO · radio de 5 m" : "EN SILENCIO · camina cerca de el guardia";
         noise.color = PlayerIsRunning || librarian.Investigating ? new Color(1, .55f, .4f) : new Color(.65f, .88f, .8f);
         ring.enabled = PlayerIsRunning;
         ring.transform.position = player.transform.position;
@@ -194,7 +194,7 @@ public sealed class LibraryLevelManager : MonoBehaviour
     void ShowTutorial()
     {
         paused = true; Time.timeScale = 0;
-        var card = Overlay("MARATÓN EN LA BIBLIOTECA", "Encuentra 3 libros y vuelve a la salida.\n\nSi corres cerca de la bibliotecaria, te puede regañar.\nCada búsqueda sin libro nuevo resta 10 segundos.\n\nWASD: moverte · E: buscar · Shift: correr · Esc: pausa");
+        var card = Overlay("MARATÓN EN LA BIBLIOTECA", "Encuentra 3 libros y vuelve a la salida.\n\nSi corres cerca de el guardia, te puede regañar.\nCada búsqueda sin libro nuevo resta 10 segundos.\n\nWASD: moverte · E: buscar · Shift: correr · Esc: pausa");
         U2Presentation.Button(card.transform, "Entrar en silencio", new Vector2(0, -320), Resume);
     }
     GameObject Overlay(string title, string description)
@@ -227,7 +227,7 @@ public sealed class LibraryLevelManager : MonoBehaviour
             PlayerPrefs.Save();
         }
         else PlayGameOverMusic();
-        var card = Overlay(success ? "¡LECTURAS COMPLETAS!" : "LA BIBLIOTECA CERRÓ", (success ? "Saliste con los tres libros para terminar tu trabajo." : "Se acabó el tiempo. Camina cerca de la bibliotecaria\ny evita volver a los estantes que ya revisaste.") + "\n\nLibros: " + CollectedCount + "/3 · Regaños: " + Reprimands + "\nTiempo de juego: " + Mathf.CeilToInt(elapsed) + " s\nPuntaje: " + score + " · Récord: " + PlayerPrefs.GetInt("YaCasi.Library.Best", 0));
+        var card = Overlay(success ? "¡LECTURAS COMPLETAS!" : "LA BIBLIOTECA CERRÓ", (success ? "Saliste con los tres libros para terminar tu trabajo." : "Se acabó el tiempo. Camina cerca de el guardia\ny evita volver a los estantes que ya revisaste.") + "\n\nLibros: " + CollectedCount + "/3 · Regaños: " + Reprimands + "\nTiempo de juego: " + Mathf.CeilToInt(elapsed) + " s\nPuntaje: " + score + " · Récord: " + PlayerPrefs.GetInt("YaCasi.Library.Best", 0));
         U2Presentation.Button(card.transform, "Volver a jugar", new Vector2(0, -180), Restart);
         U2Presentation.Button(card.transform, "Menú principal", new Vector2(0, -280), U2Presentation.ReturnToMenu);
     }

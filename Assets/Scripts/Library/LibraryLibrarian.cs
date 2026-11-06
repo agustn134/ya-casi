@@ -23,7 +23,7 @@ public sealed class LibraryLibrarian : MonoBehaviour
         {
             investigating = true;
             nextPath = 0;
-            manager.Notify("La bibliotecaria escuchó tus pasos. ¡Camina!");
+            manager.Notify("El guardia de seguridad escuchó tus pasos. ¡Camina!");
         }
         Vector2 destination;
         if (investigating)

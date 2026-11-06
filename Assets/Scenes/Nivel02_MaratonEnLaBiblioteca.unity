@@ -1064,7 +1064,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -1094,10 +1094,10 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!95 &55463824
 Animator:
   serializedVersion: 7
@@ -1108,7 +1108,7 @@ Animator:
   m_GameObject: {fileID: 55463818}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: f01ba0a54555cfc4db02893908d75b7d, type: 2}
+  m_Controller: {fileID: 22100000, guid: b4478149b212a574d9cb12dfc2a9c611, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1169,7 +1169,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7429271160772291088, guid: 72f29399ac47dc744b61b4886bb2df7c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d9821be3ec26b524598d1f65cb304526, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1662,7 +1662,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -1692,10 +1692,10 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!95 &80766307
 Animator:
   serializedVersion: 7
@@ -1706,7 +1706,7 @@ Animator:
   m_GameObject: {fileID: 80766301}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: 236aa66feb23d2342b39c9acc69a872e, type: 2}
+  m_Controller: {fileID: 22100000, guid: d44a135141f420c478def663dc985be7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1767,7 +1767,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7429271160772291088, guid: 72f29399ac47dc744b61b4886bb2df7c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 91516bb0a763cd241bb9b2f27eff2763, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -32115,7 +32115,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -32145,10 +32145,10 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!95 &735202205
 Animator:
   serializedVersion: 7
@@ -32159,7 +32159,7 @@ Animator:
   m_GameObject: {fileID: 735202199}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: 7dbb0d8eb9434eb4db22337a15793143, type: 2}
+  m_Controller: {fileID: 22100000, guid: 1a697cda3795b0d4ca59da1de34089b7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -32220,7 +32220,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7429271160772291088, guid: 72f29399ac47dc744b61b4886bb2df7c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 23fd0613a1e0bc4409242370c38bd705, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -33381,7 +33381,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -33411,10 +33411,10 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!95 &767908755
 Animator:
   serializedVersion: 7
@@ -33425,7 +33425,7 @@ Animator:
   m_GameObject: {fileID: 767908749}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: e525808ef7e59d74b919855bc55edd99, type: 2}
+  m_Controller: {fileID: 22100000, guid: d062cfe86b4855343b9df94ec02b8105, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -33486,7 +33486,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7429271160772291088, guid: 72f29399ac47dc744b61b4886bb2df7c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b180f11118bad4a43a14aa299d62942c, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -35690,7 +35690,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4280230930
+    rgba: 4289784063
   m_fontColor: {r: 1, g: 0.91, b: 0.69, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -39152,7 +39152,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -39182,10 +39182,10 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!95 &1208254832
 Animator:
   serializedVersion: 7
@@ -39196,7 +39196,7 @@ Animator:
   m_GameObject: {fileID: 1208254826}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: 40bdf51bf9e1ddc49acc32632727a4cb, type: 2}
+  m_Controller: {fileID: 22100000, guid: 284803cdc2eac734ca0aa778f6c749b6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -39257,7 +39257,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7429271160772291088, guid: 72f29399ac47dc744b61b4886bb2df7c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 59262982673e70b4dbe16e9efb6aa474, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -40191,7 +40191,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -40221,10 +40221,10 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!95 &1270999942
 Animator:
   serializedVersion: 7
@@ -40235,7 +40235,7 @@ Animator:
   m_GameObject: {fileID: 1270999936}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: ba2553bf0ba354f4f88be95e8041458d, type: 2}
+  m_Controller: {fileID: 22100000, guid: e026678fb96227340b1b2793ea8a3e48, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -40296,7 +40296,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7429271160772291088, guid: 72f29399ac47dc744b61b4886bb2df7c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bb668c63551efb244998730023ad0d4f, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -45656,7 +45656,7 @@ GameObject:
   - component: {fileID: 1719134890}
   - component: {fileID: 1719134889}
   m_Layer: 0
-  m_Name: Bibliotecaria
+  m_Name: Guardia de seguridad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45709,7 +45709,7 @@ Animator:
   m_GameObject: {fileID: 1719134888}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: ba2553bf0ba354f4f88be95e8041458d, type: 2}
+  m_Controller: {fileID: 22100000, guid: 5a46993356711704e9ddf63a4fc4b65a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -45770,7 +45770,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7429271160772291088, guid: 72f29399ac47dc744b61b4886bb2df7c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c461aa0f8685ee74a8b549241381dd03, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -46020,7 +46020,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4283059261
   m_fontColor: {r: 0.24, g: 0.3, b: 0.29, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -46033,7 +46033,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
