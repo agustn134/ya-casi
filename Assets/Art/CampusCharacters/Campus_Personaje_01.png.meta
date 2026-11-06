@@ -1,0 +1,814 @@
+fileFormatVersion: 2
+guid: 94dc21c7867c4aa0a993b2552e7b68aa
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: Campus_Personaje_01_idleRight_0
+  - first:
+      213: 21300001
+    second: Campus_Personaje_01_idleUp_1
+  - first:
+      213: 21300002
+    second: Campus_Personaje_01_idleLeft_2
+  - first:
+      213: 21300003
+    second: Campus_Personaje_01_idleDown_3
+  - first:
+      213: 21300004
+    second: Campus_Personaje_01_walkRight_0
+  - first:
+      213: 21300005
+    second: Campus_Personaje_01_walkRight_1
+  - first:
+      213: 21300006
+    second: Campus_Personaje_01_walkRight_2
+  - first:
+      213: 21300007
+    second: Campus_Personaje_01_walkRight_3
+  - first:
+      213: 21300008
+    second: Campus_Personaje_01_walkRight_4
+  - first:
+      213: 21300009
+    second: Campus_Personaje_01_walkRight_5
+  - first:
+      213: 21300010
+    second: Campus_Personaje_01_walkUp_6
+  - first:
+      213: 21300011
+    second: Campus_Personaje_01_walkUp_7
+  - first:
+      213: 21300012
+    second: Campus_Personaje_01_walkUp_8
+  - first:
+      213: 21300013
+    second: Campus_Personaje_01_walkUp_9
+  - first:
+      213: 21300014
+    second: Campus_Personaje_01_walkUp_10
+  - first:
+      213: 21300015
+    second: Campus_Personaje_01_walkUp_11
+  - first:
+      213: 21300016
+    second: Campus_Personaje_01_walkLeft_12
+  - first:
+      213: 21300017
+    second: Campus_Personaje_01_walkLeft_13
+  - first:
+      213: 21300018
+    second: Campus_Personaje_01_walkLeft_14
+  - first:
+      213: 21300019
+    second: Campus_Personaje_01_walkLeft_15
+  - first:
+      213: 21300020
+    second: Campus_Personaje_01_walkLeft_16
+  - first:
+      213: 21300021
+    second: Campus_Personaje_01_walkLeft_17
+  - first:
+      213: 21300022
+    second: Campus_Personaje_01_walkDown_18
+  - first:
+      213: 21300023
+    second: Campus_Personaje_01_walkDown_19
+  - first:
+      213: 21300024
+    second: Campus_Personaje_01_walkDown_20
+  - first:
+      213: 21300025
+    second: Campus_Personaje_01_walkDown_21
+  - first:
+      213: 21300026
+    second: Campus_Personaje_01_walkDown_22
+  - first:
+      213: 21300027
+    second: Campus_Personaje_01_walkDown_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Campus_Personaje_01_idleRight_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 624
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 790cef5566c7794da9b2900ae754994a
+      internalID: 21300000
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campus_Personaje_01_idleUp_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 624
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dca217d08bf88821c703cefce28dce72
+      internalID: 21300001
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campus_Personaje_01_idleLeft_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 624
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 854fb64b069c64256178f269b6ca5ccc
+      internalID: 21300002
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campus_Personaje_01_idleDown_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 624
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa5b468cb1b6dcf8422ef12096559416
+      internalID: 21300003
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campus_Personaje_01_walkRight_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 592
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 727298f8374d4e619271697483200fc2
+      internalID: 21300004
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campus_Personaje_01_walkRight_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 592
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a622f5b10afe7ddcad9c71b1e8afa21b
+      internalID: 21300005
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campus_Personaje_01_walkRight_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 592
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2951d0d1900785d06dfad80f497fd718
+      internalID: 21300006
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campus_Personaje_01_walkRight_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 592
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32068f4e616905841d6ae53a5115ec0d
+      internalID: 21300007
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campus_Personaje_01_walkRight_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 592
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd81020a5fd824dde467094772306fe2
+      internalID: 21300008
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campus_Personaje_01_walkRight_5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 592
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15646acae10a08d19465faf01a90d891
+      internalID: 21300009
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campus_Personaje_01_walkUp_6
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 592
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c95d3604cc4f39ff0e2eadb56e343be
+      internalID: 21300010
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campus_Personaje_01_walkUp_7
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 592
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6a1b579a4cedc8a1609bc34cdc5e773
+      internalID: 21300011
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campus_Personaje_01_walkUp_8
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 592
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6241bbf314e36ef3f3908c3377550ede
+      internalID: 21300012
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campus_Personaje_01_walkUp_9
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 592
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfd0103abb964e9cc7cf8a5cacae051e
+      internalID: 21300013
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campus_Personaje_01_walkUp_10
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 592
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42bee681d5a48d79a2eed64e601a01be
+      internalID: 21300014
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campus_Personaje_01_walkUp_11
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 592
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c7015c2517afa0890d8b7e52aa3b8f1
+      internalID: 21300015
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campus_Personaje_01_walkLeft_12
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 592
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1eb162e9133cea83ebc25f989aaf95d6
+      internalID: 21300016
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campus_Personaje_01_walkLeft_13
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 592
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c51d44954332647efc759ffbda28f9c9
+      internalID: 21300017
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campus_Personaje_01_walkLeft_14
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 592
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6877f79011b8e87d863ebc8a31796df
+      internalID: 21300018
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campus_Personaje_01_walkLeft_15
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 592
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08da6b970cbbf95ee214229815fdfa49
+      internalID: 21300019
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campus_Personaje_01_walkLeft_16
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 592
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e35fa62ed4c8fb7b318f0fbf973a28f
+      internalID: 21300020
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campus_Personaje_01_walkLeft_17
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 592
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76052929a4269a7696d44a933da9bc23
+      internalID: 21300021
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campus_Personaje_01_walkDown_18
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 592
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 867032012f976da6c1b584f27099b7a2
+      internalID: 21300022
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campus_Personaje_01_walkDown_19
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 592
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5563a638b3a0724293a01220c49254f9
+      internalID: 21300023
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campus_Personaje_01_walkDown_20
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 592
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f4a2cc50601ea50df348d7e333c5f7e
+      internalID: 21300024
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campus_Personaje_01_walkDown_21
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 592
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0835031b22be19f0638968762e3907b
+      internalID: 21300025
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campus_Personaje_01_walkDown_22
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 592
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fe51d994e8a8284cdf38ee523ec1ea8
+      internalID: 21300026
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Campus_Personaje_01_walkDown_23
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 592
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8be6d7711eb4c8ec76c2135d3e7ed56b
+      internalID: 21300027
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 7ebe4852cbe647dea3dce79218c23bb3
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Campus_Personaje_01_idleRight_0: 21300000
+      Campus_Personaje_01_idleUp_1: 21300001
+      Campus_Personaje_01_idleLeft_2: 21300002
+      Campus_Personaje_01_idleDown_3: 21300003
+      Campus_Personaje_01_walkRight_0: 21300004
+      Campus_Personaje_01_walkRight_1: 21300005
+      Campus_Personaje_01_walkRight_2: 21300006
+      Campus_Personaje_01_walkRight_3: 21300007
+      Campus_Personaje_01_walkRight_4: 21300008
+      Campus_Personaje_01_walkRight_5: 21300009
+      Campus_Personaje_01_walkUp_6: 21300010
+      Campus_Personaje_01_walkUp_7: 21300011
+      Campus_Personaje_01_walkUp_8: 21300012
+      Campus_Personaje_01_walkUp_9: 21300013
+      Campus_Personaje_01_walkUp_10: 21300014
+      Campus_Personaje_01_walkUp_11: 21300015
+      Campus_Personaje_01_walkLeft_12: 21300016
+      Campus_Personaje_01_walkLeft_13: 21300017
+      Campus_Personaje_01_walkLeft_14: 21300018
+      Campus_Personaje_01_walkLeft_15: 21300019
+      Campus_Personaje_01_walkLeft_16: 21300020
+      Campus_Personaje_01_walkLeft_17: 21300021
+      Campus_Personaje_01_walkDown_18: 21300022
+      Campus_Personaje_01_walkDown_19: 21300023
+      Campus_Personaje_01_walkDown_20: 21300024
+      Campus_Personaje_01_walkDown_21: 21300025
+      Campus_Personaje_01_walkDown_22: 21300026
+      Campus_Personaje_01_walkDown_23: 21300027
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

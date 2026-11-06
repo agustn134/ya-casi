@@ -3,3 +3,14 @@
 <img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/92f9bab1-5150-4588-a1d7-f631e02f38aa" />
 
 <img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/40161e4a-92fc-46bc-b497-701a3975bef2" />
+
+
+## Música original
+
+Composición y producción: **Agustín López Parra**, desarrollador de ¡Ya Casi!, en **FL Studio 25**.
+
+- `YaCASI-Soundtrack-InicioMenu.mp3`: menú del nivel 3.
+- `YaCASI-Soundtrack-Nivel3.mp3`: música del nivel 3, en bucle durante la partida.
+- `YaCASI-Soundtrack-GameOver-TiempoFinal.mp3`: fin de tiempo (tres minutos) del nivel 3.
+
+Para probar: abrir `Assets/Scenes/MenuNivel03.unity`, pulsar Play y elegir Jugar nivel 3.
