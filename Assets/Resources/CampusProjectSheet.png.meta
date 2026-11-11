@@ -1,0 +1,72 @@
+fileFormatVersion: 2
+guid: b65e2bd906f9419fb154eefc96fec74f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: CampusProjectSheet
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    enableMipMap: 0
+    sRGBTexture: 1
+  isReadable: 0
+  textureSettings:
+    filterMode: 0
+    aniso: 1
+    wrapU: 1
+    wrapV: 1
+  textureType: 8
+  textureShape: 1
+  spriteMode: 2
+  spritePixelsToUnits: 16
+  spriteMeshType: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  maxTextureSize: 64
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 64
+    textureFormat: -1
+    textureCompression: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CampusProjectSheet
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2
+        width: 13
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a78d8bf81bb4011b7249dca6832d914
+      internalID: 21300000
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID:
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      CampusProjectSheet: 21300000
+  userData: LimeZu Modern Exteriors - project inventory icon
+  assetBundleName:
+  assetBundleVariant:

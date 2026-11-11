@@ -1,0 +1,40 @@
+Unity 6000.3.25f1
+Escena provisional: Assets/Scenes/Nivel03_PruebaEntregas.unity
+Inicio UTC: 2026-11-11T18:56:21.7850698Z
+PASS La prueba del esquive comienza con la simulación activa.
+PASS El jugador y su camino están preparados para un esquive real.
+PASS La prueba encuentra una zona de camino de tres por tres celdas cerca del inicio.
+PASS El esquive real activa invulnerabilidad y su tiempo de recuperación.
+PASS La recuperación sigue activa al intentar repetir el esquive.
+PASS Un segundo esquive inmediato no reinicia ni prolonga la recuperación.
+PASS El esquive desplaza realmente al jugador hacia el obstáculo.
+PASS El esquive no atraviesa el obstáculo ni se desvía de su trayectoria.
+PASS La huella de los pies permanece dentro del camino después del esquive.
+PASS La escena provisional comienza con cinco entregas pendientes.
+PASS El controlador dispone del reto final.
+PASS Acepta la entrega 4 en un orden diferente al de la lista.
+PASS Acepta la entrega 1 en un orden diferente al de la lista.
+PASS Acepta la entrega 5 en un orden diferente al de la lista.
+PASS Acepta la entrega 2 en un orden diferente al de la lista.
+PASS El último profesor se detecta por su entrega pendiente, aunque no sea el quinto de la lista.
+PASS El reto pendiente conserva el último proyecto y el progreso 4/5.
+PASS El diálogo final pausa el nivel antes de iniciar las oleadas.
+PASS El diálogo no consume el reloj ni el cronómetro de recorrido.
+PASS Continuar el diálogo inicia el desafío y reanuda el nivel.
+PASS La quinta entrega sigue bloqueada mientras el desafío está activo.
+PASS El primer objeto aplica un impacto.
+PASS El impacto descuenta cinco segundos sin alterar el cronómetro de recorrido.
+PASS La inmunidad impide descontar dos veces por impactos consecutivos.
+PASS El primer proyectil aparece después de su aviso anticipado.
+PASS La pausa detiene el reto con un objeto en vuelo.
+PASS La prueba conserva al menos un proyectil para comprobar su pausa.
+PASS Reloj, cronómetro y duración del desafío permanecen congelados durante la pausa.
+PASS Los objetos en vuelo no se desplazan ni desaparecen durante la pausa.
+PASS No se aplica daño mientras la partida está pausada.
+PASS La pausa también bloquea la última entrega.
+PASS Continuar reanuda correctamente la partida.
+PASS A los dieciséis segundos termina el desafío y se retiran todos los proyectiles.
+PASS Superar el reto todavía requiere entregar el proyecto con E.
+PASS La quinta entrega se acepta después de superar el desafío.
+PASS La victoria 5/5 consume el último proyecto y detiene el nivel.
+FINAL_CHALLENGE_UNITY_OK

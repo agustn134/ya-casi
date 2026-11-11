@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 /// <summary>Letrero de edificio visible tanto al editar como durante la partida.</summary>
 [ExecuteAlways]
@@ -7,8 +8,17 @@ public sealed class CampusBuildingLabel : MonoBehaviour
     [SerializeField] string buildingName = "Edificio A";
     public string DisplayName => buildingName?.Trim() ?? "";
     [SerializeField] float textSize = .11f;
+    [SerializeField, Min(1)] float professorVisibilityRadius = 5f;
     GameObject visual;
+    string shownName;
+    float shownSize;
     static Sprite background;
+    Transform nearbyPlayer;
+    TextMeshPro labelText;
+    SpriteRenderer panelRenderer;
+    float visibility = 1f;
+    bool IsProfessor => GetComponentInParent<CampusProfessorWaiting>() != null;
+    float FontSize => IsProfessor ? Mathf.Clamp(textSize * 60f, 4.5f, 5f) : Mathf.Clamp(textSize * 60f, .8f, 12f);
 
     void OnEnable() { Build(); }
     void OnValidate()
@@ -16,7 +26,7 @@ public sealed class CampusBuildingLabel : MonoBehaviour
         // Actualiza el contenido sin crear objetos durante la deserialización.
         if (visual != null)
         {
-            var text = visual.GetComponentInChildren<TextMesh>();
+            var text = visual.GetComponentInChildren<TMP_Text>();
             if (text != null) text.text = buildingName;
         }
     }
@@ -24,21 +34,22 @@ public sealed class CampusBuildingLabel : MonoBehaviour
     void Build()
     {
         if (visual != null) return;
-        visual = new GameObject("Letrero", typeof(TextMesh));
+        visual = new GameObject("Letrero", typeof(TextMeshPro));
         visual.hideFlags = HideFlags.HideAndDontSave;
         visual.transform.SetParent(transform, false);
-        var text = visual.GetComponent<TextMesh>();
-        var font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
-        text.font = font;
+        var text = visual.GetComponent<TextMeshPro>();
+        labelText = text;
+        if (CampusTypography.Font != null) text.font = CampusTypography.Font;
         text.text = buildingName;
-        text.fontSize = 64;
-        text.characterSize = textSize;
-        text.anchor = TextAnchor.MiddleCenter;
-        text.alignment = TextAlignment.Center;
+        text.fontSize = FontSize;
+        text.rectTransform.sizeDelta = new Vector2(100, 1.5f);
+        text.alignment = TextAlignmentOptions.Center;
+        text.textWrappingMode = TextWrappingModes.NoWrap;
         text.color = Color.white;
         var renderer = text.GetComponent<MeshRenderer>();
-        renderer.sharedMaterial = font.material;
-        renderer.sortingOrder = 31;
+        // Los actores llegan hasta orden 2000; el nombre queda legible encima.
+        renderer.sortingOrder = IsProfessor ? 3001 : 31;
+        visual.transform.localPosition = IsProfessor ? new Vector3(0, .45f, 0) : Vector3.zero;
         if (background == null)
         {
             var texture = new Texture2D(1, 1);
@@ -51,16 +62,46 @@ public sealed class CampusBuildingLabel : MonoBehaviour
         var panel = new GameObject("Fondo", typeof(SpriteRenderer));
         panel.hideFlags = HideFlags.HideAndDontSave;
         panel.transform.SetParent(visual.transform, false);
-        // El ancho se calcula con las métricas de la fuente.
-        font.RequestCharactersInTexture(buildingName, 64);
-        float width = 0;
-        foreach (char c in buildingName)
-            if (font.GetCharacterInfo(c, out CharacterInfo info, 64)) width += info.advance;
-        panel.transform.localScale = new Vector3(width * textSize / 10f + .5f, .95f, 1);
+        Vector2 preferred = text.GetPreferredValues(buildingName);
+        panel.transform.localScale = new Vector3(preferred.x + .3f, Mathf.Max(.55f, preferred.y + .12f), 1);
         var sr = panel.GetComponent<SpriteRenderer>();
+        panelRenderer = sr;
         sr.sprite = background;
         sr.color = new Color(.05f, .1f, .12f, .88f);
-        sr.sortingOrder = 30;
+        sr.sortingOrder = IsProfessor ? 3000 : 30;
+        shownName = buildingName; shownSize = textSize;
+        visibility = ShouldShow() ? 1f : 0f;
+        ApplyVisibility();
+    }
+
+    void Update()
+    {
+        if (visual == null) { Build(); return; }
+        float targetVisibility = ShouldShow() ? 1f : 0f;
+        visibility = Application.isPlaying ? Mathf.MoveTowards(visibility, targetVisibility, Time.unscaledDeltaTime * 6f) : targetVisibility;
+        ApplyVisibility();
+        var text = visual.GetComponent<TextMeshPro>();
+        if (text == null || CampusTypography.Font == null || (text.font == CampusTypography.Font && shownName == buildingName && shownSize == textSize)) return;
+        text.font = CampusTypography.Font; text.text = buildingName; text.fontSize = FontSize;
+        Vector2 preferred = text.GetPreferredValues(buildingName);
+        visual.transform.Find("Fondo").localScale = new Vector3(preferred.x + .3f, Mathf.Max(.55f, preferred.y + .12f), 1);
+        shownName = buildingName; shownSize = textSize;
+    }
+
+    bool ShouldShow()
+    {
+        var professor = GetComponentInParent<CampusProfessorWaiting>();
+        if (!Application.isPlaying || professor == null) return true;
+        if (nearbyPlayer == null) nearbyPlayer = FindFirstObjectByType<CampusPathPlayer>()?.transform;
+        return nearbyPlayer == null || ((Vector2)nearbyPlayer.position - (Vector2)professor.transform.position).sqrMagnitude
+            <= professorVisibilityRadius * professorVisibilityRadius;
+    }
+
+    void ApplyVisibility()
+    {
+        if (visual.activeSelf != (visibility > .005f)) visual.SetActive(visibility > .005f);
+        if (labelText != null) labelText.color = new Color(1, 1, 1, visibility);
+        if (panelRenderer != null) panelRenderer.color = new Color(.05f, .1f, .12f, .88f * visibility);
     }
 
     void OnDisable()
@@ -69,5 +110,6 @@ public sealed class CampusBuildingLabel : MonoBehaviour
         if (Application.isPlaying) Destroy(visual);
         else DestroyImmediate(visual);
         visual = null;
+        labelText = null; panelRenderer = null;
     }
 }

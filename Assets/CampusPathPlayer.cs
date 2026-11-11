@@ -11,6 +11,35 @@ public sealed class CampusPathPlayer : MonoBehaviour
     [SerializeField] Camera followCamera;
     [SerializeField] float walkSpeed = 3f;
     [SerializeField] float runSpeed = 5f;
+    [Header("Esquive")]
+    [SerializeField] float dodgeSpeed = 9f;
+    [SerializeField] float dodgeDuration = .16f;
+    [SerializeField] float dodgeCooldown = 1.8f;
+    Vector2 dodgeDirection, lastDirection = Vector2.down;
+    float dodgeUntil, nextDodge, immuneUntil, slowUntil, shakeUntil;
+    Vector3 cameraBase;
+    SpriteRenderer appearance;
+    Color originalColor = Color.white;
+    public bool IsInvulnerable => Time.time < dodgeUntil || Time.time < immuneUntil;
+    public float DodgeReadyIn => Mathf.Max(0, nextDodge - Time.time);
+    public Vector2 FeetPosition => body != null && feet != null ? body.position + feet.offset : (Vector2)transform.position;
+    public Tilemap Path => path;
+    public Camera ViewCamera => followCamera;
+
+    public void TryDodge()
+    {
+        if (Time.timeScale == 0 || body == null || Time.time < nextDodge) return;
+        dodgeDirection = input.sqrMagnitude > .01f ? input.normalized : lastDirection;
+        dodgeUntil = Time.time + dodgeDuration;
+        nextDodge = Time.time + dodgeCooldown;
+    }
+
+    public void ApplyImpactFeedback()
+    {
+        immuneUntil = Time.time + 1f;
+        slowUntil = Time.time + .35f;
+        shakeUntil = Time.time + .18f;
+    }
     Rigidbody2D body;
     CapsuleCollider2D feet;
     Animator animator;
@@ -57,6 +86,9 @@ public sealed class CampusPathPlayer : MonoBehaviour
         }
         body.position = desired;
         followCamera.transform.position = new Vector3(desired.x, desired.y, -10f);
+        cameraBase = followCamera.transform.position;
+        appearance = GetComponent<SpriteRenderer>();
+        if (appearance != null) originalColor = appearance.color;
         Animate(Vector2.zero);
     }
 
@@ -82,12 +114,21 @@ public sealed class CampusPathPlayer : MonoBehaviour
         if (TouchGameControls.Direction.sqrMagnitude > .01f) input = TouchGameControls.Direction;
         sprint |= TouchGameControls.Sprint;
         input = Vector2.ClampMagnitude(input, 1f);
+        if (input.sqrMagnitude > .01f) lastDirection = input.normalized;
+        if ((keyboard != null && keyboard.spaceKey.wasPressedThisFrame)
+            || (Gamepad.current != null && Gamepad.current.buttonEast.wasPressedThisFrame)) TryDodge();
+        if (appearance != null)
+            appearance.color = Time.time < immuneUntil && Mathf.FloorToInt(Time.time * 16) % 2 == 0
+                ? new Color(1, .4f, .35f, .7f) : Time.time < dodgeUntil ? new Color(.6f, 1, 1) : originalColor;
     }
 
     void FixedUpdate()
     {
         Vector2 origin = body.position;
-        Vector2 delta = input * (sprint ? runSpeed : walkSpeed) * Time.fixedDeltaTime;
+        bool dodging = Time.time < dodgeUntil;
+        Vector2 velocity = dodging ? dodgeDirection * dodgeSpeed : input * (sprint ? runSpeed : walkSpeed);
+        if (!dodging && Time.time < slowUntil) velocity *= .55f;
+        Vector2 delta = velocity * Time.fixedDeltaTime;
         Vector2 next = origin;
         // Subpasos impiden atravesar huecos incluso con velocidades altas.
         int steps = Mathf.Max(1, Mathf.CeilToInt(delta.magnitude / .05f));
@@ -149,7 +190,16 @@ public sealed class CampusPathPlayer : MonoBehaviour
     {
         if (followCamera == null || body == null) return;
         Vector3 target = new Vector3(transform.position.x, transform.position.y, -10f);
-        followCamera.transform.position = Vector3.Lerp(followCamera.transform.position,
+        cameraBase = Vector3.Lerp(cameraBase,
             target, 1f - Mathf.Exp(-10f * Time.deltaTime));
+        Vector3 shake = Time.time < shakeUntil
+            ? new Vector3(Mathf.Sin(Time.time * 140), Mathf.Cos(Time.time * 113), 0) * .065f : Vector3.zero;
+        followCamera.transform.position = cameraBase + shake;
+    }
+
+    void OnDisable()
+    {
+        if (appearance != null) appearance.color = originalColor;
+        if (followCamera != null && body != null) followCamera.transform.position = cameraBase;
     }
 }

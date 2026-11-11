@@ -30,6 +30,9 @@ public sealed class CampusStudentWalker : MonoBehaviour
     HashSet<Vector3Int> network;
     List<Vector3Int> destinations;
     float pause, blocked, animationTime;
+    float courtesyUntil, nextCourtesyTime;
+    bool yielding;
+    public Vector2 FeetPosition => body != null && feet != null ? body.position + feet.offset : (Vector2)transform.position;
     readonly RaycastHit2D[] hits = new RaycastHit2D[16];
     readonly Vector3Int[] neighbors = { Vector3Int.up, Vector3Int.right, Vector3Int.down, Vector3Int.left };
 
@@ -87,6 +90,24 @@ public sealed class CampusStudentWalker : MonoBehaviour
     void FixedUpdate()
     {
         animationTime += Time.fixedDeltaTime;
+        if (yielding)
+        {
+            if (Time.time < courtesyUntil)
+            {
+                Vector2 aside = Vector2.MoveTowards(body.position, target, speed * Time.fixedDeltaTime) - body.position;
+                if (aside.sqrMagnitude > .00001f && Clear(aside, true))
+                {
+                    body.MovePosition(body.position + aside);
+                    lastDirection = aside.normalized;
+                    Animate(true);
+                }
+                else Animate(false);
+                return;
+            }
+            yielding = false;
+            // Recalcula desde la posición real; los destinos compartidos del grupo no cambian.
+            route.Clear(); target = body.position; blocked = 0; pause = .12f;
+        }
         if (pause > 0)
         {
             pause -= Time.fixedDeltaTime;
@@ -121,6 +142,44 @@ public sealed class CampusStudentWalker : MonoBehaviour
             pause = .08f + (float)random.NextDouble() * .2f;
             blocked = 0;
         }
+    }
+
+    /// <summary>Se aparta temporalmente por un tramo seguro; no altera el destino del grupo.</summary>
+    public bool TryYieldTo(Vector2 requester)
+    {
+        if (!isActiveAndEnabled || body == null || network == null || Time.timeScale <= 0
+            || Time.time < nextCourtesyTime || yielding) return false;
+        Vector2 away = FeetPosition - requester;
+        if (away.sqrMagnitude < .001f)
+        {
+            Vector3Int direction = neighbors[random.Next(4)];
+            away = new Vector2(direction.x, direction.y);
+        }
+        away.Normalize();
+        Vector2 best = body.position;
+        float bestScore = float.NegativeInfinity;
+        // Las distancias cortas permiten dejar espacio incluso en los caminos estrechos.
+        for (int direction = 0; direction < 8; direction++)
+        {
+            float angle = direction * Mathf.PI / 4;
+            Vector2 step = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
+            foreach (float distance in new[] { .45f, .8f, 1.15f })
+            {
+                Vector2 candidate = body.position + step * distance;
+                Vector2 candidateFeet = candidate + feet.offset;
+                float opening = Vector2.Distance(candidateFeet, requester) - Vector2.Distance(FeetPosition, requester);
+                if (opening < .18f || !OnPath(candidate) || !Clear(candidate - body.position, true)) continue;
+                float score = opening * 2 + Vector2.Dot(step, away) * .4f + (float)random.NextDouble() * .35f;
+                if (score <= bestScore) continue;
+                bestScore = score; best = candidate;
+            }
+        }
+        if (float.IsNegativeInfinity(bestScore)) return false;
+        route.Clear(); target = best; pause = 0; blocked = 0;
+        courtesyUntil = Time.time + 2.1f;
+        nextCourtesyTime = Time.time + 5.5f;
+        yielding = true;
+        return true;
     }
 
     void ChooseTarget()
@@ -238,7 +297,7 @@ public sealed class CampusStudentWalker : MonoBehaviour
         return true;
     }
 
-    bool Clear(Vector2 delta)
+    bool Clear(Vector2 delta, bool leavingContact = false)
     {
         // Muestras intermedias también protegen frente a cambios de velocidad en Inspector.
         int steps = Mathf.Max(1, Mathf.CeilToInt(delta.magnitude / .05f));
@@ -250,7 +309,15 @@ public sealed class CampusStudentWalker : MonoBehaviour
         int count = Physics2D.CapsuleCast(body.position + feet.offset, feet.size,
             feet.direction, 0f, delta.normalized, filter, hits, delta.magnitude + .025f);
         for (int i = 0; i < count; i++)
-            if (hits[i].collider != feet && hits[i].rigidbody != body) return false;
+        {
+            var other = hits[i].collider;
+            if (other == feet || hits[i].rigidbody == body) continue;
+            // Un contacto inicial con otro personaje no debe impedir alejarse de él.
+            if (leavingContact && hits[i].distance <= .001f
+                && (other.GetComponent<CampusStudentWalker>() != null || other.GetComponent<CampusPathPlayer>() != null)
+                && Vector2.Dot(delta, FeetPosition - (Vector2)other.bounds.center) > .0001f) continue;
+            return false;
+        }
         return true;
     }
 
