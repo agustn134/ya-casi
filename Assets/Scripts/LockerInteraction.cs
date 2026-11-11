@@ -55,11 +55,11 @@ public class LockerInteraction : MonoBehaviour
         {
             float penalty=config!=null?config.repeatLockerPenalty:5;
             levelManager.ApplyPenalty(penalty);levelManager.PlayWrongLockerSound();
-            levelManager.ShowFeedback($"Ya revisaste este casillero. −{penalty:0} segundos.");
+            levelManager.ShowFeedback($"Ya revisado · −{penalty:0} s");
             if(upgrade!=null)upgrade.Reviewed(true,false);return;
         }
         searched=true;if(upgrade!=null)upgrade.Reviewed(false,containsUSB);
-        if(containsUSB){levelManager.CollectUSB();levelManager.ShowFeedback("¡Encontraste tu USB! Vuelve a la salida.");}
-        else{float penalty=config!=null?config.wrongLockerPenalty:3;levelManager.ApplyPenalty(penalty);levelManager.PlayWrongLockerSound();levelManager.ShowFeedback($"Aquí no está la USB. −{penalty:0} segundos.");}
+        if(containsUSB){levelManager.CollectUSB();levelManager.ShowFeedback("¡USB recuperada! Vuelve a la salida.");}
+        else{float penalty=config!=null?config.wrongLockerPenalty:3;levelManager.ApplyPenalty(penalty);levelManager.PlayWrongLockerSound();levelManager.ShowFeedback($"Casillero vacío · −{penalty:0} s");}
     }
 }

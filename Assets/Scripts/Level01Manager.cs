@@ -24,6 +24,17 @@ public class Level01Manager : MonoBehaviour
     [SerializeField] private TMP_Text feedbackText;
 
     private Coroutine feedbackCoroutine;
+    private bool externalPresentation;
+    public event System.Action<string> FeedbackShown;
+
+    // El HUD del nivel agrupa estos datos sin conservar las franjas antiguas.
+    public void UseExternalPresentation()
+    {
+        externalPresentation = true;
+        ClearFeedback();
+        foreach (var text in new[] { objectiveText, timerText, feedbackText })
+            if (text != null) text.gameObject.SetActive(false);
+    }
 
     [Header("Sonidos")]
     [SerializeField] private AudioSource sfxSource;
@@ -273,10 +284,13 @@ public class Level01Manager : MonoBehaviour
     /// </summary>
     public void ShowFeedback(string message)
     {
-        if (!IsPlaying || feedbackText == null)
+        if (!IsPlaying)
         {
             return;
         }
+
+        FeedbackShown?.Invoke(message);
+        if (externalPresentation || feedbackText == null) return;
 
         ClearFeedback();
 

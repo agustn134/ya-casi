@@ -27,6 +27,14 @@ public class PlayerInteraction : MonoBehaviour
     // Casilleros encontrados al iniciar esta escena.
     private LockerInteraction[] lockers;
     private float nextReview;
+    private bool externalPrompt;
+
+    public void UseExternalPrompt()
+    {
+        externalPrompt = true;
+        SetPromptVisible(false);
+        if (interactionText != null) interactionText.gameObject.SetActive(false);
+    }
 
     /// <summary>
     /// Obtiene los casilleros activos de la escena una sola vez.
@@ -52,6 +60,7 @@ public class PlayerInteraction : MonoBehaviour
     /// </summary>
     private void Update()
     {
+        if (externalPrompt) return;
         var nearest=FindNearestLocker();
         if(interactionText!=null)interactionText.text=nearest!=null&&nearest.IsSearched?"E: ya revisado (−5 s)":"E para revisar";
         SetPromptVisible(nearest != null);
