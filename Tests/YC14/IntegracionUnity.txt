@@ -1,8 +1,10 @@
 PASS Controlador provisional inicializa 0/5
-PASS HUD usa la fuente del nivel 1
+PASS HUD usa Redaction 35
 PASS Controlador rechaza selección incorrecta (resultado: WrongProject)
+PASS Proyecto incorrecto resta cinco segundos y muestra amonestación
 PASS Primera entrega actualiza inventario y progreso
 PASS No cuenta entrega repetida
+PASS Entrega repetida resta ocho segundos
 PASS Pausa congela simulación
 PASS Reloj y cronómetro no avanzan en pausa
 PASS Pausa bloquea entregas
@@ -14,5 +16,6 @@ PASS Entrega provisional 4
 PASS Entrega provisional 5
 PASS Victoria 5/5 muestra resultado y detiene el nivel
 PASS Reiniciar restablece partida
+PASS Una amonestación agota el reloj sin consumir un proyecto
 PASS Derrota por tiempo detiene el nivel
 PASS Derrota selecciona la canción original TiempoFinal

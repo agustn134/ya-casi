@@ -75,9 +75,9 @@ public static class CampusDeliveryVerification
             if (phase == 0)
             {
                 Check(session.RequiredCount == 5 && session.DeliveredCount == 0, "Controlador provisional inicializa 0/5");
-                var font = Resources.Load<U2GameConfig>("U2GameConfig").font;
+                var font = CampusTypography.Font;
                 var hud = GameObject.Find("HUD nivel 3");
-                Check(hud != null && hud.GetComponentsInChildren<TMP_Text>().All(t => t.font == font), "HUD usa la fuente del nivel 1");
+                Check(font != null && hud != null && hud.GetComponentsInChildren<TMP_Text>().All(t => t.font == font), "HUD usa Redaction 35");
                 Near(controller, 0); controller.SelectProject(1);
                 float beforeWrong = session.RemainingTime;
                 var wrong = controller.TryDeliverTo(0);

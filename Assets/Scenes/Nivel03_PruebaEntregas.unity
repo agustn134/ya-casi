@@ -1753,10 +1753,11 @@ MonoBehaviour:
   - Proyecto F
   - Proyecto CGTI
   projectIcons: []
+  enableFinalChallenge: 0
   showTutorial: 0
   projectNamesFollowProfessors: 1
   showNarrativeIntro: 0
-  narrativeIntro: "Galindo necesita entregar los proyectos para aprobar las unidades de sus materias.\n\nLos profesores lo esperan en distintos edificios de la universidad. Debe llegar con el proyecto correcto antes de que cierre el sistema de entregas."
+  narrativeIntro: "Galindo: «Cinco proyectos y el sistema cierra en tres minutos... ¡ya casi!»\n\nCompañera: «Los profesores lanzan papel. Esquiva antes de entregar y pide permiso con Q si los alumnos te bloquean».\n\nGalindo: «¡Vamos por esas unidades!»"
 --- !u!1 &2140000000
 GameObject:
   m_ObjectHideFlags: 0

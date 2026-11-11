@@ -43,4 +43,36 @@ PASS Proyecto equivocado puede agotar el tiempo
 PASS Derrota por sanción conserva inventario y limita descuento al tiempo restante
 PASS Repetir puede provocar derrota sin sumar progreso
 PASS Penalizaciones configurables
-YC14_RULES_OK 45 comprobaciones
+PASS Impacto no descuenta durante pausa
+PASS Papel descuenta cinco segundos y cuenta un impacto
+PASS Impacto conserva inventario y separa amonestaciones y recorrido
+PASS Impactos ignoran valores inválidos
+PASS Impacto final limita descuento al tiempo restante
+PASS No hay daño después de perder
+PASS No hay daño después de ganar
+PASS Reto final espera sin consumir sus dieciséis segundos
+PASS El reto no avanza ni lanza avisos antes de iniciarse
+PASS El reto final comienza una sola vez
+PASS La primera oleada no aparece antes del segundo inicial
+PASS La pausa congela el reto y no emite oleadas
+PASS Tiempos inválidos no alteran el reto
+PASS La primera oleada se anuncia al segundo uno
+PASS Cada aviso solo se consume una vez
+PASS Repetir Start no reinicia ni extiende el desafío
+PASS Oleada 2 conserva la cadencia de 2.4 segundos
+PASS Oleada 3 conserva la cadencia de 2.4 segundos
+PASS Oleada 4 conserva la cadencia de 2.4 segundos
+PASS Oleada 5 conserva la cadencia de 2.4 segundos
+PASS Oleada 6 conserva la cadencia de 2.4 segundos
+PASS Las seis oleadas terminan de anunciarse al segundo trece
+PASS El último objeto puede terminar su recorrido antes de habilitar la entrega
+PASS Después de la sexta oleada no se generan objetos adicionales
+PASS El reto concluye a los dieciséis segundos sin avisos pendientes
+PASS El reto completado no reinicia ni deja tiempo negativo
+PASS Un salto de tiempo conserva solo la oleada reciente sin lanzar una ráfaga atrasada
+PASS El siguiente paso no recupera oleadas atrasadas
+PASS La cadencia normal continúa después de un salto de tiempo
+PASS Un aviso no consumido caduca al siguiente paso
+PASS Al pausar se descarta un aviso pendiente sin avanzar el reloj
+PASS Completar de un solo paso descarta todos los avisos anteriores
+YC14_RULES_OK 77 comprobaciones
