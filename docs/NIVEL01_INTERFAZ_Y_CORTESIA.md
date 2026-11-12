@@ -30,3 +30,9 @@ Cada alumno cercano tiene una probabilidad del 45% de aceptar; se apartan como m
 Las reglas de tiempo, casilleros, puntuación y calma conservan los valores de `U2GameConfig`. Pedir paso no garantiza despejar el pasillo y no sustituye la penalización por chocar al correr.
 
 Los cambios de este documento corresponden a la rama `nivel/01-caos-del-casillero`.
+
+## Compatibilidad del editor
+
+El proyecto usa Unity **6000.3.25f1 (6.3 LTS)**, como indica `ProjectSettings/ProjectVersion.txt`. Los paquetes de `Packages/manifest.json` y `Packages/packages-lock.json` están alineados con ese editor: Animation 13.0.6, Common 12.0.4, Aseprite 3.0.2, PSD Importer 12.0.2, SpriteShape 13.0.0, Tilemap Extras 6.0.3, Tooling 1.0.4, URP 17.3.0 y UGUI 2.0.0.
+
+El módulo `com.unity.modules.physicscore2d` pertenece a una generación posterior y se eliminó de las dependencias. Las versiones 2D más recientes que tenía esta rama producían errores dentro de `InternalEngineBridge.cs` y `RuleOverrideTile.cs`; la corrección se hace en los archivos de paquetes del proyecto, conservando la caché como contenido generado por Unity.
