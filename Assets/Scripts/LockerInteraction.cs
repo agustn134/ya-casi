@@ -26,6 +26,13 @@ public class LockerInteraction : MonoBehaviour
     private Level01Manager levelManager;
 
     private bool searched;
+    [SerializeField] private int mysteryRow;
+    private LevelOneMystery mystery;
+    public int MysteryRow => mysteryRow;
+    public int MysteryNumber { get; private set; }
+    public string MysteryName => $"{LockerMysteryRound.RowNames[Mathf.Clamp(mysteryRow,0,1)]} · {MysteryNumber:00}";
+    public void BindMystery(LevelOneMystery owner, int number) { mystery = owner; MysteryNumber = number; }
+    public void MarkSearched() { searched = true; }
 
     /// <summary>
     /// Indica si el jugador ya revisó este casillero.
@@ -49,6 +56,7 @@ public class LockerInteraction : MonoBehaviour
     public void Interact()
     {
         if(levelManager==null || !levelManager.IsPlaying)return;
+        if(mystery!=null){mystery.InvestigateLocker(this);return;}
         var config=Resources.Load<U2GameConfig>("U2GameConfig");
         var upgrade=levelManager.GetComponent<LevelOneUpgrade>();
         if(searched)

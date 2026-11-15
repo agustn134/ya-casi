@@ -13,6 +13,7 @@ public sealed class LevelOneUpgrade : MonoBehaviour
     readonly List<GameObject> marks=new List<GameObject>();
     GameObject canvas,overlay; AudioSource music;
     LevelOneHud hud; LevelOneCourtesyRequest courtesy; Material markerMaterial;
+    LevelOneMystery mystery; LevelOneStudentDirector studentDirector;
     enum OverlayKind { None, Pause, Help, Completion, Result }
     OverlayKind overlayKind;
     bool helpReturnsToPause;
@@ -28,30 +29,32 @@ public sealed class LevelOneUpgrade : MonoBehaviour
         manager.SetRoundTime(config!=null?config.roundSeconds:135);
         lockers=FindObjectsByType<LockerInteraction>(FindObjectsSortMode.None);
         System.Array.Sort(lockers,(a,b)=>{int row=b.InteractionPosition.y.CompareTo(a.InteractionPosition.y);return row!=0?row:a.InteractionPosition.x.CompareTo(b.InteractionPosition.x);});
-        int chosen=lockers.Length>0?Random.Range(0,lockers.Length):-1;
-        for(int i=0;i<lockers.Length;i++){lockers[i].InitializeRound(manager,i==chosen);AddMarker(lockers[i]);}
+        mystery=GetComponent<LevelOneMystery>();if(mystery==null)mystery=gameObject.AddComponent<LevelOneMystery>();
+        mystery.Configure(manager,player,lockers);
+        for(int i=0;i<lockers.Length;i++)AddMarker(lockers[i]);
         AudioListener.volume=1;
         music=gameObject.AddComponent<AudioSource>();music.loop=true;music.spatialBlend=0;music.clip=config!=null?config.soundtrack:null;music.volume=U2Presentation.MusicVolume;if(music.clip!=null)music.Play();
         manager.UseExternalPresentation();
         if(interaction!=null)interaction.UseExternalPrompt();
         canvas=U2Presentation.NewCanvas("HUD nivel 1",50);
         canvas.GetComponent<CanvasScaler>().matchWidthOrHeight=0;
-        hud=canvas.AddComponent<LevelOneHud>();hud.Initialize(TogglePause,()=>ShowHelp(false));
+        hud=canvas.AddComponent<LevelOneHud>();hud.Initialize(TogglePause,()=>ShowHelp(false),mystery.OpenNotebook);hud.ConfigureMystery(mystery);
         manager.FeedbackShown+=hud.Notify;
         courtesy=gameObject.AddComponent<LevelOneCourtesyRequest>();courtesy.Configure(player,manager);courtesy.Message+=hud.Notify;
         SpawnStudents();if(Application.isMobilePlatform)BuildTouchControls();PlayerPrefs.SetInt(U2Presentation.SaveKey,1);PlayerPrefs.Save();
         LevelOneTypography.Apply(canvas);
-        if(!PlayerPrefs.HasKey("YaCasi.Level1.ContextualHelp.v1"))ShowHelp(false);
+        mystery.UI.ShowIntro(null);
     }
     void Update()
     {
         if(manager==null)return;
         if(music!=null)music.volume=U2Presentation.MusicVolume*(paused?.5f:1);
         foreach(var source in GetComponentsInChildren<AudioSource>())if(source!=music)source.volume=U2Presentation.EffectsVolume;
-        if((Keyboard.current!=null&&Keyboard.current.escapeKey.wasPressedThisFrame)||(Gamepad.current!=null&&Gamepad.current.startButton.wasPressedThisFrame))TogglePause();
-        if(!finished&&Keyboard.current!=null&&Keyboard.current.f1Key.wasPressedThisFrame)ShowHelp(paused);
+        bool mysteryInput=mystery!=null&&mystery.UI!=null&&mystery.UI.BlocksGameplayInput;
+        if(!mysteryInput&&((Keyboard.current!=null&&Keyboard.current.escapeKey.wasPressedThisFrame)||(Gamepad.current!=null&&Gamepad.current.startButton.wasPressedThisFrame)))TogglePause();
+        if(!mysteryInput&&!finished&&Keyboard.current!=null&&Keyboard.current.f1Key.wasPressedThisFrame)ShowHelp(paused);
         if(!finished&&(manager.IsCompleted||manager.IsFailed)){finished=true;FinishRound();}
-        if(manager.IsPlaying){elapsed+=Time.deltaTime;if(Gamepad.current!=null&&Gamepad.current.buttonSouth.wasPressedThisFrame&&interaction!=null)interaction.TryInteract();}
+        if(manager.IsPlaying){elapsed+=Time.deltaTime;if(!mysteryInput&&Gamepad.current!=null&&Gamepad.current.buttonSouth.wasPressedThisFrame&&interaction!=null)interaction.TryInteract();}
         int number=0;var nearest=interaction!=null&&interaction.enabled?interaction.FindNearestLocker():null;
         for(int i=0;i<lockers.Length;i++)
         {
@@ -85,6 +88,7 @@ public sealed class LevelOneUpgrade : MonoBehaviour
         if (music == null) music = gameObject.AddComponent<AudioSource>();
         music.playOnAwake = false;
         music.loop = false;
+        music.pitch = 1f;
         music.spatialBlend = 0f;
         music.mute = false;
         music.ignoreListenerPause = true;
@@ -95,6 +99,16 @@ public sealed class LevelOneUpgrade : MonoBehaviour
     }
     public void Reviewed(bool repeated,bool usb)
     {score=Mathf.Max(0,score+(repeated?-75:(usb?500:30)));if(repeated)repeatReviews++;else if(!usb)emptyReviews++;}
+    public void FoundClue(){score+=75;}
+    public void BeginReturnSequence(AudioClip clip)
+    {
+        studentDirector?.BeginReturnRush();
+        if(music!=null)
+        {
+            if(clip!=null){music.clip=clip;music.pitch=1;music.Play();}
+            else music.pitch=1.12f;
+        }
+    }
     public void BumpPlayer()
     {
         if(!manager.IsPlaying||player==null||!player.IsRunning||Time.time<bumpUntil)return;
@@ -132,10 +146,10 @@ public sealed class LevelOneUpgrade : MonoBehaviour
         helpReturnsToPause=returnToPause;
         var card=NewOverlay("Ayuda del nivel 1",OverlayKind.Help);
         MenuText(card,"Historia","El edificio está por cerrar",310,70,43,new Color(1,.84f,.4f));
-        MenuText(card,"Contexto","Galindo olvidó la USB con sus proyectos en un casillero.\nEncuéntrala y sal antes de que cierre el edificio.",222,100,29,Color.white);
+        MenuText(card,"Contexto","Movieron las cosas de Galindo durante la limpieza.\nDeduce el casillero, abre el candado y vuelve con su USB.",222,100,29,Color.white);
         string penalties=$"Casillero vacío: −{(config!=null?config.wrongLockerPenalty:3):0} s. Repetir: −{(config!=null?config.repeatLockerPenalty:5):0} s.";
-        MenuText(card,"Teclas","WASD / flechas / stick: caminar\nShift / gatillo: correr\nE / botón sur: revisar un casillero\nQ / LB: pedir permiso para pasar\nEsc / Start: pausa · F1 / Ayuda: estas indicaciones",50,215,28,Color.white);
-        MenuText(card,"Reglas",penalties+"\nLos casilleros revisados muestran OK.\nChocar al correr: −2 s y −1 de calma. Con 0 de calma, pierdes.\nAl pedir permiso, solo algunos alumnos aceptan moverse.",-152,145,26,Color.white);
+        MenuText(card,"Teclas","WASD / flechas / stick: caminar · Shift / gatillo: correr\nE / botón sur: investigar, hablar o revisar\nN / Libreta: consultar tus tres pistas\nQ / LB: pedir permiso para pasar\nEsc / Start: pausa · F1 / Ayuda: estas indicaciones",50,215,28,Color.white);
+        MenuText(card,"Reglas",penalties+"\nCandado equivocado: −4 s. La libreta y el candado pausan el reloj.\nChocar al correr: −2 s y −1 de calma. Con 0 de calma, pierdes.\nCombina fila, paridad e intervalo para encontrar la USB.",-152,145,26,Color.white);
         MenuButton(card,returnToPause?"Volver a pausa":"Entendido, ¡vamos!",-315,CloseHelp);
         LevelOneTypography.Apply(overlay);
     }
@@ -167,10 +181,11 @@ public sealed class LevelOneUpgrade : MonoBehaviour
         int penalty=Mathf.RoundToInt(Mathf.Max(0,manager.RoundTime-manager.RemainingTime-elapsed));
         return $"Recorrido: {Mathf.FloorToInt(elapsed/60):00}:{Mathf.FloorToInt(elapsed%60):00} · Descuento: {penalty} s\n"+
             $"Calma: {calm}/3 · Choques: {collisions} · Casilleros: {searched}/{lockers.Length}\n"+
-            $"Vacíos: {emptyReviews} · Repetidos: {repeatReviews} · Puntos: {score}";
+            $"Pistas: {mystery.DiscoveredCount}/3 · Equivocados: {mystery.WrongLockers} · Candado: {mystery.WrongCodes} · Puntos: {score}";
     }
     void FinishRound()
     {
+        mystery?.UI?.Close();
         canvas.SetActive(false);
         if(!manager.IsCompleted){ShowResult();return;}
         score+=Mathf.CeilToInt(manager.RemainingTime)*10+calm*100;
@@ -193,7 +208,7 @@ public sealed class LevelOneUpgrade : MonoBehaviour
         var card=NewOverlay("Resultado del nivel 1",OverlayKind.Result);
         MenuText(card,"Título",manager.IsCompleted?"¡USB recuperada!":(calm<=0?"Necesitas un respiro":"Se acabó el tiempo"),305,90,44,new Color(1,.84f,.4f));
         MenuText(card,"Resultado",manager.IsCompleted?"Llegaste a tiempo a la salida.":"Recuerda los casilleros revisados y pide permiso para pasar.",212,80,28,Color.white);
-        MenuText(card,"Estadísticas",Statistics()+$"\n\nTiempo restante: {Mathf.CeilToInt(manager.RemainingTime)} s\nMejor puntaje: {PlayerPrefs.GetInt("YaCasi.U2.Best",0)}",25,240,27,Color.white);
+        MenuText(card,"Estadísticas",Statistics()+$"\n\nTiempo restante: {Mathf.CeilToInt(manager.RemainingTime)} s · Mejor: {PlayerPrefs.GetInt("YaCasi.U2.Best",0)}\n"+(manager.IsCompleted?mystery.Awards(calm):"Investiga las tres pistas antes de elegir un casillero."),25,240,27,Color.white);
         MenuButton(card,"Reintentar",-170,manager.RestartLevel);
         MenuButton(card,"Menú principal",-260,U2Presentation.ReturnToMenu);
         MenuText(card,"Fuente","Tipografía: Redaction 35 · SIL Open Font License",-352,40,21,Color.white);
@@ -201,28 +216,8 @@ public sealed class LevelOneUpgrade : MonoBehaviour
     }
     void SpawnStudents()
     {
-        if(player==null||lockers.Length<2)return;
-        float min=float.MaxValue,max=float.MinValue,y=0;
-        foreach(var locker in lockers){min=Mathf.Min(min,locker.InteractionPosition.x);max=Mathf.Max(max,locker.InteractionPosition.x);y+=locker.InteractionPosition.y;}y/=lockers.Length;
-        // Dos carriles conectados: ida frente a casilleros, vuelta por el pasillo.
-        float upper=y-.7f,lower=y-2.2f;var anim=player.GetComponent<Animator>();var sr=player.GetComponent<SpriteRenderer>();
-        var exit=FindFirstObjectByType<LevelExit>();var doorway=exit!=null?exit.GetComponent<Collider2D>():null;
-        int count=Mathf.Clamp(config!=null?config.studentCount:6,0,24);
-        for(int i=0;i<count;i++)
-        {
-            var go=new GameObject("Estudiante fila "+(i+1));go.transform.position=new Vector3(Mathf.Lerp(min,max,(i+.5f)/Mathf.Max(1,count)),i%2==0?upper:lower,0);
-            var student=go.AddComponent<CampusStudent>();student.route=i%2==0?new[]{new Vector2(max,upper),new Vector2(max,lower),new Vector2(min,lower),new Vector2(min,upper)}:new[]{new Vector2(min,lower),new Vector2(min,upper),new Vector2(max,upper),new Vector2(max,lower)};
-            if(doorway!=null)
-            {
-                Vector2 door=doorway.bounds.center;float lane=Mathf.Min(.35f,doorway.bounds.extents.y*.4f);
-                student.route=new[]{new Vector2(max,upper),new Vector2(max,lower),new Vector2(min,lower),new Vector2(door.x+1,door.y-lane),new Vector2(door.x-1.4f,door.y-lane),new Vector2(door.x-1.4f,door.y+lane),new Vector2(door.x+1,door.y+lane),new Vector2(min,upper)};
-                if(i%2==1)System.Array.Reverse(student.route);
-            }
-            var controller=config!=null&&config.studentControllers!=null&&config.studentControllers.Length>i?config.studentControllers[i]:anim.runtimeAnimatorController;
-            student.speed=1.35f+i*.12f;student.Initialize(controller,sr.sprite,controller==anim.runtimeAnimatorController?Color.HSVToRGB(i/6f,.25f,1):Color.white);
-            // La puerta cerrada limita al jugador; los estudiantes pueden entrar y salir.
-            var barrier=GameObject.Find("SalidaNivel01");if(barrier!=null){var gate=barrier.GetComponent<Collider2D>();if(gate!=null)Physics2D.IgnoreCollision(student.GetComponent<Collider2D>(),gate);}
-        }
+        studentDirector=gameObject.AddComponent<LevelOneStudentDirector>();
+        studentDirector.Configure(manager,player,config,mystery.TopRow,mystery.BottomRow);
     }
     void BuildTouchControls()
     {

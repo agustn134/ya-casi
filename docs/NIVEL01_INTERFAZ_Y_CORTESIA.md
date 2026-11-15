@@ -1,6 +1,6 @@
 # Nivel 1: interfaz y cortesía
 
-La escena `Nivel01_CaosDelCasillero` conserva la búsqueda aleatoria de la USB y el regreso a la salida. `Level01Manager` crea `LevelOneUpgrade` al iniciar; los cambios se montan automáticamente sobre la escena existente.
+La escena `Nivel01_CaosDelCasillero` incorpora el misterio de la USB y el regreso a la salida. El flujo actualizado se describe en [El casillero equivocado](NIVEL01_MISTERIO_USB.md). `Level01Manager` crea `LevelOneUpgrade` al iniciar; los cambios se montan automáticamente sobre la escena existente.
 
 - Objetivo y progreso de la USB arriba a la izquierda; reloj, pausa y ayuda arriba a la derecha.
 - Inventario con silueta de memoria USB y calma abajo a la izquierda.

@@ -40,12 +40,13 @@ public sealed class U2Presentation : MonoBehaviour
         Clear();var card=Card(root.transform,"Inicio");
         Text(card.transform,"Título","¡YA CASI!",new Vector2(0,320),new Vector2(1000,100),76,Gold);
         Text(card.transform,"Subtítulo","Recupera la USB antes de que cierre el edificio",new Vector2(0,240),new Vector2(1100,70),30,Color.white);
-        Button(card.transform,"Jugar",new Vector2(0,130),()=>{PlayerPrefs.DeleteKey("YaCasi.U2.Win");StartLevel();});
-        var cont=Button(card.transform,"Continuar",new Vector2(0,35),StartLevel);cont.interactable=PlayerPrefs.HasKey(SaveKey);
-        Button(card.transform,"Opciones",new Vector2(0,-60),()=>Options(root.transform,Main));
-        Button(card.transform,"Créditos",new Vector2(0,-155),Credits);
-        Button(card.transform,"Salir",new Vector2(0,-250),Quit);
-        Text(card.transform,"Mejor","Mejor puntaje: "+PlayerPrefs.GetInt("YaCasi.U2.Best",0),new Vector2(0,-340),new Vector2(800,55),28,Gold);
+        Button(card.transform,"Jugar nivel 1",new Vector2(0,155),()=>{PlayerPrefs.DeleteKey("YaCasi.U2.Win");StartLevel();});
+        Button(card.transform,"Jugar nivel 3",new Vector2(0,65),()=>{Time.timeScale=1;SceneManager.LoadScene("MenuNivel03");});
+        var cont=Button(card.transform,"Continuar nivel 1",new Vector2(0,-25),StartLevel);cont.interactable=PlayerPrefs.HasKey(SaveKey);
+        Button(card.transform,"Opciones",new Vector2(0,-115),()=>Options(root.transform,Main));
+        Button(card.transform,"Créditos",new Vector2(0,-205),Credits);
+        Button(card.transform,"Salir",new Vector2(0,-295),Quit);
+        Text(card.transform,"Mejor","Mejor puntaje nivel 1: "+PlayerPrefs.GetInt("YaCasi.U2.Best",0),new Vector2(0,-380),new Vector2(800,45),25,Gold);
     }
     public static void StartLevel(){Time.timeScale=1;SceneManager.LoadScene(LevelScene);}
     public static void ReturnToMenu(){Time.timeScale=1;SceneManager.LoadScene(MenuScene);}
@@ -53,7 +54,7 @@ public sealed class U2Presentation : MonoBehaviour
     {
         Clear();var card=Card(root.transform,"Créditos");var cfg=Resources.Load<U2GameConfig>("U2GameConfig");
         Text(card.transform,"Título","CRÉDITOS",new Vector2(0,320),new Vector2(900,70),54,Gold);
-        Text(card.transform,"Autores","Agustín López Parra · Carlos Manuel Palma Muñoz\n\nNivel 1: desarrollo de Agustín; revisión de Carlos.\nUnity · C# · TextMesh Pro\nArte: LimeZu — Modern Interiors, Exteriors y Office\nInterfaz: That Witch Design — Simple Button Set 01\nFuente: Pixelify Sans — SIL OFL\nEfectos: Kenney Interface Sounds y síntesis propia\nGame Over: Alphix — Pixabay (417465)\nMúsica del nivel: "+(cfg!=null?cfg.soundtrackCredit:"pendiente de confirmar")+"\n\nAvance académico: nivel 1 disponible. Niveles 2–4 pendientes.",new Vector2(0,20),new Vector2(1120,500),30,Color.white);
+        Text(card.transform,"Autores","Agustín López Parra · Carlos Manuel Palma Muñoz\n\nNivel 1: desarrollo de Agustín; revisión de Carlos.\nUnity · C# · TextMesh Pro\nArte: LimeZu — Modern Interiors, Exteriors y Office\nInterfaz: That Witch Design — Simple Button Set 01\nFuentes: Pixelify Sans y Redaction 35 — SIL OFL\nEfectos: Kenney Interface Sounds y síntesis propia\nGame Over: Alphix — Pixabay (417465)\nMúsica del regreso: Agustín López Parra — FL Studio 25\nMúsica del nivel: "+(cfg!=null?cfg.soundtrackCredit:"pendiente de confirmar")+"\n\nExplora los niveles disponibles desde el menú principal.",new Vector2(0,20),new Vector2(1120,500),27,Color.white);
         Button(card.transform,"Volver",new Vector2(0,-310),Main);
     }
     static void Quit()
@@ -66,7 +67,7 @@ public sealed class U2Presentation : MonoBehaviour
         Application.Quit();
 #endif
     }
-    public static void Options(Transform parent,Action back)
+    public static void Options(Transform parent,Action back,string controls=null)
     {
         var cover=Image(parent,"Opciones",new Color(0,0,0,.9f));Stretch(cover.rectTransform);
         var card=Card(cover.transform,"Panel opciones");
@@ -75,7 +76,7 @@ public sealed class U2Presentation : MonoBehaviour
         Slider(card.transform,"Efectos",35,EffectsVolume,v=>PlayerPrefs.SetFloat("YaCasi.U2.Effects",v));
         Text(card.transform,"Calidad","Calidad gráfica",new Vector2(-240,-75),new Vector2(400,55),32,Color.white);
         for(int i=0;i<3;i++){int quality=i;var b=Button(card.transform,new[]{"Baja","Media","Alta"}[i],new Vector2(-330+i*330,-140),()=>{QualitySettings.SetQualityLevel(Mathf.RoundToInt((QualitySettings.names.Length-1)*quality/2f),true);PlayerPrefs.SetInt("YaCasi.U2.Quality",quality);});b.GetComponent<RectTransform>().sizeDelta=new Vector2(290,65);}
-        Text(card.transform,"Controles","WASD / flechas / joystick: moverte · Shift / gatillo: correr\nE / botón sur: revisar · Esc / Start: pausa\nEn móvil: botones de dirección, correr y revisar.",new Vector2(0,-240),new Vector2(1100,120),27,Color.white);
+        Text(card.transform,"Controles",controls??"WASD / flechas / joystick: moverte · Shift / gatillo: correr\nE / botón sur: revisar · Esc / Start: pausa\nEn móvil: botones de dirección, correr y revisar.",new Vector2(0,-240),new Vector2(1100,120),27,Color.white);
         var close=Button(card.transform,"Volver",new Vector2(0,-350),()=>{PlayerPrefs.Save();Destroy(cover.gameObject);back?.Invoke();});
     }
     static void Slider(Transform parent,string caption,float y,float initial,UnityEngine.Events.UnityAction<float> changed)

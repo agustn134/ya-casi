@@ -12,9 +12,11 @@ using UnityEngine;
 /// Conserva la altura y profundidad iniciales de la cámara.
 /// Limita el desplazamiento horizontal entre dos posiciones.
 /// </summary>
+[DefaultExecutionOrder(100)]
 public class CameraFollow : MonoBehaviour
 {
     [SerializeField] private Transform target;
+    [SerializeField] private bool centerOnTarget;
 
     [SerializeField, Min(0.01f)]
     private float smoothTime = 0.15f;
@@ -31,6 +33,11 @@ public class CameraFollow : MonoBehaviour
     {
         if (target == null)
         {
+            return;
+        }
+        if(centerOnTarget)
+        {
+            transform.position=new Vector3(target.position.x,target.position.y,transform.position.z);
             return;
         }
 

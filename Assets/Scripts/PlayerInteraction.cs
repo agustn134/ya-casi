@@ -28,6 +28,12 @@ public class PlayerInteraction : MonoBehaviour
     private LockerInteraction[] lockers;
     private float nextReview;
     private bool externalPrompt;
+    private LevelOneMystery mystery;
+    public void ConfigureMystery(LevelOneMystery value)
+    {
+        mystery=value;
+        lockers=FindObjectsByType<LockerInteraction>(FindObjectsSortMode.None);
+    }
 
     public void UseExternalPrompt()
     {
@@ -111,6 +117,7 @@ public class PlayerInteraction : MonoBehaviour
     public void TryInteract()
     {
         if(!isActiveAndEnabled || Time.timeScale<=0 || Time.unscaledTime<nextReview)return;
+        if(mystery!=null && mystery.TryInteractClue()){nextReview=Time.unscaledTime+.7f;return;}
         var nearest=FindNearestLocker();if(nearest==null)return;
         nextReview=Time.unscaledTime+.7f;nearest.Interact();
     }

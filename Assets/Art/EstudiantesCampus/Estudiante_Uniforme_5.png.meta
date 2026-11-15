@@ -1,0 +1,814 @@
+fileFormatVersion: 2
+guid: d7809a6b7eca4c5784f28d3d807f5615
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: Estudiante_Uniforme_5_idleRight_0
+  - first:
+      213: 21300001
+    second: Estudiante_Uniforme_5_idleUp_1
+  - first:
+      213: 21300002
+    second: Estudiante_Uniforme_5_idleLeft_2
+  - first:
+      213: 21300003
+    second: Estudiante_Uniforme_5_idleDown_3
+  - first:
+      213: 21300004
+    second: Estudiante_Uniforme_5_walkRight_0
+  - first:
+      213: 21300005
+    second: Estudiante_Uniforme_5_walkRight_1
+  - first:
+      213: 21300006
+    second: Estudiante_Uniforme_5_walkRight_2
+  - first:
+      213: 21300007
+    second: Estudiante_Uniforme_5_walkRight_3
+  - first:
+      213: 21300008
+    second: Estudiante_Uniforme_5_walkRight_4
+  - first:
+      213: 21300009
+    second: Estudiante_Uniforme_5_walkRight_5
+  - first:
+      213: 21300010
+    second: Estudiante_Uniforme_5_walkUp_6
+  - first:
+      213: 21300011
+    second: Estudiante_Uniforme_5_walkUp_7
+  - first:
+      213: 21300012
+    second: Estudiante_Uniforme_5_walkUp_8
+  - first:
+      213: 21300013
+    second: Estudiante_Uniforme_5_walkUp_9
+  - first:
+      213: 21300014
+    second: Estudiante_Uniforme_5_walkUp_10
+  - first:
+      213: 21300015
+    second: Estudiante_Uniforme_5_walkUp_11
+  - first:
+      213: 21300016
+    second: Estudiante_Uniforme_5_walkLeft_12
+  - first:
+      213: 21300017
+    second: Estudiante_Uniforme_5_walkLeft_13
+  - first:
+      213: 21300018
+    second: Estudiante_Uniforme_5_walkLeft_14
+  - first:
+      213: 21300019
+    second: Estudiante_Uniforme_5_walkLeft_15
+  - first:
+      213: 21300020
+    second: Estudiante_Uniforme_5_walkLeft_16
+  - first:
+      213: 21300021
+    second: Estudiante_Uniforme_5_walkLeft_17
+  - first:
+      213: 21300022
+    second: Estudiante_Uniforme_5_walkDown_18
+  - first:
+      213: 21300023
+    second: Estudiante_Uniforme_5_walkDown_19
+  - first:
+      213: 21300024
+    second: Estudiante_Uniforme_5_walkDown_20
+  - first:
+      213: 21300025
+    second: Estudiante_Uniforme_5_walkDown_21
+  - first:
+      213: 21300026
+    second: Estudiante_Uniforme_5_walkDown_22
+  - first:
+      213: 21300027
+    second: Estudiante_Uniforme_5_walkDown_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Estudiante_Uniforme_5_idleRight_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 624
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68f335d8ecf50cc09fe715d2ae424b1b
+      internalID: 21300000
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estudiante_Uniforme_5_idleUp_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 624
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1447af90318432e5f7f0fff46425377a
+      internalID: 21300001
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estudiante_Uniforme_5_idleLeft_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 624
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7421dea001e1e2cf4989519269460e67
+      internalID: 21300002
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estudiante_Uniforme_5_idleDown_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 624
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e1441d905a2cf34769af8f05e147d25
+      internalID: 21300003
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estudiante_Uniforme_5_walkRight_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 592
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b502611a5cc524cce141d92085f2de2
+      internalID: 21300004
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estudiante_Uniforme_5_walkRight_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 592
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51407d484135aa3e012bfec13e425d37
+      internalID: 21300005
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estudiante_Uniforme_5_walkRight_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 592
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1d0bc29faf450311551a497011822a3
+      internalID: 21300006
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estudiante_Uniforme_5_walkRight_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 592
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db229baeed285c052ecf5a94a989542f
+      internalID: 21300007
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estudiante_Uniforme_5_walkRight_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 592
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b00a85d003eea2b4fabcbbe6966f4f3
+      internalID: 21300008
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estudiante_Uniforme_5_walkRight_5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 592
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49d35e3030c43b0ed54096ca4d9c277c
+      internalID: 21300009
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estudiante_Uniforme_5_walkUp_6
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 592
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23770cc3297648b993c3c8e793655ff9
+      internalID: 21300010
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estudiante_Uniforme_5_walkUp_7
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 592
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a9eb6d047f1d1b7aaf76d8941410e1e
+      internalID: 21300011
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estudiante_Uniforme_5_walkUp_8
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 592
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d30a06bf7508c20554f8d2cab1a306f3
+      internalID: 21300012
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estudiante_Uniforme_5_walkUp_9
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 592
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59754cc2fb687a752c4527b519940903
+      internalID: 21300013
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estudiante_Uniforme_5_walkUp_10
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 592
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68a9af07ab1a8480a412d8d0a2b81842
+      internalID: 21300014
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estudiante_Uniforme_5_walkUp_11
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 592
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b958400d7ad63171885b2e77bbe629e3
+      internalID: 21300015
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estudiante_Uniforme_5_walkLeft_12
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 592
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50c4f1f29e77096ee66c2ef3153725e6
+      internalID: 21300016
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estudiante_Uniforme_5_walkLeft_13
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 592
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80a69337197f941b87eeada4411b55d6
+      internalID: 21300017
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estudiante_Uniforme_5_walkLeft_14
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 592
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e7194140ad9d3b36083cd8f45a2db3f
+      internalID: 21300018
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estudiante_Uniforme_5_walkLeft_15
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 592
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c80d4774afc9cfd8c28600d237d374ff
+      internalID: 21300019
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estudiante_Uniforme_5_walkLeft_16
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 592
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22fe19161ea19be99a2689167c455d40
+      internalID: 21300020
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estudiante_Uniforme_5_walkLeft_17
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 592
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00e386b14ee6a23ce6b2bb768c773c4f
+      internalID: 21300021
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estudiante_Uniforme_5_walkDown_18
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 592
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3bf753cbaf0f4c4088d342cd8384437
+      internalID: 21300022
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estudiante_Uniforme_5_walkDown_19
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 592
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08cba3a7c6d30f6167bedfb503ddbba7
+      internalID: 21300023
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estudiante_Uniforme_5_walkDown_20
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 592
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e072125acbeea505d936855609e7a14
+      internalID: 21300024
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estudiante_Uniforme_5_walkDown_21
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 592
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 005453b89ed7baa0b56ebc255db6a5e7
+      internalID: 21300025
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estudiante_Uniforme_5_walkDown_22
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 592
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 682b92c0641f2f01e39035d748d7c9bc
+      internalID: 21300026
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estudiante_Uniforme_5_walkDown_23
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 592
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49e0f12ffbb548964543d06b19c79d4e
+      internalID: 21300027
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: a68d75c153594caeb1b7f5f3fe2a000a
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Estudiante_Uniforme_5_idleRight_0: 21300000
+      Estudiante_Uniforme_5_idleUp_1: 21300001
+      Estudiante_Uniforme_5_idleLeft_2: 21300002
+      Estudiante_Uniforme_5_idleDown_3: 21300003
+      Estudiante_Uniforme_5_walkRight_0: 21300004
+      Estudiante_Uniforme_5_walkRight_1: 21300005
+      Estudiante_Uniforme_5_walkRight_2: 21300006
+      Estudiante_Uniforme_5_walkRight_3: 21300007
+      Estudiante_Uniforme_5_walkRight_4: 21300008
+      Estudiante_Uniforme_5_walkRight_5: 21300009
+      Estudiante_Uniforme_5_walkUp_6: 21300010
+      Estudiante_Uniforme_5_walkUp_7: 21300011
+      Estudiante_Uniforme_5_walkUp_8: 21300012
+      Estudiante_Uniforme_5_walkUp_9: 21300013
+      Estudiante_Uniforme_5_walkUp_10: 21300014
+      Estudiante_Uniforme_5_walkUp_11: 21300015
+      Estudiante_Uniforme_5_walkLeft_12: 21300016
+      Estudiante_Uniforme_5_walkLeft_13: 21300017
+      Estudiante_Uniforme_5_walkLeft_14: 21300018
+      Estudiante_Uniforme_5_walkLeft_15: 21300019
+      Estudiante_Uniforme_5_walkLeft_16: 21300020
+      Estudiante_Uniforme_5_walkLeft_17: 21300021
+      Estudiante_Uniforme_5_walkDown_18: 21300022
+      Estudiante_Uniforme_5_walkDown_19: 21300023
+      Estudiante_Uniforme_5_walkDown_20: 21300024
+      Estudiante_Uniforme_5_walkDown_21: 21300025
+      Estudiante_Uniforme_5_walkDown_22: 21300026
+      Estudiante_Uniforme_5_walkDown_23: 21300027
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

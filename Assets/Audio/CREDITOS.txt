@@ -1,0 +1,10 @@
+MÚSICA ORIGINAL DE ¡YA CASI!
+
+Autor, compositor y productor: Agustín López Parra, desarrollador del videojuego.
+Creada en FL Studio 25.
+
+YaCASI-Soundtrack-InicioMenu.mp3: menú de entrada al nivel 3; reproducción en bucle.
+YaCASI-Soundtrack-Nivel3.mp3: música durante el nivel 3; reproducción en bucle.
+YaCASI-Soundtrack-GameOver-TiempoFinal.mp3: derrota al agotarse los tres minutos; una reproducción.
+
+Recursos gráficos: LimeZu, Modern Interiors y Modern Exteriors.

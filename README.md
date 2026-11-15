@@ -77,3 +77,22 @@ El desarrollo completo del nivel 1 fue realizado por **Agustín López Parra (@a
 | 4 — El Cubículo | Carlos Manuel Palma Muñoz (@elmanee) |
 
 Todas las issues de los sprints 1 y 3 corresponden a Agustín; las de los sprints 2 y 4 a Carlos. Actualizado el 28 de octubre de 2026.
+
+
+## Música original
+
+Composición y producción: **Agustín López Parra**, desarrollador de ¡Ya Casi!, en **FL Studio 25**.
+
+- `YaCASI-Soundtrack-InicioMenu.mp3`: menú del nivel 3.
+- `YaCASI-Soundtrack-Nivel3.mp3`: música del nivel 3, en bucle durante la partida.
+- `YaCASI-Soundtrack-GameOver-TiempoFinal.mp3`: fin de tiempo (tres minutos) del nivel 3.
+
+Para probar: abrir `Assets/Scenes/MenuNivel03.unity`, pulsar Play y elegir Jugar nivel 3.
+
+## Nivel 3 — inventario y entregas (YC14)
+
+Cinco proyectos distintos, cinco profesores y tres minutos. Seleccionar con 1–5, Tab o clic; entregar con E. Esc abre la pausa con continuar, reiniciar, opciones y menú principal. La interfaz comparte Pixelify Sans, paneles y ajustes de audio con el nivel 1.
+
+Las amonestaciones restan tiempo: proyecto equivocado, 5 segundos; entrega repetida a un profesor que ya recibió su proyecto, 8 segundos. El HUD muestra el número de amonestaciones y el descuento acumulado. Si la sanción agota el reloj, se pierde la partida.
+
+[Alcance y comprobaciones de YC14](docs/YC14_ENTREGAS_INVENTARIO.md). Escena provisional: `Assets/Scenes/Nivel03_PruebaEntregas.unity`.

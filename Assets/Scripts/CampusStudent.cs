@@ -20,12 +20,14 @@ public sealed class CampusStudent : MonoBehaviour
     Vector2 temporaryTarget;
     bool hasTemporaryTarget;
     bool courtesyActive;
+    bool stopAtEnd;
+    bool routeFinished;
     readonly RaycastHit2D[] hits = new RaycastHit2D[32];
     readonly Collider2D[] overlaps = new Collider2D[32];
 
     public Vector2 FeetPosition => body != null ? body.position + FeetOffset : (Vector2)transform.position;
     public bool CanRequestPassage => isActiveAndEnabled && body != null && manager != null &&
-        manager.IsPlaying && Time.time >= courtesyReadyAt && !courtesyActive;
+        manager.IsPlaying && Time.time >= courtesyReadyAt && !courtesyActive && !routeFinished;
     Vector2 FeetOffset => feet != null ? (Vector2)transform.TransformVector(feet.offset) : Vector2.zero;
 
     public void Initialize(RuntimeAnimatorController controller, Sprite initial, Color tint)
@@ -46,6 +48,26 @@ public sealed class CampusStudent : MonoBehaviour
         feet = gameObject.AddComponent<CapsuleCollider2D>();
         feet.size = new Vector2(.55f, .4f);
         feet.offset = new Vector2(0, -.45f);
+    }
+
+    /// <summary>Intercambia un recorrido sin conservar un índice de la ruta anterior.</summary>
+    public void SetRoute(Vector2[] points, bool stopAtEnd = false)
+    {
+        route = points;
+        this.stopAtEnd = stopAtEnd;
+        routeFinished = false;
+        next = 0;
+        routeDirection = 1;
+        hasTemporaryTarget = false;
+        courtesyActive = false;
+        wait = 0;
+        blockedTime = 0;
+    }
+
+    /// <summary>Una conversación puede hacer una pausa; pedir permiso la interrumpe.</summary>
+    public void PauseFor(float seconds)
+    {
+        if (!courtesyActive && !routeFinished) wait = Mathf.Max(wait, Mathf.Max(0, seconds));
     }
 
     /// <summary>Cada alumno decide una vez por petición; no siempre concede el paso.</summary>
@@ -69,7 +91,7 @@ public sealed class CampusStudent : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (manager == null || !manager.IsPlaying || body == null || route == null || route.Length < 2)
+        if (manager == null || !manager.IsPlaying || body == null || route == null || route.Length < 2 || routeFinished)
         {
             StopAnimation();
             return;
@@ -98,6 +120,11 @@ public sealed class CampusStudent : MonoBehaviour
                 // Espera a un lado; la petición no sustituye la ruta original.
                 StopAnimation();
             }
+            else if (stopAtEnd && next == route.Length - 1)
+            {
+                routeFinished = true;
+                StopAnimation();
+            }
             else
                 next = (next + routeDirection + route.Length) % route.Length;
             return;
@@ -123,7 +150,7 @@ public sealed class CampusStudent : MonoBehaviour
                     temporaryUntil = Time.time + 1.4f;
                     hasTemporaryTarget = true;
                 }
-                else
+                else if (!stopAtEnd)
                 {
                     routeDirection = -routeDirection;
                     next = (next + routeDirection + route.Length) % route.Length;

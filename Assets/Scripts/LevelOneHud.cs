@@ -12,8 +12,10 @@ public sealed class LevelOneHud : MonoBehaviour
     Image contextPanel, inventoryIcon;
     CanvasGroup notificationGroup;
     float notificationUntil;
+    LevelOneMystery mystery;
+    public void ConfigureMystery(LevelOneMystery value){mystery=value;}
 
-    public void Initialize(Action pause, Action help)
+    public void Initialize(Action pause, Action help, Action notebook = null)
     {
         var status = Card("Objetivo", new Vector2(0, 1), new Vector2(20, -20), new Vector2(340, 96));
         Text(status.transform, "Nivel", "El caos del casillero", new Vector2(0, 23), new Vector2(316, 34), 25);
@@ -37,6 +39,13 @@ public sealed class LevelOneHud : MonoBehaviour
             Place(contact.rectTransform, new Vector2(-5 + i * 10, 1), new Vector2(4, 7)); contact.raycastTarget = false;
         }
         inventory = Text(bag.transform, "USB y calma", "USB pendiente\nCalma: 3/3", new Vector2(26, 0), new Vector2(230, 76), 25);
+        if(notebook!=null)
+        {
+            var book=Card("Libreta de pistas",Vector2.zero,new Vector2(20,122),new Vector2(300,54));
+            var button=U2Presentation.Button(book.transform,"Libreta [N]",Vector2.zero,()=>notebook());
+            button.GetComponent<RectTransform>().sizeDelta=new Vector2(294,48);
+            var label=button.GetComponentInChildren<TMP_Text>();label.fontSize=24;label.rectTransform.sizeDelta=new Vector2(286,44);
+        }
 
         contextPanel = Card("Acción cercana", new Vector2(.5f, 0), new Vector2(0, 20), new Vector2(480, 88));
         context = Text(contextPanel.transform, "Acción", "", Vector2.zero, new Vector2(450, 78), 25);
@@ -55,6 +64,7 @@ public sealed class LevelOneHud : MonoBehaviour
         timer.text = $"{seconds / 60:00}:{seconds % 60:00}";
         timer.color = seconds <= 25 ? new Color(1, .48f, .40f) : Gold;
         goal.text = manager.HasUSB ? "Vuelve a la salida · 1/1" : "Encuentra tu USB · 0/1";
+        if(mystery!=null&&!manager.HasUSB)goal.text=mystery.DiscoveredCount<3?$"Investiga las pistas · {mystery.DiscoveredCount}/3":"Deduce y abre el casillero";
         inventory.text = (manager.HasUSB ? "USB recuperada" : "USB pendiente") + $"\nCalma: {calm}/3";
         inventoryIcon.color = manager.HasUSB ? new Color(.38f, .85f, .65f) : new Color(.36f, .53f, .60f);
         bool visible = manager.IsPlaying && nearest != null && !manager.HasUSB;
@@ -63,10 +73,12 @@ public sealed class LevelOneHud : MonoBehaviour
         {
             float penalty = Resources.Load<U2GameConfig>("U2GameConfig")?.repeatLockerPenalty ?? 5;
             context.text = nearest.IsSearched
-                ? $"Casillero {lockerNumber} · Ya revisado\nRepetir cuesta {penalty:0} s"
-                : $"Casillero {lockerNumber}\nE / botón sur: revisar";
+                ? $"{nearest.MysteryName} · Ya revisado\nRepetir cuesta {penalty:0} s"
+                : $"Casillero {nearest.MysteryName}\nE / botón sur: revisar";
             context.color = nearest.IsSearched ? Gold : Color.white;
         }
+        string clue=mystery!=null?mystery.NearbyCluePrompt():null;
+        if(manager.IsPlaying&&!manager.HasUSB&&!string.IsNullOrEmpty(clue)){contextPanel.gameObject.SetActive(true);context.text=clue;context.color=Gold;}
     }
 
     public void Notify(string message)
@@ -82,6 +94,8 @@ public sealed class LevelOneHud : MonoBehaviour
     {
         var bag = inventory.transform.parent as RectTransform;
         if (bag != null) bag.anchoredPosition = new Vector2(20, 320);
+        var book=transform.Find("Libreta de pistas") as RectTransform;
+        if(book!=null)book.anchoredPosition=new Vector2(20,422);
     }
 
     void Update()
