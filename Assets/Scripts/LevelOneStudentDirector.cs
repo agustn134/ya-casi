@@ -134,17 +134,25 @@ public sealed class LevelOneStudentDirector : MonoBehaviour
     void Spawn(string caption, Vector2[] route, float speed, bool conversation)
     {
         if (!TryFindSpawn(route, out Vector2 spawn)) return;
+        RuntimeAnimatorController controller = null;
+        Sprite appearance = null;
+        if (config != null && config.studentControllers != null && config.studentControllers.Length > 0)
+        {
+            int index = students.Count % config.studentControllers.Length;
+            controller = config.studentControllers[index];
+            if(config.studentIdleSprites!=null && index<config.studentIdleSprites.Length)
+                appearance=config.studentIdleSprites[index];
+        }
+        if(controller==null || appearance==null)
+        {
+            Debug.LogError("Falta el arte del alumno. Ejecuta Ya Casi/U2/Preparar estudiantes.",this);
+            return;
+        }
         var go = new GameObject(caption);
         go.transform.SetParent(crowdRoot, false); go.transform.position = spawn;
-        var actorAnimator = player.GetComponent<Animator>();
-        var actorSprite = player.GetComponentInChildren<SpriteRenderer>();
-        RuntimeAnimatorController controller = null;
-        if (config != null && config.studentControllers != null && config.studentControllers.Length > 0)
-            controller = config.studentControllers[students.Count % config.studentControllers.Length];
-        if (controller == null && actorAnimator != null) controller = actorAnimator.runtimeAnimatorController;
         var student = go.AddComponent<CampusStudent>();
         student.speed = speed;
-        student.Initialize(controller, actorSprite != null ? actorSprite.sprite : null, Color.white);
+        student.Initialize(controller, appearance, Color.white);
         var points = new List<Vector2> { spawn };
         points.AddRange(route);
         student.SetRoute(points.ToArray());

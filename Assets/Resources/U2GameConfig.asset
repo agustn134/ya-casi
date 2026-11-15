@@ -23,6 +23,14 @@ MonoBehaviour:
   - {fileID: 22100000, guid: ba2553bf0ba354f4f88be95e8041458d, type: 2}
   - {fileID: 22100000, guid: e525808ef7e59d74b919855bc55edd99, type: 2}
   - {fileID: 22100000, guid: 40bdf51bf9e1ddc49acc32632727a4cb, type: 2}
+  studentArtVersion: 2
+  studentIdleSprites:
+  - {fileID: 8988727409349191632, guid: fee67d477c29561abae6eef5861e4157, type: 3}
+  - {fileID: 4231014984912998979, guid: 41f5490061a05fc0980637a834c0a0bd, type: 3}
+  - {fileID: 1356766708286959163, guid: 89193a679edd5d4a99e75d291b57baca, type: 3}
+  - {fileID: 1484164247312161278, guid: 2b06b9d20a7f55879077ca07357d4439, type: 3}
+  - {fileID: 1717553519262457013, guid: e52028b1b6985725b6f2b29f304fa5e4, type: 3}
+  - {fileID: 8315999022388186061, guid: d9e116e730665e358e07a88733936e14, type: 3}
   roundSeconds: 135
   wrongLockerPenalty: 3
   repeatLockerPenalty: 5

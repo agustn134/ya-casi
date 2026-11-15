@@ -39,6 +39,11 @@ public sealed class CampusStudent : MonoBehaviour
         sprite.sortingOrder = 2;
         animator = gameObject.AddComponent<Animator>();
         animator.runtimeAnimatorController = controller;
+        if(controller!=null)
+        {
+            animator.Play("Base Layer.IdleDown",0,0);
+            animator.Update(0);
+        }
         body = gameObject.AddComponent<Rigidbody2D>();
         body.gravityScale = 0;
         body.freezeRotation = true;

@@ -74,10 +74,12 @@ public sealed class LevelOneMystery : MonoBehaviour
             var sprite=go.AddComponent<SpriteRenderer>();sprite.sortingOrder=4;
             if(i==1)
             {
-                var actorSprite=player.GetComponent<SpriteRenderer>();sprite.sprite=actorSprite!=null?actorSprite.sprite:null;
+                if(config!=null&&config.studentIdleSprites!=null&&config.studentIdleSprites.Length>0)
+                    sprite.sprite=config.studentIdleSprites[config.studentIdleSprites.Length-1];
                 var animator=go.AddComponent<Animator>();
                 if(config!=null&&config.studentControllers!=null&&config.studentControllers.Length>0)
                     animator.runtimeAnimatorController=config.studentControllers[config.studentControllers.Length-1];
+                if(animator.runtimeAnimatorController!=null){animator.Play("Base Layer.IdleDown",0,0);animator.Update(0);}
                 animator.speed=0;
             }
             else if(noteSprite!=null)
