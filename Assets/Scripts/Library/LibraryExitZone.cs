@@ -24,7 +24,7 @@ public sealed class LibraryExitZone : MonoBehaviour
         if (manager == null) return;
         bool open = manager.CollectedCount == 3;
         if (floor != null) floor.color = open ? Color.white : new Color(.8f,.84f,.85f);
-        if (sign != null) sign.text = open ? "SALIDA ABIERTA\nCRUZA LA PUERTA" : "SALIDA\nREÚNE LOS 3 LIBROS";
+        if (sign != null) sign.text = open ? "SALIDA ABIERTA\nCRUZA LA PUERTA" : "BIBLIOTECA\nENTRADA Y SALIDA";
         if (statusLight != null) statusLight.color = open ? new Color(.3f,1f,.6f) : new Color(1f,.72f,.3f);
         opening = Mathf.MoveTowards(opening, open ? 1f : 0f, Time.unscaledDeltaTime * 2.5f);
         if (doorFrames != null && doorFrames.Length > 0)

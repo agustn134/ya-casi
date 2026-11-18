@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-public enum ProjectDeliveryResult { Accepted, WrongProject, MissingProject, AlreadyDelivered, NotPlaying, UnknownProfessor }
+public enum ProjectDeliveryResult { Accepted, WrongProject, MissingProject, AlreadyDelivered, NotPlaying, UnknownProfessor, ChallengePending }
 
 /// <summary>Reglas comprobables con proyectos provisionales, sin cargar el mapa de Unity.</summary>
 public sealed class ProjectDeliverySession
@@ -17,6 +17,7 @@ public sealed class ProjectDeliverySession
     public float RepeatDeliveryPenalty { get; }
     public float TotalPenaltySeconds { get; private set; }
     public int WarningCount { get; private set; }
+    public int HazardHitCount { get; private set; }
     public bool Paused { get; private set; }
     public bool Failed { get; private set; }
     public bool Completed => DeliveredCount == RequiredCount;
@@ -77,6 +78,19 @@ public sealed class ProjectDeliverySession
     void Penalize(float seconds)
     {
         WarningCount++;
+        DeductTime(seconds);
+    }
+
+    public bool ApplyHazardHit(float seconds)
+    {
+        if (!Playing || float.IsNaN(seconds) || float.IsInfinity(seconds) || seconds <= 0) return false;
+        HazardHitCount++;
+        DeductTime(seconds);
+        return true;
+    }
+
+    void DeductTime(float seconds)
+    {
         float deducted = Math.Min(RemainingTime, seconds);
         RemainingTime -= deducted;
         TotalPenaltySeconds += deducted;

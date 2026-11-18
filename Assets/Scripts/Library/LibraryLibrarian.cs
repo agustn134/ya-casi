@@ -12,14 +12,53 @@ public sealed class LibraryLibrarian : MonoBehaviour
     int patrolIndex;
     float nextWarning, nextPath;
     bool investigating;
+    Rigidbody2D body;
+    BoxCollider2D solidBody;
+    readonly RaycastHit2D[] contacts = new RaycastHit2D[16];
+    float heardUntil;
+
+    void Awake()
+    {
+        body = gameObject.AddComponent<Rigidbody2D>();
+        body.bodyType = RigidbodyType2D.Kinematic;
+        body.interpolation = RigidbodyInterpolation2D.Interpolate;
+        solidBody = gameObject.AddComponent<BoxCollider2D>();
+        solidBody.size = new Vector2(.8f, .85f);
+        solidBody.offset = new Vector2(0, -.25f);
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (manager != null && manager.IsPlaying && manager.Player != null &&
+            collision.rigidbody == manager.Player.GetComponent<Rigidbody2D>() &&
+            (investigating || manager.PlayerIsRunning) && Time.time >= nextWarning)
+            WarnPlayer();
+    }
+
+    void WarnPlayer()
+    {
+        manager.Reprimand();
+        nextWarning = Time.time + 8f;
+        investigating = false;
+        nextPath = 0;
+        route.Clear();
+        Play(Vector2.zero);
+    }
     string animationState;
     public bool Investigating => investigating;
 
-    void Update()
+    void FixedUpdate()
     {
         if (manager == null || !manager.IsPlaying || manager.Player == null) return;
         Vector2 player = manager.Player.transform.position;
-        if (!investigating && Time.time >= nextWarning && manager.PlayerIsRunning && Vector2.Distance(transform.position, player) <= hearingRadius)
+        bool hearsPlayer = manager.PlayerIsRunning && Vector2.Distance(body.position, player) <= hearingRadius;
+        if (hearsPlayer) heardUntil = Time.time + 3f;
+        if (investigating && Time.time >= heardUntil)
+        {
+            investigating = false;
+            nextPath = 0;
+        }
+        if (!investigating && Time.time >= nextWarning && hearsPlayer)
         {
             investigating = true;
             nextPath = 0;
@@ -31,11 +70,7 @@ public sealed class LibraryLibrarian : MonoBehaviour
             destination = player;
             if (Vector2.Distance(transform.position, player) < 1.1f)
             {
-                manager.Reprimand();
-                nextWarning = Time.time + 8f; // Tres segundos detenidos y cinco de protección.
-                investigating = false;
-                route.Clear();
-                Play(Vector2.zero);
+                WarnPlayer();
                 return;
             }
         }
@@ -55,10 +90,35 @@ public sealed class LibraryLibrarian : MonoBehaviour
             nextPath = Time.time + .6f;
         }
         if (route.Count == 0) { Play(Vector2.zero); return; }
-        Vector2 from = transform.position;
+        Vector2 from = body.position;
         Vector2 direction = route[0] - from;
-        Vector2 next = Vector2.MoveTowards(from, route[0], (investigating ? 3.4f : 1.25f) * Time.deltaTime);
-        transform.position = new Vector3(next.x, next.y, 0);
+        Vector2 next = Vector2.MoveTowards(from, route[0], (investigating ? 3.4f : 1.25f) * Time.fixedDeltaTime);
+        Vector2 step = next - from;
+        float distance = step.magnitude;
+        if (distance > 0f)
+        {
+            const float clearance = .02f;
+            Vector2 heading = step / distance;
+            var filter = new ContactFilter2D { useTriggers = false };
+            int hits = solidBody.Cast(heading, filter, contacts, distance + clearance);
+            for (int i = 0; i < hits; i++)
+            {
+                if (contacts[i].collider.GetComponentInParent<PlayerMovement>() != manager.Player)
+                    continue;
+                if (Vector2.Dot(heading, player - from) <= 0f)
+                    continue;
+
+                if (Time.time >= nextWarning && (investigating || manager.PlayerIsRunning))
+                {
+                    WarnPlayer();
+                    return;
+                }
+
+                distance = Mathf.Min(distance, Mathf.Max(0f, contacts[i].distance - clearance));
+            }
+            next = from + heading * distance;
+        }
+        body.MovePosition(next);
         Play(direction);
         if (Vector2.Distance(next, route[0]) < .08f) route.RemoveAt(0);
     }

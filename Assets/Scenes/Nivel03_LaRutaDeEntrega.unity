@@ -152583,8 +152583,25 @@ MonoBehaviour:
   - {fileID: 21300007, guid: 94dc21c7867c4aa0a993b2552e7b68aa, type: 3}
   - {fileID: 21300008, guid: 94dc21c7867c4aa0a993b2552e7b68aa, type: 3}
   - {fileID: 21300009, guid: 94dc21c7867c4aa0a993b2552e7b68aa, type: 3}
-  paceDistance: 0.3
-  paceSpeed: 0.35
+  idleUp:
+  - {fileID: 21300001, guid: 94dc21c7867c4aa0a993b2552e7b68aa, type: 3}
+  walkUp:
+  - {fileID: 21300010, guid: 94dc21c7867c4aa0a993b2552e7b68aa, type: 3}
+  - {fileID: 21300011, guid: 94dc21c7867c4aa0a993b2552e7b68aa, type: 3}
+  - {fileID: 21300012, guid: 94dc21c7867c4aa0a993b2552e7b68aa, type: 3}
+  - {fileID: 21300013, guid: 94dc21c7867c4aa0a993b2552e7b68aa, type: 3}
+  - {fileID: 21300014, guid: 94dc21c7867c4aa0a993b2552e7b68aa, type: 3}
+  - {fileID: 21300015, guid: 94dc21c7867c4aa0a993b2552e7b68aa, type: 3}
+  walkDown:
+  - {fileID: 21300022, guid: 94dc21c7867c4aa0a993b2552e7b68aa, type: 3}
+  - {fileID: 21300023, guid: 94dc21c7867c4aa0a993b2552e7b68aa, type: 3}
+  - {fileID: 21300024, guid: 94dc21c7867c4aa0a993b2552e7b68aa, type: 3}
+  - {fileID: 21300025, guid: 94dc21c7867c4aa0a993b2552e7b68aa, type: 3}
+  - {fileID: 21300026, guid: 94dc21c7867c4aa0a993b2552e7b68aa, type: 3}
+  - {fileID: 21300027, guid: 94dc21c7867c4aa0a993b2552e7b68aa, type: 3}
+  patrolRadius: 3.6
+  patrolSpeed: 1
+  interactionStopDistance: 2.2
   phaseOffset: 0
 --- !u!1 &2110000010
 GameObject:
@@ -152825,8 +152842,25 @@ MonoBehaviour:
   - {fileID: 21300007, guid: 161c743362c84aecafca17add4e1b24c, type: 3}
   - {fileID: 21300008, guid: 161c743362c84aecafca17add4e1b24c, type: 3}
   - {fileID: 21300009, guid: 161c743362c84aecafca17add4e1b24c, type: 3}
-  paceDistance: 0.3
-  paceSpeed: 0.35
+  idleUp:
+  - {fileID: 21300001, guid: 161c743362c84aecafca17add4e1b24c, type: 3}
+  walkUp:
+  - {fileID: 21300010, guid: 161c743362c84aecafca17add4e1b24c, type: 3}
+  - {fileID: 21300011, guid: 161c743362c84aecafca17add4e1b24c, type: 3}
+  - {fileID: 21300012, guid: 161c743362c84aecafca17add4e1b24c, type: 3}
+  - {fileID: 21300013, guid: 161c743362c84aecafca17add4e1b24c, type: 3}
+  - {fileID: 21300014, guid: 161c743362c84aecafca17add4e1b24c, type: 3}
+  - {fileID: 21300015, guid: 161c743362c84aecafca17add4e1b24c, type: 3}
+  walkDown:
+  - {fileID: 21300022, guid: 161c743362c84aecafca17add4e1b24c, type: 3}
+  - {fileID: 21300023, guid: 161c743362c84aecafca17add4e1b24c, type: 3}
+  - {fileID: 21300024, guid: 161c743362c84aecafca17add4e1b24c, type: 3}
+  - {fileID: 21300025, guid: 161c743362c84aecafca17add4e1b24c, type: 3}
+  - {fileID: 21300026, guid: 161c743362c84aecafca17add4e1b24c, type: 3}
+  - {fileID: 21300027, guid: 161c743362c84aecafca17add4e1b24c, type: 3}
+  patrolRadius: 3.6
+  patrolSpeed: 1
+  interactionStopDistance: 2.2
   phaseOffset: 1.7
 --- !u!1 &2110000110
 GameObject:
@@ -153067,8 +153101,25 @@ MonoBehaviour:
   - {fileID: 21300007, guid: b4cb2307e9204119b02cb1c5299f9fd5, type: 3}
   - {fileID: 21300008, guid: b4cb2307e9204119b02cb1c5299f9fd5, type: 3}
   - {fileID: 21300009, guid: b4cb2307e9204119b02cb1c5299f9fd5, type: 3}
-  paceDistance: 0.3
-  paceSpeed: 0.35
+  idleUp:
+  - {fileID: 21300001, guid: b4cb2307e9204119b02cb1c5299f9fd5, type: 3}
+  walkUp:
+  - {fileID: 21300010, guid: b4cb2307e9204119b02cb1c5299f9fd5, type: 3}
+  - {fileID: 21300011, guid: b4cb2307e9204119b02cb1c5299f9fd5, type: 3}
+  - {fileID: 21300012, guid: b4cb2307e9204119b02cb1c5299f9fd5, type: 3}
+  - {fileID: 21300013, guid: b4cb2307e9204119b02cb1c5299f9fd5, type: 3}
+  - {fileID: 21300014, guid: b4cb2307e9204119b02cb1c5299f9fd5, type: 3}
+  - {fileID: 21300015, guid: b4cb2307e9204119b02cb1c5299f9fd5, type: 3}
+  walkDown:
+  - {fileID: 21300022, guid: b4cb2307e9204119b02cb1c5299f9fd5, type: 3}
+  - {fileID: 21300023, guid: b4cb2307e9204119b02cb1c5299f9fd5, type: 3}
+  - {fileID: 21300024, guid: b4cb2307e9204119b02cb1c5299f9fd5, type: 3}
+  - {fileID: 21300025, guid: b4cb2307e9204119b02cb1c5299f9fd5, type: 3}
+  - {fileID: 21300026, guid: b4cb2307e9204119b02cb1c5299f9fd5, type: 3}
+  - {fileID: 21300027, guid: b4cb2307e9204119b02cb1c5299f9fd5, type: 3}
+  patrolRadius: 3.6
+  patrolSpeed: 1
+  interactionStopDistance: 2.2
   phaseOffset: 3.4
 --- !u!1 &2110000210
 GameObject:
@@ -153309,8 +153360,25 @@ MonoBehaviour:
   - {fileID: 21300007, guid: 97a10bda795b4fa79a5b6697ca3e21e5, type: 3}
   - {fileID: 21300008, guid: 97a10bda795b4fa79a5b6697ca3e21e5, type: 3}
   - {fileID: 21300009, guid: 97a10bda795b4fa79a5b6697ca3e21e5, type: 3}
-  paceDistance: 0.3
-  paceSpeed: 0.35
+  idleUp:
+  - {fileID: 21300001, guid: 97a10bda795b4fa79a5b6697ca3e21e5, type: 3}
+  walkUp:
+  - {fileID: 21300010, guid: 97a10bda795b4fa79a5b6697ca3e21e5, type: 3}
+  - {fileID: 21300011, guid: 97a10bda795b4fa79a5b6697ca3e21e5, type: 3}
+  - {fileID: 21300012, guid: 97a10bda795b4fa79a5b6697ca3e21e5, type: 3}
+  - {fileID: 21300013, guid: 97a10bda795b4fa79a5b6697ca3e21e5, type: 3}
+  - {fileID: 21300014, guid: 97a10bda795b4fa79a5b6697ca3e21e5, type: 3}
+  - {fileID: 21300015, guid: 97a10bda795b4fa79a5b6697ca3e21e5, type: 3}
+  walkDown:
+  - {fileID: 21300022, guid: 97a10bda795b4fa79a5b6697ca3e21e5, type: 3}
+  - {fileID: 21300023, guid: 97a10bda795b4fa79a5b6697ca3e21e5, type: 3}
+  - {fileID: 21300024, guid: 97a10bda795b4fa79a5b6697ca3e21e5, type: 3}
+  - {fileID: 21300025, guid: 97a10bda795b4fa79a5b6697ca3e21e5, type: 3}
+  - {fileID: 21300026, guid: 97a10bda795b4fa79a5b6697ca3e21e5, type: 3}
+  - {fileID: 21300027, guid: 97a10bda795b4fa79a5b6697ca3e21e5, type: 3}
+  patrolRadius: 3.6
+  patrolSpeed: 1
+  interactionStopDistance: 2.2
   phaseOffset: 5.1
 --- !u!1 &2110000310
 GameObject:
@@ -153551,8 +153619,25 @@ MonoBehaviour:
   - {fileID: 21300007, guid: c57b2258714f4f239ee3e87e372dd79f, type: 3}
   - {fileID: 21300008, guid: c57b2258714f4f239ee3e87e372dd79f, type: 3}
   - {fileID: 21300009, guid: c57b2258714f4f239ee3e87e372dd79f, type: 3}
-  paceDistance: 0.3
-  paceSpeed: 0.35
+  idleUp:
+  - {fileID: 21300001, guid: c57b2258714f4f239ee3e87e372dd79f, type: 3}
+  walkUp:
+  - {fileID: 21300010, guid: c57b2258714f4f239ee3e87e372dd79f, type: 3}
+  - {fileID: 21300011, guid: c57b2258714f4f239ee3e87e372dd79f, type: 3}
+  - {fileID: 21300012, guid: c57b2258714f4f239ee3e87e372dd79f, type: 3}
+  - {fileID: 21300013, guid: c57b2258714f4f239ee3e87e372dd79f, type: 3}
+  - {fileID: 21300014, guid: c57b2258714f4f239ee3e87e372dd79f, type: 3}
+  - {fileID: 21300015, guid: c57b2258714f4f239ee3e87e372dd79f, type: 3}
+  walkDown:
+  - {fileID: 21300022, guid: c57b2258714f4f239ee3e87e372dd79f, type: 3}
+  - {fileID: 21300023, guid: c57b2258714f4f239ee3e87e372dd79f, type: 3}
+  - {fileID: 21300024, guid: c57b2258714f4f239ee3e87e372dd79f, type: 3}
+  - {fileID: 21300025, guid: c57b2258714f4f239ee3e87e372dd79f, type: 3}
+  - {fileID: 21300026, guid: c57b2258714f4f239ee3e87e372dd79f, type: 3}
+  - {fileID: 21300027, guid: c57b2258714f4f239ee3e87e372dd79f, type: 3}
+  patrolRadius: 3.6
+  patrolSpeed: 1
+  interactionStopDistance: 2.2
   phaseOffset: 6.8
 --- !u!1 &2110000410
 GameObject:
@@ -153679,7 +153764,7 @@ MonoBehaviour:
   showTutorial: 1
   projectNamesFollowProfessors: 1
   showNarrativeIntro: 1
-  narrativeIntro: "Galindo necesita entregar los proyectos para aprobar las unidades de sus materias.\n\nLos profesores lo esperan en distintos edificios de la universidad. Debe llegar con el proyecto correcto antes de que cierre el sistema de entregas."
+  narrativeIntro: "Galindo: «Cinco proyectos y el sistema cierra en tres minutos... ¡ya casi!»\n\nCompañera: «Los profesores lanzan papel. Esquiva antes de entregar y pide permiso con Q si los alumnos te bloquean».\n\nGalindo: «¡Vamos por esas unidades!»"
 --- !u!1 &2120000000
 GameObject:
   m_ObjectHideFlags: 0

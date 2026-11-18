@@ -58,6 +58,21 @@ public static class DeliveryRulesChecks
         var custom = new ProjectDeliverySession(new[] { "p" }, new[] { "b" }, 100, penalizedInventory, 3, 7);
         custom.TryDeliver("p", "a");
         Check(custom.RemainingTime == 97, "Penalizaciones configurables");
+        var hazardInventory = new ProjectInventory(); hazardInventory.Add("paper");
+        var hazard = new ProjectDeliverySession(new[] { "teacher" }, new[] { "paper" }, 12, hazardInventory);
+        hazard.SetPaused(true);
+        Check(!hazard.ApplyHazardHit(5) && hazard.RemainingTime == 12, "Impacto no descuenta durante pausa");
+        hazard.SetPaused(false); hazard.AdvanceTime(2);
+        Check(hazard.ApplyHazardHit(5) && hazard.RemainingTime == 5 && hazard.HazardHitCount == 1, "Papel descuenta cinco segundos y cuenta un impacto");
+        Check(hazard.WarningCount == 0 && hazard.ElapsedTime == 2 && hazardInventory.Quantity("paper") == 1, "Impacto conserva inventario y separa amonestaciones y recorrido");
+        Check(!hazard.ApplyHazardHit(float.NaN) && !hazard.ApplyHazardHit(-2) && !hazard.ApplyHazardHit(float.PositiveInfinity), "Impactos ignoran valores inválidos");
+        Check(hazard.ApplyHazardHit(10) && hazard.RemainingTime == 0 && hazard.Failed && hazard.TotalPenaltySeconds == 10, "Impacto final limita descuento al tiempo restante");
+        Check(!hazard.ApplyHazardHit(5) && hazard.HazardHitCount == 2, "No hay daño después de perder");
+        var wonInventory = new ProjectInventory(); wonInventory.Add("paper");
+        var won = new ProjectDeliverySession(new[] { "teacher" }, new[] { "paper" }, 30, wonInventory);
+        won.TryDeliver("teacher", "paper");
+        Check(!won.ApplyHazardHit(5) && won.RemainingTime == 30, "No hay daño después de ganar");
+        FinalChallengeChecks.Run(Check);
         Console.WriteLine("YC14_RULES_OK " + passed + " comprobaciones");
         return 0;
     }

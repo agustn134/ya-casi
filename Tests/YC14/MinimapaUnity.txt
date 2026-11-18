@@ -1,0 +1,31 @@
+Unity 6000.3.25f1
+Escena provisional: Assets/Scenes/Nivel03_PruebaEntregas.unity
+Inicio UTC: 2026-11-11T19:19:47.4808497Z
+PASS El controlador crea el minimapa y su segunda cámara.
+PASS La RenderTexture de 512 por 512 está creada.
+PASS La cámara del minimapa ve únicamente la capa Minimap.
+PASS La cámara principal excluye la capa del minimapa.
+PASS La segunda cámara es ortográfica y apunta a su RenderTexture.
+PASS La cámara del minimapa no duplica el AudioListener.
+PASS El minimapa comienza desplegado y su cámara activa.
+PASS El encuadre cubre todas las celdas del camino (253) con dimensiones válidas.
+PASS El marcador inicial del jugador coincide con sus pies.
+PASS El marcador del profesor 1 coincide con su posición.
+PASS El marcador del profesor 2 coincide con su posición.
+PASS El marcador del profesor 3 coincide con su posición.
+PASS El marcador del profesor 4 coincide con su posición.
+PASS El marcador del profesor 5 coincide con su posición.
+PASS La prueba encuentra otra celda transitable para mover al jugador.
+PASS El marcador sigue al jugador después de cambiar de celda.
+PASS La RenderTexture contiene mapa y marcadores visibles; no está vacía (grupos de color: 20).
+PASS Los profesores dorados y el jugador azul se ven en los píxeles renderizados.
+PASS La partida entra en pausa para comprobar los marcadores.
+PASS Revisar el minimapa en pausa no consume tiempo.
+PASS El marcador del profesor refleja su posición incluso mientras la partida está pausada.
+PASS Se acepta la primera entrega durante la prueba del minimapa.
+PASS El profesor que recibió el proyecto cambia a un marcador verde.
+PASS Los demás profesores conservan el color de entrega pendiente.
+PASS Minimizar oculta el mapa y detiene su cámara.
+PASS Minimizar conserva la RenderTexture sin volver a crearla.
+PASS Desplegar recupera el mapa y reutiliza la misma textura.
+MINIMAP_UNITY_OK

@@ -16,6 +16,8 @@ public sealed class LibraryLevelManager : MonoBehaviour
     public Transform exit;
     public LibraryExitZone exitZone;
     public Sprite[] bookIcons;
+    [SerializeField] AudioClip levelMusicOverride;
+    [SerializeField] AudioClip timeoutMusicOverride;
     public float roundSeconds = 300f;
     public float wrongShelfPenalty = 10f;
     public string[] bookNames = { "Algoritmos", "Bases de datos", "Redes" };
@@ -33,6 +35,8 @@ public sealed class LibraryLevelManager : MonoBehaviour
     TMP_Text clock, objective, prompt, feedback, noise, catalog;
     GameObject hud, overlay;
     Rigidbody2D body;
+    LibraryCamera libraryCamera;
+    TMP_FontAsset libraryFont;
     AudioSource music, effects;
     AudioClip collectSound, errorSound, shushSound, stepSound;
     LibraryShelf nearest;
@@ -48,6 +52,12 @@ public sealed class LibraryLevelManager : MonoBehaviour
         Time.timeScale = 1;
         remaining = roundSeconds;
         body = player.GetComponent<Rigidbody2D>();
+        body.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+        libraryCamera = FindFirstObjectByType<LibraryCamera>();
+        var font = Resources.Load<Font>("Redaction35-Regular");
+        if (font != null) libraryFont = TMP_FontAsset.CreateFontAsset(font);
+        if (exitZone != null && exitZone.sign != null && libraryFont != null)
+            exitZone.sign.font = libraryFont;
         previousPosition = player.transform.position;
         PlayerPrefs.SetInt(U2Presentation.SaveKey, 2);
         PlayerPrefs.Save();
@@ -79,7 +89,11 @@ public sealed class LibraryLevelManager : MonoBehaviour
             if (keyboard != null && keyboard.rKey.wasPressedThisFrame) Restart();
             return;
         }
-        if (music != null) music.volume = U2Presentation.MusicVolume * .55f;
+        if (music != null)
+        {
+            music.volume = U2Presentation.MusicVolume * .55f;
+            music.pitch = Mathf.MoveTowards(music.pitch, librarian.Investigating ? 1.12f : 1f, Time.unscaledDeltaTime);
+        }
         if (!IsPlaying) return;
         remaining = Mathf.Max(0, remaining - Time.deltaTime);
         elapsed += Time.deltaTime;
@@ -101,7 +115,7 @@ public sealed class LibraryLevelManager : MonoBehaviour
         int displaySeconds = Mathf.CeilToInt(remaining);
         clock.text = "CIERRE  " + (displaySeconds / 60).ToString("00") + ":" + (displaySeconds % 60).ToString("00");
         clock.color = remaining < 30 ? new Color(1, .4f, .35f) : gold;
-        noise.text = frozen ? "¡SHHH! · 3 s sin moverte" : librarian.Investigating ? "TE ESCUCHARON · el guardia se acerca" : PlayerIsRunning ? "RUIDO ALTO · radio de 5 m" : "EN SILENCIO · camina cerca de el guardia";
+        noise.text = frozen ? "¡SHHH! · 3 s sin moverte" : librarian.Investigating ? "TE ESCUCHARON · el guardia se acerca" : PlayerIsRunning ? "RUIDO ALTO · radio de 5 m" : "EN SILENCIO · camina cerca del guardia";
         noise.color = PlayerIsRunning || librarian.Investigating ? new Color(1, .55f, .4f) : new Color(.65f, .88f, .8f);
         ring.enabled = PlayerIsRunning;
         ring.transform.position = player.transform.position;
@@ -132,7 +146,12 @@ public sealed class LibraryLevelManager : MonoBehaviour
     public bool TryExit(bool showHint)
     {
         if (!IsPlaying || frozen || !AtExit) return false;
-        if (CollectedCount == 3) { Finish(true); return true; }
+        if (CollectedCount == 3)
+        {
+            if (exitZone != null && !exitZone.DoorIsOpen) return false;
+            Finish(true);
+            return true;
+        }
         if (showHint) Notify("Necesitas los tres libros antes de salir. Te faltan " + (3 - CollectedCount) + ".");
         return false;
     }
@@ -169,6 +188,7 @@ public sealed class LibraryLevelManager : MonoBehaviour
     {
         if (!IsPlaying || frozen) return;
         Reprimands++;
+        if (libraryCamera != null) libraryCamera.Shake();
         StartCoroutine(Freeze());
     }
     IEnumerator Freeze()
@@ -186,16 +206,20 @@ public sealed class LibraryLevelManager : MonoBehaviour
         if (paused) { Resume(); return; }
         paused = true; Time.timeScale = 0;
         var card = Overlay("PAUSA", "Maratón en la Biblioteca\nEncuentra tres libros y vuelve a la salida.");
-        U2Presentation.Button(card.transform, "Continuar", new Vector2(0, -40), Resume);
-        U2Presentation.Button(card.transform, "Reiniciar", new Vector2(0, -140), Restart);
-        U2Presentation.Button(card.transform, "Opciones", new Vector2(0, -240), () => U2Presentation.Options(overlay.transform, null));
-        U2Presentation.Button(card.transform, "Menú principal", new Vector2(0, -340), U2Presentation.ReturnToMenu);
+        LibraryButton(card.transform, "Continuar", new Vector2(0, -40), Resume);
+        LibraryButton(card.transform, "Reiniciar", new Vector2(0, -140), Restart);
+        LibraryButton(card.transform, "Opciones", new Vector2(0, -240), () => U2Presentation.Options(overlay.transform, null));
+        LibraryButton(card.transform, "Menú principal", new Vector2(0, -340), U2Presentation.ReturnToMenu);
     }
     void ShowTutorial()
     {
         paused = true; Time.timeScale = 0;
-        var card = Overlay("MARATÓN EN LA BIBLIOTECA", "Encuentra 3 libros y vuelve a la salida.\n\nSi corres cerca de el guardia, te puede regañar.\nCada búsqueda sin libro nuevo resta 10 segundos.\n\nWASD: moverte · E: buscar · Shift: correr · Esc: pausa");
-        U2Presentation.Button(card.transform, "Entrar en silencio", new Vector2(0, -320), Resume);
+        var card = Overlay("MARATÓN EN LA BIBLIOTECA",
+            "Estudiante: ¡Ya recuperé la USB! Pero aún me faltan las fuentes para la entrega.\n\n" +
+            "Guardia: Quedan cinco minutos. Busca Algoritmos, Bases de datos y Redes. Vuelve por esta puerta cuando tengas los tres. Y camina, por favor.\n\n" +
+            "WASD o flechas para moverte · E para revisar · Shift para correr\n" +
+            "Una búsqueda sin libro cuesta 10 segundos.");
+        LibraryButton(card.transform, "Entrar en silencio", new Vector2(0, -320), Resume);
     }
     GameObject Overlay(string title, string description)
     {
@@ -204,8 +228,23 @@ public sealed class LibraryLevelManager : MonoBehaviour
         var card = U2Presentation.Card(overlay.transform, "Panel");
         U2Presentation.Text(card.transform, "Título", title, new Vector2(0, 315), new Vector2(1180, 100), 46, gold);
         U2Presentation.Text(card.transform, "Descripción", description, new Vector2(0, 70), new Vector2(1140, 390), 31, Color.white);
+        foreach (var text in card.GetComponentsInChildren<TMP_Text>())
+            ApplyLibraryFont(text);
         return card;
     }
+
+    Button LibraryButton(Transform parent, string label, Vector2 position, UnityEngine.Events.UnityAction action)
+    {
+        var button = U2Presentation.Button(parent, label, position, action);
+        ApplyLibraryFont(button.GetComponentInChildren<TMP_Text>());
+        return button;
+    }
+
+    void ApplyLibraryFont(TMP_Text text)
+    {
+        if (libraryFont != null && text != null) text.font = libraryFont;
+    }
+
     public void Resume()
     {
         if (overlay != null) Destroy(overlay);
@@ -227,25 +266,44 @@ public sealed class LibraryLevelManager : MonoBehaviour
             PlayerPrefs.Save();
         }
         else PlayGameOverMusic();
-        var card = Overlay(success ? "¡LECTURAS COMPLETAS!" : "LA BIBLIOTECA CERRÓ", (success ? "Saliste con los tres libros para terminar tu trabajo." : "Se acabó el tiempo. Camina cerca de el guardia\ny evita volver a los estantes que ya revisaste.") + "\n\nLibros: " + CollectedCount + "/3 · Regaños: " + Reprimands + "\nTiempo de juego: " + Mathf.CeilToInt(elapsed) + " s\nPuntaje: " + score + " · Récord: " + PlayerPrefs.GetInt("YaCasi.Library.Best", 0));
-        U2Presentation.Button(card.transform, "Volver a jugar", new Vector2(0, -180), Restart);
-        U2Presentation.Button(card.transform, "Menú principal", new Vector2(0, -280), U2Presentation.ReturnToMenu);
+        string stats = $"\n\nLibros: {CollectedCount}/3 · Regaños: {Reprimands}\nTiempo de juego: {Mathf.CeilToInt(elapsed)} s"
+            + $"\nPuntaje: {score} · Récord: {PlayerPrefs.GetInt("YaCasi.Library.Best", 0)}";
+        if (success)
+        {
+            U2Presentation.SaveDeliveryProgress();
+            if (overlay != null) Destroy(overlay);
+            overlay = U2Presentation.NewCanvas("Resultado nivel 2", 120);
+            var victory = U2Presentation.Card(overlay.transform, "Resultado");
+            U2Presentation.Text(victory.transform, "Título", "¡LECTURAS COMPLETAS!", new Vector2(0, 315), new Vector2(1180, 100), 46, gold);
+            U2Presentation.Text(victory.transform, "Resultado", "Saliste con los tres libros para terminar tu trabajo." + stats,
+                new Vector2(0, 83), new Vector2(1140, 290), 31, Color.white);
+            U2Presentation.Button(victory.transform, "Nivel 3 · La ruta de entrega", new Vector2(0, -160), U2Presentation.PlayDelivery);
+            U2Presentation.Button(victory.transform, "Volver a jugar", new Vector2(0, -255), Restart);
+            U2Presentation.Button(victory.transform, "Menú principal", new Vector2(0, -350), U2Presentation.ReturnToMenu);
+            return;
+        }
+
+        var card = Overlay("LA BIBLIOTECA CERRÓ", "Se acabó el tiempo. Camina cerca del guardia\ny evita volver a los estantes que ya revisaste." + stats);
+        LibraryButton(card.transform, "Volver a jugar", new Vector2(0, -180), Restart);
+        LibraryButton(card.transform, "Menú principal", new Vector2(0, -280), U2Presentation.ReturnToMenu);
     }
     void PlayGameOverMusic()
     {
         var config = Resources.Load<U2GameConfig>("U2GameConfig");
-        if (config == null || config.gameOverSound == null)
+        AudioClip clip = timeoutMusicOverride != null ? timeoutMusicOverride : config?.gameOverSound;
+        if (clip == null)
         {
-            Debug.LogError("Biblioteca: falta la música Game Over compartida con el nivel 1.", this);
+            Debug.LogError("Biblioteca: falta la música de derrota.", this);
             return;
         }
         music.playOnAwake = false;
         music.loop = false;
+        music.pitch = 1f;
         music.spatialBlend = 0;
         music.mute = false;
         music.ignoreListenerPause = true;
         music.volume = U2Presentation.MusicVolume;
-        music.clip = config.gameOverSound;
+        music.clip = clip;
         music.Play();
         Debug.Log("LIBRARY_GAME_OVER_MUSIC: " + music.clip.name, this);
     }
@@ -265,7 +323,7 @@ public sealed class LibraryLevelManager : MonoBehaviour
             var rect = icon.rectTransform; rect.anchorMin = rect.anchorMax = Vector2.one; rect.anchoredPosition = new Vector2(-280 + i * 90, -150); rect.sizeDelta = new Vector2(65, 70);
             inventory.Add(icon);
         }
-        var pause = U2Presentation.Button(hud.transform, "Pausa", Vector2.zero, TogglePause);
+        var pause = LibraryButton(hud.transform, "Pausa", Vector2.zero, TogglePause);
         var pauseRect = pause.GetComponent<RectTransform>(); pauseRect.anchorMin = pauseRect.anchorMax = new Vector2(1, 0); pauseRect.anchoredPosition = new Vector2(-120, 210); pauseRect.sizeDelta = new Vector2(200, 65);
         if (Application.isMobilePlatform || SystemInfo.deviceType == DeviceType.Handheld) TouchControls();
     }
@@ -275,6 +333,7 @@ public sealed class LibraryLevelManager : MonoBehaviour
         var rect = background.rectTransform; rect.anchorMin = rect.anchorMax = anchor;
         rect.pivot = new Vector2(anchor.x, .5f); rect.anchoredPosition = position; rect.sizeDelta = size;
         var text = U2Presentation.Text(background.transform, name, value, Vector2.zero, size - new Vector2(20, 8), fontSize, Color.white);
+        ApplyLibraryFont(text);
         return text;
     }
     void TouchControls()
@@ -284,13 +343,13 @@ public sealed class LibraryLevelManager : MonoBehaviour
         string[] labels = { "←", "→", "↑", "↓" };
         for (int i = 0; i < 4; i++)
         {
-            var button = U2Presentation.Button(hud.transform, labels[i], places[i], () => {});
+            var button = LibraryButton(hud.transform, labels[i], places[i], () => {});
             button.GetComponent<RectTransform>().sizeDelta = new Vector2(100, 90);
             button.gameObject.AddComponent<TouchGameControls>().direction = directions[i];
         }
-        var review = U2Presentation.Button(hud.transform, "Revisar / salir", new Vector2(680, -300), Interact);
+        var review = LibraryButton(hud.transform, "Revisar / salir", new Vector2(680, -300), Interact);
         review.GetComponent<RectTransform>().sizeDelta = new Vector2(330, 90);
-        var sprint = U2Presentation.Button(hud.transform, "Correr", new Vector2(680,-410), () => {});
+        var sprint = LibraryButton(hud.transform, "Correr", new Vector2(680,-410), () => {});
         sprint.GetComponent<RectTransform>().sizeDelta = new Vector2(330,90);
         sprint.gameObject.AddComponent<TouchGameControls>().sprint = true;
     }
@@ -310,7 +369,8 @@ public sealed class LibraryLevelManager : MonoBehaviour
         effects = gameObject.AddComponent<AudioSource>(); effects.playOnAwake = false;
         music = gameObject.AddComponent<AudioSource>(); music.loop = true; music.playOnAwake = false;
         var config = Resources.Load<U2GameConfig>("U2GameConfig");
-        if (config != null && config.soundtrack != null) { music.clip = config.soundtrack; music.volume = U2Presentation.MusicVolume * .55f; music.Play(); }
+        AudioClip clip = levelMusicOverride != null ? levelMusicOverride : config?.soundtrack;
+        if (clip != null) { music.clip = clip; music.volume = U2Presentation.MusicVolume * .55f; music.Play(); }
         collectSound = Tone("Libro recogido", 660, .16f, false);
         errorSound = Tone("Libro equivocado", 170, .2f, false);
         shushSound = Tone("Shhh", 0, .65f, true);
@@ -336,5 +396,6 @@ public sealed class LibraryLevelManager : MonoBehaviour
         TouchGameControls.Direction = Vector2.zero; TouchGameControls.Sprint = false;
         foreach (var clip in new[] { collectSound, errorSound, shushSound, stepSound }) if (clip != null) Destroy(clip);
         if (ring != null && ring.sharedMaterial != null) Destroy(ring.sharedMaterial);
+        if (libraryFont != null) Destroy(libraryFont);
     }
 }
