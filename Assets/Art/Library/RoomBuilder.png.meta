@@ -1,0 +1,2964 @@
+fileFormatVersion: 2
+guid: 16ea69a81bfd43a4ba4d91f31fe074ec
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5401255569280277119
+    second: RoomBuilder_0
+  - first:
+      213: 4237027820863926552
+    second: RoomBuilder_1
+  - first:
+      213: 5798916660161091743
+    second: RoomBuilder_2
+  - first:
+      213: -991206395851289388
+    second: RoomBuilder_3
+  - first:
+      213: 5702783932377280460
+    second: RoomBuilder_4
+  - first:
+      213: -6235702659209979354
+    second: RoomBuilder_5
+  - first:
+      213: -5815081503318285499
+    second: RoomBuilder_6
+  - first:
+      213: 4100714722042327317
+    second: RoomBuilder_7
+  - first:
+      213: -7676987441371623438
+    second: RoomBuilder_8
+  - first:
+      213: -3669825048890196089
+    second: RoomBuilder_9
+  - first:
+      213: 6526976864142875075
+    second: RoomBuilder_10
+  - first:
+      213: 8089177743013715492
+    second: RoomBuilder_11
+  - first:
+      213: 1628812732439353502
+    second: RoomBuilder_12
+  - first:
+      213: -5382024637732149255
+    second: RoomBuilder_13
+  - first:
+      213: -4649116562379872983
+    second: RoomBuilder_14
+  - first:
+      213: 7257845744608724727
+    second: RoomBuilder_15
+  - first:
+      213: 28206910284530917
+    second: RoomBuilder_16
+  - first:
+      213: -3637401240189089513
+    second: RoomBuilder_17
+  - first:
+      213: -963967175547979489
+    second: RoomBuilder_18
+  - first:
+      213: -8680741352858440929
+    second: RoomBuilder_19
+  - first:
+      213: -181749852046153243
+    second: RoomBuilder_20
+  - first:
+      213: 6037328233637079587
+    second: RoomBuilder_21
+  - first:
+      213: -4458994103978631232
+    second: RoomBuilder_22
+  - first:
+      213: 7066287361626090078
+    second: RoomBuilder_23
+  - first:
+      213: 7449866684619789959
+    second: RoomBuilder_24
+  - first:
+      213: -449509228073082612
+    second: RoomBuilder_25
+  - first:
+      213: 6849941392322851694
+    second: RoomBuilder_26
+  - first:
+      213: 6817749655357479220
+    second: RoomBuilder_27
+  - first:
+      213: -8073978620110780300
+    second: RoomBuilder_28
+  - first:
+      213: 3775247230999908883
+    second: RoomBuilder_29
+  - first:
+      213: -7213360591443682809
+    second: RoomBuilder_30
+  - first:
+      213: -6066412087395383236
+    second: RoomBuilder_31
+  - first:
+      213: 6348577912931181260
+    second: RoomBuilder_32
+  - first:
+      213: 4882412278035105603
+    second: RoomBuilder_33
+  - first:
+      213: 4895317844361941046
+    second: RoomBuilder_34
+  - first:
+      213: -4016114105306332869
+    second: RoomBuilder_35
+  - first:
+      213: 2782502360991574659
+    second: RoomBuilder_36
+  - first:
+      213: -462732842785261534
+    second: RoomBuilder_37
+  - first:
+      213: -3815227793781709359
+    second: RoomBuilder_38
+  - first:
+      213: -8845252510237611421
+    second: RoomBuilder_39
+  - first:
+      213: -5266333006987123467
+    second: RoomBuilder_40
+  - first:
+      213: -6353803917422459589
+    second: RoomBuilder_41
+  - first:
+      213: 1514826248181020417
+    second: RoomBuilder_42
+  - first:
+      213: 5353109213205336451
+    second: RoomBuilder_43
+  - first:
+      213: -528082737841772724
+    second: RoomBuilder_44
+  - first:
+      213: -3341921642797940887
+    second: RoomBuilder_45
+  - first:
+      213: -4622420723608276619
+    second: RoomBuilder_46
+  - first:
+      213: 7435386195144323805
+    second: RoomBuilder_47
+  - first:
+      213: -6822345588924589905
+    second: RoomBuilder_48
+  - first:
+      213: -1517692956706650559
+    second: RoomBuilder_49
+  - first:
+      213: -5088702383787315255
+    second: RoomBuilder_50
+  - first:
+      213: 1458904759969525052
+    second: RoomBuilder_51
+  - first:
+      213: 6132051831132070150
+    second: RoomBuilder_52
+  - first:
+      213: 4127336549651117137
+    second: RoomBuilder_53
+  - first:
+      213: -5210338908915406713
+    second: RoomBuilder_54
+  - first:
+      213: 1744297301055945879
+    second: RoomBuilder_55
+  - first:
+      213: 7891566009453042245
+    second: RoomBuilder_56
+  - first:
+      213: 5238221791743262272
+    second: RoomBuilder_57
+  - first:
+      213: -7675011059556562442
+    second: RoomBuilder_58
+  - first:
+      213: -5395976119403845877
+    second: RoomBuilder_59
+  - first:
+      213: -2365760439259072317
+    second: RoomBuilder_60
+  - first:
+      213: 3424323767056965716
+    second: RoomBuilder_61
+  - first:
+      213: -2319008551190824433
+    second: RoomBuilder_62
+  - first:
+      213: -4819781894816628870
+    second: RoomBuilder_63
+  - first:
+      213: -471818986107805359
+    second: RoomBuilder_64
+  - first:
+      213: 5916517883939566634
+    second: RoomBuilder_65
+  - first:
+      213: -2446918532705332863
+    second: RoomBuilder_66
+  - first:
+      213: -8303876828864079794
+    second: RoomBuilder_67
+  - first:
+      213: 3456960582324877544
+    second: RoomBuilder_68
+  - first:
+      213: 2228534215314101918
+    second: RoomBuilder_69
+  - first:
+      213: 6722208974471848802
+    second: RoomBuilder_70
+  - first:
+      213: 7718710273270256567
+    second: RoomBuilder_71
+  - first:
+      213: 5187418722863326892
+    second: RoomBuilder_72
+  - first:
+      213: 999546637015525936
+    second: RoomBuilder_73
+  - first:
+      213: 7167983459689369510
+    second: RoomBuilder_74
+  - first:
+      213: 2574720505548177847
+    second: RoomBuilder_75
+  - first:
+      213: -8700554744482413300
+    second: RoomBuilder_76
+  - first:
+      213: -8153968330047274224
+    second: RoomBuilder_77
+  - first:
+      213: 3636083026625120802
+    second: RoomBuilder_78
+  - first:
+      213: 1322742879899670448
+    second: RoomBuilder_79
+  - first:
+      213: -9181848287519877198
+    second: RoomBuilder_80
+  - first:
+      213: -7396855214644637900
+    second: RoomBuilder_81
+  - first:
+      213: 7212759738199941318
+    second: RoomBuilder_82
+  - first:
+      213: -6290037155339700401
+    second: RoomBuilder_83
+  - first:
+      213: 8309002921211839067
+    second: RoomBuilder_84
+  - first:
+      213: 5396825255357876821
+    second: RoomBuilder_85
+  - first:
+      213: -3589941248877280553
+    second: RoomBuilder_86
+  - first:
+      213: 2001173486183336208
+    second: RoomBuilder_87
+  - first:
+      213: 237927947068436920
+    second: RoomBuilder_88
+  - first:
+      213: -1243925887406511913
+    second: RoomBuilder_89
+  - first:
+      213: -1428525590261329269
+    second: RoomBuilder_90
+  - first:
+      213: 3181130736671252837
+    second: RoomBuilder_91
+  - first:
+      213: 1491915619885206625
+    second: RoomBuilder_92
+  - first:
+      213: -5747261633590863380
+    second: RoomBuilder_93
+  - first:
+      213: 3874266169936180620
+    second: RoomBuilder_94
+  - first:
+      213: 4254837488162934211
+    second: RoomBuilder_95
+  - first:
+      213: -5323575862169804054
+    second: RoomBuilder_96
+  - first:
+      213: -772517548592540286
+    second: RoomBuilder_97
+  - first:
+      213: 5971059068597043902
+    second: RoomBuilder_98
+  - first:
+      213: 3067881091938278758
+    second: RoomBuilder_99
+  - first:
+      213: -306445003356534409
+    second: RoomBuilder_100
+  - first:
+      213: 5302793528473668087
+    second: RoomBuilder_101
+  - first:
+      213: -5159913238217206602
+    second: RoomBuilder_102
+  - first:
+      213: -5083520839221017182
+    second: RoomBuilder_103
+  - first:
+      213: 2099110584061933556
+    second: RoomBuilder_104
+  - first:
+      213: 6541707236422587926
+    second: RoomBuilder_105
+  - first:
+      213: -2668544188267602173
+    second: RoomBuilder_106
+  - first:
+      213: 5576961278335991841
+    second: RoomBuilder_107
+  - first:
+      213: 4677363966089343696
+    second: RoomBuilder_108
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RoomBuilder_0
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 1743
+        width: 98
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7a1d0cb25d15fa40800000000000000
+      internalID: 5401255569280277119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_1
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 1753
+        width: 32
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 811ba06ba52fcca30800000000000000
+      internalID: 4237027820863926552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_2
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 1663
+        width: 226
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f981ffa7af3e97050800000000000000
+      internalID: 5798916660161091743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_3
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 1711
+        width: 162
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4dc403cd8078e32f0800000000000000
+      internalID: -991206395851289388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_4
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 1695
+        width: 197
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccf272895cb542f40800000000000000
+      internalID: 5702783932377280460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_5
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 1780
+        width: 25
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62a94d838755679a0800000000000000
+      internalID: -6235702659209979354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_6
+      rect:
+        serializedVersion: 2
+        x: 907
+        y: 1780
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 543e4ceae2eac4fa0800000000000000
+      internalID: -5815081503318285499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_7
+      rect:
+        serializedVersion: 2
+        x: 921
+        y: 1780
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5113c8c205aa8e830800000000000000
+      internalID: 4100714722042327317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_8
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 1778
+        width: 23
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ffc8e3b89cd57590800000000000000
+      internalID: -7676987441371623438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_9
+      rect:
+        serializedVersion: 2
+        x: 951
+        y: 1780
+        width: 27
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78fb115cf89221dc0800000000000000
+      internalID: -3669825048890196089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_10
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 1727
+        width: 18
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c9dd6460ea749a50800000000000000
+      internalID: 6526976864142875075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_11
+      rect:
+        serializedVersion: 2
+        x: 851
+        y: 1759
+        width: 32
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42e14598c48824070800000000000000
+      internalID: 8089177743013715492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_12
+      rect:
+        serializedVersion: 2
+        x: 927
+        y: 1763
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e985ea2ec84ba9610800000000000000
+      internalID: 1628812732439353502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_13
+      rect:
+        serializedVersion: 2
+        x: 964
+        y: 1760
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f7239f6b153f45b0800000000000000
+      internalID: -5382024637732149255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_14
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 1737
+        width: 18
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92566fb5e150b7fb0800000000000000
+      internalID: -4649116562379872983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_15
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 1744
+        width: 46
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f6cbf1404c09b460800000000000000
+      internalID: 7257845744608724727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_16
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 1743
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e488b31906346000800000000000000
+      internalID: 28206910284530917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_17
+      rect:
+        serializedVersion: 2
+        x: 927
+        y: 1743
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 719c6f408da558dc0800000000000000
+      internalID: -3637401240189089513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_18
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 1743
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f19735e06fc4f92f0800000000000000
+      internalID: -963967175547979489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_19
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 1707
+        width: 28
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1b24db6bbfc78780800000000000000
+      internalID: -8680741352858440929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_20
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 1663
+        width: 98
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e92fc6f87b4a7df0800000000000000
+      internalID: -181749852046153243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_21
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 1673
+        width: 32
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32aef569a06e8c350800000000000000
+      internalID: 6037328233637079587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_22
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 1675
+        width: 25
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cfdac8bc787e12c0800000000000000
+      internalID: -4458994103978631232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_23
+      rect:
+        serializedVersion: 2
+        x: 847
+        y: 1695
+        width: 40
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5a2e86aaee701260800000000000000
+      internalID: 7066287361626090078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_24
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 1686
+        width: 18
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78697c0574e336760800000000000000
+      internalID: 7449866684619789959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_25
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 1695
+        width: 43
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c01a1791db503c9f0800000000000000
+      internalID: -449509228073082612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_26
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 1675
+        width: 28
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e63f5ad5761ef0f50800000000000000
+      internalID: 6849941392322851694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_27
+      rect:
+        serializedVersion: 2
+        x: 973
+        y: 1647
+        width: 68
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 439df1780338d9e50800000000000000
+      internalID: 6817749655357479220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1691
+        width: 34
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 478c238093773ff80800000000000000
+      internalID: -8073978620110780300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_29
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 1691
+        width: 44
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 312d60fba5f546430800000000000000
+      internalID: 3775247230999908883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_30
+      rect:
+        serializedVersion: 2
+        x: 1101
+        y: 1687
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70a923692cef4eb90800000000000000
+      internalID: -7213360591443682809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_31
+      rect:
+        serializedVersion: 2
+        x: 1111
+        y: 1687
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3889a50956cfcba0800000000000000
+      internalID: -6066412087395383236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_32
+      rect:
+        serializedVersion: 2
+        x: 1122
+        y: 1687
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc26721c9fdaa1850800000000000000
+      internalID: 6348577912931181260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_33
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 1671
+        width: 10
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 347c9474910d1c340800000000000000
+      internalID: 4882412278035105603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_34
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 1673
+        width: 25
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63013d794a9afe340800000000000000
+      internalID: 4895317844361941046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_35
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 1670
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b31c7cfdf75e348c0800000000000000
+      internalID: -4016114105306332869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_36
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 1675
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38aa69da72f6d9620800000000000000
+      internalID: 2782502360991574659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_37
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 1676
+        width: 33
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 228b0ef5eea0499f0800000000000000
+      internalID: -462732842785261534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_38
+      rect:
+        serializedVersion: 2
+        x: 878
+        y: 1676
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d5a17619869d0bc0800000000000000
+      internalID: -3815227793781709359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_39
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 1675
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36aa7a2c4b95f3580800000000000000
+      internalID: -8845252510237611421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_40
+      rect:
+        serializedVersion: 2
+        x: 1095
+        y: 1669
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f42e99480a3ae6b0800000000000000
+      internalID: -5266333006987123467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_41
+      rect:
+        serializedVersion: 2
+        x: 1104
+        y: 1669
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b358c814001c2d7a0800000000000000
+      internalID: -6353803917422459589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_42
+      rect:
+        serializedVersion: 2
+        x: 1118
+        y: 1669
+        width: 28
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1077443627eb50510800000000000000
+      internalID: 1514826248181020417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_43
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 1650
+        width: 32
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38199f8a7701a4a40800000000000000
+      internalID: 5353109213205336451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_44
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 1649
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c47ecee3c8fdba8f0800000000000000
+      internalID: -528082737841772724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_45
+      rect:
+        serializedVersion: 2
+        x: 1084
+        y: 1655
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96fb6ddd8fb1f91d0800000000000000
+      internalID: -3341921642797940887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_46
+      rect:
+        serializedVersion: 2
+        x: 1094
+        y: 1655
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 571bceea7dcd9dfb0800000000000000
+      internalID: -4622420723608276619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_47
+      rect:
+        serializedVersion: 2
+        x: 1109
+        y: 1651
+        width: 52
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd2bb61a95ccf2760800000000000000
+      internalID: 7435386195144323805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1633
+        width: 161
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa8523d45d82251a0800000000000000
+      internalID: -6822345588924589905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_49
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 1633
+        width: 162
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14643650c4210fae0800000000000000
+      internalID: -1517692956706650559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_50
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 1633
+        width: 162
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cf6cae942c4169b0800000000000000
+      internalID: -5088702383787315255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_51
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 1647
+        width: 18
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3d2c1b46221f3410800000000000000
+      internalID: 1458904759969525052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_52
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 1647
+        width: 18
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60129e2c6ac691550800000000000000
+      internalID: 6132051831132070150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_53
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 1638
+        width: 70
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 154f07e69be374930800000000000000
+      internalID: 4127336549651117137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_54
+      rect:
+        serializedVersion: 2
+        x: 969
+        y: 1634
+        width: 50
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78863be2e5821b7b0800000000000000
+      internalID: -5210338908915406713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_55
+      rect:
+        serializedVersion: 2
+        x: 1018
+        y: 1634
+        width: 31
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79cbc14572df43810800000000000000
+      internalID: 1744297301055945879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_56
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1055
+        width: 161
+        height: 578
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54adefa6979748d60800000000000000
+      internalID: 7891566009453042245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_57
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 1023
+        width: 162
+        height: 610
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04e319f57f6e1b840800000000000000
+      internalID: 5238221791743262272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_58
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 1087
+        width: 162
+        height: 546
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f9cfe3fa12ec7590800000000000000
+      internalID: -7675011059556562442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_59
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 1055
+        width: 50
+        height: 578
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b07617afe44ad15b0800000000000000
+      internalID: -5395976119403845877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_60
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 1055
+        width: 50
+        height: 578
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c87a423a612b2fd0800000000000000
+      internalID: -2365760439259072317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_61
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 1055
+        width: 50
+        height: 578
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 450ab53c254a58f20800000000000000
+      internalID: 3424323767056965716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_62
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 1055
+        width: 50
+        height: 578
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0a7d23620a31dfd0800000000000000
+      internalID: -2319008551190824433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_63
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 1617
+        width: 98
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7f789827e1bc1db0800000000000000
+      internalID: -4819781894816628870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_64
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 1601
+        width: 98
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15162c6c123c379f0800000000000000
+      internalID: -471818986107805359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_65
+      rect:
+        serializedVersion: 2
+        x: 973
+        y: 1583
+        width: 22
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a24b67b1ba1bb1250800000000000000
+      internalID: 5916517883939566634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_66
+      rect:
+        serializedVersion: 2
+        x: 1021
+        y: 1583
+        width: 22
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18157cf0f8cca0ed0800000000000000
+      internalID: -2446918532705332863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_67
+      rect:
+        serializedVersion: 2
+        x: 1055
+        y: 1592
+        width: 161
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4895fc1504b2cc80800000000000000
+      internalID: -8303876828864079794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_68
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 1585
+        width: 98
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e87008755799ff20800000000000000
+      internalID: 3456960582324877544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_69
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 1590
+        width: 22
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e96d991cf085dee10800000000000000
+      internalID: 2228534215314101918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_70
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 1596
+        width: 46
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 263665d42751a4d50800000000000000
+      internalID: 6722208974471848802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_71
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 1569
+        width: 98
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b39e6a191e5e1b60800000000000000
+      internalID: 7718710273270256567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_72
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 1553
+        width: 98
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca6aa7528d96df740800000000000000
+      internalID: 5187418722863326892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_73
+      rect:
+        serializedVersion: 2
+        x: 959
+        y: 1135
+        width: 226
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03a2fbbde5a1fdd00800000000000000
+      internalID: 999546637015525936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_74
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 1537
+        width: 98
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6af09ae9afac97360800000000000000
+      internalID: 7167983459689369510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_75
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 1521
+        width: 98
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b10d1988ae3bb320800000000000000
+      internalID: 2574720505548177847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_76
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 1505
+        width: 98
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c054942be8b614780800000000000000
+      internalID: -8700554744482413300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_77
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 1489
+        width: 98
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0134fb1610947de80800000000000000
+      internalID: -8153968330047274224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_78
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 1473
+        width: 98
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22a41d77f36f57230800000000000000
+      internalID: 3636083026625120802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_79
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 1457
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b7d89d14a35b5210800000000000000
+      internalID: 1322742879899670448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_80
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 1457
+        width: 32
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b759d841a5839080800000000000000
+      internalID: -9181848287519877198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_81
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 1457
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43f4c1c5f57195990800000000000000
+      internalID: -7396855214644637900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_82
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 1393
+        width: 98
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c0a5ad54ced81460800000000000000
+      internalID: 7212759738199941318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_83
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 1421
+        width: 33
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f47f7f3888c45b8a0800000000000000
+      internalID: -6290037155339700401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_84
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 1412
+        width: 22
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b52c38442228f4370800000000000000
+      internalID: 8309002921211839067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_85
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 1379
+        width: 17
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55a8674e9ff55ea40800000000000000
+      internalID: 5396825255357876821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_86
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 1379
+        width: 17
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d2c5285477fd2ec0800000000000000
+      internalID: -3589941248877280553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_87
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 1379
+        width: 17
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01943e9dea895cb10800000000000000
+      internalID: 2001173486183336208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_88
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 1379
+        width: 17
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b1f62f053a4d4300800000000000000
+      internalID: 237927947068436920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_89
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 1362
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d8e83afeffacbee0800000000000000
+      internalID: -1243925887406511913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_90
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 1362
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b821be75b8bdc2ce0800000000000000
+      internalID: -1428525590261329269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_91
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 1362
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 561ed57fc85a52c20800000000000000
+      internalID: 3181130736671252837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_92
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 1362
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16c4d1e0a5954b410800000000000000
+      internalID: 1491915619885206625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_93
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 1297
+        width: 50
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce9d59a9eff9d30b0800000000000000
+      internalID: -5747261633590863380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_94
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 1297
+        width: 50
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c85fb580e8824c530800000000000000
+      internalID: 3874266169936180620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_95
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 1283
+        width: 17
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cd87f207283c0b30800000000000000
+      internalID: 4254837488162934211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_96
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 1283
+        width: 17
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae2668875fbde16b0800000000000000
+      internalID: -5323575862169804054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_97
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 1266
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 285d26de1677745f0800000000000000
+      internalID: -772517548592540286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_98
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 1266
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb20a9c36967dd250800000000000000
+      internalID: 5971059068597043902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_99
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 1201
+        width: 50
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66d5e1a499d439a20800000000000000
+      internalID: 3067881091938278758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_100
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 1183
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7798dbf94e94fbbf0800000000000000
+      internalID: -306445003356534409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_101
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 1180
+        width: 23
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f9c9e56e9e479940800000000000000
+      internalID: 5302793528473668087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_102
+      rect:
+        serializedVersion: 2
+        x: 933
+        y: 1183
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b45a3c8f3e4468b0800000000000000
+      internalID: -5159913238217206602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_103
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 1151
+        width: 98
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a58fe9fab4b379b0800000000000000
+      internalID: -5083520839221017182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_104
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 1171
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f7364364f9812d10800000000000000
+      internalID: 2099110584061933556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_105
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 1119
+        width: 98
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61612937210d8ca50800000000000000
+      internalID: 6541707236422587926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_106
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 1039
+        width: 130
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30f50e6033d67fad0800000000000000
+      internalID: -2668544188267602173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_107
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 751
+        width: 673
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12043511cb8556d40800000000000000
+      internalID: 5576961278335991841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomBuilder_108
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 0
+        width: 386
+        height: 1025
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d2b7f3deb559e040800000000000000
+      internalID: 4677363966089343696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      RoomBuilder_0: 5401255569280277119
+      RoomBuilder_1: 4237027820863926552
+      RoomBuilder_10: 6526976864142875075
+      RoomBuilder_100: -306445003356534409
+      RoomBuilder_101: 5302793528473668087
+      RoomBuilder_102: -5159913238217206602
+      RoomBuilder_103: -5083520839221017182
+      RoomBuilder_104: 2099110584061933556
+      RoomBuilder_105: 6541707236422587926
+      RoomBuilder_106: -2668544188267602173
+      RoomBuilder_107: 5576961278335991841
+      RoomBuilder_108: 4677363966089343696
+      RoomBuilder_11: 8089177743013715492
+      RoomBuilder_12: 1628812732439353502
+      RoomBuilder_13: -5382024637732149255
+      RoomBuilder_14: -4649116562379872983
+      RoomBuilder_15: 7257845744608724727
+      RoomBuilder_16: 28206910284530917
+      RoomBuilder_17: -3637401240189089513
+      RoomBuilder_18: -963967175547979489
+      RoomBuilder_19: -8680741352858440929
+      RoomBuilder_2: 5798916660161091743
+      RoomBuilder_20: -181749852046153243
+      RoomBuilder_21: 6037328233637079587
+      RoomBuilder_22: -4458994103978631232
+      RoomBuilder_23: 7066287361626090078
+      RoomBuilder_24: 7449866684619789959
+      RoomBuilder_25: -449509228073082612
+      RoomBuilder_26: 6849941392322851694
+      RoomBuilder_27: 6817749655357479220
+      RoomBuilder_28: -8073978620110780300
+      RoomBuilder_29: 3775247230999908883
+      RoomBuilder_3: -991206395851289388
+      RoomBuilder_30: -7213360591443682809
+      RoomBuilder_31: -6066412087395383236
+      RoomBuilder_32: 6348577912931181260
+      RoomBuilder_33: 4882412278035105603
+      RoomBuilder_34: 4895317844361941046
+      RoomBuilder_35: -4016114105306332869
+      RoomBuilder_36: 2782502360991574659
+      RoomBuilder_37: -462732842785261534
+      RoomBuilder_38: -3815227793781709359
+      RoomBuilder_39: -8845252510237611421
+      RoomBuilder_4: 5702783932377280460
+      RoomBuilder_40: -5266333006987123467
+      RoomBuilder_41: -6353803917422459589
+      RoomBuilder_42: 1514826248181020417
+      RoomBuilder_43: 5353109213205336451
+      RoomBuilder_44: -528082737841772724
+      RoomBuilder_45: -3341921642797940887
+      RoomBuilder_46: -4622420723608276619
+      RoomBuilder_47: 7435386195144323805
+      RoomBuilder_48: -6822345588924589905
+      RoomBuilder_49: -1517692956706650559
+      RoomBuilder_5: -6235702659209979354
+      RoomBuilder_50: -5088702383787315255
+      RoomBuilder_51: 1458904759969525052
+      RoomBuilder_52: 6132051831132070150
+      RoomBuilder_53: 4127336549651117137
+      RoomBuilder_54: -5210338908915406713
+      RoomBuilder_55: 1744297301055945879
+      RoomBuilder_56: 7891566009453042245
+      RoomBuilder_57: 5238221791743262272
+      RoomBuilder_58: -7675011059556562442
+      RoomBuilder_59: -5395976119403845877
+      RoomBuilder_6: -5815081503318285499
+      RoomBuilder_60: -2365760439259072317
+      RoomBuilder_61: 3424323767056965716
+      RoomBuilder_62: -2319008551190824433
+      RoomBuilder_63: -4819781894816628870
+      RoomBuilder_64: -471818986107805359
+      RoomBuilder_65: 5916517883939566634
+      RoomBuilder_66: -2446918532705332863
+      RoomBuilder_67: -8303876828864079794
+      RoomBuilder_68: 3456960582324877544
+      RoomBuilder_69: 2228534215314101918
+      RoomBuilder_7: 4100714722042327317
+      RoomBuilder_70: 6722208974471848802
+      RoomBuilder_71: 7718710273270256567
+      RoomBuilder_72: 5187418722863326892
+      RoomBuilder_73: 999546637015525936
+      RoomBuilder_74: 7167983459689369510
+      RoomBuilder_75: 2574720505548177847
+      RoomBuilder_76: -8700554744482413300
+      RoomBuilder_77: -8153968330047274224
+      RoomBuilder_78: 3636083026625120802
+      RoomBuilder_79: 1322742879899670448
+      RoomBuilder_8: -7676987441371623438
+      RoomBuilder_80: -9181848287519877198
+      RoomBuilder_81: -7396855214644637900
+      RoomBuilder_82: 7212759738199941318
+      RoomBuilder_83: -6290037155339700401
+      RoomBuilder_84: 8309002921211839067
+      RoomBuilder_85: 5396825255357876821
+      RoomBuilder_86: -3589941248877280553
+      RoomBuilder_87: 2001173486183336208
+      RoomBuilder_88: 237927947068436920
+      RoomBuilder_89: -1243925887406511913
+      RoomBuilder_9: -3669825048890196089
+      RoomBuilder_90: -1428525590261329269
+      RoomBuilder_91: 3181130736671252837
+      RoomBuilder_92: 1491915619885206625
+      RoomBuilder_93: -5747261633590863380
+      RoomBuilder_94: 3874266169936180620
+      RoomBuilder_95: 4254837488162934211
+      RoomBuilder_96: -5323575862169804054
+      RoomBuilder_97: -772517548592540286
+      RoomBuilder_98: 5971059068597043902
+      RoomBuilder_99: 3067881091938278758
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

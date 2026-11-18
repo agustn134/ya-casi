@@ -1,0 +1,1 @@
+PASS: alumnos existentes sólidos; 6 apariencias distintas; guardia Premade_Character_19 con 8 animaciones; escena guardada.

@@ -3698,7 +3698,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 99f2c31a99205f144a17c49426f516ef, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -18378,7 +18378,7 @@ MonoBehaviour:
   wrongLockerSound: {fileID: 8300000, guid: b716b73b5ebc98e428fb92abf0b399a3, type: 3}
   usbFoundSound: {fileID: 8300000, guid: 14567ab550f86784b90b1ad9bd7f3561, type: 3}
   victorySound: {fileID: 8300000, guid: 4c37e7378f760e34cb7ba2c532b053cc, type: 3}
-  defeatSound: {fileID: 8300000, guid: 4b0aa0ec16a04514484ecad7066e40af, type: 3}
+  defeatSound: {fileID: 8300000, guid: e3ea0f22b2fb4284f8ca1b49e7b1dca8, type: 3}
   exitBarrier: {fileID: 365760078}
   playerMovement: {fileID: 2075774344}
   playerInteraction: {fileID: 2075774345}

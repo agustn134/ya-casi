@@ -528,6 +528,8 @@ public sealed class CampusDeliveryObjectives : MonoBehaviour
     {
         if (completionOpen || resultShown) return;
         completionOpen = true; optionsOpen = false; narrativeOpen = false; Time.timeScale = 0;
+        if (SceneManager.GetActiveScene().name == U2Presentation.DeliveryScene)
+            U2Presentation.CompleteCampaign();
         if (FinalChallenge != null) FinalChallenge.Clear();
         if (overlay != null) Destroy(overlay);
         music.Stop();

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: U2GameConfig
   m_EditorClassIdentifier: Assembly-CSharp::U2GameConfig
   soundtrack: {fileID: 8300000, guid: fa85c1ec53bc89f43a2984e82c1d3c08, type: 3}
+  gameOverSound: {fileID: 8300000, guid: e3ea0f22b2fb4284f8ca1b49e7b1dca8, type: 3}
   menuMusic: {fileID: 8300000, guid: 4014ca32447973247bec21ddcfcebb88, type: 3}
   font: {fileID: 11400000, guid: 518635a2bee37f045b5cff339953dd5b, type: 2}
   studentControllers:

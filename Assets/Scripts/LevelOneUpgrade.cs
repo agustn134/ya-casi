@@ -52,6 +52,27 @@ public sealed class LevelOneUpgrade : MonoBehaviour
         line.SetPositions(new[]{new Vector3(b.min.x,b.min.y,0),new Vector3(b.min.x,b.max.y,0),new Vector3(b.max.x,b.max.y,0),new Vector3(b.max.x,b.min.y,0)});line.enabled=false;borders.Add(line);
         var mark=new GameObject("Casillero revisado");mark.transform.SetParent(locker.transform,false);mark.transform.position=b.center+Vector3.up*b.extents.y*.5f;var label=mark.AddComponent<TextMeshPro>();if(config!=null&&config.font!=null)label.font=config.font;label.text="OK";label.fontSize=3;label.color=new Color(.7f,1,.8f);label.alignment=TextAlignmentOptions.Center;label.rectTransform.sizeDelta=new Vector2(1,.5f);label.renderer.sortingOrder=7;mark.SetActive(false);marks.Add(mark);
     }
+    public void StopLevelMusic()
+    {
+        if (music != null) music.Stop();
+    }
+
+    // Game Over es música de resultado: no depende del volumen de efectos.
+    public void PlayGameOverMusic(AudioClip clip)
+    {
+        StopLevelMusic();
+        if (clip == null) { Debug.LogError("No se asignó la música Game Over.", this); return; }
+        if (music == null) music = gameObject.AddComponent<AudioSource>();
+        music.playOnAwake = false;
+        music.loop = false;
+        music.spatialBlend = 0f;
+        music.mute = false;
+        music.ignoreListenerPause = true;
+        music.volume = U2Presentation.MusicVolume;
+        music.clip = clip;
+        music.Play();
+        Debug.Log($"Game Over: {clip.name}; volumen de música: {music.volume:0.00}; reproducción: {music.isPlaying}", this);
+    }
     public void Reviewed(bool repeated,bool usb)
     {score=Mathf.Max(0,score+(repeated?-75:(usb?500:30)));}
     public void BumpPlayer()
@@ -88,7 +109,7 @@ public sealed class LevelOneUpgrade : MonoBehaviour
         U2Presentation.Text(card.transform,"Resultado",(manager.IsCompleted?"Llegaste a tiempo a la salida.":"Respira, evita las filas y recuerda los casilleros revisados.")+$"\n\nPuntaje: {score}\nTiempo de juego: {Mathf.FloorToInt(elapsed/60):00}:{Mathf.FloorToInt(elapsed%60):00}\nTiempo restante: {Mathf.CeilToInt(manager.RemainingTime)} s\nMejor puntaje: {PlayerPrefs.GetInt("YaCasi.U2.Best",0)}",new Vector2(0,70),new Vector2(1130,300),34,Color.white);
         U2Presentation.Button(card.transform,"Reintentar",new Vector2(0,-150),manager.RestartLevel);
         U2Presentation.Button(card.transform,"Menú principal",new Vector2(0,-250),U2Presentation.ReturnToMenu);
-        U2Presentation.Text(card.transform,"Siguiente nivel","Nivel 2 en desarrollo",new Vector2(0,-350),new Vector2(900,60),28,Color.white);
+        if(manager.IsCompleted) U2Presentation.Button(card.transform,"Nivel 2 · Biblioteca",new Vector2(0,-350),()=>{Time.timeScale=1;UnityEngine.SceneManagement.SceneManager.LoadScene(LibraryLevelManager.SceneName);});
     }
     void SpawnStudents()
     {
