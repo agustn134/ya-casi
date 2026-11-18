@@ -39,7 +39,7 @@ public sealed class LevelOneHud : MonoBehaviour
             var contact = U2Presentation.Image(metal.transform, "Contacto", Panel);
             Place(contact.rectTransform, new Vector2(-5 + i * 10, 1), new Vector2(4, 7)); contact.raycastTarget = false;
         }
-        inventory = Text(bag.transform, "USB y calma", "USB pendiente\nCalma: 3/3", new Vector2(26, 0), new Vector2(230, 76), 25);
+        inventory = Text(bag.transform, "USB y choques", "USB pendiente\nChoques: 0/3", new Vector2(26, 0), new Vector2(230, 76), 25);
         if(notebook!=null)
         {
             var book=Card("Libreta de pistas",Vector2.zero,new Vector2(20,122),new Vector2(300,54));
@@ -68,7 +68,7 @@ public sealed class LevelOneHud : MonoBehaviour
         timer.color = seconds <= 25 ? new Color(1, .48f, .40f) : Gold;
         goal.text = manager.HasUSB ? "Vuelve a la salida · 1/1" : "Encuentra tu USB · 0/1";
         if(mystery!=null&&!manager.HasUSB)goal.text=mystery.DiscoveredCount<3?$"Investiga las pistas · {mystery.DiscoveredCount}/3":"Deduce y abre el casillero";
-        inventory.text = (manager.HasUSB ? "USB recuperada" : "USB pendiente") + $"\nCalma: {calm}/3";
+        inventory.text = (manager.HasUSB ? "USB recuperada" : "USB pendiente") + $"\nChoques: {Mathf.Clamp(3-calm,0,3)}/3";
         inventoryIcon.color = manager.HasUSB ? new Color(.38f, .85f, .65f) : new Color(.36f, .53f, .60f);
         bool visible = manager.IsPlaying && nearest != null && !manager.HasUSB;
         contextPanel.gameObject.SetActive(visible);

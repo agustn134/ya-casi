@@ -47,6 +47,7 @@ public sealed class LevelOneMystery : MonoBehaviour
                 AddLockerNumber(locker);
             }
         }
+        AddSectionSigns(TopRow);AddSectionSigns(BottomRow);
         UI=gameObject.AddComponent<LevelOneMysteryUI>();UI.Configure(this);
         CreateClueSources();
         if(player!=null)player.GetComponent<PlayerInteraction>()?.ConfigureMystery(this);
@@ -57,11 +58,31 @@ public sealed class LevelOneMystery : MonoBehaviour
         var go=new GameObject("Identificador "+locker.MysteryName);go.transform.SetParent(locker.transform,false);
         go.transform.position=locker.transform.position+new Vector3(0,-.40f,0);
         var label=go.AddComponent<TextMeshPro>();if(LevelOneTypography.Font!=null)label.font=LevelOneTypography.Font;
-        label.text=locker.MysteryName;label.fontSize=1.9f;label.alignment=TextAlignmentOptions.Center;
-        label.rectTransform.sizeDelta=new Vector2(1.52f,.40f);label.renderer.sortingOrder=8;
+        label.text=locker.ShortCode;label.fontSize=3.4f;label.alignment=TextAlignmentOptions.Center;
+        label.rectTransform.sizeDelta=new Vector2(1.52f,.48f);label.renderer.sortingOrder=3000;
+        Backplate(go.transform,new Vector2(1.55f,.5f));
         label.color=locker.MysteryRow==0?new Color(.62f,.85f,1):new Color(.60f,1,.72f);
     }
 
+    static Sprite plateSprite;
+    void Backplate(Transform parent,Vector2 size)
+    {
+        if(plateSprite==null){plateSprite=Sprite.Create(Texture2D.whiteTexture,new Rect(0,0,1,1),Vector2.one*.5f,1,0,SpriteMeshType.FullRect);plateSprite.hideFlags=HideFlags.HideAndDontSave;}
+        var go=new GameObject("Placa de identificación");go.transform.SetParent(parent,false);go.transform.localScale=new Vector3(size.x,size.y,1);
+        var sr=go.AddComponent<SpriteRenderer>();sr.sprite=plateSprite;sr.color=new Color(.035f,.07f,.10f,.96f);sr.sortingOrder=2999;
+    }
+    void AddSectionSigns(LockerInteraction[] row)
+    {
+        for(int first=0;first<row.Length;first+=4)
+        {
+            int last=Mathf.Min(first+3,row.Length-1);
+            var go=new GameObject("Sección "+row[first].SectionName);go.transform.SetParent(transform,false);
+            go.transform.position=new Vector3((row[first].transform.position.x+row[last].transform.position.x)*.5f,row[first].transform.position.y+1.65f,0);
+            var label=go.AddComponent<TextMeshPro>();if(LevelOneTypography.Font!=null)label.font=LevelOneTypography.Font;
+            label.text=$"{row[first].SectionName}\n{row[first].ShortCode} a {row[last].ShortCode}";label.fontSize=2.6f;label.alignment=TextAlignmentOptions.Center;
+            label.rectTransform.sizeDelta=new Vector2(5.5f,.75f);label.renderer.sortingOrder=3000;Backplate(go.transform,new Vector2(5.5f,.8f));
+        }
+    }
     void CreateClueSources()
     {
         if(player==null)return;
@@ -174,7 +195,7 @@ public sealed class LevelOneMystery : MonoBehaviour
         var awards=new List<string>();
         if(DiscoveredCount==3)awards.Add("Detective del pasillo");
         if(WrongLockers==0&&WrongCodes==0)awards.Add("Sin equivocaciones");
-        if(calm==3)awards.Add("Sin perder la calma");
+        if(calm==3)awards.Add("Sin choques");
         return string.Join(" · ",awards);
     }
 }

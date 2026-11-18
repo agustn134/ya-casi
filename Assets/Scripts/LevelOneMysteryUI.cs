@@ -72,10 +72,10 @@ public sealed class LevelOneMysteryUI : MonoBehaviour
             block.rectTransform.anchoredPosition = new Vector2(0, y);
             block.rectTransform.sizeDelta = new Vector2(1020, 117);
             U2Presentation.Text(block.transform, "Origen", (i + 1) + ". " + sources[i], new Vector2(0, 35), new Vector2(980, 36), 25, known ? Gold : Muted);
-            string value = known ? controller.Round.Clues[i] : "??? · Todavía falta investigar esta pista.";
+            string value = known ? controller.Round.Clues[i].Replace("fila Azul","sección Azul (A), planta baja").Replace("fila Verde","sección Verde (V), planta alta") : "??? · Todavía falta investigar esta pista.";
             U2Presentation.Text(block.transform, "Anotación", value, new Vector2(0, -17), new Vector2(980, 72), 25, known ? Color.white : Muted);
         }
-        Label("Cómo deducir", "Fila Azul: planta baja · Fila Verde: segundo piso.\nCombina fila, paridad e intervalo. La primera pista guarda el candado.", -253, 81, 24, Muted);
+        Label("Cómo deducir", "Azul (A): planta baja · Verde (V): planta alta.\nBusca las placas A-01…A-17 o V-01…V-17 y los letreros de sección.\nCombina sección, paridad e intervalo. La nota guarda el candado.", -253, 81, 24, Muted);
         var close = ActionButton(returnToLock ? "Volver al candado" : "Cerrar libreta", new Vector2(0, -350), new Vector2(520, 62), BackFromNotebook);
         FinishPage(close);
     }

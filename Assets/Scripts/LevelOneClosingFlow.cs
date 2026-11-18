@@ -4,7 +4,7 @@ using UnityEngine;
 /// <summary>Desalojo escalonado de ambas plantas y puertas automáticas animadas.</summary>
 public sealed class LevelOneClosingFlow : MonoBehaviour
 {
-    sealed class Departure { public CampusStudent actor; public float at; public int phase; public Vector2 end; public bool upstairs; public float lane; public float exitLane; }
+    sealed class Departure { public CampusStudent actor; public float at; public int phase; public Vector2 end; public bool upstairs; public float lane; public float exitLane; public int queueRank; }
     sealed class Door { public Transform pivot; public Quaternion closed; public float open; public Vector2 position; }
     readonly List<Departure> crowd=new List<Departure>();
     readonly List<Door> doors=new List<Door>();
@@ -24,7 +24,7 @@ public sealed class LevelOneClosingFlow : MonoBehaviour
             var go=new GameObject("Alumno de salida "+floor+" · "+i);go.transform.SetParent(transform);go.transform.position=at;
             var actor=go.AddComponent<CampusStudent>();actor.Initialize(config.studentControllers[look],config.studentIdleSprites[look],Color.white);
             actor.speed=1.25f+(i%5)*.15f;
-            crowd.Add(new Departure{actor=actor,at=(i%9)*.65f,upstairs=floor==1,lane=lane,exitLane=-1.4f+(i%3)*.8f});
+            crowd.Add(new Departure{actor=actor,at=(i%9)*.65f,upstairs=floor==1,lane=lane,exitLane=-1.4f+(i%3)*.8f,queueRank=35-i});
             // Sin rutas de ida y vuelta: espera en reposo hasta iniciar su salida.
         }
         // El Grid es hermano del gestor, por lo que sus puertas se buscan en la escena.
@@ -50,13 +50,18 @@ public sealed class LevelOneClosingFlow : MonoBehaviour
             Vector2 p=d.actor.transform.position;
             if(d.phase==0&&elapsed>=d.at)
             {
-                if(d.upstairs){d.end=new Vector2(70.5f,32+d.lane);d.actor.SetRoute(new[]{p,d.end},true);d.phase=1;}
+                if(d.upstairs){d.end=QueuePoint(d);d.actor.SetRoute(new[]{p,d.end},true);d.phase=1;}
                 else Exit(d,p);
             }
-            else if(d.phase==1&&Vector2.Distance(p,d.end)<.6f&&elapsed>=nextStairEntry)
+            else if(d.phase==1)
             {
-                nextStairEntry=elapsed+4;d.end=new Vector2(83.5f,31);d.actor.speed=1.8f;
-                d.actor.SetRoute(new[]{p,new Vector2(72.5f,p.y),new Vector2(72.5f,31.5f),new Vector2(76.5f,31.5f),new Vector2(76.5f,41.4f),new Vector2(83.5f,41.4f),d.end},true);d.phase=4;
+                Vector2 place=QueuePoint(d);
+                if(Vector2.Distance(place,d.end)>.1f){d.end=place;d.actor.SetRoute(new[]{p,place},true);}
+                if(WaitingAhead(d)==0&&Vector2.Distance(p,d.end)<.6f&&elapsed>=nextStairEntry)
+                {
+                    nextStairEntry=elapsed+4;d.end=new Vector2(83.5f,31);d.actor.speed=1.8f;
+                    d.actor.SetRoute(new[]{p,new Vector2(72.5f,p.y),new Vector2(72.5f,31.5f),new Vector2(76.5f,31.5f),new Vector2(76.5f,41.4f),new Vector2(83.5f,41.4f),d.end},true);d.phase=4;
+                }
             }
             else if(d.phase==4&&Vector2.Distance(p,d.end)<.6f)
             {
@@ -72,6 +77,13 @@ public sealed class LevelOneClosingFlow : MonoBehaviour
             door.pivot.localRotation=door.closed*Quaternion.Euler(0,0,Mathf.Lerp(0,-88,door.open));
         }
     }
+    int WaitingAhead(Departure entry)
+    {
+        int count=0;foreach(var other in crowd)
+            if(other.actor!=null&&other.upstairs&&other.phase<=1&&other.queueRank<entry.queueRank)count++;
+        return count;
+    }
+    Vector2 QueuePoint(Departure entry)=>new Vector2(70.0f-WaitingAhead(entry)*1.65f,30.5f);
     void Exit(Departure d,Vector2 p)
     {
         d.end=new Vector2(-11,d.exitLane);

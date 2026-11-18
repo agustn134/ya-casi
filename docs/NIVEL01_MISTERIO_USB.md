@@ -23,7 +23,7 @@ E o el botón sur investiga la fuente cercana. N o el botón Libreta permite con
 - Combinación incorrecta: 4 s. Puede agotar el reloj y provocar derrota.
 - Cada pista nueva suma 75 puntos; recuperar la USB conserva su recompensa.
 - El resumen muestra pistas, casilleros equivocados, errores del candado, choques, tiempo y puntaje.
-- Reconocimientos: Detective del pasillo, Sin equivocaciones y Sin perder la calma.
+- Reconocimientos: Detective del pasillo, Sin equivocaciones y Sin choques.
 
 El objetivo no entrega la USB hasta reunir las tres pistas y resolver el candado. Encontrarlo por azar antes de investigar no permite saltarse el puzzle. Al recuperar la USB cambia la música y tres alumnos de planta baja comienzan a marcharse por la salida. Los demás mantienen cruces, paseos y grupos con pausas; Q/LB conserva la petición aleatoria de paso. Cada planta tiene un director que intenta colocar hasta 13 alumnos, evitando superposición inicial.
 

@@ -30,7 +30,9 @@ public class LockerInteraction : MonoBehaviour
     private LevelOneMystery mystery;
     public int MysteryRow => mysteryRow;
     public int MysteryNumber { get; private set; }
-    public string MysteryName => $"{LockerMysteryRound.RowNames[Mathf.Clamp(mysteryRow,0,1)]} · {MysteryNumber:00}";
+    public string ShortCode => $"{(mysteryRow==0?"A":"V")}-{MysteryNumber:00}";
+    public string SectionName => mysteryRow==0?"Planta baja · Azul (A)":"Planta alta · Verde (V)";
+    public string MysteryName => $"{ShortCode} · {SectionName}";
     public void BindMystery(LevelOneMystery owner, int number) { mystery = owner; MysteryNumber = number; }
     public void MarkSearched() { searched = true; }
 

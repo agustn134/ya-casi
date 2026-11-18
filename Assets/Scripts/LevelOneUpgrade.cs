@@ -116,8 +116,8 @@ public sealed class LevelOneUpgrade : MonoBehaviour
     }
     public void BumpPlayer()
     {
-        if(!manager.IsPlaying||player==null||!player.IsRunning||Time.time<bumpUntil)return;
-        bumpUntil=Time.time+2;calm--;collisions++;manager.ApplyPenalty(2);manager.ShowFeedback("Choque al correr · −2 s · −1 de calma");
+        if(!manager.IsPlaying||player==null||Time.time<bumpUntil)return;
+        bumpUntil=Time.time+2;calm--;collisions++;manager.ApplyPenalty(2);manager.ShowFeedback($"Choque con un alumno · −2 s · {collisions}/3");
         if(calm<=0)manager.FailLevel();
     }
     public void TogglePause()
@@ -153,7 +153,7 @@ public sealed class LevelOneUpgrade : MonoBehaviour
         MenuText(card,"Historia","El edificio está por cerrar",310,70,43,new Color(1,.84f,.4f));
         MenuText(card,"Contexto","Es de noche. El conserje está cerrando los dos pisos.\nInvestiga, abre el candado y regresa a la salida de planta baja.",222,100,29,Color.white);
         string penalties=$"Casillero vacío: −{(config!=null?config.wrongLockerPenalty:3):0} s. Repetir: −{(config!=null?config.repeatLockerPenalty:5):0} s.";
-        MenuText(card,"Teclas","WASD / flechas / stick: caminar · Shift / gatillo: correr\nE / botón sur: investigar, hablar o revisar\nN / Libreta: consultar tus tres pistas\nQ / LB: pedir permiso para pasar\nEsc / Start: pausa · F1 / Ayuda: estas indicaciones",50,215,28,Color.white);
+        MenuText(card,"Teclas","WASD / flechas / stick: caminar · Shift / gatillo: correr\nE / botón sur: investigar, hablar o revisar\nN / Libreta: consultar tus tres pistas\nQ / LB: pedir permiso para pasar\nCada choque: −2 s. El tercer choque termina la partida.\nEsc / Start: pausa · F1 / Ayuda: estas indicaciones",50,215,28,Color.white);
         MenuText(card,"Reglas",penalties+" Candado: −4 s. Intendente: dos advertencias; tercera captura, expulsión.\nEntra a un salón y deja de correr para esconderte lejos de la puerta.\nRecorre ambos tramos de la escalera en U para cambiar de piso.\nAzul: planta baja. Verde: segundo piso. La libreta pausa el reloj.",-152,145,26,Color.white);
         MenuButton(card,returnToPause?"Volver a pausa":"Entendido, ¡vamos!",-315,CloseHelp);
         LevelOneTypography.Apply(overlay);
@@ -185,7 +185,7 @@ public sealed class LevelOneUpgrade : MonoBehaviour
         int searched=0;foreach(var locker in lockers)if(locker.IsSearched)searched++;
         int penalty=Mathf.RoundToInt(Mathf.Max(0,manager.RoundTime-manager.RemainingTime-elapsed));
         return $"Recorrido: {Mathf.FloorToInt(elapsed/60):00}:{Mathf.FloorToInt(elapsed%60):00} · Descuento: {penalty} s\n"+
-            $"Calma: {calm}/3 · Choques: {collisions} · Casilleros: {searched}/{lockers.Length}\n"+
+            $"Choques: {collisions}/3 · Casilleros: {searched}/{lockers.Length}\n"+
             $"Pistas: {mystery.DiscoveredCount}/3 · Equivocados: {mystery.WrongLockers} · Candado: {mystery.WrongCodes} · Puntos: {score}";
     }
     void FinishRound()
@@ -211,7 +211,7 @@ public sealed class LevelOneUpgrade : MonoBehaviour
     void ShowResult()
     {
         var card=NewOverlay("Resultado del nivel 1",OverlayKind.Result);
-        MenuText(card,"Título",manager.IsCompleted?"¡USB recuperada!":(nightSchool!=null&&nightSchool.Caretaker!=null&&nightSchool.Caretaker.Warnings>=3?"Expulsado del edificio":calm<=0?"Necesitas un respiro":"Se acabó el tiempo"),305,90,44,new Color(1,.84f,.4f));
+        MenuText(card,"Título",manager.IsCompleted?"¡USB recuperada!":(nightSchool!=null&&nightSchool.Caretaker!=null&&nightSchool.Caretaker.Warnings>=3?"Expulsado del edificio":calm<=0?"Tres choques: partida terminada":"Se acabó el tiempo"),305,90,44,new Color(1,.84f,.4f));
         MenuText(card,"Resultado",manager.IsCompleted?"Llegaste a tiempo a la salida.":"Recuerda los casilleros revisados y pide permiso para pasar.",212,80,28,Color.white);
         MenuText(card,"Estadísticas",Statistics()+$"\n\nTiempo restante: {Mathf.CeilToInt(manager.RemainingTime)} s · Mejor: {PlayerPrefs.GetInt("YaCasi.U2.Best",0)}\n"+(manager.IsCompleted?mystery.Awards(calm):(nightSchool!=null&&nightSchool.Caretaker!=null&&nightSchool.Caretaker.Warnings>=3?"El intendente te expulsó tras tres capturas.":"Investiga las tres pistas antes de elegir un casillero.")),25,240,27,Color.white);
         MenuButton(card,"Reintentar",-170,manager.RestartLevel);
