@@ -9,6 +9,7 @@ public sealed class LevelOneHud : MonoBehaviour
     static readonly Color Panel = new Color(.035f, .075f, .09f, .90f);
     static readonly Color Gold = new Color(1f, .84f, .42f);
     TMP_Text goal, timer, inventory, context, notification;
+    TMP_Text vigilance;
     Image contextPanel, inventoryIcon;
     CanvasGroup notificationGroup;
     float notificationUntil;
@@ -50,6 +51,8 @@ public sealed class LevelOneHud : MonoBehaviour
         contextPanel = Card("Acción cercana", new Vector2(.5f, 0), new Vector2(0, 20), new Vector2(480, 88));
         context = Text(contextPanel.transform, "Acción", "", Vector2.zero, new Vector2(450, 78), 25);
         contextPanel.gameObject.SetActive(false);
+        var watch=Card("Piso y vigilancia",Vector2.right,new Vector2(-20,20),new Vector2(300,90));
+        vigilance=Text(watch.transform,"Estado del edificio","",Vector2.zero,new Vector2(278,80),24);
 
         var toast = Card("Aviso temporal", new Vector2(.5f, 1), new Vector2(0, -20), new Vector2(650, 68));
         notificationGroup = toast.gameObject.AddComponent<CanvasGroup>();
@@ -78,6 +81,15 @@ public sealed class LevelOneHud : MonoBehaviour
             context.color = nearest.IsSearched ? Gold : Color.white;
         }
         string clue=mystery!=null?mystery.NearbyCluePrompt():null;
+        var world=LevelOneNightSchool.Active;
+        if(world!=null)
+        {
+            int floor=world.FloorAt(Camera.main!=null?Camera.main.transform.position:Vector3.zero);
+            string status=world.Caretaker==null?"De ronda":world.Caretaker.Suspicion01>=1?"¡Te persigue!":world.Caretaker.Suspicion01>.05f?"Te está mirando":"De ronda";
+            vigilance.text=(floor==1?"Segundo piso":floor<0?"Escalera en U":"Planta baja")+"\nConserje: "+status;
+            if(world.TryGetWorldPrompt(out string roomPrompt))
+            {contextPanel.gameObject.SetActive(true);context.text=roomPrompt;context.color=new Color(.65f,.82f,1);}
+        }
         if(manager.IsPlaying&&!manager.HasUSB&&!string.IsNullOrEmpty(clue)){contextPanel.gameObject.SetActive(true);context.text=clue;context.color=Gold;}
     }
 
@@ -96,6 +108,8 @@ public sealed class LevelOneHud : MonoBehaviour
         if (bag != null) bag.anchoredPosition = new Vector2(20, 320);
         var book=transform.Find("Libreta de pistas") as RectTransform;
         if(book!=null)book.anchoredPosition=new Vector2(20,422);
+        var watch=transform.Find("Piso y vigilancia") as RectTransform;
+        if(watch!=null)watch.anchoredPosition=new Vector2(-20,340);
     }
 
     void Update()

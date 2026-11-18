@@ -14,6 +14,8 @@ public sealed class LevelOneUpgrade : MonoBehaviour
     GameObject canvas,overlay; AudioSource music;
     LevelOneHud hud; LevelOneCourtesyRequest courtesy; Material markerMaterial;
     LevelOneMystery mystery; LevelOneStudentDirector studentDirector;
+    LevelOneStudentDirector upstairsStudents;
+    LevelOneNightSchool nightSchool;
     enum OverlayKind { None, Pause, Help, Completion, Result }
     OverlayKind overlayKind;
     bool helpReturnsToPause;
@@ -26,7 +28,9 @@ public sealed class LevelOneUpgrade : MonoBehaviour
         Application.runInBackground=true;
         manager=GetComponent<Level01Manager>(); player=FindFirstObjectByType<PlayerMovement>(); interaction=FindFirstObjectByType<PlayerInteraction>();
         config=Resources.Load<U2GameConfig>("U2GameConfig");
-        manager.SetRoundTime(config!=null?config.roundSeconds:135);
+        nightSchool=GetComponent<LevelOneNightSchool>();
+        manager.SetRoundTime(nightSchool!=null?nightSchool.roundSeconds:(config!=null?config.roundSeconds:135));
+        if(nightSchool!=null)nightSchool.ConfigureRuntime(manager,player,config);
         lockers=FindObjectsByType<LockerInteraction>(FindObjectsSortMode.None);
         System.Array.Sort(lockers,(a,b)=>{int row=b.InteractionPosition.y.CompareTo(a.InteractionPosition.y);return row!=0?row:a.InteractionPosition.x.CompareTo(b.InteractionPosition.x);});
         mystery=GetComponent<LevelOneMystery>();if(mystery==null)mystery=gameObject.AddComponent<LevelOneMystery>();
@@ -50,7 +54,7 @@ public sealed class LevelOneUpgrade : MonoBehaviour
         if(manager==null)return;
         if(music!=null)music.volume=U2Presentation.MusicVolume*(paused?.5f:1);
         foreach(var source in GetComponentsInChildren<AudioSource>())if(source!=music)source.volume=U2Presentation.EffectsVolume;
-        bool mysteryInput=mystery!=null&&mystery.UI!=null&&mystery.UI.BlocksGameplayInput;
+        bool mysteryInput=(mystery!=null&&mystery.UI!=null&&mystery.UI.BlocksGameplayInput)||(nightSchool!=null&&nightSchool.Stairs!=null&&nightSchool.Stairs.InTransit);
         if(!mysteryInput&&((Keyboard.current!=null&&Keyboard.current.escapeKey.wasPressedThisFrame)||(Gamepad.current!=null&&Gamepad.current.startButton.wasPressedThisFrame)))TogglePause();
         if(!mysteryInput&&!finished&&Keyboard.current!=null&&Keyboard.current.f1Key.wasPressedThisFrame)ShowHelp(paused);
         if(!finished&&(manager.IsCompleted||manager.IsFailed)){finished=true;FinishRound();}
@@ -103,6 +107,7 @@ public sealed class LevelOneUpgrade : MonoBehaviour
     public void BeginReturnSequence(AudioClip clip)
     {
         studentDirector?.BeginReturnRush();
+        nightSchool?.Caretaker?.HearNoise(player.transform.position);
         if(music!=null)
         {
             if(clip!=null){music.clip=clip;music.pitch=1;music.Play();}
@@ -146,10 +151,10 @@ public sealed class LevelOneUpgrade : MonoBehaviour
         helpReturnsToPause=returnToPause;
         var card=NewOverlay("Ayuda del nivel 1",OverlayKind.Help);
         MenuText(card,"Historia","El edificio está por cerrar",310,70,43,new Color(1,.84f,.4f));
-        MenuText(card,"Contexto","Movieron las cosas de Galindo durante la limpieza.\nDeduce el casillero, abre el candado y vuelve con su USB.",222,100,29,Color.white);
+        MenuText(card,"Contexto","Es de noche. El conserje está cerrando los dos pisos.\nInvestiga, abre el candado y regresa a la salida de planta baja.",222,100,29,Color.white);
         string penalties=$"Casillero vacío: −{(config!=null?config.wrongLockerPenalty:3):0} s. Repetir: −{(config!=null?config.repeatLockerPenalty:5):0} s.";
         MenuText(card,"Teclas","WASD / flechas / stick: caminar · Shift / gatillo: correr\nE / botón sur: investigar, hablar o revisar\nN / Libreta: consultar tus tres pistas\nQ / LB: pedir permiso para pasar\nEsc / Start: pausa · F1 / Ayuda: estas indicaciones",50,215,28,Color.white);
-        MenuText(card,"Reglas",penalties+"\nCandado equivocado: −4 s. La libreta y el candado pausan el reloj.\nChocar al correr: −2 s y −1 de calma. Con 0 de calma, pierdes.\nCombina fila, paridad e intervalo para encontrar la USB.",-152,145,26,Color.white);
+        MenuText(card,"Reglas",penalties+" Candado: −4 s. Conserje: −8 s.\nEntra a un salón y deja de correr para esconderte lejos de la puerta.\nRecorre ambos tramos de la escalera en U para cambiar de piso.\nAzul: planta baja. Verde: segundo piso. La libreta pausa el reloj.",-152,145,26,Color.white);
         MenuButton(card,returnToPause?"Volver a pausa":"Entendido, ¡vamos!",-315,CloseHelp);
         LevelOneTypography.Apply(overlay);
     }
@@ -217,7 +222,13 @@ public sealed class LevelOneUpgrade : MonoBehaviour
     void SpawnStudents()
     {
         studentDirector=gameObject.AddComponent<LevelOneStudentDirector>();
-        studentDirector.Configure(manager,player,config,mystery.TopRow,mystery.BottomRow);
+        if(nightSchool!=null)
+        {
+            studentDirector.Configure(manager,player,config,mystery.TopRow,System.Array.Empty<LockerInteraction>());
+            upstairsStudents=gameObject.AddComponent<LevelOneStudentDirector>();
+            upstairsStudents.Configure(manager,player,config,mystery.BottomRow,System.Array.Empty<LockerInteraction>());
+        }
+        else studentDirector.Configure(manager,player,config,mystery.TopRow,mystery.BottomRow);
     }
     void BuildTouchControls()
     {

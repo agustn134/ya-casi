@@ -43,8 +43,8 @@ public sealed class LevelOneMysteryUI : MonoBehaviour
         OpenPage(Page.Intro, "El casillero equivocado");
         Label("Título", "El casillero equivocado", 330, 70, 43, Gold);
         Label("Mensaje", "Mensaje para Galindo", 254, 44, 27, Muted);
-        Label("Historia", "Movieron tus cosas durante la limpieza.\nTu USB está en otro casillero…\ny el edificio está por cerrar.", 151, 150, 32, Color.white);
-        Label("Plan", "1. Busca la nota, el aviso y al compañero que tiene una pista.\n2. Deduce la fila y el número del casillero.\n3. Abre el candado y vuelve a la salida con tu USB.", -32, 158, 27, Color.white);
+        Label("Historia", "Movieron tus cosas durante la limpieza.\nEs de noche y el conserje está cerrando la universidad.\nTu USB quedó en uno de los dos pisos.", 151, 150, 30, Color.white);
+        Label("Plan", "1. Investiga el salón 101 y sube por la escalera en U.\n2. Habla con el compañero y busca el aviso en el salón 203.\n3. Abre el casillero y vuelve a la salida de planta baja.\nSi te ve el conserje, entra a un salón oscuro y deja de correr.", -32, 166, 26, Color.white);
         Label("Controles", "E / botón sur: investigar o hablar\nN / Libreta: consultar pistas · Q / LB: pedir paso\nEl reloj se detiene al leer la libreta o resolver el candado.", -213, 116, 25, Muted);
         var start = ActionButton("Buscar las pistas", new Vector2(0, -337), new Vector2(520, 64), Close);
         FinishPage(start);
@@ -62,7 +62,7 @@ public sealed class LevelOneMysteryUI : MonoBehaviour
         if (controller.Discovered != null)
             foreach (bool found in controller.Discovered) if (found) count++;
         Label("Progreso", $"Pistas encontradas: {count}/3", 282, 42, 27, Muted);
-        string[] sources = { "La nota de limpieza", "El compañero", "El aviso del pasillo" };
+        string[] sources = { "La nota · Salón 101, planta baja", "El compañero · Segundo piso", "El aviso · Salón 203, segundo piso" };
         for (int i = 0; i < 3; i++)
         {
             bool known = controller.Discovered != null && i < controller.Discovered.Length && controller.Discovered[i];
@@ -75,7 +75,7 @@ public sealed class LevelOneMysteryUI : MonoBehaviour
             string value = known ? controller.Round.Clues[i] : "??? · Todavía falta investigar esta pista.";
             U2Presentation.Text(block.transform, "Anotación", value, new Vector2(0, -17), new Vector2(980, 72), 25, known ? Color.white : Muted);
         }
-        Label("Cómo deducir", "Combina la fila, el número par o impar y el intervalo indicado.\nLa secuencia del candado queda anotada en la primera pista.", -253, 81, 24, Muted);
+        Label("Cómo deducir", "Fila Azul: planta baja · Fila Verde: segundo piso.\nCombina fila, paridad e intervalo. La primera pista guarda el candado.", -253, 81, 24, Muted);
         var close = ActionButton(returnToLock ? "Volver al candado" : "Cerrar libreta", new Vector2(0, -350), new Vector2(520, 62), BackFromNotebook);
         FinishPage(close);
     }

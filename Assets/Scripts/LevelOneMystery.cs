@@ -55,7 +55,7 @@ public sealed class LevelOneMystery : MonoBehaviour
     void AddLockerNumber(LockerInteraction locker)
     {
         var go=new GameObject("Identificador "+locker.MysteryName);go.transform.SetParent(locker.transform,false);
-        go.transform.position=new Vector3(locker.transform.position.x,locker.MysteryRow==0?3.20f:-2.82f,0);
+        go.transform.position=locker.transform.position+new Vector3(0,-.40f,0);
         var label=go.AddComponent<TextMeshPro>();if(LevelOneTypography.Font!=null)label.font=LevelOneTypography.Font;
         label.text=locker.MysteryName;label.fontSize=1.9f;label.alignment=TextAlignmentOptions.Center;
         label.rectTransform.sizeDelta=new Vector2(1.52f,.40f);label.renderer.sortingOrder=8;
@@ -68,6 +68,8 @@ public sealed class LevelOneMystery : MonoBehaviour
         float min=TopRow.First().InteractionPosition.x, max=TopRow.Last().InteractionPosition.x;
         float bottom=BottomRow.Length>0?BottomRow.Average(l=>l.InteractionPosition.y):-2;
         Vector2[] places={new Vector2(Mathf.Lerp(min,max,.08f),.20f),new Vector2(Mathf.Lerp(min,max,.52f),bottom+.90f),new Vector2(Mathf.Lerp(min,max,.91f),.20f)};
+        if(LevelOneNightSchool.Active!=null)
+            for(int i=0;i<places.Length;i++)places[i]=LevelOneNightSchool.Active.CluePoint(i);
         for(int i=0;i<3;i++)
         {
             var go=new GameObject(captions[i]);go.transform.SetParent(transform,false);go.transform.position=places[i];
@@ -144,6 +146,7 @@ public sealed class LevelOneMystery : MonoBehaviour
             pendingLocker=locker;UI.ShowLock();return;
         }
         bool repeat=locker.IsSearched;locker.MarkSearched();WrongLockers++;
+        LevelOneNightSchool.Active?.Caretaker?.HearNoise(locker.InteractionPosition);
         float penalty=repeat?(config!=null?config.repeatLockerPenalty:5):(config!=null?config.wrongLockerPenalty:3);
         upgrade?.Reviewed(repeat,false);manager.ApplyPenalty(penalty);manager.PlayWrongLockerSound();
         manager.ShowFeedback(repeat?$"Ya revisado · −{penalty:0} s":$"Aquí no está · −{penalty:0} s. Consulta tus pistas.");

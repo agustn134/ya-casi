@@ -2,6 +2,8 @@
 
 Escena: `Assets/Scenes/Nivel01_CaosDelCasillero.unity`. Rama de trabajo: `nivel/01-caos-del-casillero`.
 
+La versión actual transcurre de noche en dos plantas. La nota está en el salón 101, el compañero en el pasillo superior y el aviso en el salón 203. La fila Azul queda abajo y la Verde arriba; se comunican con una escalera en U. El recorrido dispone de cinco minutos y aulas oscuras para ocultarse del conserje. Véase [Edificio nocturno](NIVEL01_EDIFICIO_NOCTURNO.md).
+
 ## Partida
 
 Galindo recibe un mensaje: movieron sus cosas durante la limpieza. Tiene que investigar tres fuentes del pasillo, deducir el casillero de su USB, abrir un candado y regresar a la salida antes del cierre.
@@ -23,13 +25,13 @@ E o el botón sur investiga la fuente cercana. N o el botón Libreta permite con
 - El resumen muestra pistas, casilleros equivocados, errores del candado, choques, tiempo y puntaje.
 - Reconocimientos: Detective del pasillo, Sin equivocaciones y Sin perder la calma.
 
-El objetivo no entrega la USB hasta reunir las tres pistas y resolver el candado. Encontrarlo por azar antes de investigar no permite saltarse el puzzle. Al recuperar la USB cambia la música y tres alumnos comienzan a marcharse por la salida. Los demás mantienen cruces, paseos y grupos con pausas; Q/LB conserva la petición aleatoria de paso. El director intenta colocar hasta 13 alumnos, evitando superposición inicial.
+El objetivo no entrega la USB hasta reunir las tres pistas y resolver el candado. Encontrarlo por azar antes de investigar no permite saltarse el puzzle. Al recuperar la USB cambia la música y tres alumnos de planta baja comienzan a marcharse por la salida. Los demás mantienen cruces, paseos y grupos con pausas; Q/LB conserva la petición aleatoria de paso. Cada planta tiene un director que intenta colocar hasta 13 alumnos, evitando superposición inicial.
 
 ## Escenario e integración
 
-La fila inferior reutiliza sprites de casilleros existentes, con colliders e interacciones orientadas hacia el pasillo. Los casilleros nuevos están guardados en la escena. El misterio y los personajes se configuran al iniciar `LevelOneUpgrade`.
+Ambas filas reutilizan sprites de casilleros existentes, con colliders e interacciones orientadas hacia su pasillo. Los casilleros están guardados en la escena. El misterio y los personajes se configuran al iniciar `LevelOneUpgrade`.
 
-Se integra también el campus del nivel 3 desde develop, manteniendo las mejoras del nivel 1 y las dependencias compatibles con Unity 6000.3.25f1. La cámara del nivel 1 sigue al jugador en ambos ejes. `LevelOneCampusBackdrop` añade pasto, andadores, techos y árboles de fondo en edición y juego, sin colliders ni extensión del área jugable.
+Se integra también el campus del nivel 3 desde develop, manteniendo las mejoras del nivel 1 y las dependencias compatibles con Unity 6000.3.25f1. La cámara del nivel 1 sigue al jugador en ambos ejes. `LevelOneNightSchool` reconstruye los pasillos, las ocho aulas y las escaleras, y reutiliza el pasto y los árboles del fondo anterior. El decorado antiguo permanece inactivo para evitar superposiciones.
 
 Música del regreso: YaCASI-Soundtrack-Nivel3, composición de Agustín López Parra en FL Studio 25. La música inicial y los efectos conservan sus atribuciones anteriores.
 
