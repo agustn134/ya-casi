@@ -2,7 +2,7 @@
 
 Escena: `Assets/Scenes/Nivel01_CaosDelCasillero.unity`. Rama de trabajo: `nivel/01-caos-del-casillero`.
 
-La versión actual transcurre de noche en dos plantas. La nota está en el salón 101, el compañero en el pasillo superior y el aviso en el salón 203. La fila Azul queda abajo y la Verde arriba; se comunican con una escalera en U. El recorrido dispone de cinco minutos y aulas oscuras para ocultarse del conserje. Véase [Edificio nocturno](NIVEL01_EDIFICIO_NOCTURNO.md).
+La versión actual transcurre de noche en dos plantas. La nota está en el salón 101, el compañero en el pasillo superior y el aviso en el salón 203. La fila Azul queda abajo y la Verde arriba; se comunican con una escalera en U. El recorrido dispone de tres minutos y treinta segundos y aulas oscuras para ocultarse del conserje. Véase [Edificio nocturno](NIVEL01_EDIFICIO_NOCTURNO.md).
 
 ## Partida
 

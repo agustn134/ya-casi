@@ -11,7 +11,7 @@ El diseño visual vigente está guardado en **Grid_EdificioF**, con Tilemaps edi
 - Cuatro aulas por planta, numeradas 101–104 y 201–204. Puertas abiertas con huecos transitables, pupitres, sillas, pizarrones y zonas oscuras.
 - Nota en el salón 101; compañero en el pasillo del segundo piso; aviso en el salón 203.
 - La salida sigue en el extremo izquierdo de planta baja. Solo permite ganar con la USB.
-- Tiempo inicial: cinco minutos, ajustable en `LevelOneNightSchool.roundSeconds`.
+- Tiempo inicial: tres minutos y treinta segundos, ajustable en `LevelOneNightSchool.roundSeconds`.
 
 Los gráficos usan suelo, paredes y escalones de Room Builder de LimeZu y muebles de los recursos ThirdParty existentes. La arquitectura utiliza `Assets/Resources/LevelOneBuildingPalette.asset`; puertas y mobiliario conservan las referencias de `Assets/Resources/LevelOneNightPalette.asset`.
 

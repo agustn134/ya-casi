@@ -11,11 +11,13 @@ public sealed class LevelOneCaretaker : MonoBehaviour
     public int PatrolDirection=1;
     public float PatrolLaneOffset;
     int patrolStep=1;
+    public Vector2 Position => body!=null?body.position:(Vector2)transform.position;
+    public bool IsChasing => state==Behaviour.Chasing;
     public int Warnings => world!=null?world.TotalWarnings:0;
-    const float SightRange = 6f;
-    const float SightAngle = 65f;
+    const float SightRange = 10f;
+    const float SightAngle = 90f;
     const float DetectionSeconds = 1f;
-    const float ChaseSeconds = 5f;
+    const float ChaseSeconds = 8f;
     const float ProtectionSeconds = 8f;
     const int FanSegments = 28;
 
@@ -48,6 +50,7 @@ public sealed class LevelOneCaretaker : MonoBehaviour
     float stateUntil;
     float stopUntil;
     float protectedUntil;
+    float runningSeconds;
     float nextRunningNoise;
     float nextFanUpdate;
     float blockedTime;
@@ -146,8 +149,18 @@ public sealed class LevelOneCaretaker : MonoBehaviour
         }
         else awareness = Mathf.MoveTowards(awareness, 0, Time.deltaTime * .9f);
 
+        runningSeconds=player.IsRunning&&playerFloor==floor&&!hidden?runningSeconds+Time.deltaTime:
+            Mathf.MoveTowards(runningSeconds,0,Time.deltaTime*2);
+        if(runningSeconds>=3.5f&&playerFloor==floor&&!hidden&&
+            Time.time>=Mathf.Max(protectedUntil,world.SafeUntil)&&Vector2.Distance(body.position,playerPosition)<=14)
+        {
+            if(state!=Behaviour.Chasing)Message?.Invoke("¡El conserje oyó tus pasos! Entra a un salón y deja de correr.");
+            lastSeen=playerPosition;awareness=1;state=Behaviour.Chasing;stateUntil=Time.time+ChaseSeconds;stopUntil=0;
+            StatusText="Te oyó correr · busca un salón oscuro";
+        }
+
         if (player.IsRunning && playerFloor == floor && Time.time >= nextRunningNoise &&
-            Vector2.Distance(body.position, playerPosition) <= 6.5f)
+            Vector2.Distance(body.position, playerPosition) <= 11f)
         {
             nextRunningNoise = Time.time + 2.5f;
             HearNoise(playerPosition);
@@ -155,7 +168,7 @@ public sealed class LevelOneCaretaker : MonoBehaviour
 
         if (state == Behaviour.Chasing)
         {
-            moveSpeed = 5.4f;
+            moveSpeed = 5.8f;
             moveTarget = ChasePoint(seesPlayer ? playerPosition : lastSeen);
             if (hidden || playerFloor != floor || Time.time >= stateUntil)
             {
@@ -206,7 +219,7 @@ public sealed class LevelOneCaretaker : MonoBehaviour
     {
         if (manager == null || !manager.IsPlaying || actor == null || state == Behaviour.Chasing ||
             state == Behaviour.ChangingFloor || world.FloorAt(position) != floor ||
-            Vector2.Distance(body.position, position) > 9) return;
+            Vector2.Distance(body.position, position) > 14) return;
         bool justHeard = state != Behaviour.Investigating;
         state = Behaviour.Investigating;
         noisePoint = CorridorPoint(position);

@@ -8,7 +8,7 @@ using UnityEngine.Rendering.Universal;
 public sealed class LevelOneNightSchool : MonoBehaviour
 {
     public static LevelOneNightSchool Active { get; private set; }
-    public float roundSeconds=300;
+    public float roundSeconds=210;
     public LevelOneNightPalette palette;
     public Material surfaceMaterial;
     [Tooltip("Grid guardado en la escena. Sus Tilemaps se editan directamente y no se regeneran al jugar.")]

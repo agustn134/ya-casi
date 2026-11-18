@@ -29,3 +29,11 @@ Dos intendentes por planta (cuatro en total) patrullan en direcciones contrarias
 Un tercio de los alumnos recorre temporalmente circuitos frente a los grupos de casilleros y cruza hacia el carril interior en ambos sentidos. Después se incorpora al desalojo. Sus posiciones futuras en la fila superior se reservan desde el inicio para evitar que los recién llegados desplacen a los que ya esperan.
 
 Esta ampliación se implementó sin ejecutar compilación, comprobaciones ni partidas de prueba, por solicitud del propietario.
+
+## Presión de vigilancia y tiempo
+
+Tiempo inicial: 210 segundos (3:30), como ajuste inicial de dificultad, no como mínimo demostrado. Se cambia en LevelOneNightSchool.roundSeconds. Visión de los conserjes: alcance 10 y ángulo 90 grados. Correr de forma sostenida durante 3.5 segundos puede iniciar una persecución por ruido a una distancia de hasta 14 unidades de la misma planta. La persecución dura hasta ocho segundos tras el último estímulo; entrar al aula y dejar de correr permite ocultarse.
+
+El lateral derecho indica dirección, cercanía y persecución del conserje más próximo de la planta. La planta alta dedica la mitad de sus alumnos a circuitos ante casilleros, hasta entre 75 y 103 segundos antes de incorporarse a la fila de salida.
+
+Este ajuste se entrega sin compilación ni pruebas, por solicitud del propietario.

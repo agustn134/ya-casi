@@ -9,7 +9,8 @@ public sealed class LevelOneHud : MonoBehaviour
     static readonly Color Panel = new Color(.035f, .075f, .09f, .90f);
     static readonly Color Gold = new Color(1f, .84f, .42f);
     TMP_Text goal, timer, inventory, context, notification;
-    TMP_Text vigilance;
+    TMP_Text vigilance,proximity;
+    Image proximityPanel;
     Image contextPanel, inventoryIcon;
     CanvasGroup notificationGroup;
     float notificationUntil;
@@ -54,6 +55,9 @@ public sealed class LevelOneHud : MonoBehaviour
         var watch=Card("Piso y vigilancia",Vector2.right,new Vector2(-20,20),new Vector2(300,90));
         vigilance=Text(watch.transform,"Estado del edificio","",Vector2.zero,new Vector2(278,80),21);
 
+        proximityPanel=Card("Conserje cercano",new Vector2(1,.5f),new Vector2(-20,25),new Vector2(265,112));
+        proximity=Text(proximityPanel.transform,"Dirección del peligro","",Vector2.zero,new Vector2(245,102),21);
+
         var toast = Card("Aviso temporal", new Vector2(.5f, 1), new Vector2(0, -20), new Vector2(650, 68));
         notificationGroup = toast.gameObject.AddComponent<CanvasGroup>();
         notificationGroup.blocksRaycasts = false; notificationGroup.interactable = false; notificationGroup.alpha = 0;
@@ -88,6 +92,24 @@ public sealed class LevelOneHud : MonoBehaviour
             var guard=world.MostAlertGuard(floor==1?1:0);
             string status=guard==null?"De ronda":guard.Suspicion01>=1?"¡Te persigue!":guard.Suspicion01>.05f?"Te está mirando":"De ronda";
             vigilance.text=(floor==1?"Segundo piso":floor<0?"Escalera en U":"Planta baja")+"\nIntendentes: "+status+"\nAdvertencias: "+(world.Caretaker!=null?world.Caretaker.Warnings:0)+"/2";
+            Vector2 origin=Camera.main!=null?(Vector2)Camera.main.transform.position:Vector2.zero;
+            LevelOneCaretaker nearestGuard=null;float distance=float.PositiveInfinity;
+            if(world.Watchmen!=null)foreach(var candidate in world.Watchmen)
+            {
+                if(candidate==null||candidate.AssignedFloor!=(origin.y>=16?1:0))continue;
+                float range=Vector2.Distance(candidate.Position,origin);
+                if(range<distance){distance=range;nearestGuard=candidate;}
+            }
+            if(nearestGuard!=null)
+            {
+                Vector2 offset=nearestGuard.Position-origin;
+                string direction=Mathf.Abs(offset.x)>=Mathf.Abs(offset.y)?(offset.x<0?"Izquierda":"Derecha"):(offset.y<0?"Abajo":"Arriba");
+                string closeness=distance<5?"Muy cerca":distance<10?"Cerca":"A distancia";
+                proximity.text="Conserje · "+closeness+"\n"+direction+"\n"+(nearestGuard.IsChasing?"¡Te persigue! Busca un salón":"Camina para no hacer ruido");
+                proximity.color=nearestGuard.IsChasing||distance<5?new Color(1,.56f,.4f):distance<10?Gold:Color.white;
+                proximityPanel.color=nearestGuard.IsChasing?new Color(.22f,.05f,.04f,.94f):Panel;
+            }
+            else proximity.text="Sin conserjes cerca";
             if(world.TryGetWorldPrompt(out string roomPrompt))
             {contextPanel.gameObject.SetActive(true);context.text=roomPrompt;context.color=new Color(.65f,.82f,1);}
         }
