@@ -84,7 +84,7 @@ public class PlayerMovement : MonoBehaviour
         if(Gamepad.current!=null && Gamepad.current.leftStick.ReadValue().sqrMagnitude>.01f)moveInput=Gamepad.current.leftStick.ReadValue();
         if(TouchGameControls.Direction.sqrMagnitude>.01f)moveInput=TouchGameControls.Direction;
         moveInput=Vector2.ClampMagnitude(moveInput,1);
-        sprintHeld=keyboardSprint || TouchGameControls.Sprint || (Gamepad.current!=null&&Gamepad.current.rightTrigger.isPressed);
+        sprintHeld=Application.isFocused && Time.timeScale>0 && ((Keyboard.current!=null && (Keyboard.current.leftShiftKey.isPressed || Keyboard.current.rightShiftKey.isPressed)) || TouchGameControls.Sprint || (Gamepad.current!=null&&Gamepad.current.rightTrigger.isPressed));
         UpdateAnimation();
     }
 
@@ -166,9 +166,14 @@ public class PlayerMovement : MonoBehaviour
     /// Detiene el movimiento y muestra reposo
     /// cuando el gestor desactiva este componente.
     /// </summary>
+    private void OnApplicationFocus(bool focused)
+    { if(!focused){ keyboardInput=Vector2.zero; keyboardSprint=false; sprintHeld=false; moveInput=Vector2.zero; if(rb!=null)rb.linearVelocity=Vector2.zero; } }
+
     private void OnDisable()
     {
         moveInput = Vector2.zero;
+        keyboardInput = Vector2.zero;
+        keyboardSprint = false;
         sprintHeld = false;
         wasRunning = false;
 

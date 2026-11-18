@@ -52,7 +52,7 @@ public sealed class LevelOneHud : MonoBehaviour
         context = Text(contextPanel.transform, "Acción", "", Vector2.zero, new Vector2(450, 78), 25);
         contextPanel.gameObject.SetActive(false);
         var watch=Card("Piso y vigilancia",Vector2.right,new Vector2(-20,20),new Vector2(300,90));
-        vigilance=Text(watch.transform,"Estado del edificio","",Vector2.zero,new Vector2(278,80),24);
+        vigilance=Text(watch.transform,"Estado del edificio","",Vector2.zero,new Vector2(278,80),21);
 
         var toast = Card("Aviso temporal", new Vector2(.5f, 1), new Vector2(0, -20), new Vector2(650, 68));
         notificationGroup = toast.gameObject.AddComponent<CanvasGroup>();
@@ -86,7 +86,7 @@ public sealed class LevelOneHud : MonoBehaviour
         {
             int floor=world.FloorAt(Camera.main!=null?Camera.main.transform.position:Vector3.zero);
             string status=world.Caretaker==null?"De ronda":world.Caretaker.Suspicion01>=1?"¡Te persigue!":world.Caretaker.Suspicion01>.05f?"Te está mirando":"De ronda";
-            vigilance.text=(floor==1?"Segundo piso":floor<0?"Escalera en U":"Planta baja")+"\nConserje: "+status;
+            vigilance.text=(floor==1?"Segundo piso":floor<0?"Escalera en U":"Planta baja")+"\nIntendente: "+status+"\nAdvertencias: "+(world.Caretaker!=null?world.Caretaker.Warnings:0)+"/2";
             if(world.TryGetWorldPrompt(out string roomPrompt))
             {contextPanel.gameObject.SetActive(true);context.text=roomPrompt;context.color=new Color(.65f,.82f,1);}
         }

@@ -7,6 +7,7 @@ public sealed class LevelOneCaretaker : MonoBehaviour
 {
     enum Behaviour { Patrol, Investigating, Chasing, ChangingFloor }
 
+    public int Warnings { get; private set; }
     const float SightRange = 6f;
     const float SightAngle = 65f;
     const float DetectionSeconds = 1f;
@@ -147,7 +148,7 @@ public sealed class LevelOneCaretaker : MonoBehaviour
 
         if (state == Behaviour.Chasing)
         {
-            moveSpeed = 3.15f;
+            moveSpeed = 5.4f;
             moveTarget = ChasePoint(seesPlayer ? playerPosition : lastSeen);
             if (hidden || playerFloor != floor || Time.time >= stateUntil)
             {
@@ -333,10 +334,11 @@ public sealed class LevelOneCaretaker : MonoBehaviour
         state = Behaviour.Patrol;
         stopUntil = Time.time + 2f;
         nextPoint = patrol.Length > 0 ? (ClosestPatrolIndex() + 1) % patrol.Length : 0;
-        manager.ApplyPenalty(8f);
+        Warnings++;
+        if(Warnings>=3){StatusText="Expulsado del edificio";Message?.Invoke("El intendente te expulsó tras tres capturas.");manager.ShowFeedback(StatusText);manager.FailLevel();return;}
         if (!manager.IsFailed) world.TeleportPlayer(checkpoint);
         StatusText = "Amonestación · protección temporal";
-        Message?.Invoke("El conserje te alcanzó: −8 s. Conservas tus pistas y tu USB.");
+        Message?.Invoke(Warnings==1?"El edificio está cerrando. Debes salir.":"Última advertencia, Galindo.");
     }
 
     void ChangeFloor(int desiredFloor)

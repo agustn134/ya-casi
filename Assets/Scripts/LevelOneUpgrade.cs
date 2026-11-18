@@ -154,7 +154,7 @@ public sealed class LevelOneUpgrade : MonoBehaviour
         MenuText(card,"Contexto","Es de noche. El conserje está cerrando los dos pisos.\nInvestiga, abre el candado y regresa a la salida de planta baja.",222,100,29,Color.white);
         string penalties=$"Casillero vacío: −{(config!=null?config.wrongLockerPenalty:3):0} s. Repetir: −{(config!=null?config.repeatLockerPenalty:5):0} s.";
         MenuText(card,"Teclas","WASD / flechas / stick: caminar · Shift / gatillo: correr\nE / botón sur: investigar, hablar o revisar\nN / Libreta: consultar tus tres pistas\nQ / LB: pedir permiso para pasar\nEsc / Start: pausa · F1 / Ayuda: estas indicaciones",50,215,28,Color.white);
-        MenuText(card,"Reglas",penalties+" Candado: −4 s. Conserje: −8 s.\nEntra a un salón y deja de correr para esconderte lejos de la puerta.\nRecorre ambos tramos de la escalera en U para cambiar de piso.\nAzul: planta baja. Verde: segundo piso. La libreta pausa el reloj.",-152,145,26,Color.white);
+        MenuText(card,"Reglas",penalties+" Candado: −4 s. Intendente: dos advertencias; tercera captura, expulsión.\nEntra a un salón y deja de correr para esconderte lejos de la puerta.\nRecorre ambos tramos de la escalera en U para cambiar de piso.\nAzul: planta baja. Verde: segundo piso. La libreta pausa el reloj.",-152,145,26,Color.white);
         MenuButton(card,returnToPause?"Volver a pausa":"Entendido, ¡vamos!",-315,CloseHelp);
         LevelOneTypography.Apply(overlay);
     }
@@ -211,9 +211,9 @@ public sealed class LevelOneUpgrade : MonoBehaviour
     void ShowResult()
     {
         var card=NewOverlay("Resultado del nivel 1",OverlayKind.Result);
-        MenuText(card,"Título",manager.IsCompleted?"¡USB recuperada!":(calm<=0?"Necesitas un respiro":"Se acabó el tiempo"),305,90,44,new Color(1,.84f,.4f));
+        MenuText(card,"Título",manager.IsCompleted?"¡USB recuperada!":(nightSchool!=null&&nightSchool.Caretaker!=null&&nightSchool.Caretaker.Warnings>=3?"Expulsado del edificio":calm<=0?"Necesitas un respiro":"Se acabó el tiempo"),305,90,44,new Color(1,.84f,.4f));
         MenuText(card,"Resultado",manager.IsCompleted?"Llegaste a tiempo a la salida.":"Recuerda los casilleros revisados y pide permiso para pasar.",212,80,28,Color.white);
-        MenuText(card,"Estadísticas",Statistics()+$"\n\nTiempo restante: {Mathf.CeilToInt(manager.RemainingTime)} s · Mejor: {PlayerPrefs.GetInt("YaCasi.U2.Best",0)}\n"+(manager.IsCompleted?mystery.Awards(calm):"Investiga las tres pistas antes de elegir un casillero."),25,240,27,Color.white);
+        MenuText(card,"Estadísticas",Statistics()+$"\n\nTiempo restante: {Mathf.CeilToInt(manager.RemainingTime)} s · Mejor: {PlayerPrefs.GetInt("YaCasi.U2.Best",0)}\n"+(manager.IsCompleted?mystery.Awards(calm):(nightSchool!=null&&nightSchool.Caretaker!=null&&nightSchool.Caretaker.Warnings>=3?"El intendente te expulsó tras tres capturas.":"Investiga las tres pistas antes de elegir un casillero.")),25,240,27,Color.white);
         MenuButton(card,"Reintentar",-170,manager.RestartLevel);
         MenuButton(card,"Menú principal",-260,U2Presentation.ReturnToMenu);
         MenuText(card,"Fuente","Tipografía: Redaction 35 · SIL Open Font License",-352,40,21,Color.white);
@@ -221,6 +221,7 @@ public sealed class LevelOneUpgrade : MonoBehaviour
     }
     void SpawnStudents()
     {
+        if(nightSchool!=null){gameObject.AddComponent<LevelOneClosingFlow>();return;}
         studentDirector=gameObject.AddComponent<LevelOneStudentDirector>();
         if(nightSchool!=null)
         {

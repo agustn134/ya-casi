@@ -14,7 +14,7 @@ public sealed class U2Presentation : MonoBehaviour
     public const string SaveKey = "YaCasi.U2.ResumeLevel";
     public static float MusicVolume => PlayerPrefs.GetFloat("YaCasi.U2.Music", .45f);
     public static float EffectsVolume => PlayerPrefs.GetFloat("YaCasi.U2.Effects", .7f);
-    static TMP_FontAsset Font => Resources.Load<U2GameConfig>("U2GameConfig")?.font;
+    static TMP_FontAsset Font => LevelOneTypography.Font;
     static readonly Color Navy = new Color32(24,39,51,255);
     static readonly Color Gold = new Color32(255,213,107,255);
     GameObject root;
@@ -40,14 +40,35 @@ public sealed class U2Presentation : MonoBehaviour
         Clear();var card=Card(root.transform,"Inicio");
         Text(card.transform,"Título","¡YA CASI!",new Vector2(0,320),new Vector2(1000,100),76,Gold);
         Text(card.transform,"Subtítulo","Recupera la USB antes de que cierre el edificio",new Vector2(0,240),new Vector2(1100,70),30,Color.white);
-        Button(card.transform,"Jugar nivel 1",new Vector2(0,155),()=>{PlayerPrefs.DeleteKey("YaCasi.U2.Win");StartLevel();});
-        Button(card.transform,"Jugar nivel 3",new Vector2(0,65),()=>{Time.timeScale=1;SceneManager.LoadScene("MenuNivel03");});
-        var cont=Button(card.transform,"Continuar nivel 1",new Vector2(0,-25),StartLevel);cont.interactable=PlayerPrefs.HasKey(SaveKey);
-        Button(card.transform,"Opciones",new Vector2(0,-115),()=>Options(root.transform,Main));
-        Button(card.transform,"Créditos",new Vector2(0,-205),Credits);
-        Button(card.transform,"Salir",new Vector2(0,-295),Quit);
+        string[] names={"1 · El caos del casillero","2 · Biblioteca","3 · La ruta de entrega","4 · El cubículo"};
+        for(int i=0;i<4;i++)
+        {
+            int number=i+1;string scene=FindLevel(number);
+            var button=Button(card.transform,names[i]+(scene==null?" · Próximamente":""),new Vector2(0,165-i*70),()=>LoadLevel(scene));
+            button.interactable=scene!=null;
+        }
+        string resume=PlayerPrefs.GetString("YaCasi.LastPlayedScene",LevelScene);
+        var cont=Button(card.transform,"Continuar",new Vector2(0,-125),()=>LoadLevel(resume));cont.interactable=Application.CanStreamedLevelBeLoaded(resume);
+        Button(card.transform,"Opciones",new Vector2(-310,-215),()=>Options(root.transform,Main));
+        Button(card.transform,"Créditos",new Vector2(310,-215),Credits);
+        Button(card.transform,"Salir",new Vector2(0,-305),Quit);
         Text(card.transform,"Mejor","Mejor puntaje nivel 1: "+PlayerPrefs.GetInt("YaCasi.U2.Best",0),new Vector2(0,-380),new Vector2(800,45),25,Gold);
     }
+    static string FindLevel(int number)
+    {
+        for(int i=0;i<SceneManager.sceneCountInBuildSettings;i++)
+        {
+            string path=UnityEngine.SceneManagement.SceneUtility.GetScenePathByBuildIndex(i);
+            string name=System.IO.Path.GetFileNameWithoutExtension(path);
+            if(name.StartsWith("Nivel0"+number)&&!name.Contains("Prueba"))return name;
+        }
+        return null;
+    }
+    static void LoadLevel(string scene){if(!string.IsNullOrEmpty(scene)&&Application.CanStreamedLevelBeLoaded(scene)){Time.timeScale=1;SceneManager.LoadScene(scene);}}
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+    static void TrackProgress(){SceneManager.sceneLoaded-=RememberLevel;SceneManager.sceneLoaded+=RememberLevel;}
+    static void RememberLevel(Scene scene,LoadSceneMode mode)
+    {if(scene.name.StartsWith("Nivel0")&&!scene.name.Contains("Prueba")){PlayerPrefs.SetString("YaCasi.LastPlayedScene",scene.name);PlayerPrefs.Save();}}
     public static void StartLevel(){Time.timeScale=1;SceneManager.LoadScene(LevelScene);}
     public static void ReturnToMenu(){Time.timeScale=1;SceneManager.LoadScene(MenuScene);}
     void Credits()

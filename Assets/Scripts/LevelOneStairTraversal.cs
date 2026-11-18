@@ -8,7 +8,7 @@ public sealed class LevelOneStairTraversal : MonoBehaviour
     enum StairStep { Outside, FirstFlight, Landing, ReturnFlight }
 
     const float FloorSpacing = 32f;
-    const float FadeSeconds = .18f;
+    const float FadeSeconds = .45f;
     LevelOneNightSchool world;
     Level01Manager manager;
     PlayerMovement player;
@@ -94,7 +94,10 @@ public sealed class LevelOneStairTraversal : MonoBehaviour
         U2Presentation.Stretch(curtain.rectTransform);
         curtain.raycastTarget = true;
 
+        var caption=U2Presentation.Text(fadeCanvas.transform,"Dirección",destinationFloor==1?"↑ Subiendo al segundo piso":"↓ Bajando a planta baja",Vector2.zero,new Vector2(850,90),36,Color.white);
+        LevelOneTypography.Apply(fadeCanvas);
         yield return FadeTo(1f);
+        yield return new WaitForSecondsRealtime(.35f);
         if (world != null && player != null && manager != null && !manager.IsCompleted && !manager.IsFailed)
         {
             world.TeleportPlayer(new Vector2(72.5f, destinationFloor * FloorSpacing - .5f));
