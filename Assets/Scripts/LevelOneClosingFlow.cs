@@ -18,13 +18,25 @@ public sealed class LevelOneClosingFlow : MonoBehaviour
         for(int floor=0;floor<2;floor++)for(int i=0;i<36;i++)
         {
             float lane=-3.0f+(i%3)*1.5f;
-            Vector2 at=new Vector2(-2+i*1.95f+Mathf.Sin(i*2.1f)*.35f, floor*32+lane);
+            bool circuit=i%3==0;int group=i/9;int side=(i%9)/3;
+            float left=group==0?-3.5f:13.5f+(group-1)*18;
+            Vector2 at=circuit?new Vector2(left+1.5f+side*3,floor*32+(side==1?.25f:2.2f)):
+                new Vector2(-2+i*1.95f+Mathf.Sin(i*2.1f)*.35f, floor*32+lane);
             if(Physics2D.OverlapCapsule(at+Vector2.down*.45f,new Vector2(.7f,.5f),CapsuleDirection2D.Vertical,0)!=null)continue;
             int look=i%Mathf.Min(config.studentControllers.Length,config.studentIdleSprites.Length);
             var go=new GameObject("Alumno de salida "+floor+" · "+i);go.transform.SetParent(transform);go.transform.position=at;
             var actor=go.AddComponent<CampusStudent>();actor.Initialize(config.studentControllers[look],config.studentIdleSprites[look],Color.white);
             actor.speed=1.25f+(i%5)*.15f;
-            crowd.Add(new Departure{actor=actor,at=(i%9)*.65f,upstairs=floor==1,lane=lane,exitLane=-1.4f+(i%3)*.8f,queueRank=35-i});
+            var departure=new Departure{actor=actor,at=(i%9)*.65f,upstairs=floor==1,lane=lane,exitLane=-1.4f+(i%3)*.8f,queueRank=(circuit?1000:0)+35-i};
+            crowd.Add(departure);
+            if(circuit)
+            {
+                float top=floor*32+2.2f,bottom=floor*32+.25f,right=left+10.5f;
+                Vector2[] path=side==0?new[]{new Vector2(right,top),new Vector2(right,bottom),new Vector2(left,bottom),new Vector2(left,top)}:
+                    side==1?new[]{new Vector2(left,bottom),new Vector2(left,top),new Vector2(right,top),new Vector2(right,bottom)}:
+                    new[]{new Vector2(left,top),new Vector2(left,bottom),new Vector2(right,bottom),new Vector2(right,top)};
+                actor.SetRoute(path);departure.phase=5;departure.at=55+(i%9)*7+floor*5;
+            }
             // Sin rutas de ida y vuelta: espera en reposo hasta iniciar su salida.
         }
         // El Grid es hermano del gestor, por lo que sus puertas se buscan en la escena.
@@ -48,7 +60,7 @@ public sealed class LevelOneClosingFlow : MonoBehaviour
         {
             if(d.actor==null)continue;
             Vector2 p=d.actor.transform.position;
-            if(d.phase==0&&elapsed>=d.at)
+            if((d.phase==0||d.phase==5)&&elapsed>=d.at)
             {
                 if(d.upstairs){d.end=QueuePoint(d);d.actor.SetRoute(new[]{p,d.end},true);d.phase=1;}
                 else Exit(d,p);
@@ -80,7 +92,7 @@ public sealed class LevelOneClosingFlow : MonoBehaviour
     int WaitingAhead(Departure entry)
     {
         int count=0;foreach(var other in crowd)
-            if(other.actor!=null&&other.upstairs&&other.phase<=1&&other.queueRank<entry.queueRank)count++;
+            if(other.actor!=null&&other.upstairs&&(other.phase<=1||other.phase==5)&&other.queueRank<entry.queueRank)count++;
         return count;
     }
     Vector2 QueuePoint(Departure entry)=>new Vector2(70.0f-WaitingAhead(entry)*1.65f,30.5f);

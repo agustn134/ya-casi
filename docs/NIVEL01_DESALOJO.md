@@ -21,3 +21,11 @@ El menú muestra niveles 1–4 en orden. Solo activa escenas incluidas en la com
 Comprobación realizada: compilación C# y ejecución en Unity durante 35 segundos con 72 alumnos iniciales; quedaron 60 tras cruzar la salida. Se verificaron dos intendentes y que el punto exterior junto a la pared de planta alta no produce aviso de salón. Evidencia en `docs/evidencia/Nivel01_Desalojo.txt`. No equivale a una partida completa ni comprueba todos los encuentros posibles entre multitudes y jugador.
 
 Comprobación adicional de la fila superior: en 110 segundos descendieron 21 de sus 36 alumnos y quedaron tres alumnos en la zona de entrada a la escalera. Evidencia en `docs/evidencia/Nivel01_FilaPlantaAlta.txt`. Se comparó el método SubmitCombination con la versión anterior: sin cambios.
+
+## Más presión junto a los casilleros
+
+Dos intendentes por planta (cuatro en total) patrullan en direcciones contrarias, vuelven por el pasillo al llegar a sus extremos y comparten el contador de advertencias. El HUD muestra el vigilante más alerta de la planta.
+
+Un tercio de los alumnos recorre temporalmente circuitos frente a los grupos de casilleros y cruza hacia el carril interior en ambos sentidos. Después se incorpora al desalojo. Sus posiciones futuras en la fila superior se reservan desde el inicio para evitar que los recién llegados desplacen a los que ya esperan.
+
+Esta ampliación se implementó sin ejecutar compilación, comprobaciones ni partidas de prueba, por solicitud del propietario.

@@ -23,7 +23,7 @@ Los tramos tienen tres unidades de ancho y un separador con collider. Se conserv
 
 ## Conserje y escondites
 
-Dos intendentes patrullan el edificio, uno por planta, con un cono de linterna visible. Su visión respeta paredes, casilleros y pupitres. El cono tiene seis unidades de alcance y 65 grados; necesitan ver al jugador durante un segundo para iniciar una persecución.
+Cuatro intendentes patrullan el edificio, dos por planta y en sentidos opuestos, con un cono de linterna visible. Su visión respeta paredes, casilleros y pupitres. El cono tiene seis unidades de alcance y 65 grados; necesitan ver al jugador durante un segundo para iniciar una persecución.
 
 Correr cerca o revisar un casillero equivocado genera ruido. El intendente de esa planta investiga el punto del pasillo más cercano. Cada vigilante permanece en su propia planta.
 

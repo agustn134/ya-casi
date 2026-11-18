@@ -15,6 +15,13 @@ public sealed class LevelOneNightSchool : MonoBehaviour
     public GameObject authoredLayout;
     public LevelOneCaretaker Caretaker { get; private set; }
     public LevelOneCaretaker SecondCaretaker { get; private set; }
+    public LevelOneCaretaker[] Watchmen { get; private set; }
+    public LevelOneCaretaker MostAlertGuard(int floor)
+    {
+        LevelOneCaretaker best=null;if(Watchmen==null)return null;
+        foreach(var guard in Watchmen)if(guard!=null&&guard.AssignedFloor==floor&&(best==null||guard.Suspicion01>best.Suspicion01))best=guard;
+        return best;
+    }
     public int TotalWarnings { get; private set; }
     public float SafeUntil { get; private set; }
     public void RegisterCapture(){TotalWarnings++;SafeUntil=Time.time+8;}
@@ -176,9 +183,15 @@ public sealed class LevelOneNightSchool : MonoBehaviour
     {
         manager=levelManager;player=actor;Active=this;
         if(generated==null)Rebuild();
-        Caretaker=gameObject.AddComponent<LevelOneCaretaker>();Caretaker.AssignedFloor=0;Caretaker.Configure(manager,player,this,config);
-        Caretaker.Message+=manager.ShowFeedback;
-        SecondCaretaker=gameObject.AddComponent<LevelOneCaretaker>();SecondCaretaker.AssignedFloor=1;SecondCaretaker.Configure(manager,player,this,config);SecondCaretaker.Message+=manager.ShowFeedback;
+        Watchmen=new LevelOneCaretaker[4];
+        for(int floor=0;floor<2;floor++)for(int direction=0;direction<2;direction++)
+        {
+            var guard=gameObject.AddComponent<LevelOneCaretaker>();guard.AssignedFloor=floor;
+            guard.PatrolDirection=direction==0?1:-1;guard.PatrolLaneOffset=direction==0?-.65f:.65f;
+            guard.Configure(manager,player,this,config);guard.Message+=manager.ShowFeedback;
+            Watchmen[floor*2+direction]=guard;
+        }
+        Caretaker=Watchmen[0];SecondCaretaker=Watchmen[2];
         gameObject.AddComponent<LevelOneDepthSetup>();
         Stairs=gameObject.AddComponent<LevelOneStairTraversal>();Stairs.Configure(this,manager,player);
         Stairs.Message+=manager.ShowFeedback;

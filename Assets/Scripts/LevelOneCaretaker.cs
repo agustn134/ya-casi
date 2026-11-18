@@ -8,6 +8,9 @@ public sealed class LevelOneCaretaker : MonoBehaviour
     enum Behaviour { Patrol, Investigating, Chasing, ChangingFloor }
 
     public int AssignedFloor=-1;
+    public int PatrolDirection=1;
+    public float PatrolLaneOffset;
+    int patrolStep=1;
     public int Warnings => world!=null?world.TotalWarnings:0;
     const float SightRange = 6f;
     const float SightAngle = 65f;
@@ -61,13 +64,16 @@ public sealed class LevelOneCaretaker : MonoBehaviour
         manager = levelManager; player = actorPlayer; world = school;
         floor = AssignedFloor>=0?AssignedFloor:Mathf.Max(0, world.FloorAt(player.transform.position));
         patrol = world.PatrolPoints(floor) ?? Array.Empty<Vector2>();
-        actor = new GameObject("Conserje · ronda nocturna");
+        patrolStep=PatrolDirection>=0?1:-1;
+        for(int i=0;i<patrol.Length;i++)patrol[i]+=Vector2.up*PatrolLaneOffset;
+        int start=Mathf.Clamp(patrolStep>0?1:patrol.Length-2,0,Mathf.Max(0,patrol.Length-1));
+        actor = new GameObject("Intendente · planta "+(floor+1)+" · sentido "+patrolStep);
         actor.transform.SetParent(transform, false);
         actor.AddComponent<LevelOneDepthSort>();
-        actor.transform.position = patrol.Length > 0 ? patrol[patrol.Length / 2] : world.SafePoint(floor);
+        actor.transform.position = patrol.Length > 0 ? patrol[start] : world.SafePoint(floor);
         var sprite = actor.AddComponent<SpriteRenderer>();
         sprite.sortingOrder = 3;
-        const int appearance = 3;
+        int appearance = patrolStep>0?3:2;
         if (config != null && config.studentIdleSprites != null && config.studentIdleSprites.Length > appearance)
             sprite.sprite = config.studentIdleSprites[appearance];
         animator = actor.AddComponent<Animator>();
@@ -96,7 +102,8 @@ public sealed class LevelOneCaretaker : MonoBehaviour
         label.rectTransform.sizeDelta = new Vector2(3.4f, .85f);
         label.renderer.sortingOrder = 15;
         CreateFlashlight();
-        nextPoint = patrol.Length > 1 ? (patrol.Length / 2 + 1) % patrol.Length : 0;
+        nextPoint = Mathf.Clamp(start+patrolStep,0,Mathf.Max(0,patrol.Length-1));
+        facing=patrolStep>0?Vector2.right:Vector2.left;
         moveTarget = patrol.Length > 0 ? patrol[nextPoint] : body.position;
         protectedUntil = Time.time + 3;
         UpdatePresentation();
@@ -186,7 +193,7 @@ public sealed class LevelOneCaretaker : MonoBehaviour
                 moveTarget = patrol[nextPoint];
                 if (Vector2.Distance(body.position, moveTarget) < .18f && Time.time >= stopUntil)
                 {
-                    nextPoint = (nextPoint + 1) % patrol.Length;
+                    AdvancePatrol();
                     stopUntil = Time.time + .85f;
                     facing = nextPoint % 2 == 0 ? Vector2.up : Vector2.down;
                 }
@@ -229,7 +236,7 @@ public sealed class LevelOneCaretaker : MonoBehaviour
             {
                 blockedTime = 0;
                 state = Behaviour.Patrol;
-                if (patrol.Length > 0) nextPoint = (nextPoint + 1) % patrol.Length;
+                if (patrol.Length > 0) AdvancePatrol();
                 stopUntil = Time.time + .4f;
             }
             return;
@@ -310,6 +317,14 @@ public sealed class LevelOneCaretaker : MonoBehaviour
         return best;
     }
 
+    void AdvancePatrol()
+    {
+        if(patrol.Length<2){nextPoint=0;return;}
+        int target=nextPoint+patrolStep;
+        if(target<0||target>=patrol.Length){patrolStep=-patrolStep;target=nextPoint+patrolStep;}
+        nextPoint=Mathf.Clamp(target,0,patrol.Length-1);
+    }
+
     int ClosestPatrolIndex()
     {
         int result = 0; float distance = float.PositiveInfinity;
@@ -333,7 +348,7 @@ public sealed class LevelOneCaretaker : MonoBehaviour
         awareness = 0;
         state = Behaviour.Patrol;
         stopUntil = Time.time + 2f;
-        nextPoint = patrol.Length > 0 ? (ClosestPatrolIndex() + 1) % patrol.Length : 0;
+        nextPoint = ClosestPatrolIndex();AdvancePatrol();
         world.RegisterCapture();
         if(Warnings>=3){StatusText="Expulsado del edificio";Message?.Invoke("El intendente te expulsó tras tres capturas.");manager.ShowFeedback(StatusText);manager.FailLevel();return;}
         if (!manager.IsFailed) world.TeleportPlayer(checkpoint);
