@@ -2,6 +2,8 @@
 
 Escena: `Assets/Scenes/Nivel01_CaosDelCasillero.unity`. Rama: `nivel/01-caos-del-casillero`. Conserva la USB, la libreta, las tres pistas y el candado del misterio.
 
+El diseño visual vigente está guardado en **Grid_EdificioF**, con Tilemaps editables inspirados en las fotos del edificio F. Consulta [Arquitectura del edificio F](NIVEL01_EDIFICIO_F_GRID.md) para pintar paredes, pisos y exterior.
+
 ## Recorrido
 
 - Dos plantas separadas por 32 unidades de altura en el mapa, con pasillos de aproximadamente 82 unidades de largo.
@@ -11,7 +13,7 @@ Escena: `Assets/Scenes/Nivel01_CaosDelCasillero.unity`. Rama: `nivel/01-caos-del
 - La salida sigue en el extremo izquierdo de planta baja. Solo permite ganar con la USB.
 - Tiempo inicial: cinco minutos, ajustable en `LevelOneNightSchool.roundSeconds`.
 
-Los gráficos usan los sprites de suelo, pared y escalones del Room Builder de LimeZu, una puerta de Modern Interiors y muebles de los recursos ThirdParty existentes. La paleta se guarda en `Assets/Resources/LevelOneNightPalette.asset`.
+Los gráficos usan suelo, paredes y escalones de Room Builder de LimeZu y muebles de los recursos ThirdParty existentes. La arquitectura utiliza `Assets/Resources/LevelOneBuildingPalette.asset`; puertas y mobiliario conservan las referencias de `Assets/Resources/LevelOneNightPalette.asset`.
 
 ## Escalera en U
 
@@ -33,6 +35,6 @@ La IA, la sospecha y la persecución respetan la pausa, la libreta y el candado.
 
 ## Generación y comprobaciones
 
-`LevelOneNightSchool` reconstruye el edificio en edición y juego. Los objetos generados no se guardan repetidos dentro de la escena; sus recursos, configuración y lógica sí forman parte del proyecto y de la compilación. El Grid y el decorado antiguos se conservan inactivos para evitar colisiones duplicadas.
+`LevelOneNightSchool.authoredLayout` referencia el Grid guardado en la escena. Si existe esa referencia, solo registra los escondites y no reconstruye el decorado. Las ediciones manuales de los Tilemaps se conservan. El Grid y el decorado antiguos se mantienen inactivos para evitar colisiones duplicadas; el generador anterior queda como respaldo para escenas sin arquitectura guardada.
 
 Se comprobaron los accesos de las ocho aulas y los puntos de pistas contra los colliders estáticos. Las escaleras se muestrearon en 3 134 posiciones por planta, con un margen de 0.3 unidades y el desplazamiento de los pies del personaje: ambos recorridos y sus destinos quedan libres.

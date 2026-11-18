@@ -11,6 +11,8 @@ public sealed class LevelOneNightSchool : MonoBehaviour
     public float roundSeconds=300;
     public LevelOneNightPalette palette;
     public Material surfaceMaterial;
+    [Tooltip("Grid guardado en la escena. Sus Tilemaps se editan directamente y no se regeneran al jugar.")]
+    public GameObject authoredLayout;
     public LevelOneCaretaker Caretaker { get; private set; }
     public LevelOneStairTraversal Stairs { get; private set; }
     public const float FloorSpacing=32;
@@ -39,6 +41,13 @@ public sealed class LevelOneNightSchool : MonoBehaviour
     public void Rebuild()
     {
         if(!gameObject.scene.IsValid())return;
+        if(authoredLayout!=null)
+        {
+            ClearGenerated();hiddenRooms.Clear();
+            for(int floor=0;floor<2;floor++)foreach(float center in RoomCenters)
+                hiddenRooms.Add(new Rect(center-5.3f,floor*FloorSpacing+7,10.6f,8.5f));
+            return;
+        }
         if(palette==null)palette=Resources.Load<LevelOneNightPalette>("LevelOneNightPalette");
         if(palette==null)return;
         ClearGenerated();hiddenRooms.Clear();
@@ -168,7 +177,7 @@ public sealed class LevelOneNightSchool : MonoBehaviour
         Stairs=gameObject.AddComponent<LevelOneStairTraversal>();Stairs.Configure(this,manager,player);
         Stairs.Message+=manager.ShowFeedback;
         foreach(var light in FindObjectsByType<Light2D>(FindObjectsSortMode.None))
-            if(light.lightType==Light2D.LightType.Global)light.intensity=.55f;
+            if(light.lightType==Light2D.LightType.Global)light.intensity=authoredLayout!=null?.68f:.55f;
         var glow=new GameObject("Visibilidad del jugador de noche");glow.transform.SetParent(player.transform,false);
         playerLight=glow.AddComponent<Light2D>();playerLight.lightType=Light2D.LightType.Point;
         playerLight.color=new Color(.75f,.84f,1);playerLight.intensity=.8f;

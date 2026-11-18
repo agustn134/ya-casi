@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 846ed82b93cc4b969168e40d5666b021, type: 3}
+  m_Name: LevelOneBuildingPalette
+  m_EditorClassIdentifier: Assembly-CSharp::LevelOneBuildingPalette
+  floor: {fileID: -986359982, guid: 287fe7836c6e6a24784da177852c3441, type: 3}
+  lane: {fileID: 340956136, guid: 287fe7836c6e6a24784da177852c3441, type: 3}
+  wallFace: {fileID: -2063436069, guid: 287fe7836c6e6a24784da177852c3441, type: 3}
+  wallFaceLower: {fileID: 789209755, guid: 287fe7836c6e6a24784da177852c3441, type: 3}
+  wallTop: {fileID: 90627557, guid: 287fe7836c6e6a24784da177852c3441, type: 3}
+  wallLeft: {fileID: -1809948091, guid: 287fe7836c6e6a24784da177852c3441, type: 3}
+  wallRight: {fileID: -648572604, guid: 287fe7836c6e6a24784da177852c3441, type: 3}
+  cornerTopLeft: {fileID: -555918714, guid: 287fe7836c6e6a24784da177852c3441, type: 3}
+  cornerTopLeftLower: {fileID: -569213401, guid: 287fe7836c6e6a24784da177852c3441, type: 3}
+  cornerTopRight: {fileID: 1380349886, guid: 287fe7836c6e6a24784da177852c3441, type: 3}
+  cornerTopRightLower: {fileID: -1514785055, guid: 287fe7836c6e6a24784da177852c3441, type: 3}
+  cornerBottomLeft: {fileID: -1094384177, guid: 287fe7836c6e6a24784da177852c3441, type: 3}
+  cornerBottomLeftLower: {fileID: -402025426, guid: 287fe7836c6e6a24784da177852c3441, type: 3}
+  cornerBottomRight: {fileID: 987949815, guid: 287fe7836c6e6a24784da177852c3441, type: 3}
+  cornerBottomRightLower: {fileID: 864283197, guid: 287fe7836c6e6a24784da177852c3441, type: 3}
+  column: {fileID: 0}
+  window: {fileID: 0}
+  exteriorPaving: {fileID: 1734672539, guid: 287fe7836c6e6a24784da177852c3441, type: 3}
+  roof: {fileID: 0}
+  bench: {fileID: 3729099195707288451, guid: 3b09a0735baeb654aaa86b01b53f03bb, type: 3}
+  shrub: {fileID: -4639271126393749740, guid: 9e4544446db5f6345a75b9497ba2ad28, type: 3}
