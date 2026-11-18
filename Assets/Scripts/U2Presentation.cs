@@ -75,7 +75,7 @@ public sealed class U2Presentation : MonoBehaviour
     {
         Clear();var card=Card(root.transform,"Créditos");var cfg=Resources.Load<U2GameConfig>("U2GameConfig");
         Text(card.transform,"Título","CRÉDITOS",new Vector2(0,320),new Vector2(900,70),54,Gold);
-        Text(card.transform,"Autores","Agustín López Parra · Carlos Manuel Palma Muñoz\n\nNivel 1: desarrollo de Agustín; revisión de Carlos.\nUnity · C# · TextMesh Pro\nArte: LimeZu — Modern Interiors, Exteriors y Office\nInterfaz: That Witch Design — Simple Button Set 01\nFuentes: Pixelify Sans y Redaction 35 — SIL OFL\nEfectos: Kenney Interface Sounds y síntesis propia\nGame Over: Alphix — Pixabay (417465)\nMúsica del regreso: Agustín López Parra — FL Studio 25\nMúsica del nivel: "+(cfg!=null?cfg.soundtrackCredit:"pendiente de confirmar")+"\n\nExplora los niveles disponibles desde el menú principal.",new Vector2(0,20),new Vector2(1120,500),27,Color.white);
+        Text(card.transform,"Autores","Agustín López Parra · Carlos Manuel Palma Muñoz\n\nNivel 1: desarrollo de Agustín; revisión de Carlos.\nUnity · C# · TextMesh Pro\nArte: LimeZu — Modern Interiors, Exteriors y Office\nInterfaz: That Witch Design — Simple Button Set 01\nFuentes: Pixelify Sans y Redaction 35 — SIL OFL\nEfectos: Kenney Interface Sounds y síntesis propia\nGame Over: Alphix — Pixabay (417465)\nMúsica original del campus: Agustín López Parra — FL Studio 25\nMúsica del nivel: "+(cfg!=null?cfg.soundtrackCredit:"pendiente de confirmar")+"\n\nExplora los niveles disponibles desde el menú principal.",new Vector2(0,20),new Vector2(1120,500),27,Color.white);
         Button(card.transform,"Volver",new Vector2(0,-310),Main);
     }
     static void Quit()

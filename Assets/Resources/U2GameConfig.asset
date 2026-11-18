@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c116de20fd9fb9d48b2e053dd6fc60e0, type: 3}
   m_Name: U2GameConfig
   m_EditorClassIdentifier: Assembly-CSharp::U2GameConfig
-  soundtrack: {fileID: 8300000, guid: fa85c1ec53bc89f43a2984e82c1d3c08, type: 3}
+  soundtrack: {fileID: 8300000, guid: 803197acd22f1164ca19e09a9838df79, type: 3}
   gameOverSound: {fileID: 8300000, guid: e3ea0f22b2fb4284f8ca1b49e7b1dca8, type: 3}
   menuMusic: {fileID: 8300000, guid: 4014ca32447973247bec21ddcfcebb88, type: 3}
   font: {fileID: 11400000, guid: 518635a2bee37f045b5cff339953dd5b, type: 2}
@@ -35,4 +35,4 @@ MonoBehaviour:
   wrongLockerPenalty: 3
   repeatLockerPenalty: 5
   studentCount: 6
-  soundtrackCredit: "Pixel art \u2014 Brutaldesign \xB7 Pixabay\npixabay.com/music/id-481480/"
+  soundtrackCredit: "Pista del nivel 1: NIVEL1NUEVACANCION"

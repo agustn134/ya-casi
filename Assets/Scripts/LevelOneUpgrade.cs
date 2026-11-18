@@ -108,6 +108,7 @@ public sealed class LevelOneUpgrade : MonoBehaviour
     {
         studentDirector?.BeginReturnRush();
         nightSchool?.Caretaker?.HearNoise(player.transform.position);
+        if(nightSchool!=null)return; // Conserva la nueva canción también durante el regreso con la USB.
         if(music!=null)
         {
             if(clip!=null){music.clip=clip;music.pitch=1;music.Play();}

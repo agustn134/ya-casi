@@ -11,6 +11,8 @@ public sealed class LevelOneHud : MonoBehaviour
     TMP_Text goal, timer, inventory, context, notification;
     TMP_Text vigilance,proximity;
     Image proximityPanel;
+    RawImage alertIcon,directionIcon;
+    LevelOneAlertIcons alertIcons;
     Image contextPanel, inventoryIcon;
     CanvasGroup notificationGroup;
     float notificationUntil;
@@ -55,8 +57,12 @@ public sealed class LevelOneHud : MonoBehaviour
         var watch=Card("Piso y vigilancia",Vector2.right,new Vector2(-20,20),new Vector2(300,90));
         vigilance=Text(watch.transform,"Estado del edificio","",Vector2.zero,new Vector2(278,80),21);
 
-        proximityPanel=Card("Conserje cercano",new Vector2(1,.5f),new Vector2(-20,25),new Vector2(265,112));
-        proximity=Text(proximityPanel.transform,"Dirección del peligro","",Vector2.zero,new Vector2(245,102),21);
+        proximityPanel=Card("Conserje cercano",new Vector2(1,.5f),new Vector2(-20,25),new Vector2(180,112));
+        proximity=Text(proximityPanel.transform,"Estado del peligro","",new Vector2(0,-35),new Vector2(165,28),20);
+        Text(proximityPanel.transform,"Vigilancia","Conserjes",new Vector2(0,42),new Vector2(165,22),19);
+        alertIcons=Resources.Load<LevelOneAlertIcons>("LevelOneAlertIcons");
+        alertIcon=MakeAlertIcon(proximityPanel.transform,new Vector2(-39,5),alertIcons!=null?alertIcons.patrol:null);
+        directionIcon=MakeAlertIcon(proximityPanel.transform,new Vector2(39,5),alertIcons!=null?alertIcons.arrow:null);
 
         var toast = Card("Aviso temporal", new Vector2(.5f, 1), new Vector2(0, -20), new Vector2(650, 68));
         notificationGroup = toast.gameObject.AddComponent<CanvasGroup>();
@@ -98,22 +104,31 @@ public sealed class LevelOneHud : MonoBehaviour
             {
                 if(candidate==null||candidate.AssignedFloor!=(origin.y>=16?1:0))continue;
                 float range=Vector2.Distance(candidate.Position,origin);
-                if(range<distance){distance=range;nearestGuard=candidate;}
+                if(nearestGuard==null||(candidate.IsChasing&&!nearestGuard.IsChasing)||(candidate.IsChasing==nearestGuard.IsChasing&&range<distance)){distance=range;nearestGuard=candidate;}
             }
             if(nearestGuard!=null)
             {
                 Vector2 offset=nearestGuard.Position-origin;
-                string direction=Mathf.Abs(offset.x)>=Mathf.Abs(offset.y)?(offset.x<0?"Izquierda":"Derecha"):(offset.y<0?"Abajo":"Arriba");
-                string closeness=distance<5?"Muy cerca":distance<10?"Cerca":"A distancia";
-                proximity.text="Conserje · "+closeness+"\n"+direction+"\n"+(nearestGuard.IsChasing?"¡Te persigue! Busca un salón":"Camina para no hacer ruido");
-                proximity.color=nearestGuard.IsChasing||distance<5?new Color(1,.56f,.4f):distance<10?Gold:Color.white;
+                Color tint=nearestGuard.IsChasing?new Color(1,.38f,.23f):distance<10?Gold:new Color(.55f,.83f,1);
+                proximity.text=nearestGuard.IsChasing?"¡Alerta!":distance<5?"Muy cerca":distance<10?"Cerca":"Lejos";
+                proximity.color=tint;directionIcon.color=tint;
+                directionIcon.rectTransform.localRotation=Quaternion.Euler(0,0,Mathf.Atan2(offset.y,offset.x)*Mathf.Rad2Deg);
+                if(alertIcons!=null)alertIcon.texture=nearestGuard.IsChasing?alertIcons.alert:distance<10?alertIcons.suspicion:alertIcons.patrol;
+                alertIcon.color=nearestGuard.IsChasing?Color.white:tint;
                 proximityPanel.color=nearestGuard.IsChasing?new Color(.22f,.05f,.04f,.94f):Panel;
             }
-            else proximity.text="Sin conserjes cerca";
+            else {proximity.text="Sin vigilancia";alertIcon.color=new Color(1,1,1,.25f);directionIcon.color=new Color(1,1,1,.25f);}
             if(world.TryGetWorldPrompt(out string roomPrompt))
             {contextPanel.gameObject.SetActive(true);context.text=roomPrompt;context.color=new Color(.65f,.82f,1);}
         }
         if(manager.IsPlaying&&!manager.HasUSB&&!string.IsNullOrEmpty(clue)){contextPanel.gameObject.SetActive(true);context.text=clue;context.color=Gold;}
+    }
+
+    static RawImage MakeAlertIcon(Transform parent,Vector2 position,Texture2D texture)
+    {
+        var go=new GameObject("Icono de vigilancia",typeof(RectTransform));go.transform.SetParent(parent,false);
+        var image=go.AddComponent<RawImage>();image.texture=texture;image.raycastTarget=false;
+        image.rectTransform.anchoredPosition=position;image.rectTransform.sizeDelta=new Vector2(42,42);return image;
     }
 
     public void Notify(string message)

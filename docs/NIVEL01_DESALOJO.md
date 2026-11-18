@@ -37,3 +37,11 @@ Tiempo inicial: 210 segundos (3:30), como ajuste inicial de dificultad, no como 
 El lateral derecho indica dirección, cercanía y persecución del conserje más próximo de la planta. La planta alta dedica la mitad de sus alumnos a circuitos ante casilleros, hasta entre 75 y 103 segundos antes de incorporarse a la fila de salida.
 
 Este ajuste se entrega sin compilación ni pruebas, por solicitud del propietario.
+
+## Música y sectores de vigilancia
+
+La canción del nivel 1 es Assets/Audio/NIVEL1NUEVACANCION.mp3 y continúa al recuperar la USB. Cada planta tiene un vigilante en el sector oeste y otro en el este, con rutas que alternan carriles y puntos de inicio separados. Su movimiento comprueba también los cuerpos de los otros vigilantes para detenerse y retomar la ronda si se bloquean.
+
+El indicador lateral usa el icono de usuario, una pregunta, una señal de advertencia y una flecha de los assets existentes. Azul indica distancia, amarillo cercanía y la señal de advertencia indica persecución; la flecha gira hacia la amenaza, priorizando al perseguidor. Recursos configurados en Resources/LevelOneAlertIcons.asset.
+
+Cambios realizados sin compilación ni comprobaciones, por solicitud del propietario.

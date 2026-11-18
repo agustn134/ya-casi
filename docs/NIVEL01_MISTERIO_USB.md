@@ -33,7 +33,7 @@ Ambas filas reutilizan sprites de casilleros existentes, con colliders e interac
 
 Se integra también el campus del nivel 3 desde develop, manteniendo las mejoras del nivel 1 y las dependencias compatibles con Unity 6000.3.25f1. La cámara del nivel 1 sigue al jugador en ambos ejes. Los pasillos, las ocho aulas, las escaleras y el exterior se guardan en **Grid_EdificioF**, con [Tilemaps editables](NIVEL01_EDIFICIO_F_GRID.md). `LevelOneNightSchool` registra los escondites sin reemplazar el diseño al jugar. El decorado antiguo permanece inactivo para evitar superposiciones.
 
-Música del regreso: YaCASI-Soundtrack-Nivel3, composición de Agustín López Parra en FL Studio 25. La música inicial y los efectos conservan sus atribuciones anteriores.
+Música del nivel 1 y del regreso: NIVEL1NUEVACANCION.mp3, seleccionada por el propietario. La música inicial y los efectos conservan sus atribuciones anteriores.
 
 ## Comprobaciones
 

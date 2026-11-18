@@ -1,0 +1,11 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cac06af2d574ec5a07f00439f7e66a6, type: 3}
+  m_Name: LevelOneAlertIcons
+  patrol: {fileID: 2800000, guid: ca09d89e4979d814d87dd1e020aa41e8, type: 3}
+  suspicion: {fileID: 2800000, guid: 8143f852c3cbb53489177bce8ed0d104, type: 3}
+  alert: {fileID: 2800000, guid: 691cfba0faa970649a99b684acf3272a, type: 3}
+  arrow: {fileID: 2800000, guid: 8f85d8ce213015144a117d359c69fcbd, type: 3}

@@ -66,10 +66,12 @@ public sealed class LevelOneCaretaker : MonoBehaviour
         if (actor != null || levelManager == null || actorPlayer == null || school == null) return;
         manager = levelManager; player = actorPlayer; world = school;
         floor = AssignedFloor>=0?AssignedFloor:Mathf.Max(0, world.FloorAt(player.transform.position));
-        patrol = world.PatrolPoints(floor) ?? Array.Empty<Vector2>();
+        float baseY=floor*LevelOneNightSchool.FloorSpacing;
+        patrol=PatrolDirection>=0?new[]{new Vector2(-3,baseY-1.3f),new Vector2(10,baseY-1.3f),new Vector2(10,baseY+1.15f),new Vector2(23,baseY+1.15f),new Vector2(23,baseY-1.3f),new Vector2(34,baseY-1.3f)}:
+            new[]{new Vector2(38,baseY+1.15f),new Vector2(50,baseY+1.15f),new Vector2(50,baseY-1.3f),new Vector2(62,baseY-1.3f),new Vector2(62,baseY+1.15f),new Vector2(72,baseY+1.15f)};
         patrolStep=PatrolDirection>=0?1:-1;
         for(int i=0;i<patrol.Length;i++)patrol[i]+=Vector2.up*PatrolLaneOffset;
-        int start=Mathf.Clamp(patrolStep>0?1:patrol.Length-2,0,Mathf.Max(0,patrol.Length-1));
+        int start=Mathf.Clamp(patrolStep>0?0:patrol.Length-1,0,Mathf.Max(0,patrol.Length-1));
         actor = new GameObject("Intendente · planta "+(floor+1)+" · sentido "+patrolStep);
         actor.transform.SetParent(transform, false);
         actor.AddComponent<LevelOneDepthSort>();
@@ -285,10 +287,15 @@ public sealed class LevelOneCaretaker : MonoBehaviour
     bool CanWalkStep(Vector2 delta)
     {
         var filter = ContactFilter2D.noFilter; filter.useTriggers = false;
-        int count = feet.Cast(delta.normalized, filter, rayHits, delta.magnitude + .035f);
+        int count = feet.Cast(delta.normalized, filter, rayHits, delta.magnitude * 2 + .08f);
         if (count >= rayHits.Length) return false;
         for (int i = 0; i < count; i++)
-            if (IsStaticObstacle(rayHits[i].collider)) return false;
+        {
+            var hit=rayHits[i].collider;
+            if(IsStaticObstacle(hit))return false;
+            if(world.Watchmen!=null)foreach(var guard in world.Watchmen)
+                if(guard!=null&&guard!=this&&guard.body!=null&&hit!=null&&hit.attachedRigidbody==guard.body)return false;
+        }
         return true;
     }
 
