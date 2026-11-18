@@ -33,6 +33,7 @@ public sealed class CampusStudent : MonoBehaviour
     public void Initialize(RuntimeAnimatorController controller, Sprite initial, Color tint)
     {
         manager = FindFirstObjectByType<Level01Manager>();
+        if(LevelOneNightSchool.Active!=null)gameObject.AddComponent<LevelOneDepthSort>();
         var sprite = gameObject.AddComponent<SpriteRenderer>();
         sprite.sprite = initial;
         sprite.color = tint;

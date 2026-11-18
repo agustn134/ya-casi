@@ -14,6 +14,10 @@ public sealed class LevelOneNightSchool : MonoBehaviour
     [Tooltip("Grid guardado en la escena. Sus Tilemaps se editan directamente y no se regeneran al jugar.")]
     public GameObject authoredLayout;
     public LevelOneCaretaker Caretaker { get; private set; }
+    public LevelOneCaretaker SecondCaretaker { get; private set; }
+    public int TotalWarnings { get; private set; }
+    public float SafeUntil { get; private set; }
+    public void RegisterCapture(){TotalWarnings++;SafeUntil=Time.time+8;}
     public LevelOneStairTraversal Stairs { get; private set; }
     public const float FloorSpacing=32;
     static readonly float[] RoomCenters={10,28,46,64};
@@ -172,8 +176,10 @@ public sealed class LevelOneNightSchool : MonoBehaviour
     {
         manager=levelManager;player=actor;Active=this;
         if(generated==null)Rebuild();
-        Caretaker=gameObject.AddComponent<LevelOneCaretaker>();Caretaker.Configure(manager,player,this,config);
+        Caretaker=gameObject.AddComponent<LevelOneCaretaker>();Caretaker.AssignedFloor=0;Caretaker.Configure(manager,player,this,config);
         Caretaker.Message+=manager.ShowFeedback;
+        SecondCaretaker=gameObject.AddComponent<LevelOneCaretaker>();SecondCaretaker.AssignedFloor=1;SecondCaretaker.Configure(manager,player,this,config);SecondCaretaker.Message+=manager.ShowFeedback;
+        gameObject.AddComponent<LevelOneDepthSetup>();
         Stairs=gameObject.AddComponent<LevelOneStairTraversal>();Stairs.Configure(this,manager,player);
         Stairs.Message+=manager.ShowFeedback;
         foreach(var light in FindObjectsByType<Light2D>(FindObjectsSortMode.None))
@@ -213,7 +219,8 @@ public sealed class LevelOneNightSchool : MonoBehaviour
         if(FloorAt(p)<0){text="Escalera en U\nRecorre ambos tramos y el descanso";return true;}
         if(IsHidden(p)){text=player.IsRunning?"Salón oscuro\nDeja de correr para ocultarte":"Salón oscuro · Estás oculto\nCamina con cuidado al salir";return true;}
         float localY=p.y-Mathf.Max(0,FloorAt(p))*FloorSpacing;
-        if(localY>5.5f){text="Salón oscuro\nAléjate de la puerta para ocultarte";return true;}
+        bool doorway=false;foreach(float center in RoomCenters)if(Mathf.Abs(p.x-center)<1.35f&&localY>5.5f&&localY<7.0f)doorway=true;
+        if(doorway){text="Salón oscuro\nAléjate de la puerta para ocultarte";return true;}
         return false;
     }
     public void TeleportPlayer(Vector2 destination)

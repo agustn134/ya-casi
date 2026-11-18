@@ -85,7 +85,8 @@ public sealed class LevelOneHud : MonoBehaviour
         if(world!=null)
         {
             int floor=world.FloorAt(Camera.main!=null?Camera.main.transform.position:Vector3.zero);
-            string status=world.Caretaker==null?"De ronda":world.Caretaker.Suspicion01>=1?"¡Te persigue!":world.Caretaker.Suspicion01>.05f?"Te está mirando":"De ronda";
+            var guard=floor==1?world.SecondCaretaker:world.Caretaker;
+            string status=guard==null?"De ronda":guard.Suspicion01>=1?"¡Te persigue!":guard.Suspicion01>.05f?"Te está mirando":"De ronda";
             vigilance.text=(floor==1?"Segundo piso":floor<0?"Escalera en U":"Planta baja")+"\nIntendente: "+status+"\nAdvertencias: "+(world.Caretaker!=null?world.Caretaker.Warnings:0)+"/2";
             if(world.TryGetWorldPrompt(out string roomPrompt))
             {contextPanel.gameObject.SetActive(true);context.text=roomPrompt;context.color=new Color(.65f,.82f,1);}

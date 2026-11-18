@@ -23,13 +23,13 @@ Los tramos tienen tres unidades de ancho y un separador con collider. Se conserv
 
 ## Conserje y escondites
 
-Un único conserje patrulla el edificio con un cono de linterna visible. Su visión respeta paredes, casilleros y pupitres. El cono tiene seis unidades de alcance y 65 grados; necesita ver al jugador durante un segundo para iniciar una persecución.
+Dos intendentes patrullan el edificio, uno por planta, con un cono de linterna visible. Su visión respeta paredes, casilleros y pupitres. El cono tiene seis unidades de alcance y 65 grados; necesitan ver al jugador durante un segundo para iniciar una persecución.
 
-Correr cerca o revisar un casillero equivocado genera ruido. El conserje investiga el punto del pasillo más cercano. Si cambia de piso, tarda al menos seis segundos y no llega por la escalera si el jugador está demasiado cerca de ese lugar.
+Correr cerca o revisar un casillero equivocado genera ruido. El intendente de esa planta investiga el punto del pasillo más cercano. Cada vigilante permanece en su propia planta.
 
 Para esconderse basta entrar a un salón, alejarse del marco de la puerta y dejar de correr. El HUD confirma «Estás oculto». El jugador sigue pudiendo caminar y leer las pistas. Se reduce su luz en las zonas oscuras; no es necesario pulsar una tecla adicional.
 
-Al ser alcanzado pierde ocho segundos, vuelve a un punto cercano del pasillo y obtiene ocho segundos de protección. Conserva todas las pistas, la combinación y la USB. Si la sanción agota el tiempo, se mantiene la derrota normal.
+Las dos primeras capturas dan una advertencia, devuelven a Galindo a un punto cercano del pasillo y conceden ocho segundos de protección compartida frente a ambos intendentes. Conserva las pistas, la combinación y la USB. La tercera captura provoca expulsión y derrota. El contador es común a las dos plantas.
 
 La IA, la sospecha y la persecución respetan la pausa, la libreta y el candado. La vigilancia no se añade a otros niveles.
 

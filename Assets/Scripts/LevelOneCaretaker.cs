@@ -7,7 +7,8 @@ public sealed class LevelOneCaretaker : MonoBehaviour
 {
     enum Behaviour { Patrol, Investigating, Chasing, ChangingFloor }
 
-    public int Warnings { get; private set; }
+    public int AssignedFloor=-1;
+    public int Warnings => world!=null?world.TotalWarnings:0;
     const float SightRange = 6f;
     const float SightAngle = 65f;
     const float DetectionSeconds = 1f;
@@ -58,10 +59,11 @@ public sealed class LevelOneCaretaker : MonoBehaviour
     {
         if (actor != null || levelManager == null || actorPlayer == null || school == null) return;
         manager = levelManager; player = actorPlayer; world = school;
-        floor = Mathf.Max(0, world.FloorAt(player.transform.position));
+        floor = AssignedFloor>=0?AssignedFloor:Mathf.Max(0, world.FloorAt(player.transform.position));
         patrol = world.PatrolPoints(floor) ?? Array.Empty<Vector2>();
         actor = new GameObject("Conserje · ronda nocturna");
         actor.transform.SetParent(transform, false);
+        actor.AddComponent<LevelOneDepthSort>();
         actor.transform.position = patrol.Length > 0 ? patrol[patrol.Length / 2] : world.SafePoint(floor);
         var sprite = actor.AddComponent<SpriteRenderer>();
         sprite.sortingOrder = 3;
@@ -111,9 +113,7 @@ public sealed class LevelOneCaretaker : MonoBehaviour
         int playerFloor = world.FloorAt(player.transform.position);
         if (playerFloor >= 0 && playerFloor != floor)
         {
-            ChangeFloor(playerFloor);
-            UpdatePresentation();
-            return;
+            if(AssignedFloor<0){ChangeFloor(playerFloor);UpdatePresentation();return;}
         }
         if (state == Behaviour.ChangingFloor)
         {
@@ -124,7 +124,7 @@ public sealed class LevelOneCaretaker : MonoBehaviour
 
         Vector2 playerPosition = player.transform.position;
         bool hidden = world.IsHidden(playerPosition) && !player.IsRunning;
-        bool seesPlayer = playerFloor == floor && !hidden && Time.time >= protectedUntil && CanSee(playerPosition);
+        bool seesPlayer = playerFloor == floor && !hidden && Time.time >= Mathf.Max(protectedUntil,world.SafeUntil) && CanSee(playerPosition);
         if (seesPlayer)
         {
             awareness = Mathf.Min(1, awareness + Time.deltaTime / DetectionSeconds);
@@ -160,7 +160,7 @@ public sealed class LevelOneCaretaker : MonoBehaviour
                 StatusText = hidden ? "A salvo en la oscuridad · deja de correr" : "El conserje busca dónde te vio";
                 Message?.Invoke(hidden ? "Perdiste al conserje en la oscuridad." : "Rompiste su persecución. Sigue con cuidado.");
             }
-            else if (Vector2.Distance(body.position, playerPosition) < .85f && Time.time >= protectedUntil)
+            else if (Vector2.Distance(body.position, playerPosition) < .85f && Time.time >= Mathf.Max(protectedUntil,world.SafeUntil))
                 CatchPlayer();
         }
         else if (state == Behaviour.Investigating)
@@ -334,7 +334,7 @@ public sealed class LevelOneCaretaker : MonoBehaviour
         state = Behaviour.Patrol;
         stopUntil = Time.time + 2f;
         nextPoint = patrol.Length > 0 ? (ClosestPatrolIndex() + 1) % patrol.Length : 0;
-        Warnings++;
+        world.RegisterCapture();
         if(Warnings>=3){StatusText="Expulsado del edificio";Message?.Invoke("El intendente te expulsó tras tres capturas.");manager.ShowFeedback(StatusText);manager.FailLevel();return;}
         if (!manager.IsFailed) world.TeleportPlayer(checkpoint);
         StatusText = "Amonestación · protección temporal";
