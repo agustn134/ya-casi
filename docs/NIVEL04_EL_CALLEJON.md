@@ -1,6 +1,6 @@
 # Nivel 4 · El callejón y el edificio F
 
-Rama local: `nivel/04-cubiculo`.
+Rama de trabajo original: `nivel/04-cubiculo`. Avance publicado actualmente en `nivel/02-biblioteca` (commit `4655bb5fa` y posteriores).
 Escena: `Assets/Scenes/Nivel04_ElCallejon.unity`.
 Plataforma: PC, teclado y mouse.
 
@@ -50,7 +50,7 @@ Menú: `Ya Casi > Nivel 4 > Probar misión completa`.
 Reporte: `Level4Work/VerificacionMision.txt`.
 La prueba comprueba reglas de choques, cuerpos sólidos, reloj de 180 segundos, visión y aturdimiento, sensores, transiciones, grupo correcto, guardado del 8 y regreso a Software. Para recorrer los objetivos rápidamente, la automatización coloca al jugador junto a los puntos de interacción; la jugabilidad y equilibrio manuales pueden seguir afinándose.
 
-Respaldos: `Level4Work/AntesDeMisionF.unity.bak` y el respaldo previo de la calle nocturna. Arte de alumnos y guardias: LimeZu, con licencia copiada en el proyecto. Perros, mobiliario provisional y elementos de interfaz se construyen localmente. Este avance no se ha subido a GitHub.
+Respaldos: `Level4Work/AntesDeMisionF.unity.bak` y el respaldo previo de la calle nocturna. Arte de alumnos y guardias: LimeZu, con licencia copiada en el proyecto. Perros, mobiliario provisional y elementos de interfaz se construyen localmente. Este avance está subido a GitHub en `nivel/02-biblioteca`; no equivale a una Release o build final validada.
 
 Última verificación: 75 comprobaciones aprobadas en Play. Incluye colisiones físicas con alumnos, combate, guardias, sensores, credenciales manuales, pausa y reloj de 180 segundos, recorrido del F, guardado del 8 y regreso a Software. También verifica pasto transitable, paso entre árboles, bases de troncos sólidas, esquinas de edificios y amplitud del nuevo interior. El recorrido automático coloca al jugador junto a objetivos; no sustituye una prueba manual de equilibrio.
 
