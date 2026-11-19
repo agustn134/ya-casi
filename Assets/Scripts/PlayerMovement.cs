@@ -31,8 +31,10 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Animator animator;
     private Vector2 moveInput;
-    private Vector2 keyboardInput; private bool keyboardSprint;
-    public bool IsRunning => sprintHeld && moveInput.sqrMagnitude > .001f;
+    private Vector2 keyboardInput;
+    private bool hasFocus = true;
+    public float EnvironmentSpeedMultiplier { get; set; } = 1f;
+    public bool IsRunning => isActiveAndEnabled && hasFocus && sprintHeld && moveInput.sqrMagnitude > .001f;
 
     // Al comenzar, el personaje mira hacia abajo.
     private string facingDirection = "Down";
@@ -75,23 +77,62 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-        keyboardSprint = value.isPressed;
+        // El evento no conserva un estado: la tecla puede soltarse mientras estamos desactivados.
+        sprintHeld = ReadSprintHeld();
+    }
+
+    private static bool ReadSprintHeld()
+    {
+        var keyboard = Keyboard.current;
+        bool shift = keyboard != null && (keyboard.leftShiftKey.isPressed || keyboard.rightShiftKey.isPressed);
+        return shift || TouchGameControls.Sprint || (Gamepad.current != null && Gamepad.current.rightTrigger.isPressed);
     }
 
     private void Update()
     {
-        moveInput=keyboardInput;
-        if(Gamepad.current!=null && Gamepad.current.leftStick.ReadValue().sqrMagnitude>.01f)moveInput=Gamepad.current.leftStick.ReadValue();
-        if(TouchGameControls.Direction.sqrMagnitude>.01f)moveInput=TouchGameControls.Direction;
-        moveInput=Vector2.ClampMagnitude(moveInput,1);
-        sprintHeld=keyboardSprint || TouchGameControls.Sprint || (Gamepad.current!=null&&Gamepad.current.rightTrigger.isPressed);
+        if (!hasFocus) { ClearMovement(); return; }
+        moveInput = keyboardInput;
+        var keyboard = Keyboard.current;
+        if (keyboard != null)
+        {
+            Vector2 held = new Vector2(
+                (keyboard.dKey.isPressed || keyboard.rightArrowKey.isPressed ? 1 : 0) - (keyboard.aKey.isPressed || keyboard.leftArrowKey.isPressed ? 1 : 0),
+                (keyboard.wKey.isPressed || keyboard.upArrowKey.isPressed ? 1 : 0) - (keyboard.sKey.isPressed || keyboard.downArrowKey.isPressed ? 1 : 0));
+            if (held.sqrMagnitude > .01f) moveInput = held;
+        }
+        if (Gamepad.current != null && Gamepad.current.leftStick.ReadValue().sqrMagnitude > .01f)
+            moveInput = Gamepad.current.leftStick.ReadValue();
+        if (TouchGameControls.Direction.sqrMagnitude > .01f) moveInput = TouchGameControls.Direction;
+        moveInput = Vector2.ClampMagnitude(moveInput, 1);
+        sprintHeld = ReadSprintHeld();
         UpdateAnimation();
+    }
+
+    private void OnApplicationFocus(bool focused)
+    {
+        hasFocus = focused;
+        if (!focused) ClearMovement();
+    }
+
+    private void OnApplicationPause(bool paused)
+    {
+        if (paused) ClearMovement();
+    }
+
+    private void ClearMovement()
+    {
+        keyboardInput = moveInput = Vector2.zero;
+        sprintHeld = wasRunning = false;
+        TouchGameControls.Direction = Vector2.zero;
+        TouchGameControls.Sprint = false;
+        if (rb != null) rb.linearVelocity = Vector2.zero;
+        if (animator != null) animator.speed = 1f;
     }
 
     private void FixedUpdate()
     {
         float currentSpeed = sprintHeld ? runSpeed : moveSpeed;
-        rb.linearVelocity = moveInput * currentSpeed;
+        rb.linearVelocity = moveInput * currentSpeed * Mathf.Clamp(EnvironmentSpeedMultiplier, .2f, 1f);
     }
 
     /// <summary>
@@ -100,6 +141,7 @@ public class PlayerMovement : MonoBehaviour
     /// </summary>
     private void UpdateAnimation()
     {
+        if (animator == null || !animator.isActiveAndEnabled || animator.runtimeAnimatorController == null) return;
         bool isMoving = moveInput.sqrMagnitude > 0.001f;
         bool isRunning = isMoving && sprintHeld;
 
@@ -111,12 +153,6 @@ public class PlayerMovement : MonoBehaviour
         {
             if (isMoving)
             {
-                Debug.Log(
-                    isRunning
-                        ? "[PlayerMovement] Corriendo."
-                        : "[PlayerMovement] Caminando.",
-                    this
-                );
             }
 
             wasRunning = isRunning;
@@ -155,11 +191,7 @@ public class PlayerMovement : MonoBehaviour
 
         currentAnimation = nextAnimation;
 
-        string movementDescription = isMoving
-            ? $"Moviéndose hacia {facingDirection} (Input: {moveInput})"
-            : $"Detenido mirando hacia {facingDirection}";
 
-        Debug.Log($"[PlayerMovement] Animación activa: {nextAnimation} | {movementDescription}", this);
     }
 
     /// <summary>
@@ -168,9 +200,7 @@ public class PlayerMovement : MonoBehaviour
     /// </summary>
     private void OnDisable()
     {
-        moveInput = Vector2.zero;
-        sprintHeld = false;
-        wasRunning = false;
+        ClearMovement();
 
         if (rb != null)
         {

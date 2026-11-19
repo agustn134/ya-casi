@@ -1,0 +1,29 @@
+using UnityEngine;
+
+[RequireComponent(typeof(Camera))]
+public sealed class LibraryCamera : MonoBehaviour
+{
+    public Transform target;
+    Camera view;
+    float normalSize, impactUntil;
+    Vector3 velocity;
+
+    void Awake()
+    {
+        view = GetComponent<Camera>();
+        normalSize = Mathf.Max(5.4f, view.orthographicSize);
+        view.orthographicSize = normalSize;
+    }
+    public void Shake() => impactUntil = Time.unscaledTime + .18f;
+    void LateUpdate()
+    {
+        if (target == null) return;
+        float impact = Mathf.Max(0, impactUntil - Time.unscaledTime) / .18f;
+        view.orthographicSize = normalSize * (1f - .018f * impact);
+        float limitX = Mathf.Max(0, 15f - view.orthographicSize * view.aspect);
+        float limitY = Mathf.Max(0, 9f - view.orthographicSize);
+        Vector3 destination = new Vector3(Mathf.Clamp(target.position.x, -limitX, limitX),
+            Mathf.Clamp(target.position.y + .65f, -limitY, limitY), -10);
+        transform.position = Vector3.SmoothDamp(transform.position, destination, ref velocity, .14f, Mathf.Infinity, Time.unscaledDeltaTime);
+    }
+}

@@ -1,0 +1,5 @@
+Exterior guardado: césped, banquetas, calle y paso peatonal.
+grass: 1_Terrains_and_Fences_16x16_187
+asphalt: 2_City_Terrains_16x16_2354
+sidewalk: 2_City_Terrains_16x16_1003
+Cámara centrada en el personaje. No se ejecutaron pruebas ni Play.

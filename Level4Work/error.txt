@@ -1,0 +1,4 @@
+System.InvalidOperationException: Guarda los cambios de la escena antes de aplicar el diseño.
+  at LevelFourDetailBuilder.Apply () [0x005ae] in C:\Users\elmane\Documents\Universidad\10mo\barron\ya-casi\Assets\Editor\LevelFourDetailBuilder.cs:76 
+  at LevelFourCampusUpgrade.Apply () [0x0002d] in C:\Users\elmane\Documents\Universidad\10mo\barron\ya-casi\Assets\Editor\LevelFourCampusUpgrade.cs:26 
+  at LevelFourBuilder.Poll () [0x00175] in C:\Users\elmane\Documents\Universidad\10mo\barron\ya-casi\Assets\Editor\LevelFourBuilder.cs:37 

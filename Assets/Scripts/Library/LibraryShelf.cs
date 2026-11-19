@@ -9,12 +9,12 @@ public sealed class LibraryShelf : MonoBehaviour
     public SpriteRenderer highlight;
     public Transform interactionPoint;
     public Vector2 Position => interactionPoint != null ? (Vector2)interactionPoint.position : (Vector2)transform.position;
-    public void Highlight(bool value)
+    public void Highlight(bool value, bool missionTarget = false)
     {
         if (highlight != null)
         {
-            highlight.enabled = value || searched;
-            highlight.color = searched ? new Color(.45f, 1f, .65f, .35f) : new Color(1f, .82f, .35f, .5f);
+            highlight.enabled = value || searched || missionTarget;
+            highlight.color = value ? new Color(1f, .82f, .35f, .65f) : searched ? new Color(.45f, 1f, .65f, .35f) : new Color(.4f, .8f, 1f, .45f);
         }
     }
 }

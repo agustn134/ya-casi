@@ -109,6 +109,13 @@ public class PlayerInteraction : MonoBehaviour
     /// <summary>
     /// Controla la visibilidad del componente de texto.
     /// </summary>
+    public void HideLegacyPrompt()
+    {
+        if (interactionText == null) return;
+        interactionText.transform.parent.gameObject.SetActive(false);
+        interactionText = null;
+    }
+
     private void SetPromptVisible(bool visible)
     {
         if (interactionText != null)

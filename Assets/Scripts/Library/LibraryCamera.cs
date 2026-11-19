@@ -4,28 +4,22 @@ using UnityEngine;
 public sealed class LibraryCamera : MonoBehaviour
 {
     public Transform target;
-
     Camera view;
-    float normalSize;
-    float impactUntil;
+    float normalSize, impactUntil;
 
     void Awake()
     {
         view = GetComponent<Camera>();
-        normalSize = view.orthographicSize;
+        normalSize = Mathf.Max(5.4f, view.orthographicSize);
+        view.orthographicSize = normalSize;
     }
-
     public void Shake() => impactUntil = Time.unscaledTime + .18f;
-
     void LateUpdate()
     {
         if (target == null) return;
-
-        Vector3 center = target.position;
-        transform.position = new Vector3(center.x, center.y, transform.position.z);
-
-        // El golpe cambia el zoom sin descentrar al jugador.
         float impact = Mathf.Max(0, impactUntil - Time.unscaledTime) / .18f;
         view.orthographicSize = normalSize * (1f - .018f * impact);
+        // El exterior cubre el campo de visión: el jugador permanece en el centro.
+        transform.position = new Vector3(target.position.x, target.position.y, -10);
     }
 }
