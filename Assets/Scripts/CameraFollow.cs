@@ -27,7 +27,6 @@ public class CameraFollow : MonoBehaviour
     [Tooltip("Límite derecho del centro de la cámara.")]
     [SerializeField] private float maxX = 30f;
 
-    [SerializeField] private bool centerOnTarget;
     private float horizontalVelocity;
 
     private void LateUpdate()
@@ -36,12 +35,6 @@ public class CameraFollow : MonoBehaviour
         {
             return;
         }
-        if(centerOnTarget)
-        {
-            transform.position=new Vector3(target.position.x,target.position.y,transform.position.z);
-            return;
-        }
-
         if (centerOnTarget)
         {
             Vector3 center = target.position;
