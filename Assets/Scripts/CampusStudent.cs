@@ -1,18 +1,68 @@
 using UnityEngine;
-/// <summary>Estudiante que recorre una fila, cede ante obstáculos y deja libre el paso al esperar.</summary>
+
+/// <summary>Recorre los pasillos y se aparta sin atravesar a otros personajes ni el mobiliario.</summary>
 public sealed class CampusStudent : MonoBehaviour
 {
     public Vector2[] route;
-    public float speed=1.7f;
-    Level01Manager manager; Rigidbody2D body;Animator animator;SpriteRenderer sprite;
-    int next;float blockedTime;float wait;
-    Vector2? courtesyTarget;
+    public float speed = 1.7f;
 
+    const float RoutePadding = .6f;
+    Level01Manager manager;
+    Rigidbody2D body;
+    Animator animator;
+    SpriteRenderer sprite;
     Sprite[] characterFrames;
     int facing = 3;
     float walkCycle;
+    CapsuleCollider2D feet;
+    int next;
+    int routeDirection = 1;
+    float blockedTime;
+    float wait;
+    float courtesyReadyAt;
+    float temporaryUntil;
+    Vector2 temporaryTarget;
+    bool hasTemporaryTarget;
+    bool courtesyActive;
+    bool stopAtEnd;
+    bool routeFinished;
+    readonly RaycastHit2D[] hits = new RaycastHit2D[32];
+    readonly Collider2D[] overlaps = new Collider2D[32];
 
-    public void UseCharacterSheet(Texture2D sheet)
+    public Vector2 FeetPosition => body != null ? body.position + FeetOffset : (Vector2)transform.position;
+    public bool CanRequestPassage => isActiveAndEnabled && body != null && manager != null &&
+        manager.IsPlaying && Time.time >= courtesyReadyAt && !courtesyActive && !routeFinished;
+    Vector2 FeetOffset => feet != null ? (Vector2)transform.TransformVector(feet.offset) : Vector2.zero;
+
+    public void Initialize(RuntimeAnimatorController controller, Sprite initial, Color tint)
+    {
+        manager = FindFirstObjectByType<Level01Manager>();
+        if(LevelOneNightSchool.Active!=null)gameObject.AddComponent<LevelOneDepthSort>();
+        sprite = gameObject.AddComponent<SpriteRenderer>();
+        sprite.sprite = initial;
+        sprite.color = tint;
+        sprite.sortingOrder = 2;
+        animator = gameObject.AddComponent<Animator>();
+        animator.runtimeAnimatorController = controller;
+        if(controller!=null)
+        {
+            animator.Play("Base Layer.IdleDown",0,0);
+            animator.Update(0);
+        }
+        body = gameObject.AddComponent<Rigidbody2D>();
+        body.gravityScale = 0;
+        body.freezeRotation = true;
+        body.bodyType = RigidbodyType2D.Kinematic;
+        body.useFullKinematicContacts = true;
+        body.interpolation = RigidbodyInterpolation2D.Interpolate;
+        feet = gameObject.AddComponent<CapsuleCollider2D>();
+        feet.size = new Vector2(.55f, .4f);
+        feet.offset = new Vector2(0, -.45f);
+    }
+
+    /// <summary>Intercambia un recorrido sin conservar un índice de la ruta anterior.</summary>
+
+public void UseCharacterSheet(Texture2D sheet)
     {
         const int frameWidth = 16;
         const int frameHeight = 32;
@@ -32,108 +82,292 @@ public sealed class CampusStudent : MonoBehaviour
         }
         ShowIdle();
     }
-
-    void ShowIdle()
+void ShowIdle()
     {
         if (characterFrames != null) sprite.sprite = characterFrames[facing * 7];
         if (animator != null) animator.speed = 0f;
     }
-
-    void OnDestroy()
+void OnDestroy()
     {
         if (characterFrames == null) return;
         foreach (var frame in characterFrames) Destroy(frame);
     }
+    public void TryMakeRoom(Vector2 playerPosition) { TryYieldTo(playerPosition); }
 
-    public void TryMakeRoom(Vector2 playerPosition)
+    public void SetRoute(Vector2[] points, bool stopAtEnd = false)
     {
-        if (body == null || courtesyTarget.HasValue) return;
-        Vector2 away = body.position - playerPosition;
-        if (away.sqrMagnitude < .001f) return;
+        route = points;
+        this.stopAtEnd = stopAtEnd;
+        routeFinished = false;
+        next = 0;
+        routeDirection = 1;
+        hasTemporaryTarget = false;
+        courtesyActive = false;
+        wait = 0;
+        blockedTime = 0;
+    }
+
+    /// <summary>Una conversación puede hacer una pausa; pedir permiso la interrumpe.</summary>
+    public void PauseFor(float seconds)
+    {
+        if (!courtesyActive && !routeFinished) wait = Mathf.Max(wait, Mathf.Max(0, seconds));
+    }
+
+    /// <summary>Cada alumno decide una vez por petición; no siempre concede el paso.</summary>
+    public bool TryYieldTo(Vector2 requester)
+    {
+        if (!CanRequestPassage || route == null || route.Length < 2)
+            return false;
+
+        courtesyReadyAt = Time.time + 5.5f;
+        if (Random.value >= .45f || !FindYieldTarget(requester, out Vector2 destination))
+            return false;
+
+        temporaryTarget = destination;
+        temporaryUntil = Time.time + 2f;
+        hasTemporaryTarget = true;
+        courtesyActive = true;
+        blockedTime = 0;
+        wait = 0;
+        return true;
+    }
+
+    void FixedUpdate()
+    {
+        if (manager == null || !manager.IsPlaying || body == null || route == null || route.Length < 2 || routeFinished)
+        {
+            StopAnimation();
+            return;
+        }
+
+        if (hasTemporaryTarget && Time.time >= temporaryUntil)
+        {
+            hasTemporaryTarget = false;
+            courtesyActive = false;
+        }
+
+        if (wait > 0)
+        {
+            wait -= Time.fixedDeltaTime;
+            StopAnimation();
+            return;
+        }
+
+        next = (next + route.Length) % route.Length;
+        Vector2 target = hasTemporaryTarget ? temporaryTarget : route[next];
+        Vector2 delta = target - body.position;
+        if (delta.sqrMagnitude < .01f)
+        {
+            if (hasTemporaryTarget)
+            {
+                // Espera a un lado; la petición no sustituye la ruta original.
+                StopAnimation();
+            }
+            else if (stopAtEnd && next == route.Length - 1)
+            {
+                routeFinished = true;
+                StopAnimation();
+            }
+            else
+                next = (next + routeDirection + route.Length) % route.Length;
+            return;
+        }
+
+        Vector2 destination = Vector2.MoveTowards(body.position, target, speed * Time.fixedDeltaTime);
+        if (!IsSafePath(body.position, destination))
+        {
+            StopAnimation();
+            blockedTime += Time.fixedDeltaTime;
+            if (courtesyActive)
+                return;
+
+            // Esperas distintas y desvíos laterales resuelven encuentros de frente.
+            // Nunca se omite una esquina para atajar a través de paredes.
+            if (blockedTime > .7f)
+            {
+                blockedTime = 0;
+                hasTemporaryTarget = false;
+                if (FindDetour(delta.normalized, out Vector2 detour))
+                {
+                    temporaryTarget = detour;
+                    temporaryUntil = Time.time + 1.4f;
+                    hasTemporaryTarget = true;
+                }
+                else if (!stopAtEnd)
+                {
+                    routeDirection = -routeDirection;
+                    next = (next + routeDirection + route.Length) % route.Length;
+                }
+                wait = Random.Range(.12f, .45f);
+            }
+            return;
+        }
+
+        blockedTime = 0;
+        Animate(delta.normalized);
+        body.MovePosition(destination);
+    }
+
+    bool FindYieldTarget(Vector2 requester, out Vector2 destination)
+    {
+        destination = body.position;
+        Vector2 away = FeetPosition - requester;
+        if (away.sqrMagnitude < .001f)
+            away = Vector2.right;
         away.Normalize();
-        Vector2 side = new Vector2(-away.y, away.x);
-        if (Random.value < .5f) side = -side;
+
+        float bestScore = float.NegativeInfinity;
+        float startDistance = Vector2.Distance(FeetPosition, requester);
+        for (int directionIndex = 0; directionIndex < 8; directionIndex++)
+        {
+            float angle = directionIndex * Mathf.PI / 4;
+            Vector2 direction = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
+            for (int distanceIndex = 0; distanceIndex < 3; distanceIndex++)
+            {
+                float distance = 1f - distanceIndex * .25f;
+                Vector2 candidate = body.position + direction * distance;
+                float clearance = Vector2.Distance(candidate + FeetOffset, requester);
+                if (clearance < startDistance + .15f || !IsSafePath(body.position, candidate))
+                    continue;
+                float score = clearance + distance * .35f + Vector2.Dot(direction, away) * .1f;
+                if (score > bestScore)
+                {
+                    bestScore = score;
+                    destination = candidate;
+                }
+            }
+        }
+        return bestScore > float.NegativeInfinity;
+    }
+
+    bool FindDetour(Vector2 forward, out Vector2 destination)
+    {
+        destination = body.position;
+        Vector2 side = new Vector2(-forward.y, forward.x);
+        if ((GetInstanceID() & 1) == 0)
+            side = -side;
+        for (int i = 0; i < 4; i++)
+        {
+            Vector2 direction = i < 2 ? side * (i == 0 ? 1 : -1) :
+                (side * (i == 2 ? 1 : -1) - forward * .35f).normalized;
+            Vector2 candidate = body.position + direction * .5f;
+            if (!IsSafePath(body.position, candidate))
+                continue;
+            destination = candidate;
+            return true;
+        }
+        return false;
+    }
+
+    bool IsSafePath(Vector2 from, Vector2 to)
+    {
+        // También comprueba el recorrido intermedio al apartarse junto a una esquina.
+        int samples = Mathf.Max(1, Mathf.CeilToInt(Vector2.Distance(from, to) / .15f));
+        for (int i = 1; i <= samples; i++)
+            if (!WithinRoute(Vector2.Lerp(from, to, (float)i / samples)))
+                return false;
 
         var filter = ContactFilter2D.noFilter;
         filter.useTriggers = false;
-        const float clearance = .72f;
-        if (body.Cast(side, filter, hits, clearance) > 0) side = -side;
-        if (body.Cast(side, filter, hits, clearance) > 0) return;
+        Vector2 size = feet.bounds.size;
+        Vector2 offset = FeetOffset;
+        Vector2 delta = to - from;
+        float distance = delta.magnitude;
+        if (distance > .0001f)
+        {
+            int count = Physics2D.CapsuleCast(from + offset, size, feet.direction, body.rotation,
+                delta / distance, filter, hits, distance + .025f);
+            if (count >= hits.Length)
+                return false;
+            for (int i = 0; i < count; i++)
+            {
+                Collider2D other = hits[i].collider;
+                if (!IsObstacle(other))
+                    continue;
+                // Si la partida empezó con dos alumnos tocándose, pueden separarse.
+                if (hits[i].distance <= .001f && SeparatingFrom(other, from + offset, to + offset))
+                    continue;
+                return false;
+            }
+        }
 
-        wait = 0f;
-        blockedTime = 0f;
-        courtesyTarget = body.position + side * .65f;
+        int overlapCount = Physics2D.OverlapCapsule(to + offset, size, feet.direction,
+            body.rotation, filter, overlaps);
+        if (overlapCount >= overlaps.Length)
+            return false;
+        for (int i = 0; i < overlapCount; i++)
+        {
+            Collider2D other = overlaps[i];
+            if (IsObstacle(other) && !SeparatingFrom(other, from + offset, to + offset))
+                return false;
+        }
+        return true;
     }
-    readonly RaycastHit2D[] hits=new RaycastHit2D[12];
-    public void Initialize(RuntimeAnimatorController controller,Sprite initial,Color tint)
+
+    bool IsObstacle(Collider2D other)
     {
-        manager=FindFirstObjectByType<Level01Manager>();
-        sprite=gameObject.AddComponent<SpriteRenderer>();sprite.sprite=initial;sprite.color=tint;sprite.sortingOrder=2;
-        animator=gameObject.AddComponent<Animator>();animator.runtimeAnimatorController=controller;
-        if (controller != null)
-        {
-            animator.Play("Base Layer.IdleDown", 0, 0f);
-            animator.Update(0f);
-        }
-        body=gameObject.AddComponent<Rigidbody2D>();body.gravityScale=0;body.freezeRotation=true;body.bodyType=RigidbodyType2D.Kinematic;body.useFullKinematicContacts=true;body.interpolation=RigidbodyInterpolation2D.Interpolate;
-        var col=gameObject.AddComponent<CapsuleCollider2D>();col.size=new Vector2(.55f,.4f);col.offset=new Vector2(0,-.45f);
+        return other != null && other != feet && other.attachedRigidbody != body &&
+            !other.isTrigger && !Physics2D.GetIgnoreCollision(feet, other);
     }
-    void FixedUpdate()
+
+    bool SeparatingFrom(Collider2D other, Vector2 from, Vector2 to)
     {
-        if(manager==null||!manager.IsPlaying||route==null||route.Length<2){ShowIdle();return;}
-        if(wait>0){wait-=Time.fixedDeltaTime;return;}
-        Vector2 target = courtesyTarget ?? route[next]; Vector2 delta = target - body.position;
-        if (delta.magnitude < .15f)
+        // Solo admite salida de un contacto existente, nunca entrar en uno nuevo.
+        Vector2 closest = other.ClosestPoint(from);
+        if ((closest - from).sqrMagnitude > .0004f && !feet.IsTouching(other))
+            return false;
+        Vector2 center = other.bounds.center;
+        return (to - center).sqrMagnitude > (from - center).sqrMagnitude + .00001f;
+    }
+
+    bool WithinRoute(Vector2 position)
+    {
+        if (route == null || route.Length < 2)
+            return false;
+        for (int i = 0; i < route.Length; i++)
         {
-            if (courtesyTarget.HasValue)
-            {
-                courtesyTarget = null;
-                wait = .6f;
-                ShowIdle();
-            }
-            else next = (next + 1) % route.Length;
-            return;
+            Vector2 start = route[i];
+            Vector2 segment = route[(i + 1) % route.Length] - start;
+            float t = segment.sqrMagnitude > .0001f
+                ? Mathf.Clamp01(Vector2.Dot(position - start, segment) / segment.sqrMagnitude) : 0;
+            if ((position - (start + segment * t)).sqrMagnitude <= RoutePadding * RoutePadding)
+                return true;
         }
-        Vector2 direction=delta.normalized;
-        var filter=ContactFilter2D.noFilter;filter.useTriggers=false;
-        int count=body.Cast(direction,filter,hits,.18f);bool blocked=false;
-        for(int i=0;i<count;i++)if(hits[i].collider!=null&&hits[i].collider.GetComponent<CampusStudent>()==null){blocked=true;break;}
-        if(blocked)
-        {
-            if (courtesyTarget.HasValue)
-            {
-                courtesyTarget = null;
-                ShowIdle();
-                return;
-            }
-            blockedTime+=Time.fixedDeltaTime;ShowIdle();
-            // Una fila nunca bloquea para siempre un casillero o la salida.
-            if(blockedTime>1.1f){next=(next+1)%route.Length;blockedTime=0;wait=.35f;}
-            return;
-        }
-        blockedTime = 0;
+        return false;
+    }
+
+    void Animate(Vector2 direction)
+    {
         if (characterFrames != null)
         {
-            if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
-                facing = direction.x > 0 ? 0 : 2;
-            else
-                facing = direction.y > 0 ? 1 : 3;
+            facing = Mathf.Abs(direction.x) > Mathf.Abs(direction.y) ? (direction.x > 0 ? 0 : 2) : (direction.y > 0 ? 1 : 3);
             walkCycle += Time.fixedDeltaTime * 9f;
             sprite.sprite = characterFrames[facing * 7 + 1 + (Mathf.FloorToInt(walkCycle) % 6)];
+            return;
         }
-        else
-        {
-            animator.speed = .8f;
-            string side = Mathf.Abs(direction.x) > Mathf.Abs(direction.y)
-                ? (direction.x > 0 ? "Right" : "Left") : (direction.y > 0 ? "Up" : "Down");
-            if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Walk" + side))
-                animator.Play("Base Layer.Walk" + side);
-        }
-        body.MovePosition(Vector2.MoveTowards(body.position,target,speed*Time.fixedDeltaTime));
+        if (animator == null || animator.runtimeAnimatorController == null)
+            return;
+        animator.speed = .8f;
+        string side = Mathf.Abs(direction.x) > Mathf.Abs(direction.y)
+            ? (direction.x > 0 ? "Right" : "Left") : (direction.y > 0 ? "Up" : "Down");
+        if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Walk" + side))
+            animator.Play("Base Layer.Walk" + side);
     }
+
+    void StopAnimation()
+    {
+        if (characterFrames != null) { ShowIdle(); return; }
+        if (animator != null)
+            animator.speed = 0;
+    }
+
     void OnCollisionEnter2D(Collision2D collision)
     {
-        var p=collision.gameObject.GetComponent<PlayerMovement>();if(p==null)return;
-        var upgrade=FindFirstObjectByType<LevelOneUpgrade>();if(upgrade!=null)upgrade.BumpPlayer();
+        var player = collision.gameObject.GetComponentInParent<PlayerMovement>();
+        if (player == null || manager == null || !manager.IsPlaying)
+            return;
+        var upgrade = FindFirstObjectByType<LevelOneUpgrade>();
+        if (upgrade != null)
+            upgrade.BumpPlayer();
     }
 }

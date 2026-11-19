@@ -1,0 +1,182 @@
+using System;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
+/// <summary>Información de la USB en los bordes; solo muestra las acciones cercanas.</summary>
+public sealed class LevelOneHud : MonoBehaviour
+{
+    static readonly Color Panel = new Color(.035f, .075f, .09f, .90f);
+    static readonly Color Gold = new Color(1f, .84f, .42f);
+    TMP_Text goal, timer, inventory, context, notification;
+    TMP_Text vigilance,proximity;
+    Image proximityPanel;
+    RawImage alertIcon,directionIcon;
+    LevelOneAlertIcons alertIcons;
+    Image contextPanel, inventoryIcon;
+    CanvasGroup notificationGroup;
+    float notificationUntil;
+    LevelOneMystery mystery;
+    public void ConfigureMystery(LevelOneMystery value){mystery=value;}
+
+    public void Initialize(Action pause, Action help, Action notebook = null)
+    {
+        var status = Card("Objetivo", new Vector2(0, 1), new Vector2(20, -20), new Vector2(340, 96));
+        Text(status.transform, "Nivel", "El caos del casillero", new Vector2(0, 23), new Vector2(316, 34), 25);
+        goal = Text(status.transform, "Objetivo actual", "Encuentra tu USB · 0/1", new Vector2(0, -19), new Vector2(316, 38), 25);
+
+        var clock = Card("Reloj y controles", Vector2.one, new Vector2(-20, -20), new Vector2(286, 112));
+        timer = Text(clock.transform, "Tiempo", "02:15", new Vector2(0, 28), new Vector2(260, 48), 35);
+        SmallButton(clock.transform, "Pausa", new Vector2(-67, -29), pause);
+        SmallButton(clock.transform, "Ayuda", new Vector2(67, -29), help);
+
+        var bag = Card("Inventario USB", Vector2.zero, new Vector2(20, 20), new Vector2(300, 90));
+        // Silueta de una memoria USB: conector metálico, dos contactos y carcasa.
+        inventoryIcon = U2Presentation.Image(bag.transform, "Memoria USB", new Color(.36f, .53f, .60f));
+        Place(inventoryIcon.rectTransform, new Vector2(-109, -7), new Vector2(32, 44));
+        inventoryIcon.raycastTarget = false;
+        var metal = U2Presentation.Image(inventoryIcon.transform, "Conector", new Color(.77f, .83f, .86f));
+        Place(metal.rectTransform, new Vector2(0, 29), new Vector2(24, 18)); metal.raycastTarget = false;
+        for (int i = 0; i < 2; i++)
+        {
+            var contact = U2Presentation.Image(metal.transform, "Contacto", Panel);
+            Place(contact.rectTransform, new Vector2(-5 + i * 10, 1), new Vector2(4, 7)); contact.raycastTarget = false;
+        }
+        inventory = Text(bag.transform, "USB y choques", "USB pendiente\nChoques: 0/3", new Vector2(26, 0), new Vector2(230, 76), 25);
+        if(notebook!=null)
+        {
+            var book=Card("Libreta de pistas",Vector2.zero,new Vector2(20,122),new Vector2(300,54));
+            var button=U2Presentation.Button(book.transform,"Libreta [N]",Vector2.zero,()=>notebook());
+            button.GetComponent<RectTransform>().sizeDelta=new Vector2(294,48);
+            var label=button.GetComponentInChildren<TMP_Text>();label.fontSize=24;label.rectTransform.sizeDelta=new Vector2(286,44);
+        }
+
+        contextPanel = Card("Acción cercana", new Vector2(.5f, 0), new Vector2(0, 20), new Vector2(480, 88));
+        context = Text(contextPanel.transform, "Acción", "", Vector2.zero, new Vector2(450, 78), 25);
+        contextPanel.gameObject.SetActive(false);
+        var watch=Card("Piso y vigilancia",Vector2.right,new Vector2(-20,20),new Vector2(300,90));
+        vigilance=Text(watch.transform,"Estado del edificio","",Vector2.zero,new Vector2(278,80),21);
+
+        proximityPanel=Card("Conserje cercano",new Vector2(1,.5f),new Vector2(-20,25),new Vector2(180,112));
+        proximity=Text(proximityPanel.transform,"Estado del peligro","",new Vector2(0,-35),new Vector2(165,28),20);
+        Text(proximityPanel.transform,"Vigilancia","Conserjes",new Vector2(0,42),new Vector2(165,22),19);
+        alertIcons=Resources.Load<LevelOneAlertIcons>("LevelOneAlertIcons");
+        alertIcon=MakeAlertIcon(proximityPanel.transform,new Vector2(-39,5),alertIcons!=null?alertIcons.patrol:null);
+        directionIcon=MakeAlertIcon(proximityPanel.transform,new Vector2(39,5),alertIcons!=null?alertIcons.arrow:null);
+
+        var toast = Card("Aviso temporal", new Vector2(.5f, 1), new Vector2(0, -20), new Vector2(650, 68));
+        notificationGroup = toast.gameObject.AddComponent<CanvasGroup>();
+        notificationGroup.blocksRaycasts = false; notificationGroup.interactable = false; notificationGroup.alpha = 0;
+        notification = Text(toast.transform, "Aviso", "", Vector2.zero, new Vector2(620, 56), 25);
+        LevelOneTypography.Apply(gameObject);
+    }
+
+    public void Refresh(Level01Manager manager, int calm, LockerInteraction nearest, int lockerNumber)
+    {
+        int seconds = Mathf.CeilToInt(manager.RemainingTime);
+        timer.text = $"{seconds / 60:00}:{seconds % 60:00}";
+        timer.color = seconds <= 25 ? new Color(1, .48f, .40f) : Gold;
+        goal.text = manager.HasUSB ? "Vuelve a la salida · 1/1" : "Encuentra tu USB · 0/1";
+        if(mystery!=null&&!manager.HasUSB)goal.text=mystery.DiscoveredCount<3?$"Investiga las pistas · {mystery.DiscoveredCount}/3":"Deduce y abre el casillero";
+        inventory.text = (manager.HasUSB ? "USB recuperada" : "USB pendiente") + $"\nChoques: {Mathf.Clamp(3-calm,0,3)}/3";
+        inventoryIcon.color = manager.HasUSB ? new Color(.38f, .85f, .65f) : new Color(.36f, .53f, .60f);
+        bool visible = manager.IsPlaying && nearest != null && !manager.HasUSB;
+        contextPanel.gameObject.SetActive(visible);
+        if (visible)
+        {
+            float penalty = Resources.Load<U2GameConfig>("U2GameConfig")?.repeatLockerPenalty ?? 5;
+            context.text = nearest.IsSearched
+                ? $"{nearest.MysteryName} · Ya revisado\nRepetir cuesta {penalty:0} s"
+                : $"Casillero {nearest.MysteryName}\nE / botón sur: revisar";
+            context.color = nearest.IsSearched ? Gold : Color.white;
+        }
+        string clue=mystery!=null?mystery.NearbyCluePrompt():null;
+        var world=LevelOneNightSchool.Active;
+        if(world!=null)
+        {
+            int floor=world.FloorAt(Camera.main!=null?Camera.main.transform.position:Vector3.zero);
+            var guard=world.MostAlertGuard(floor==1?1:0);
+            string status=guard==null?"De ronda":guard.Suspicion01>=1?"¡Te persigue!":guard.Suspicion01>.05f?"Te está mirando":"De ronda";
+            vigilance.text=(floor==1?"Segundo piso":floor<0?"Escalera en U":"Planta baja")+"\nIntendentes: "+status+"\nAdvertencias: "+(world.Caretaker!=null?world.Caretaker.Warnings:0)+"/2";
+            Vector2 origin=Camera.main!=null?(Vector2)Camera.main.transform.position:Vector2.zero;
+            LevelOneCaretaker nearestGuard=null;float distance=float.PositiveInfinity;
+            if(world.Watchmen!=null)foreach(var candidate in world.Watchmen)
+            {
+                if(candidate==null||candidate.AssignedFloor!=(origin.y>=16?1:0))continue;
+                float range=Vector2.Distance(candidate.Position,origin);
+                if(nearestGuard==null||(candidate.IsChasing&&!nearestGuard.IsChasing)||(candidate.IsChasing==nearestGuard.IsChasing&&range<distance)){distance=range;nearestGuard=candidate;}
+            }
+            if(nearestGuard!=null)
+            {
+                Vector2 offset=nearestGuard.Position-origin;
+                Color tint=nearestGuard.IsChasing?new Color(1,.38f,.23f):distance<10?Gold:new Color(.55f,.83f,1);
+                proximity.text=nearestGuard.IsChasing?"¡Alerta!":distance<5?"Muy cerca":distance<10?"Cerca":"Lejos";
+                proximity.color=tint;directionIcon.color=tint;
+                directionIcon.rectTransform.localRotation=Quaternion.Euler(0,0,Mathf.Atan2(offset.y,offset.x)*Mathf.Rad2Deg);
+                if(alertIcons!=null)alertIcon.texture=nearestGuard.IsChasing?alertIcons.alert:distance<10?alertIcons.suspicion:alertIcons.patrol;
+                alertIcon.color=nearestGuard.IsChasing?Color.white:tint;
+                proximityPanel.color=nearestGuard.IsChasing?new Color(.22f,.05f,.04f,.94f):Panel;
+            }
+            else {proximity.text="Sin vigilancia";alertIcon.color=new Color(1,1,1,.25f);directionIcon.color=new Color(1,1,1,.25f);}
+            if(world.TryGetWorldPrompt(out string roomPrompt))
+            {contextPanel.gameObject.SetActive(true);context.text=roomPrompt;context.color=new Color(.65f,.82f,1);}
+        }
+        if(manager.IsPlaying&&!manager.HasUSB&&!string.IsNullOrEmpty(clue)){contextPanel.gameObject.SetActive(true);context.text=clue;context.color=Gold;}
+    }
+
+    static RawImage MakeAlertIcon(Transform parent,Vector2 position,Texture2D texture)
+    {
+        var go=new GameObject("Icono de vigilancia",typeof(RectTransform));go.transform.SetParent(parent,false);
+        var image=go.AddComponent<RawImage>();image.texture=texture;image.raycastTarget=false;
+        image.rectTransform.anchoredPosition=position;image.rectTransform.sizeDelta=new Vector2(42,42);return image;
+    }
+
+    public void Notify(string message)
+    {
+        if (notification == null || string.IsNullOrWhiteSpace(message)) return;
+        notification.text = message;
+        notification.color = message.Contains("−") ? Gold : Color.white;
+        notificationUntil = Time.unscaledTime + 2.8f;
+        notificationGroup.alpha = 1;
+    }
+
+    public void UseTouchLayout()
+    {
+        var bag = inventory.transform.parent as RectTransform;
+        if (bag != null) bag.anchoredPosition = new Vector2(20, 320);
+        var book=transform.Find("Libreta de pistas") as RectTransform;
+        if(book!=null)book.anchoredPosition=new Vector2(20,422);
+        var watch=transform.Find("Piso y vigilancia") as RectTransform;
+        if(watch!=null)watch.anchoredPosition=new Vector2(-20,340);
+    }
+
+    void Update()
+    {
+        if (notificationGroup != null)
+            notificationGroup.alpha = Mathf.Clamp01((notificationUntil - Time.unscaledTime) / .6f);
+    }
+
+    Image Card(string name, Vector2 anchor, Vector2 position, Vector2 size)
+    {
+        var image = U2Presentation.Image(transform, name, Panel);
+        image.raycastTarget = false;
+        var rect = image.rectTransform;
+        rect.anchorMin = rect.anchorMax = rect.pivot = anchor;
+        Place(rect, position, size);
+        return image;
+    }
+
+    static TMP_Text Text(Transform parent, string name, string value, Vector2 position, Vector2 size, float fontSize)
+        => U2Presentation.Text(parent, name, value, position, size, fontSize, Color.white);
+
+    static void SmallButton(Transform parent, string caption, Vector2 position, Action action)
+    {
+        var button = U2Presentation.Button(parent, caption, position, () => action());
+        Place(button.GetComponent<RectTransform>(), position, new Vector2(122, 37));
+        var label = button.GetComponentInChildren<TMP_Text>();
+        label.rectTransform.sizeDelta = new Vector2(118, 35); label.fontSize = 23;
+    }
+
+    static void Place(RectTransform rect, Vector2 position, Vector2 size)
+    { rect.anchoredPosition = position; rect.sizeDelta = size; }
+}

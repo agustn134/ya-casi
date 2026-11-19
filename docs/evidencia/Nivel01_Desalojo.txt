@@ -1,0 +1,5 @@
+initial=72
+guards=2
+falseExteriorRoom=False
+remainingAfter35s=60
+EGRESS_PASS

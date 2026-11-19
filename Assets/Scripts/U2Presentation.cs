@@ -6,7 +6,7 @@ using UnityEngine.InputSystem.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-/// <summary>MenÃº del videojuego y opciones comunes, independientes de la actividad MenÃº II.</summary>
+/// <summary>Menú del videojuego y opciones comunes, independientes de la actividad Menú II.</summary>
 public sealed class U2Presentation : MonoBehaviour
 {
     public const string MenuScene = "MenuPrincipal";
@@ -14,32 +14,30 @@ public sealed class U2Presentation : MonoBehaviour
     public const string SaveKey = "YaCasi.U2.ResumeLevel";
     public static float MusicVolume => PlayerPrefs.GetFloat("YaCasi.U2.Music", .45f);
     public static float EffectsVolume => PlayerPrefs.GetFloat("YaCasi.U2.Effects", .7f);
-    static TMP_FontAsset Font => Resources.Load<U2GameConfig>("U2GameConfig")?.font;
+    static TMP_FontAsset Font => LevelOneTypography.Font;
     static readonly Color Navy = new Color32(24,39,51,255);
     static readonly Color Gold = new Color32(255,213,107,255);
     GameObject root;
     AudioSource music;
+    float splashTime;
+    bool splash;
     public const string DeliveryScene = "Nivel03_LaRutaDeEntrega";
     const string CampaignKey = "YaCasi.Campaign.Resume";
     const string FinishedKey = "YaCasi.Campaign.Completed";
     static readonly string[] CampaignScenes = { LevelScene, LibraryLevelManager.SceneName, DeliveryScene };
     void Start()
     {
-        Time.timeScale = 1;
-        root = NewCanvas("Menú principal", 100);
-        music = gameObject.AddComponent<AudioSource>();
-        music.loop = true;
-        music.volume = MusicVolume;
-        music.clip = Resources.Load<U2GameConfig>("U2GameConfig")?.menuMusic;
-        if (music.clip != null) music.Play();
-        Main();
+        Time.timeScale=1;
+        root=NewCanvas("Menú principal",100);
+        music=gameObject.AddComponent<AudioSource>();music.loop=true;music.volume=MusicVolume;
+        var config=Resources.Load<U2GameConfig>("U2GameConfig");music.clip=config!=null?config.menuMusic:null;if(music.clip!=null)music.Play();
+        splash=true;splashTime=Time.unscaledTime+1.8f;
+        var card=Card(root.transform,"Splash");
+        Text(card.transform,"Logo equipo","AL · CP",new Vector2(0,120),new Vector2(700,120),76,Gold);
+        Text(card.transform,"Nombre","¡YA CASI!",Vector2.zero,new Vector2(850,120),82,Color.white);
+        Text(card.transform,"Carga","Una aventura universitaria contrarreloj",new Vector2(0,-130),new Vector2(1000,80),34,Color.white);
     }
-
-    void Update()
-    {
-        if (music != null) music.volume = MusicVolume;
-    }
-
+    void Update(){if(music!=null)music.volume=MusicVolume;if(splash&&Time.unscaledTime>=splashTime){splash=false;Main();}}
     void Clear()
     {
         foreach (Transform child in root.transform)
@@ -48,37 +46,43 @@ public sealed class U2Presentation : MonoBehaviour
             Destroy(child.gameObject);
         }
     }
-
     public void Main()
     {
-        Clear();
-        var card = Card(root.transform, "Inicio");
-        Text(card.transform, "Título", "¡YA CASI!", new Vector2(0, 338), new Vector2(1000, 88), 64, Gold);
-        bool finished = PlayerPrefs.GetInt(FinishedKey) == 1;
-        Text(card.transform, "Subtítulo", finished ? "Campaña completada" : "Una aventura universitaria contrarreloj",
-            new Vector2(0, 262), new Vector2(1100, 54), 28, Color.white);
-
-        var size = new Vector2(620, 80);
-        MenuButton(card.transform, "Jugar nivel 1", new Vector2(0, 172), size, 34, () => LoadLevel(1));
-        MenuButton(card.transform, "Nivel 2 · Biblioteca", new Vector2(0, 87), size, 34, () => LoadLevel(2));
-        MenuButton(card.transform, "Jugar nivel 3", new Vector2(0, 2), size, 34, () => LoadLevel(3));
-        MenuButton(card.transform, "Continuar", new Vector2(0, -83), size, 34, StartLevel);
-        MenuButton(card.transform, "Opciones", new Vector2(0, -168), size, 34, () => Options(root.transform, null));
-        MenuButton(card.transform, "Créditos", new Vector2(0, -253), size, 34, Credits);
-        MenuButton(card.transform, "Salir", new Vector2(0, -338), size, 34, Quit);
+        Clear();var card=Card(root.transform,"Inicio");
+        Text(card.transform,"Título","¡YA CASI!",new Vector2(0,320),new Vector2(1000,100),76,Gold);
+        Text(card.transform,"Subtítulo","Recupera la USB antes de que cierre el edificio",new Vector2(0,240),new Vector2(1100,70),30,Color.white);
+        string[] names={"1 · El caos del casillero","2 · Biblioteca","3 · La ruta de entrega","4 · El cubículo"};
+        for(int i=0;i<4;i++)
+        {
+            int number=i+1;string scene=FindLevel(number);
+            var button=Button(card.transform,names[i]+(scene==null?" · Próximamente":""),new Vector2(0,165-i*70),()=>LoadLevel(scene));
+            button.interactable=scene!=null;
+        }
+        string resume=PlayerPrefs.GetString("YaCasi.LastPlayedScene",LevelScene);
+        var cont=Button(card.transform,"Continuar",new Vector2(0,-125),()=>LoadLevel(resume));cont.interactable=Application.CanStreamedLevelBeLoaded(resume);
+        Button(card.transform,"Opciones",new Vector2(-310,-215),()=>Options(root.transform,Main));
+        Button(card.transform,"Créditos",new Vector2(310,-215),Credits);
+        Button(card.transform,"Salir",new Vector2(0,-305),Quit);
+        Text(card.transform,"Mejor","Mejor puntaje nivel 1: "+PlayerPrefs.GetInt("YaCasi.U2.Best",0),new Vector2(0,-380),new Vector2(800,45),25,Gold);
     }
-
-    static Button MenuButton(Transform parent, string label, Vector2 position, Vector2 size, float fontSize, UnityEngine.Events.UnityAction action)
+    static string FindLevel(int number)
     {
-        var button = Button(parent, label, position, action);
-        ((RectTransform)button.transform).sizeDelta = size;
-        var text = button.GetComponentInChildren<TMP_Text>();
-        text.rectTransform.sizeDelta = new Vector2(size.x - 20, Mathf.Min(size.y, 62));
-        text.fontSize = fontSize;
-        return button;
+        for(int i=0;i<SceneManager.sceneCountInBuildSettings;i++)
+        {
+            string path=UnityEngine.SceneManagement.SceneUtility.GetScenePathByBuildIndex(i);
+            string name=System.IO.Path.GetFileNameWithoutExtension(path);
+            if(name.StartsWith("Nivel0"+number)&&!name.Contains("Prueba"))return name;
+        }
+        return null;
     }
-
-    static int ResumeLevel()
+    static void LoadLevel(string scene){if(!string.IsNullOrEmpty(scene)&&Application.CanStreamedLevelBeLoaded(scene)){Time.timeScale=1;SceneManager.LoadScene(scene);}}
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+    static void TrackProgress(){SceneManager.sceneLoaded-=RememberLevel;SceneManager.sceneLoaded+=RememberLevel;}
+    static void RememberLevel(Scene scene,LoadSceneMode mode)
+    {if(scene.name.StartsWith("Nivel0")&&!scene.name.Contains("Prueba")){PlayerPrefs.SetString("YaCasi.LastPlayedScene",scene.name);PlayerPrefs.Save();}}
+    public static void StartLevel(){string last=PlayerPrefs.GetString("YaCasi.LastPlayedScene", "");if(!string.IsNullOrEmpty(last)&&Application.CanStreamedLevelBeLoaded(last))LoadLevel(last);else LoadLevel(ResumeLevel());}
+    public static void ReturnToMenu(){Time.timeScale=1;SceneManager.LoadScene(MenuScene);}
+static int ResumeLevel()
     {
         if (PlayerPrefs.HasKey(CampaignKey))
             return Mathf.Clamp(PlayerPrefs.GetInt(CampaignKey), 1, CampaignScenes.Length);
@@ -86,16 +90,12 @@ public sealed class U2Presentation : MonoBehaviour
         if (PlayerPrefs.GetInt("YaCasi.U2.Win") == 1) return 2;
         return Mathf.Clamp(PlayerPrefs.GetInt(SaveKey, 1), 1, CampaignScenes.Length);
     }
-
-    static void SaveProgress(int level)
+static void SaveProgress(int level)
     {
         PlayerPrefs.SetInt(CampaignKey, Mathf.Max(level, ResumeLevel()));
         PlayerPrefs.Save();
     }
-
-    public static void StartLevel() => LoadLevel(ResumeLevel());
-
-    static void LoadLevel(int level)
+static void LoadLevel(int level)
     {
         if (level < 1 || level > CampaignScenes.Length) return;
         string scene = CampaignScenes[level - 1];
@@ -108,30 +108,21 @@ public sealed class U2Presentation : MonoBehaviour
         Time.timeScale = 1;
         SceneManager.LoadScene(scene);
     }
-
-    public static void ReturnToMenu()
-    {
-        Time.timeScale = 1;
-        SceneManager.LoadScene(MenuScene);
-    }
-
-    public static void SaveLibraryProgress() => SaveProgress(2);
-
-    public static void PlayLibrary() => LoadLevel(2);
-    public static void SaveDeliveryProgress() => SaveProgress(3);
-    public static void PlayDelivery() => LoadLevel(3);
-
-    public static void CompleteCampaign()
+public static void CompleteCampaign()
     {
         PlayerPrefs.SetInt(FinishedKey, 1);
         SaveProgress(3);
     }
+    public static void SaveLibraryProgress() => SaveProgress(2);
+    public static void PlayLibrary() => LoadLevel(2);
+    public static void SaveDeliveryProgress() => SaveProgress(3);
+    public static void PlayDelivery() => LoadLevel(3);
 
     void Credits()
     {
         Clear();var card=Card(root.transform,"Créditos");var cfg=Resources.Load<U2GameConfig>("U2GameConfig");
         Text(card.transform,"Título","CRÉDITOS",new Vector2(0,320),new Vector2(900,70),54,Gold);
-        Text(card.transform,"Autores","Agustín López Parra · Carlos Manuel Palma Muñoz\n\nNivel 1: desarrollo de Agustín; revisión de Carlos.\nUnity · C# · TextMesh Pro\nArte: LimeZu — Modern Interiors, Exteriors y Office\nInterfaz: That Witch Design — Simple Button Set 01\nFuente: Pixelify Sans — SIL OFL\nEfectos: Kenney Interface Sounds y síntesis propia\nGame Over: Alphix — Pixabay (417465)\nMúsica del nivel: "+(cfg!=null?cfg.soundtrackCredit:"pendiente de confirmar")+"\n\nCampaña: Caos del Casillero, Maratón en la Biblioteca y La Ruta de Entrega.",new Vector2(0,20),new Vector2(1120,500),30,Color.white);
+        Text(card.transform,"Autores","Agustín López Parra · Carlos Manuel Palma Muñoz\n\nNivel 1: desarrollo de Agustín; revisión de Carlos.\nUnity · C# · TextMesh Pro\nArte: LimeZu — Modern Interiors, Exteriors y Office\nInterfaz: That Witch Design — Simple Button Set 01\nFuentes: Pixelify Sans y Redaction 35 — SIL OFL\nEfectos: Kenney Interface Sounds y síntesis propia\nGame Over: Alphix — Pixabay (417465)\nMúsica original del campus: Agustín López Parra — FL Studio 25\nMúsica del nivel: "+(cfg!=null?cfg.soundtrackCredit:"pendiente de confirmar")+"\n\nExplora los niveles disponibles desde el menú principal.",new Vector2(0,20),new Vector2(1120,500),27,Color.white);
         Button(card.transform,"Volver",new Vector2(0,-310),Main);
     }
     static void Quit()
@@ -139,7 +130,7 @@ public sealed class U2Presentation : MonoBehaviour
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying=false;
 #elif UNITY_WEBGL
-        Debug.Log("Puedes cerrar la pestaÃ±a para salir del juego.");
+        Debug.Log("Puedes cerrar la pestaña para salir del juego.");
 #else
         Application.Quit();
 #endif

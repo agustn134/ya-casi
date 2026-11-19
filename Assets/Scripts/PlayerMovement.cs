@@ -83,6 +83,7 @@ public class PlayerMovement : MonoBehaviour
 
     private static bool ReadSprintHeld()
     {
+        if (!Application.isFocused || Time.timeScale <= 0) return false;
         var keyboard = Keyboard.current;
         bool shift = keyboard != null && (keyboard.leftShiftKey.isPressed || keyboard.rightShiftKey.isPressed);
         return shift || TouchGameControls.Sprint || (Gamepad.current != null && Gamepad.current.rightTrigger.isPressed);

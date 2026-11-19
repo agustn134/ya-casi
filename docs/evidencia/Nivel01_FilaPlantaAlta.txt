@@ -1,0 +1,6 @@
+initialUpper=36
+seconds=110
+upperRemaining=15
+upperDescended=21
+studentsAtEntrance=3
+UPPER_QUEUE_PASS
