@@ -380,8 +380,7 @@ public sealed class LibraryLevelManager : MonoBehaviour
         }
         else PlayGameOverMusic();
         var card = Overlay(success ? "¡LECTURAS COMPLETAS!" : "LA BIBLIOTECA CERRÓ", (success ? "Tu equipo ya tiene las tres referencias.\nEl trabajo puede continuar: llegaste antes del cierre." : "La biblioteca cerró antes de reunir las referencias.\nEn el próximo intento, sigue el catálogo y camina cerca de la bibliotecaria.") + "\n\nLibros: " + CollectedCount + "/3 · Regaños: " + Reprimands + "\nTiempo de juego: " + Mathf.CeilToInt(elapsed) + " s\nPuntaje: " + score + " · Récord: " + PlayerPrefs.GetInt("YaCasi.Library.Best", 0));
-        DialogButton(card.transform, "Volver a jugar", new Vector2(0, -180), Restart);
-        DialogButton(card.transform, "Menú principal", new Vector2(0, -280), U2Presentation.ReturnToMenu);
+        GameLevelFlow.ResultActions(card.transform,2,success);
     }
     void PlayGameOverMusic()
     {

@@ -24,7 +24,7 @@ public sealed class U2Presentation : MonoBehaviour
     public const string DeliveryScene = "Nivel03_LaRutaDeEntrega";
     const string CampaignKey = "YaCasi.Campaign.Resume";
     const string FinishedKey = "YaCasi.Campaign.Completed";
-    static readonly string[] CampaignScenes = { LevelScene, LibraryLevelManager.SceneName, DeliveryScene };
+    static readonly string[] CampaignScenes = { LevelScene, LibraryLevelManager.SceneName, DeliveryScene, "Nivel04_ElCallejon" };
     void Start()
     {
         Time.timeScale=1;
@@ -111,7 +111,7 @@ static void LoadLevel(int level)
 public static void CompleteCampaign()
     {
         PlayerPrefs.SetInt(FinishedKey, 1);
-        SaveProgress(3);
+        SaveProgress(4);
     }
     public static void SaveLibraryProgress() => SaveProgress(2);
     public static void PlayLibrary() => LoadLevel(2);

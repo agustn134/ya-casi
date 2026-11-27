@@ -438,7 +438,7 @@ public sealed class LevelFourMission : MonoBehaviour
         if (cover != null) Destroy(cover);
         Panel("NO LOGRASTE ESCAPAR", Navy);
         Label(panel.transform, reason, new Vector2(0, 30), new Vector2(1050, 270), 36, Cream);
-        Button(panel.transform, "Reintentar nivel", new Vector2(0, -180), () => SceneManager.LoadScene(SceneManager.GetActiveScene().name));
+        GameLevelFlow.ResultActions(panel.transform,4,false,-150);
     }
 
     void Win()
@@ -448,7 +448,8 @@ public sealed class LevelFourMission : MonoBehaviour
         Intro.beer.gameObject.SetActive(true);
         Panel("¡YA CASI... AHORA SÍ!", Navy);
         Label(panel.transform, "Volviste con Team Software.\nBases de Datos: 8\nEntraste, saliste del F a tiempo y regresaste por la malla.", new Vector2(0, 20), new Vector2(1050, 280), 36, Cream);
-        Button(panel.transform, "Volver a jugar", new Vector2(0, -190), () => SceneManager.LoadScene(SceneManager.GetActiveScene().name));
+        U2Presentation.CompleteCampaign();
+        GameLevelFlow.ResultActions(panel.transform,4,true,-130);
     }
 
     void Panel(string title, Color background)

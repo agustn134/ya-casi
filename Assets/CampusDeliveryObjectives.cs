@@ -529,7 +529,7 @@ public sealed class CampusDeliveryObjectives : MonoBehaviour
         if (completionOpen || resultShown) return;
         completionOpen = true; optionsOpen = false; narrativeOpen = false; Time.timeScale = 0;
         if (SceneManager.GetActiveScene().name == U2Presentation.DeliveryScene)
-            U2Presentation.CompleteCampaign();
+            U2Presentation.SaveDeliveryProgress();
         if (FinalChallenge != null) FinalChallenge.Clear();
         if (overlay != null) Destroy(overlay);
         music.Stop();
@@ -539,8 +539,9 @@ public sealed class CampusDeliveryObjectives : MonoBehaviour
         U2Presentation.Text(card.transform, "Proyectos entregados", "Proyectos entregados: " + Session.DeliveredCount + "/" + Session.RequiredCount
             + "\n\nTodos los profesores recibieron su proyecto.\n\nGalindo: «¡Ya casi... ahora sí terminé!»",
             new Vector2(0, 50), new Vector2(1100, 280), 38, Color.white);
-        U2Presentation.Button(card.transform, "Ver resumen", new Vector2(0, -210), () => { completionOpen = false; ShowResult(); });
-        U2Presentation.Button(card.transform, "Volver al menú", new Vector2(0, -310), U2Presentation.ReturnToMenu);
+        GameLevelFlow.ResultActions(card.transform,3,true,-150);
+        var summary=U2Presentation.Button(card.transform,"Ver resumen",new Vector2(0,-380),()=>{completionOpen=false;ShowResult();});
+        ResizeButton(summary,new Vector2(620,55),26);
         CampusTypography.Apply(overlay.transform);
     }
     void ShowResult()
@@ -558,9 +559,8 @@ public sealed class CampusDeliveryObjectives : MonoBehaviour
             + "\n\nEntregas: " + Session.DeliveredCount + "/" + Session.RequiredCount + "\nTiempo de juego: " + Format(Session.ElapsedTime, false) + "\nTiempo restante: " + Format(Session.RemainingTime, true)
             + "\nAmonestaciones: " + Session.WarningCount + " · Impactos: " + Session.HazardHitCount + "\nDescuento total: −" + Session.TotalPenaltySeconds.ToString("0.#") + " s",
             new Vector2(0, 70), new Vector2(1130, 340), 32, Color.white);
-        U2Presentation.Button(card.transform, "Reintentar", new Vector2(0, -150), Restart);
-        U2Presentation.Button(card.transform, "Menú principal", new Vector2(0, -250), U2Presentation.ReturnToMenu);
-        U2Presentation.Text(card.transform, "Crédito musical", "Música original: Agustín López Parra · FL Studio 25", new Vector2(0, -350), new Vector2(1100, 60), 25, Color.white);
+        GameLevelFlow.ResultActions(card.transform,3,Session.Completed,-150);
+        U2Presentation.Text(card.transform, "Crédito musical", "Música original: Agustín López Parra · FL Studio 25", new Vector2(0, -395), new Vector2(1100, 35), 21, Color.white);
         CampusTypography.Apply(overlay.transform);
     }
     public void Restart()

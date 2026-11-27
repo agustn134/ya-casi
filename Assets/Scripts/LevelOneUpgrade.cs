@@ -200,9 +200,10 @@ public sealed class LevelOneUpgrade : MonoBehaviour
         var card=NewOverlay("Nivel superado",OverlayKind.Completion);
         MenuText(card,"Título","¡Nivel superado!",140,100,52,new Color(1,.84f,.4f));
         MenuText(card,"Cierre","USB recuperada. Llegaste a tiempo a la salida.\nGalindo ya tiene sus proyectos para continuar.",0,130,30,Color.white);
-        MenuButton(card,"Ver resumen",-180,ShowResult);
+        GameLevelFlow.ResultActions(card.transform,1,true,-140);
+        MenuButton(card,"Ver resumen",-370,ShowResult);
         LevelOneTypography.Apply(overlay);
-        StartCoroutine(CompletionDelay());
+        // La victoria espera a que el jugador elija qué hacer.
     }
     System.Collections.IEnumerator CompletionDelay()
     {
@@ -215,9 +216,7 @@ public sealed class LevelOneUpgrade : MonoBehaviour
         MenuText(card,"Título",manager.IsCompleted?"¡USB recuperada!":(nightSchool!=null&&nightSchool.Caretaker!=null&&nightSchool.Caretaker.Warnings>=3?"Expulsado del edificio":calm<=0?"Tres choques: partida terminada":"Se acabó el tiempo"),305,90,44,new Color(1,.84f,.4f));
         MenuText(card,"Resultado",manager.IsCompleted?"Llegaste a tiempo a la salida.":"Recuerda los casilleros revisados y pide permiso para pasar.",212,80,28,Color.white);
         MenuText(card,"Estadísticas",Statistics()+$"\n\nTiempo restante: {Mathf.CeilToInt(manager.RemainingTime)} s · Mejor: {PlayerPrefs.GetInt("YaCasi.U2.Best",0)}\n"+(manager.IsCompleted?mystery.Awards(calm):(nightSchool!=null&&nightSchool.Caretaker!=null&&nightSchool.Caretaker.Warnings>=3?"El intendente te expulsó tras tres capturas.":"Investiga las tres pistas antes de elegir un casillero.")),25,240,27,Color.white);
-        MenuButton(card,"Reintentar",-140,manager.RestartLevel);
-        MenuButton(card,"Menú principal",-225,U2Presentation.ReturnToMenu);
-        if(manager.IsCompleted){U2Presentation.SaveLibraryProgress();MenuButton(card,"Nivel 2 · Biblioteca",-310,U2Presentation.PlayLibrary);}
+        GameLevelFlow.ResultActions(card.transform,1,manager.IsCompleted,-140);
         MenuText(card,"Fuente","Tipografía: Redaction 35 · SIL Open Font License",-380,40,21,Color.white);
         LevelOneTypography.Apply(overlay);
     }
