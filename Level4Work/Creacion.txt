@@ -1,0 +1,4 @@
+OK
+Escena: Assets/Scenes/Nivel04_ElCallejon.unity
+Campus copiado del nivel 3. Escena original intacta.
+Malla con collider, 3 amigos, cerveza, mensaje en celular y secuencia hasta el salto.

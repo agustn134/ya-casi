@@ -1,0 +1,12 @@
+PASS: Shift + W activa correr
+PASS: Soltar Shift vuelve a caminar manteniendo W
+PASS: Shift derecho también activa correr
+PASS: Soltar Shift durante desactivación no deja carrera pegada
+PASS: Perder foco limpia correr
+PASS: Recuperar foco no reactiva una tecla soltada
+PASS: Gatillo mantenido activa correr
+PASS: Soltar gatillo vuelve a caminar
+PASS: Botón táctil mantenido activa correr
+PASS: Salir del botón táctil libera correr
+PASS: Soltar botón táctil libera correr
+RESULTADO: PASS (11 comprobaciones)

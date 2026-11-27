@@ -1,0 +1,1 @@
+OK: 24 alumnos, 10 personajes, 7 lámparas 2D, ambiente nocturno, calle extendida, sin entrada marcada y escalada continua.

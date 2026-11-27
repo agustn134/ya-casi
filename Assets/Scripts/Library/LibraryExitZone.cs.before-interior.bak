@@ -1,0 +1,31 @@
+using TMPro;
+using UnityEngine;
+
+/// <summary>Salida con un área física amplia y prioridad sobre los estantes.</summary>
+public sealed class LibraryExitZone : MonoBehaviour
+{
+    public LibraryLevelManager manager;
+    public BoxCollider2D zone;
+    public SpriteRenderer floor;
+    public TMP_Text sign;
+    public bool Contains(PlayerMovement player)
+    {
+        if (player == null || zone == null) return false;
+        var feet = player.GetComponent<Collider2D>();
+        if (feet != null) return zone.bounds.Intersects(feet.bounds);
+        return zone.bounds.Contains(player.transform.position);
+    }
+    void Update()
+    {
+        if (manager == null) return;
+        bool open = manager.CollectedCount == 3;
+        if (floor != null) floor.color = open ? new Color(.25f,.85f,.5f) : new Color(.7f,.53f,.25f);
+        if (sign != null) sign.text = open ? "SALIDA ABIERTA ↓\nENTRA AQUÍ" : "SALIDA ↓\nREÚNE 3 LIBROS";
+    }
+    void OnTriggerEnter2D(Collider2D other) { Attempt(other); }
+    void OnTriggerStay2D(Collider2D other) { Attempt(other); }
+    void Attempt(Collider2D other)
+    {
+        if (manager != null && other.GetComponentInParent<PlayerMovement>() == manager.Player) manager.TryExit(false);
+    }
+}

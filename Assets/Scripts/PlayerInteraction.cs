@@ -27,6 +27,20 @@ public class PlayerInteraction : MonoBehaviour
     // Casilleros encontrados al iniciar esta escena.
     private LockerInteraction[] lockers;
     private float nextReview;
+    private bool externalPrompt;
+    private LevelOneMystery mystery;
+    public void ConfigureMystery(LevelOneMystery value)
+    {
+        mystery=value;
+        lockers=FindObjectsByType<LockerInteraction>(FindObjectsSortMode.None);
+    }
+
+    public void UseExternalPrompt()
+    {
+        externalPrompt = true;
+        SetPromptVisible(false);
+        if (interactionText != null) interactionText.gameObject.SetActive(false);
+    }
 
     /// <summary>
     /// Obtiene los casilleros activos de la escena una sola vez.
@@ -52,6 +66,7 @@ public class PlayerInteraction : MonoBehaviour
     /// </summary>
     private void Update()
     {
+        if (externalPrompt) return;
         var nearest=FindNearestLocker();
         if(interactionText!=null)interactionText.text=nearest!=null&&nearest.IsSearched?"E: ya revisado (−5 s)":"E para revisar";
         SetPromptVisible(nearest != null);
@@ -102,6 +117,7 @@ public class PlayerInteraction : MonoBehaviour
     public void TryInteract()
     {
         if(!isActiveAndEnabled || Time.timeScale<=0 || Time.unscaledTime<nextReview)return;
+        if(mystery!=null && mystery.TryInteractClue()){nextReview=Time.unscaledTime+.7f;return;}
         var nearest=FindNearestLocker();if(nearest==null)return;
         nextReview=Time.unscaledTime+.7f;nearest.Interact();
     }
@@ -109,6 +125,13 @@ public class PlayerInteraction : MonoBehaviour
     /// <summary>
     /// Controla la visibilidad del componente de texto.
     /// </summary>
+    public void HideLegacyPrompt()
+    {
+        if (interactionText == null) return;
+        interactionText.transform.parent.gameObject.SetActive(false);
+        interactionText = null;
+    }
+
     private void SetPromptVisible(bool visible)
     {
         if (interactionText != null)

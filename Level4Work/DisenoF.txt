@@ -1,0 +1,1 @@
+OK: piso de loseta fina, franjas grises, flechas azules, muros amarillos, columnas rojas, cristales, puertas, bancas, asientos negros, casilleros y cubículo con sprites LimeZu. Combate con daño/derribo y minimapa preparados.

@@ -1,0 +1,10 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6672b5d90cc3440ba696f4b42aaa2454, type: 3}
+  m_Name: LevelOneAmbience
+  backpack: {fileID: 1384564409632868591, guid: b219cdf10e39ae34ba7e760970ee7881, type: 3}
+  bin: {fileID: 1403872667690491893, guid: 1769199462812ef4c8bbc6d8f1d5fa93, type: 3}
+  paper: {fileID: 3804665568409157936, guid: ee615abf5e5674946a61503700c08840, type: 3}

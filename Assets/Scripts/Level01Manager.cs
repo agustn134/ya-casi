@@ -24,6 +24,17 @@ public class Level01Manager : MonoBehaviour
     [SerializeField] private TMP_Text feedbackText;
 
     private Coroutine feedbackCoroutine;
+    private bool externalPresentation;
+    public event System.Action<string> FeedbackShown;
+
+    // El HUD del nivel agrupa estos datos sin conservar las franjas antiguas.
+    public void UseExternalPresentation()
+    {
+        externalPresentation = true;
+        ClearFeedback();
+        foreach (var text in new[] { objectiveText, timerText, feedbackText })
+            if (text != null) text.gameObject.SetActive(false);
+    }
 
     [Header("Sonidos")]
     [SerializeField] private AudioSource sfxSource;
@@ -271,16 +282,33 @@ public class Level01Manager : MonoBehaviour
     /// Muestra un mensaje temporal durante la partida.
     /// Si ya había otro mensaje, lo reemplaza y renueva su duración.
     /// </summary>
+    public void BindCompactHud(TMP_Text timer, TMP_Text feedback)
+    {
+        ClearFeedback();
+        foreach (var text in new[] { objectiveText, timerText, feedbackText })
+            if (text != null) text.transform.parent.gameObject.SetActive(false);
+        objectiveText = null;
+        timerText = timer;
+        feedbackText = feedback;
+        feedback.transform.parent.gameObject.SetActive(false);
+        UpdateTimer();
+    }
+
     public void ShowFeedback(string message)
     {
-        if (!IsPlaying || feedbackText == null)
+        if (!IsPlaying)
         {
             return;
         }
 
+        FeedbackShown?.Invoke(message);
+        if (externalPresentation || feedbackText == null) return;
+
         ClearFeedback();
 
         feedbackText.text = message;
+        feedbackText.alpha = 1f;
+        feedbackText.transform.parent.gameObject.SetActive(true);
         feedbackCoroutine = StartCoroutine(HideFeedbackAfterDelay());
     }
 
@@ -289,9 +317,17 @@ public class Level01Manager : MonoBehaviour
     /// </summary>
     private IEnumerator HideFeedbackAfterDelay()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
+        float fade = .45f;
+        while (fade > 0f)
+        {
+            fade -= Time.deltaTime;
+            feedbackText.alpha = Mathf.Clamp01(fade / .45f);
+            yield return null;
+        }
 
         feedbackText.text = "";
+        if (objectiveText == null) feedbackText.transform.parent.gameObject.SetActive(false);
         feedbackCoroutine = null;
     }
 
@@ -309,6 +345,7 @@ public class Level01Manager : MonoBehaviour
         if (feedbackText != null)
         {
             feedbackText.text = "";
+            if (objectiveText == null) feedbackText.transform.parent.gameObject.SetActive(false);
         }
     }
 

@@ -26,6 +26,15 @@ public class LockerInteraction : MonoBehaviour
     private Level01Manager levelManager;
 
     private bool searched;
+    [SerializeField] private int mysteryRow;
+    private LevelOneMystery mystery;
+    public int MysteryRow => mysteryRow;
+    public int MysteryNumber { get; private set; }
+    public string ShortCode => $"{(mysteryRow==0?"A":"V")}-{MysteryNumber:00}";
+    public string SectionName => mysteryRow==0?"Planta baja · Azul (A)":"Planta alta · Verde (V)";
+    public string MysteryName => $"{ShortCode} · {SectionName}";
+    public void BindMystery(LevelOneMystery owner, int number) { mystery = owner; MysteryNumber = number; }
+    public void MarkSearched() { searched = true; }
 
     /// <summary>
     /// Indica si el jugador ya revisó este casillero.
@@ -49,17 +58,18 @@ public class LockerInteraction : MonoBehaviour
     public void Interact()
     {
         if(levelManager==null || !levelManager.IsPlaying)return;
+        if(mystery!=null){mystery.InvestigateLocker(this);return;}
         var config=Resources.Load<U2GameConfig>("U2GameConfig");
         var upgrade=levelManager.GetComponent<LevelOneUpgrade>();
         if(searched)
         {
             float penalty=config!=null?config.repeatLockerPenalty:5;
             levelManager.ApplyPenalty(penalty);levelManager.PlayWrongLockerSound();
-            levelManager.ShowFeedback($"Ya revisaste este casillero. −{penalty:0} segundos.");
+            levelManager.ShowFeedback($"Ya revisado · −{penalty:0} s");
             if(upgrade!=null)upgrade.Reviewed(true,false);return;
         }
         searched=true;if(upgrade!=null)upgrade.Reviewed(false,containsUSB);
-        if(containsUSB){levelManager.CollectUSB();levelManager.ShowFeedback("¡Encontraste tu USB! Vuelve a la salida.");}
-        else{float penalty=config!=null?config.wrongLockerPenalty:3;levelManager.ApplyPenalty(penalty);levelManager.PlayWrongLockerSound();levelManager.ShowFeedback($"Aquí no está la USB. −{penalty:0} segundos.");}
+        if(containsUSB){levelManager.CollectUSB();levelManager.ShowFeedback("¡USB recuperada! Vuelve a la salida.");}
+        else{float penalty=config!=null?config.wrongLockerPenalty:3;levelManager.ApplyPenalty(penalty);levelManager.PlayWrongLockerSound();levelManager.ShowFeedback($"Casillero vacío · −{penalty:0} s");}
     }
 }

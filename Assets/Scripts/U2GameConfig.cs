@@ -7,6 +7,8 @@ public sealed class U2GameConfig : ScriptableObject
     public AudioClip gameOverSound;
     public TMP_FontAsset font;
     public RuntimeAnimatorController[] studentControllers;
+    public Sprite[] studentIdleSprites;
+    public int studentArtVersion;
     public float roundSeconds = 135f;
     public float wrongLockerPenalty = 3f;
     public float repeatLockerPenalty = 5f;
